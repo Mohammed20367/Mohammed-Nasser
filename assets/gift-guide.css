@@ -12,6 +12,8 @@ Only styles for the small strip above hero
     background-color:#F5F5F5;
     padding: 10px 50px; /* top/bottom - left/right */
     height :64px
+    position: relative;
+    z-index:10;
 }
 
 /*first image in nav*/
