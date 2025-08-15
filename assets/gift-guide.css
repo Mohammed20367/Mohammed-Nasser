@@ -15,6 +15,7 @@ Only styles for the small strip above hero
 
 /* Center message text */
 .gift-top-bar_message {
+    display : flex;
     font-size: 16px;
     font-family: 'Jost', sans-serif;
     font-weight: 400;
