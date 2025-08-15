@@ -78,7 +78,13 @@ Only styles for the small strip above hero
 
 .frame
 {
+    display : flex
 width : 1440px;
 height:780px;
+}
 
+.imageinframe
+{
+   width : 100%;
+   height:100%;
 }
