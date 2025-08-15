@@ -85,9 +85,9 @@ height:780px;
 
 .imageinframe
 {
-      position: relative;
-    top: -5px; /* تحريك الصورة لأعلى */
-    z-index: 2; /* تخليها تحت الناف بار */
+    margin-top: -60px; /* حرك الصورة لفوق */
+    position: relative;
+    z-index: 1; /* خليها تحت أي عناصر فوقها */
    width : 100%;
    height:50%;
    top:64px;
