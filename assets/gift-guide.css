@@ -80,7 +80,7 @@ Only styles for the small strip above hero
 
 /*first frame in home page*/
 
-.frame
+.firstframe
 {
 display : flex
 width : 1440px;
