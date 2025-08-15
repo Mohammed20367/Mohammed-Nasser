@@ -20,7 +20,6 @@ Only styles for the small strip above hero
     font-family: 'Jost', sans-serif;
     font-weight: 400;
     align-items: center;        /* يوسّط عموديًا */
-    justify-content: center;    /* يوسّط أفقيًا */
 }
 
 /* Button */
