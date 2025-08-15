@@ -65,6 +65,6 @@ Only styles for the small strip above hero
 
 .gift-top-bar_first_message
 {
-    font-family:bold;
+   font-weight :bold
     color:#000000;
 }
