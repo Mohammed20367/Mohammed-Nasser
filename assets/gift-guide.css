@@ -5,6 +5,7 @@ Only styles for the small strip above hero
 
 /* Main Container for the top bar */
 .gift-top-bar {
+    background: transparent;
     position: relative;
     z-index:10;
     display: flex; /* Horizontal layout */
