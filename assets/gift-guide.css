@@ -89,10 +89,10 @@ height:780px;
 
 .imageinframe
 {
-    margin-top: -150px; /* حرك الصورة لفوق */
+    margin-top: -140px; /* حرك الصورة لفوق */
     position: relative;
     z-index: 1; /* خليها تحت أي عناصر فوقها */
    width : 100%;
    height:50%;
-   top:64px;
+  
 }
