@@ -13,6 +13,14 @@ Only styles for the small strip above hero
     padding: 10px 50px; /* top/bottom - left/right */
 }
 
+/*first image in nav*/
+.gift-icon--tisso
+{
+    width:151px;
+    height:19px;
+}
+
+
 /* Center message text */
 .gift-top-bar_message {
     display : flex;
@@ -65,12 +73,5 @@ Only styles for the small strip above hero
 }
 
 
-
-
-.gift-icon--tisso
-{
-    width:151px;
-    height:19px;
-}
 
 
