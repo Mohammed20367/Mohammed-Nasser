@@ -8,20 +8,20 @@ Only styles for the small strip above hero
     display: flex; /* Horizontal layout */
     align-items: center; /* Vertical centering */
     justify-content: space-between;
-    gap: 360px; /* Space between text and button */
+    gap: 5px; /* Space between text and button */
     background-color: #F5F5F5;
     padding: 10px 50px; /* top/bottom - left/right */
 }
 
 /* Center message text */
 .gift-top-bar_message {
-    width: 260px;
-    height: 14px;
-    flex: 1;
-    text-align: center;
+    display : flex;
     font-size: 16px;
     font-family: 'Jost', sans-serif;
     font-weight: 400;
+    align-items: center;       
+    justify-content: center;  
+    
 }
 
 /* Button */
@@ -60,4 +60,11 @@ Only styles for the small strip above hero
     width: 24px;
     height: 0px;
     border-top: 1.5px solid #000;
+}
+
+
+.gift-top-bar_first_message
+{
+   font-weight :bold
+    color:#000000;
 }

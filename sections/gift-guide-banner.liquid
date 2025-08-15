@@ -1,51 +1,37 @@
 {% comment %}
-Gift Guid - Banner (Custom) | Step 1 : scafold only 
-    - This fill will host the hero (banner) for the figma design.
-    - I start wuth a minimal structure + basix setting.
-    - No css and Js , i will add them in the next step
+Gift Guid - Banner (Custom) | Step 1 : scaffold only
+This section will host the hero (banner) for the figma design.
+No css and js yet – they will be added in the next step.
 {% endcomment %}
 
+{{ 'gift-guide.css' | asset_url | stylesheet_tag }}
 
-{{'gift-guide.css' | asset_url ||stylesheet_tag}}
+<section id="gift-hero-{{ section.id }}" class="gift-hero" role="banner" aria-label="Gift Guid hero banner">
+  <div class="gift-top-bar">
+    <div class="gift-top-bar_first_message">
+                TISSO VISON 
+    </div>
+    <div class="gift-top-bar_message">
+      Find the ideal gift for your loved ones
+    </div>
 
-<section id = "gift-hero-{{section.id}}"
-         class = "gift-hero"
-         role = "banner"
-         aria-label = "Gift Guid hero banner">
-
-<!-- Step A : Top bar (message + CTA) -->
-<div class = "gift-top-bar">
-<!-- Centerd message -->
-<div class ="gift-top-bar_message">
-Find the ideal gift for your loed ones
-</div>
-
-<!-- CTA button -->
-<button class = "gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
-
-<span> CHOOSE GIFT </span>
-
-<img class="gift-icon gift-icon--arrow"
-     src="{{ 'arrow-right.svg' | asset_url }}"
-     alt=""
-     aria-hidden="true"
-     width="16" height="16" loading="lazy">
-
- </button>
+    <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
+      <span>CHOOSE GIFT</span>
+      <img class="gift-icon gift-icon--arrow"
+           src="{{ 'arrow-right.svg' | asset_url }}"
+           alt=""
+           aria-hidden="true"
+           width="16" height="16" loading="lazy">
+    </button>
+  </div>
+</section>
 
 {% schema %}
 {
-  "name": "Gift Guide — Top Bar (Custom)",
+  "name": "Gift Guide Top Bar",
   "settings": [],
   "presets": [
-    { "name": "Gift Guide — Top Bar" }
+    { "name": "Gift Guide Top Bar" }
   ]
 }
 {% endschema %}
-
-
-</div>
-
-
-</section>
-
