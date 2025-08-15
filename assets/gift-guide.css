@@ -26,6 +26,8 @@ Only styles for the small strip above hero
 
 /* Button */
 .gift-button {
+    width:207px;
+    height:44px;
     display: inline-flex;
     align-items: center;
     gap: 7px; /* space between text and arrow */
