@@ -108,7 +108,11 @@ height:780px;
 
 .seconimageinframe
 {
-    position:relative;
-width : 50%;
-   height:50%;
+    
+    display: block; /* يشيل الـ space بتاع الصور */
+    margin: 0;
+    padding: 0;
+    width: auto; /* أو 100% لو عايز تملا العرض */
+    position: relative;
+    left: 0;
 }
