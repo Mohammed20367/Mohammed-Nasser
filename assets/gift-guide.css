@@ -99,6 +99,7 @@ height:780px;
 
 .secondframe
 {
+   
     width:890px
     height:402px;
     top :442px;
@@ -107,6 +108,7 @@ height:780px;
 
 .seconimageinframe
 {
+    position:relative;
 width : 100%;
    height:50%;
 }
