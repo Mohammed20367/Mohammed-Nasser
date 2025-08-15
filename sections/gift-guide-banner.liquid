@@ -4,7 +4,20 @@ This section will host the hero (banner) for the figma design.
 No css and js yet – they will be added in the next step.
 {% endcomment %}
 
+
+
 {{ 'gift-guide.css' | asset_url | stylesheet_tag }}
+
+<head>
+  {{ content_for_header }}
+
+  <!-- خط Jost -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+
 
 <section id="gift-hero-{{ section.id }}" class="gift-hero" role="banner" aria-label="Gift Guid hero banner">
   <div class="gift-top-bar">
