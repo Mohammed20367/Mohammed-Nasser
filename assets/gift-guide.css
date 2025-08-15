@@ -5,6 +5,8 @@ Only styles for the small strip above hero
 
 /* Main Container for the top bar */
 .gift-top-bar {
+    position: relative;
+    z-index:10;
     display: flex; /* Horizontal layout */
     align-items: center; /* Vertical centering */
     justify-content: space-between;
@@ -12,8 +14,7 @@ Only styles for the small strip above hero
     background-color:#F5F5F5;
     padding: 10px 50px; /* top/bottom - left/right */
     height :64px
-    position: relative;
-    z-index:10;
+  
 }
 
 /*first image in nav*/
@@ -80,7 +81,7 @@ Only styles for the small strip above hero
 
 .frame
 {
-    display : flex
+display : flex
 width : 1440px;
 height:780px;
 }
