@@ -74,5 +74,10 @@ Only styles for the small strip above hero
 }
 
 
+/*first frame in home page*/
 
-
+.frame
+{
+width : 100%;
+height:100%
+}
