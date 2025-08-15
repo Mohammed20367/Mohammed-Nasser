@@ -8,7 +8,7 @@ Only styles for the small strip above hero
     display: flex; /* Horizontal layout */
     align-items: center; /* Vertical centering */
     justify-content: space-between;
-    gap: 360px; /* Space between text and button */
+    gap: 5px; /* Space between text and button */
     background-color: #F5F5F5;
     padding: 10px 50px; /* top/bottom - left/right */
 }
@@ -19,7 +19,9 @@ Only styles for the small strip above hero
     font-size: 16px;
     font-family: 'Jost', sans-serif;
     font-weight: 400;
-    justify-content: center;    /* يوسّط أفقيًا */
+    align-items: center;       
+    justify-content: center;  
+    
 }
 
 /* Button */
