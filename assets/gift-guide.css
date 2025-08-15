@@ -11,6 +11,7 @@ Only styles for the small strip above hero
     gap: 5px; /* Space between text and button */
     background-color: #F5F5F5;
     padding: 10px 50px; /* top/bottom - left/right */
+    height :64px
 }
 
 /*first image in nav*/
