@@ -9,7 +9,7 @@ Only styles for the small strip above hero
     align-items: center; /* Vertical centering */
     justify-content: space-between;
     gap: 5px; /* Space between text and button */
-    background-color: #F5F5F5;
+    background-color:#F5F5F5;
     padding: 10px 50px; /* top/bottom - left/right */
     height :64px
 }
