@@ -1,37 +1,76 @@
 {% comment %}
-Gift Guid - Banner (Custom) | Step 1 : scaffold only
-This section will host the hero (banner) for the figma design.
-No css and js yet – they will be added in the next step.
+  Section: Hero Banner with Text
+  Description: Custom hero banner with title, subtitle, and CTA buttons
 {% endcomment %}
 
-{{ 'gift-guide.css' | asset_url | stylesheet_tag }}
-
-<section id="gift-hero-{{ section.id }}" class="gift-hero" role="banner" aria-label="Gift Guid hero banner">
-  <div class="gift-top-bar">
-    <div class="gift-top-bar_message">
-                TISSO VISON 
+<div class="hero-banner">
+  <div class="hero-content">
+    <h1 class="hero-title">{{ section.settings.title }}</h1>
+    <p class="hero-subtitle">{{ section.settings.subtitle }}</p>
+    
+    <div class="hero-buttons">
+      <a href="{{ section.settings.cta1_url }}" class="btn-primary">
+        {{ section.settings.cta1_text }} →
+      </a>
+      <a href="{{ section.settings.cta2_url }}" class="btn-secondary">
+        {{ section.settings.cta2_text }} →
+      </a>
     </div>
-    <div class="gift-top-bar_message">
-      Find the ideal gift for your loved ones
-    </div>
-
-    <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
-      <span>CHOOSE GIFT</span>
-      <img class="gift-icon gift-icon--arrow"
-           src="{{ 'arrow-right.svg' | asset_url }}"
-           alt=""
-           aria-hidden="true"
-           width="16" height="16" loading="lazy">
-    </button>
+    
+    <p class="hero-message">{{ section.settings.bottom_message }}</p>
   </div>
-</section>
+</div>
 
 {% schema %}
 {
-  "name": "Gift Guide Top Bar",
-  "settings": [],
+  "name": "Hero Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "TISSO VISON"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Find the ideal gift for your loved ones."
+    },
+    {
+      "type": "text",
+      "id": "cta1_text",
+      "label": "First CTA Text",
+      "default": "Choose gift"
+    },
+    {
+      "type": "url",
+      "id": "cta1_url",
+      "label": "First CTA Link"
+    },
+    {
+      "type": "text",
+      "id": "cta2_text",
+      "label": "Second CTA Text",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "cta2_url",
+      "label": "Second CTA Link"
+    },
+    {
+      "type": "text",
+      "id": "bottom_message",
+      "label": "Bottom Message",
+      "default": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO AXL"
+    }
+  ],
   "presets": [
-    { "name": "Gift Guide Top Bar" }
+    {
+      "name": "Hero Banner",
+      "category": "Custom Sections"
+    }
   ]
 }
 {% endschema %}
