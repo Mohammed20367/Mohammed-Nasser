@@ -259,3 +259,17 @@ vertical-align: middle;
 }
 .wild__plus::before{ width:var(--cross); height:var(--stroke); }
 .wild__plus::after { width:var(--stroke); height:var(--cross); }
+/* لازم يكون الكارت نفسه relative */
+.grid-item, .wild__item { position: relative; }
+
+/* خلّي أي زر + يتموضع بالنِّسب، وبطّل التثبيت القديم top/right */
+.grid-item .plus-icon,
+.wild__item .wild__plus{
+  position: absolute;
+  right: auto !important;
+  bottom: auto !important;
+  left: var(--x, 86%) !important;   /* قيم افتراضية لو منسّبتش */
+  top:  var(--y, 20%) !important;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
