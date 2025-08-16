@@ -151,7 +151,12 @@ vertical-align: middle;
 /*second section*/
 .section2
 {
-  
+width: 1337;
+height: 981;
+gap: 30px;
+angle: 0 deg;
+opacity: 1;
+
 }
 
 .part-two {
