@@ -10,12 +10,12 @@
   width:1440px;
   height:878px;
 }
-.nav
+/* .nav
 {
   width:1400px;
   height:64px;
   gap:360px;
-} 
+}  */
 
 
 .gift-top-bar {
@@ -29,6 +29,9 @@
   background-color: #F5F5F5;
   padding: 10px 50px;         /* top/bottom - left/right */
   height: 64px;
+    width:1400px;
+  height:64px;
+  gap:360px;
 }
 
 /* first image in nav */
