@@ -4,7 +4,11 @@ width:1440px;
 height:2000px;
 gap :90px;
 }
-
+.navplusfpage
+{
+    width:1440px;;
+    height:878px;
+}
 .nav
 {
     width:1440px;
@@ -13,11 +17,7 @@ gap :90px;
     gap:360px
 
 }
-.navplusfpage
-{
-    width:1440px;;
-    height:878px;
-}
+
 
 .gift-top-bar {
   background: transparent;
