@@ -1,125 +1,48 @@
-/*
-Gift Guide - Top Bar (A)
-Only styles for the small strip above hero
-*/
-
-/* Main Container for the top bar */
-.gift-top-bar {
-    background: transparent;
-    position: relative;
-    z-index:10;
-    display: flex; /* Horizontal layout */
-    align-items: center; /* Vertical centering */
-    justify-content: space-between;
-    gap: 5px; /* Space between text and button */
-    background-color:#F5F5F5;
-    padding: 10px 50px; /* top/bottom - left/right */
-    height :64px
-  
+/* HERO / first frame */
+.firstframe {
+  position: relative;
+  width: 100%;
+  /* لو عاوز نفس نسبة فيجما استخدم aspect-ratio: */
+  aspect-ratio: 1440 / 780;   /* 1440x780 = 1.846 */
+  overflow: hidden;           /* علشان أي زوايد تتقص */
+  margin: 0;                  /* ما فيش مسافات زيادة */
+  padding: 0;
 }
 
-/*first image in nav*/
-.gift-icon--tisso
-{
-    width:151px;
-    height:19px;
+.imageinframe {
+  display: block;     /* يمنع فجوة الـ baseline الخاصة بالصور */
+  width: 100%;
+  height: 100%;       /* يملأ الكونتينر */
+  object-fit: cover;  /* يقصّ الصورة عشان تملأ المساحة بنفس النسبة */
+  margin: 0;          /* شيل أي margin */
+  position: relative;
+  z-index: 1;
 }
 
-
-/* Center message text */
-.gift-top-bar_message {
-    display : flex;
-    font-size: 16px;
-     font-family: 'Jost', sans-serif;
-    font-weight: 400;
-    align-items: center;       
-    justify-content: center;  
-    
-}
-
-/* Button */
-.gift-button {
-    width:207px;
-    height:44px;
-    display: inline-flex;
-    justify-content:center;
-    align-items: center;
-    gap: 20px; /* space between text and arrow */
-    padding: 12px 16px; /* top/bottom - left/right */
-    border: 1px solid #000;
-    background: transparent;
-    text-decoration: none;
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.25s ease, color 0.25s ease;
-}
-
-/* Yellow button -- highlighted */
-.gift-button--highlight {
-    background-color: #FFF544;
-    border-color: #FFF544;
-    font-weight: 400;
-}
-
-/* Arrow text container */
-.gift-icon--arrow-text {
-    display: inline-block;
-    transition: transform 0.25s ease; /* Subtle slide on hover */
-}
-
-.gift-button:hover .gift-icon--arrow-text {
-    transform: translateX(4px);
-}
-
-/* Arrow line */
-.gift-icon--arrow {
-    display: inline-block;
-    width: 24px;
-    height: 100%;
-}
-
-
-/*first frame in home page*/
-
-.firstframe
-{
-display : flex
-width : 1440px;
-height:780px;
-}
-
-.imageinframe
-{
-    margin-top: -120px; /* حرك الصورة لفوق */
-    position: relative;
-    z-index: 1; /* خليها تحت أي عناصر فوقها */
-   width : 100%;
-   height:50%;
-  
-}
-
-
-
-
+/* SECOND BLOCK */
 .secondframe {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom:500px;
+  gap: 24px;          /* مسافة منطقية بين النص والصورة */
+  margin-top: 24px;   /* بدل الإنلاين 100px الكبيرة */
 }
 
 .secondframe > div {
-  flex: 1;              /* كل ديف ياخد 50% */
+  flex: 1;            /* 50% لكل عمود */
 }
 
 .secondframe h1 {
-  margin: 0;
-  text-align: left;     /* يخلي النص يبدأ من الشمال */
+  margin: 0;          /* منع المسافات الافتراضية */
+  text-align: left;
 }
 
 .seconimageinframe {
-  width: 100%;          /* الصورة تملأ الجزء بتاعها */
-  height: auto;         /* تحافظ على التناسب */
   display: block;
-  object-fit: contain;  /* عشان ما تتقصش */
+  width: 100%;
+  height: auto;       /* أو height:100% مع object-fit:contain لو عايزها تملى الارتفاع */
+  object-fit: contain;
 }
 
+/* يفضّل أيضًا عمل reset بسيط للصفحة كلها */
+body { margin: 0; padding: 0; }
