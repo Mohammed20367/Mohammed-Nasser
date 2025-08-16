@@ -120,6 +120,7 @@ display:flex;
   gap: 24px;
 }
 .divleft{
+  margin-top:609px
   width:483px;
   height:84px;
    align-items: center;
