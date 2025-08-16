@@ -8,6 +8,13 @@
     gap:30px;
 }
 
+.spantisso
+{
+    font-size: 36px;
+  font-family: 'Lustria', sans-serif;
+  font-weight: 400;
+}
+
 .part-two {
   max-width: 1300px;
   margin: auto;
