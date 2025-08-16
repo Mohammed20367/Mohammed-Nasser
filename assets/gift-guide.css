@@ -200,7 +200,6 @@ vertical-align: middle;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right var(--shift-y);
-  border: 1px solid #e8e8e8;
 }
 
 /* مقاسات الهيرو والتحريك لفوق */
@@ -246,14 +245,11 @@ vertical-align: middle;
   height: var(--hero-h);
   min-height: var(--hero-h);
   overflow:hidden;
-  border: 1px solid #e8e8e8;         /* خط رفيع زي المرجع */
 }
 .gift-hero__img{
   position:absolute; 
   width:100%; height:100%;
   display:block;
-  object-fit: cover;                  /* تملى وتتقص */
-  object-position: right var(--shift-y);
 }
 
 /* الشريط السفلي */
