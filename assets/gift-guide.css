@@ -99,19 +99,26 @@ height:780px;
 
 
 
+
 .secondframe {
   display: flex;
-  justify-content: space-between; /* يوزع النص شمال والصورة يمين */
-  align-items: center;            /* يوسّطهم عموديًا */
-  padding: 20px;                  /* مسافة داخلية اختيارية */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.secondframe > div {
+  flex: 1;              /* كل ديف ياخد 50% */
 }
 
 .secondframe h1 {
-  margin: 0; /* عشان مايبقاش فيه مسافات زيادة */
+  margin: 0;
+  text-align: left;     /* يخلي النص يبدأ من الشمال */
 }
 
 .seconimageinframe {
-  max-width: 150px; /* تقدر تتحكم في حجم الصورة */
-  height: auto;
+  width: 100%;          /* الصورة تملأ الجزء بتاعها */
+  height: auto;         /* تحافظ على التناسب */
+  display: block;
+  object-fit: contain;  /* عشان ما تتقصش */
 }
 
