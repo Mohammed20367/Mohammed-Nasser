@@ -17,7 +17,7 @@
   gap:360px;
 }  
 .firstframe {
-
+background-color:green;
 display:flex;
   position: relative;
   height:392px;
