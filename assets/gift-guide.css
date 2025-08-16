@@ -92,11 +92,6 @@ margin-top: -120px;
 }
 
 
-
-
-
-
-
 /* second frame */
 .secondframe {
   display: flex;
@@ -120,4 +115,13 @@ margin-top: -120px;
   height:780px;
   display: block;
   object-fit: contain;
+}
+
+.firstframe,
+.secondframe,
+.firstframe img,
+.secondframe img {
+  margin: 0;
+  padding: 0;
+  line-height: 0;  /* يمنع أي مسافة من ال line-height */
 }
