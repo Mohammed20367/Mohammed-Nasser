@@ -12,7 +12,7 @@
 }
 .nav
 {
-    width:1440px;
+  width:1440px;
   height:67px;
   gap:360px;
 }
@@ -35,8 +35,7 @@
   z-index: 10;
   display: flex;              /* Horizontal layout */
   align-items: center;        /* Vertical centering */
-  justify-content: space-between;
-  gap: 5px;                   /* Space between text and button */
+  justify-content: space-between;                  /* Space between text and button */
   background-color: #F5F5F5;
   padding: 10px 50px;         /* top/bottom - left/right */
   height: 64px;
