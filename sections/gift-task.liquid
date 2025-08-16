@@ -7,29 +7,32 @@
 <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lustria&display=swap" rel="stylesheet">
 
 <div class = "page">
+    <div class="section1">
+            <nav class='nav'>
+            <div class="gift-top-bar">
+            <div>
+            <img class="gift-icon--tisso"
+                src="{{ 'tisso.svg' | asset_url }}"
+                alt="Tisso Vison"
+                width="151" height="19" loading="lazy">
+            </div>
+
+            <div class="gift-top-bar_message">
+            Find the ideal gift for your loved ones.
+            </div>
+
+            <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
+            <span class="gift-icon--arrow-text">CHOOSE GIFT</span>
+            <img class="gift-icon gift-icon--arrow"
+                src="{{ 'Arrow.svg' | asset_url }}"
+                alt="" aria-hidden="true"
+                width="24" height="1" loading="lazy">
+                 </button>
+                </div>
+                </nav>
+    </div>
 <div class="navplusfpage">
-    <nav class='nav'>
-    <div class="gift-top-bar">
-    <div>
-      <img class="gift-icon--tisso"
-           src="{{ 'tisso.svg' | asset_url }}"
-           alt="Tisso Vison"
-           width="151" height="19" loading="lazy">
-    </div>
-
-    <div class="gift-top-bar_message">
-      Find the ideal gift for your loved ones.
-    </div>
-
-    <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
-      <span class="gift-icon--arrow-text">CHOOSE GIFT</span>
-      <img class="gift-icon gift-icon--arrow"
-           src="{{ 'Arrow.svg' | asset_url }}"
-           alt="" aria-hidden="true"
-           width="24" height="1" loading="lazy">
-    </button>
-  </div>
-</nav>
+ 
 
 <div class="firstframe">
     <img class="imageinframe"

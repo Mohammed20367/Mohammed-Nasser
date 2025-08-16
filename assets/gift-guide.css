@@ -4,6 +4,18 @@
   height:2000px;
   background-color:red;
 }
+.section{
+  width:1440px;
+  height:875px;
+}
+.nav
+{
+  width:1440px;
+  height:64px;
+  padding:10px 50px;
+  gap:360px;
+
+}
 
 
 .gift-top-bar {
