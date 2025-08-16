@@ -27,13 +27,10 @@ Keeps your existing top bar; hero image sits right under it with no Dawn padding
 <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lustria&display=swap" rel="stylesheet">
 
 
-<div class = "parentall">
-  <div class="section1">
-<section id="gift-hero-{{ section.id }}" class = "section" aria-label="Gift Guid hero banner">
-
-  <!-- Top bar (زي ما هو) -->
-  <div class="gift-top-bar">
-    <div>
+<div classe = "page">
+  <div class="section1"> <!--contain nav + fram1 + fram2 + footer-->
+    <div class='gift-top-bar'> <!--navbar-->
+ <div>
       <img class="gift-icon--tisso"
            src="{{ 'tisso.svg' | asset_url }}"
            alt="Tisso Vison"
@@ -51,7 +48,17 @@ Keeps your existing top bar; hero image sits right under it with no Dawn padding
            alt="" aria-hidden="true"
            width="24" height="1" loading="lazy">
     </button>
+      </div><!--end of navbar-->
+    </div>
+
+
+  <!-- Top bar (زي ما هو) -->
+  <div class="">
+   
   </div>
+
+
+
 
   <!-- أول صورة: تيجي مباشرة تحت الناف -->
   <div class="firstframe">
@@ -74,10 +81,10 @@ Keeps your existing top bar; hero image sits right under it with no Dawn padding
     </div>
   </div>
 
-</section>
+
 </div>
 
-<div class="section2">
+{% comment %} <div class="section2">
 <section class="part-two">
   <div class ="parentofimages">
     <div>
@@ -115,7 +122,7 @@ Keeps your existing top bar; hero image sits right under it with no Dawn padding
     </div>
 </div>
 </div>
-</section>
+</section> {% endcomment %}
 
 </div>
 
