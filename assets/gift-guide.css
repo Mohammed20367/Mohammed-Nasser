@@ -97,7 +97,7 @@ height:780px;
   
 }
 
-.secondframe
+/* .secondframe
 {
    
     width:890px
@@ -115,4 +115,22 @@ height:780px;
     width: auto; /* أو 100% لو عايز تملا العرض */
     position: relative;
     left: 0;
+} */
+
+
+.secondframe {
+  display: flex;
+  justify-content: space-between; /* يوزع النص شمال والصورة يمين */
+  align-items: center;            /* يوسّطهم عموديًا */
+  padding: 20px;                  /* مسافة داخلية اختيارية */
 }
+
+.secondframe h1 {
+  margin: 0; /* عشان مايبقاش فيه مسافات زيادة */
+}
+
+.seconimageinframe {
+  max-width: 150px; /* تقدر تتحكم في حجم الصورة */
+  height: auto;
+}
+
