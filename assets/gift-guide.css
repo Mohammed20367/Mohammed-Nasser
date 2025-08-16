@@ -154,6 +154,7 @@ vertical-align: middle;
 .gift-guide-section {
   background: #09c;
   padding: 60px 20px;
+  height:auto;
 }
 .gift-guide-container {
   display: flex;
