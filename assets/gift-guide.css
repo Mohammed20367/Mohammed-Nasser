@@ -253,7 +253,7 @@ opacity: 1;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,.08);
-  aspect-ratio: 1 / 1;                      /* مربعات متساوية */
+  height:auto                     /* مربعات متساوية */
   background:#f6f6f6;
 }
 
