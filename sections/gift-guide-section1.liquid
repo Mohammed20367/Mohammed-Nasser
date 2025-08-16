@@ -54,7 +54,35 @@ Keeps your existing top bar; hero image sits right under it with no Dawn padding
          src="{{ 'Frame.svg' | asset_url }}"
          alt=""
          width="10" height="10" loading="eager">
-  </div> <!--end to first frame-->    
+  </div> <!--end to first frame-->
+
+  <div class="secondframe">
+    <div class="divleft">
+      <div  class="contentdiv">
+      The Gift Guide
+      </div>
+      <div class="contentinleftdiv">
+        Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.
+        </div>
+        <div class="showbottom">
+           <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
+      <span class="gift-icon--arrow-text">Shop</span>
+      <img class="gift-icon gift-icon--arrow"
+           src="{{ 'Arrow.svg' | asset_url }}"
+           alt="" aria-hidden="true"
+           width="24" height="1" loading="lazy">
+    </button>
+          </div>
+    </div>
+    <div>
+      <img class="seconimageinframe"
+           src="{{ 'Frame.svg' | asset_url }}"
+           alt=""
+           width="10" height="10" loading="lazy">
+    </div>
+  </div>
+ 
+    
 </div>
 </div>
 
@@ -113,9 +141,9 @@ Keeps your existing top bar; hero image sits right under it with no Dawn padding
 </div>
 </section> {% endcomment %}
 
+</div>
 
-
-
+</div>
 
 {% schema %}
 {
