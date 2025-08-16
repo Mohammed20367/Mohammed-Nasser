@@ -5,13 +5,6 @@ Only styles for the small strip above hero
 
 /* Main Container for the top bar */
 
-.section
-{
-    width:1440px;
-    height:878px;
-}
-
-
 .gift-top-bar {
   background: transparent;
   position: relative;
@@ -19,7 +12,7 @@ Only styles for the small strip above hero
   display: flex;              /* Horizontal layout */
   align-items: center;        /* Vertical centering */
   justify-content: space-between;
-  gap: 360px;                   /* Space between text and button */
+  gap: 5px;                   /* Space between text and button */
   background-color: #F5F5F5;
   padding: 10px 50px;         /* top/bottom - left/right */
   height: 64px;
