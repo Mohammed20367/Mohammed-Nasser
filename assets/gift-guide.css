@@ -226,26 +226,35 @@ vertical-align: middle;
 
 
 
-.grid-item, .wild__item { position: relative; }  /* مهم جداً */
+/* مهم: الكارت نفسه لازم يكون relative */
+.grid-item, .wild__item { position: relative; }
 
-.plus-icon, .wild__plus{
+/* موضع علامة + بالنِّسب. مع فوال باك وقهر لأي right/top قديمة */
+.grid-item .plus-icon,
+.wild__item .wild__plus{
   position: absolute;
-  left: var(--x) !important;   /* نسبة داخل الكارت */
-  top:  var(--y) !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: var(--x, 86%) !important;   /* افتراضي لو منستش تمرر قيم */
+  top:  var(--y, 20%) !important;
   transform: translate(-50%, -50%);
+  z-index: 3;
+
   width: 24px; height: 24px;
   border-radius: 50%;
   background: #fff;
   border: 1px solid rgba(0,0,0,.15);
   box-shadow: 0 1px 4px rgba(0,0,0,.18);
 }
-.plus-icon::before, .plus-icon::after,
-.wild__plus::before, .wild__plus::after{
+
+/* رسم علامة + */
+.grid-item .plus-icon::before, .grid-item .plus-icon::after,
+.wild__item .wild__plus::before, .wild__item .wild__plus::after{
   content:""; position:absolute; left:50%; top:50%;
   background:#000; transform:translate(-50%,-50%);
 }
-.plus-icon::before, .wild__plus::before{ width:10px; height:1.5px; }
-.plus-icon::after,  .wild__plus::after { width:1.5px; height:10px; }
+.grid-item .plus-icon::before, .wild__item .wild__plus::before{ width:10px; height:1.5px; }
+.grid-item .plus-icon::after,  .wild__item .wild__plus::after { width:1.5px; height:10px; }
 
 
 
