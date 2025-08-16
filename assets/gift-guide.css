@@ -36,21 +36,23 @@ margin-top: -105px;
   z-index: 1;
 } */
 
-.gift-top-bar {
-  width: 100%;
-  height: 64px;
-  background-color: #F5F5F5;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 50px;
+.firstframe {
+  background-color: green;
   position: relative;
-  z-index: 10;
+  height: 392px;
+  width: 100%;
+  overflow: hidden;
 }
 
-/* prevent inside items from shrinking */
-.gift-top-bar > * {
-  flex-shrink: 0;
+.imageinframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;     /* أكبر من 100% عشان تغطي بعد المارجن */
+  object-fit: cover;
+  margin-top: -105px;
+  z-index: 1;
 }
 .secondframe
 {
