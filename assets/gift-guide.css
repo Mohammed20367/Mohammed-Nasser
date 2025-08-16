@@ -29,18 +29,12 @@ display:flex;
 :root { --shift: 120px; }
 .imageinframe {
   background-color:red;
-margin-top: -105px;
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   position: absolute;
   z-index: 1;
-  height: calc(80% + var(--shift)); /* نعوّض الإزاحة */
-  margin-top: calc(-1 * var(--shift));
-   angle: 0 deg;
-opacity: 1;
-top: 64px;
 } 
  
 
