@@ -16,6 +16,11 @@ Only styles for the small strip above hero
   height:878px;
     margin:0;
 }
+.section2
+{
+  width: 1337px;;
+  height:981px;;
+}
 
 .gift-top-bar {
   background: transparent;
