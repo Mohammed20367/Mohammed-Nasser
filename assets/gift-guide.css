@@ -121,7 +121,10 @@ display:flex;
 }
 .divleft{
   width:483px;
-  height:84px
+  height:84px;
+   align-items: center;
+  justify-content: center;
+  
 }
 .contentdiv{
 font-family: 'Jost', sans-serif;
