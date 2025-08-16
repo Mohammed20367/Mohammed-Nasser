@@ -25,7 +25,6 @@
 }
 
 .imageinframe {
-  width: 100%;
   height: 100%;
   object-fit: cover;            /* تملأ الديف وتقص الزيادة */
   object-position: center -120px; /* تزق الصورة لفوق (زي margin-top) */
