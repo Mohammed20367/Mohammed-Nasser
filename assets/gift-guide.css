@@ -39,14 +39,12 @@ display:flex;
 } 
  
 
-
-
-.secondframe
-{
+.secondframe{
+  margin:0;
   width:100%;
   height:392px;
-
 }
+
 
 .gift-top-bar {
   background: transparent;
@@ -167,9 +165,7 @@ background-color:red;
 .seconimageinframe {
   display: block;
 }
-.secondframe{
-  margin:0;
-}
+
 
 
 /*second section*/
