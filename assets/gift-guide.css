@@ -49,8 +49,6 @@ margin-top: -105px;
 
 .imageinframe{
   position: absolute;
-  left: 0;
-  top: 0;                 /* يفضل 100% لو العرض مرن */
   height: calc(100% + var(--shift));  /* نزود الارتفاع قد الإزاحة */
   margin-top: calc(-1 * var(--shift));/* نزق الصورة لفوق */
   object-fit: cover;             /* ملء مع قصّ */
