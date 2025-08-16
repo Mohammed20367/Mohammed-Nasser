@@ -225,7 +225,8 @@ opacity: 1;
  */
 
 
- .section2 { background:#fff; }
+ .section2 { background:#09c;
+ }
 
 .part-two{
   width: min(100%, 1337px);   /* نفس عرض فيجما كحد أقصى */
