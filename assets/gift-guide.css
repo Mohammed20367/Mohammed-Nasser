@@ -146,7 +146,6 @@ background-color:red;
 
 
 .seconimageinframe {
-  margin:0;
     background-color:red;
   width: 890px;
   height:100%;
@@ -168,7 +167,9 @@ background-color:red;
 .seconimageinframe {
   display: block;
 }
-
+.secondframe{
+  margin:0;
+}
 
 
 /*second section*/
