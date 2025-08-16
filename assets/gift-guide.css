@@ -157,6 +157,7 @@ vertical-align: middle;
   padding: 60px 20px;
 }
 .gift-guide-container {
+  margin:0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
