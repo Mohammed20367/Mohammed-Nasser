@@ -133,10 +133,12 @@ display:flex;
 }
 
 .secondframe > div {
+  margin:0;
   flex: 1; /* كل ديف ياخد 50% */
 }
 
 .secondframe h1 {
+
 background-color:red;
   margin: 0;
   text-align: left;
