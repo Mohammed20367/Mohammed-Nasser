@@ -235,6 +235,7 @@ opacity: 1;
 .part-two{
   width: min(100%, 1337px);   /* نفس عرض فيجما كحد أقصى */
   margin: 0 auto;
+  margin:20px 10px;
   height:982px;
   width:1337;
 
