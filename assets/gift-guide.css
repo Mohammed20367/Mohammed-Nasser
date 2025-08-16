@@ -7,16 +7,9 @@
 
  .section1
 {
-  position:relative;
   width:1440px;
   height:878px;
 }
-/* .nav
-{
-  width:1400px;
-  height:64px;
-  gap:360px;
-}  */
 
 
 .gift-top-bar {
@@ -30,7 +23,7 @@
   background-color: #F5F5F5;
   padding: 10px 50px;         /* top/bottom - left/right */
   width:1400px;
-  height:64pxك
+  height:64px;
 }
 
 /* first image in nav */
