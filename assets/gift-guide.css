@@ -26,12 +26,12 @@ display:flex;
 }
 
 .imageinframe {
-margin-top: -110px;
+margin-top: -107px;
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: absolute;
+  position: relative;
   z-index: 1;
 }
 
