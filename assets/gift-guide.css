@@ -304,3 +304,101 @@ vertical-align: middle;
   .grid-container{ grid-template-columns: 1fr; }
   .wild-title{ margin-bottom: 14px; }
 }
+
+
+
+/* أرقام فيجما */
+:root{
+  --frame-w: 1339px;   /* عرض الكونتينر الأبيض الداخلي */
+  --gap: 20px;
+  --card-w: calc((var(--frame-w) - 2 * var(--gap)) / 3); /* (1339 - 40)/3 = 433 */
+  --card-h: 444px;
+  --radius: 12px;
+}
+
+/* الديف الكبير الأبيض */
+.wild{
+  background:#fff;
+  margin:0;
+  padding: 24px 0;
+  /* تأكيد عدم وجود خط تجريبي */
+  border-top: 0 !important;
+  outline: none !important;
+}
+
+/* الكونتينر: يثبت على 1339px ويتوسّط */
+.wild__inner{
+  max-width: var(--frame-w);
+  margin-inline: auto;
+  padding-inline: 0;     /* لو عايز حواف جانبية زوّدها هنا */
+}
+
+/* العنوان حسب فيجما */
+.wild__title{
+  font-family: 'Lustria', serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 120%;
+  margin: 0 0 16px;
+}
+
+/* الشبكة: 3 أعمدة ثابتة بالمقاس */
+.wild__grid{
+  display: grid;
+  grid-template-columns: repeat(3, var(--card-w));
+  grid-auto-rows: var(--card-h);
+  gap: var(--gap);
+}
+
+/* الكارت */
+.wild__item{
+  width: var(--card-w);
+  height: var(--card-h);
+  box-sizing: border-box;         /* عشان البوردر ميزوّدش المقاس */
+  border: 1.5px solid #000;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  display: block;
+  background: #f6f6f6;
+}
+
+.wild__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* زر + */
+.wild__plus{
+  position: absolute;
+  top: 12px; right: 12px;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  color: #fff;
+  background: rgba(0,0,0,.6);
+  border: 1px solid rgba(255,255,255,.85);
+  box-shadow: 0 2px 6px rgba(0,0,0,.18);
+}
+
+/* ريسبونسيف تحت 1339px: نحافظ على 3 أعمدة لكن بعرض مرن ونفس النسبة */
+@media (max-width: 1339px){
+  .wild__inner{ max-width: 100%; padding-inline: 16px; }
+  .wild__grid{ grid-template-columns: repeat(3, 1fr); }
+  .wild__item{
+    width: auto; height: auto;
+    aspect-ratio: 433 / 444;   /* نفس النسبة */
+  }
+}
+
+/* 2 أعمدة على التابلت */
+@media (max-width: 992px){
+  .wild__grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+/* عمود واحد على الموبايل */
+@media (max-width: 576px){
+  .wild__grid{ grid-template-columns: 1fr; }
+}
