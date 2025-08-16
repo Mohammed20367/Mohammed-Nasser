@@ -122,7 +122,7 @@ display:flex;
 .divleft{
   width:483px;
   height:84px;
-   align-items: center;
+  align-items: center;
   justify-content: center;
   
 }
