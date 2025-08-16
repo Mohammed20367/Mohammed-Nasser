@@ -149,7 +149,7 @@ vertical-align: middle;
 
 
 /*second section*/
-.section2
+/* .section2
 {
 background-color:#09c
 
@@ -222,4 +222,74 @@ opacity: 1;
 
 
 
+ */
 
+
+ .section2 { background:#fff; }
+
+.part-two{
+  width: min(100%, 1337px);   /* نفس عرض فيجما كحد أقصى */
+  margin: 0 auto;
+  padding: clamp(12px, 3vw, 24px);
+}
+
+.wild-title{
+  font-family: 'Lustria', 'Jost', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: clamp(20px, 2.2vw, 28px);
+  margin: 8px 0 20px;
+}
+
+/* الشبكة */
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 30px;                               /* من فيجما */
+}
+
+/* كل كارت */
+.grid-item{
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
+  aspect-ratio: 1 / 1;                      /* مربعات متساوية */
+  background:#f6f6f6;
+}
+
+.grid-item img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;                         /* تقطيع نظيف */
+}
+
+/* زرار + */
+.plus-icon{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  color: #fff;
+  background: rgba(0,0,0,.6);
+  border: 1px solid rgba(255,255,255,.85);
+  box-shadow: 0 2px 6px rgba(0,0,0,.18);
+  user-select: none;
+  transition: transform .15s ease, background .15s ease;
+}
+.grid-item:hover .plus-icon{ transform: scale(1.06); }
+
+/* ريسبونسيف */
+@media (max-width: 992px){
+  .grid-container{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+
+@media (max-width: 576px){
+  .grid-container{ grid-template-columns: 1fr; }
+  .wild-title{ margin-bottom: 14px; }
+}
