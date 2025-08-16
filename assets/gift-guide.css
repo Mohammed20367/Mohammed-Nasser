@@ -226,50 +226,23 @@ vertical-align: middle;
 
 
 
-/* نفس زر + الأبيض الصغير */
-:root{
-  --badge: 24px;     /* حجم الدايرة */
-  --stroke: 1.5px;   /* سُمك أذرع + */
-  --cross: 10px;     /* طول أذرع + */
-}
+.grid-item, .wild__item { position: relative; }  /* مهم جداً */
 
-.wild__item{ position: relative; }
-
-.wild__plus{
+.plus-icon, .wild__plus{
   position: absolute;
-  /* الموضع كنِسب مئوية لكل كارت */
-  left: var(--x, 86%);   /* default لو منسّبتش */
-  top:  var(--y, 20%);
+  left: var(--x) !important;   /* نسبة داخل الكارت */
+  top:  var(--y) !important;
   transform: translate(-50%, -50%);
-  width: var(--badge); height: var(--badge);
+  width: 24px; height: 24px;
   border-radius: 50%;
-  background:#fff;
-  border:1px solid rgba(0,0,0,.15);
-  box-shadow:0 1px 4px rgba(0,0,0,.18);
-  display:block;
-  pointer-events:auto;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.15);
+  box-shadow: 0 1px 4px rgba(0,0,0,.18);
 }
-
-/* نرسم علامة + */
-.wild__plus::before,
-.wild__plus::after{
-  content:"";
-  position:absolute; left:50%; top:50%;
+.plus-icon::before, .plus-icon::after,
+.wild__plus::before, .wild__plus::after{
+  content:""; position:absolute; left:50%; top:50%;
   background:#000; transform:translate(-50%,-50%);
 }
-.wild__plus::before{ width:var(--cross); height:var(--stroke); }
-.wild__plus::after { width:var(--stroke); height:var(--cross); }
-/* لازم يكون الكارت نفسه relative */
-.grid-item, .wild__item { position: relative; }
-
-/* خلّي أي زر + يتموضع بالنِّسب، وبطّل التثبيت القديم top/right */
-.grid-item .plus-icon,
-.wild__item .wild__plus{
-  position: absolute;
-  right: auto !important;
-  bottom: auto !important;
-  left: var(--x, 86%) !important;   /* قيم افتراضية لو منسّبتش */
-  top:  var(--y, 20%) !important;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-}
+.plus-icon::before, .wild__plus::before{ width:10px; height:1.5px; }
+.plus-icon::after,  .wild__plus::after { width:1.5px; height:10px; }
