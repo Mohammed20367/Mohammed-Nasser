@@ -25,7 +25,7 @@ display:flex;
   height:450px;
   width: 100%;
   overflow: hidden;
-  margin-top: -125px;
+  margin-top: -128px;
 }
 :root { --shift: 120px; }
 .imageinframe {
