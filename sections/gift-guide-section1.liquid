@@ -1,130 +1,116 @@
 {% comment %}
-Gift Guid - Banner (Custom)
+Gift Guide - Banner (Custom)
 Keeps your existing top bar; hero image sits right under it with no Dawn padding.
 {% endcomment %}
 
 {{ 'gift-guide.css' | asset_url | stylesheet_tag }}
 
-{%- comment -%}
-  Dawn بيضيف padding/margin على كل سكشن تلقائيًا.
-  السطرين دول بيصفروا الـ padding/top/bottom للسكشن ده تحديدًا.
-{%- endcomment -%}
-
-
-<!-- لو عايز تسيب الخط هنا مؤقتًا ماشي، بس الأفضل نقله لـ layout/theme.liquid -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lustria&display=swap" rel="stylesheet">
-
-
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TISSO VISON - Find the ideal gift for your loved ones</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Header Section -->
-    <header class="header-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-6 col-md-4">
-                    <h1 class="brand-logo">TISSO VISON</h1>
-                </div>
-                <div class="col-6 col-md-4 text-center d-none d-md-block">
-                    <p class="tagline">Find the ideal gift for your loved ones.</p>
-                </div>
-                <div class="col-6 col-md-4 text-end">
-                    <button class="btn btn-primary choose-gift-btn">
-                        CHOOSE GIFT
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <path d="M8 1L15 8L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section - The Gift Guide -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="hero-content">
-                        <h2 class="hero-title">The Gift Guide</h2>
-                        <p class="hero-description">
-                            Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.
-                        </p>
-                        <button class="btn btn-dark shop-now-btn">
-                            SHOP NOW
+<!-- Hero Section - The Gift Guide -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <h2 class="hero-title">{{ section.settings.title | default: 'The Gift Guide' }}</h2>
+                    <p class="hero-description">
+                        {{ section.settings.description | default: 'Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.' }}
+                    </p>
+                    {% if section.settings.button_link %}
+                        <a href="{{ section.settings.button_link }}" class="btn btn-dark shop-now-btn">
+                            {{ section.settings.button_text | default: 'SHOP NOW' }}
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                                 <path d="M8 1L15 8L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                        </button>
-                    </div>
+                        </a>
+                    {% endif %}
                 </div>
-                <div class="col-lg-6">
-                    <div class="hero-illustration">
-                        <!-- SVG Illustration will be added via CSS -->
-                    </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-illustration">
+                    {% if section.settings.background_image %}
+                        <img src="{{ section.settings.background_image | img_url: '600x400', crop: 'center' }}" 
+                             alt="{{ section.settings.title }}" 
+                             class="illustration-image">
+                    {% else %}
+                        <!-- Default SVG Illustration -->
+                        <svg class="default-illustration" viewBox="0 0 400 400" fill="none">
+                            <g stroke="#000" stroke-width="2">
+                                <!-- Glasses -->
+                                <ellipse cx="80" cy="60" rx="25" ry="15"/>
+                                <ellipse cx="120" cy="60" rx="25" ry="15"/>
+                                <line x1="105" y1="60" x2="95" y2="60"/>
+                                
+                                <!-- Camera -->
+                                <rect x="150" y="40" width="40" height="30" rx="5"/>
+                                <circle cx="170" cy="55" r="8"/>
+                                <rect x="155" y="45" width="30" height="20" rx="3"/>
+                                
+                                <!-- Notebook -->
+                                <rect x="50" y="120" width="60" height="40" rx="3"/>
+                                <line x1="55" y1="130" x2="95" y2="130"/>
+                                <line x1="55" y1="140" x2="95" y2="140"/>
+                                <line x1="55" y1="150" x2="85" y2="150"/>
+                                
+                                <!-- Pen -->
+                                <line x1="130" y1="120" x2="130" y2="160" stroke-width="3"/>
+                                <polygon points="125,120 135,120 130,115" fill="#000"/>
+                                
+                                <!-- Compass -->
+                                <circle cx="200" cy="140" r="20"/>
+                                <line x1="200" y1="120" x2="200" y2="160"/>
+                                <line x1="180" y1="140" x2="220" y2="140"/>
+                                <circle cx="200" cy="140" r="3"/>
+                                
+                                <!-- Watch -->
+                                <circle cx="80" cy="220" r="25"/>
+                                <circle cx="80" cy="220" r="20"/>
+                                <line x1="80" y1="200" x2="80" y2="210" stroke-width="2"/>
+                                <line x1="80" y1="220" x2="90" y2="230" stroke-width="2"/>
+                                
+                                <!-- Bow Tie -->
+                                <path d="M150 200 L170 210 L150 220 L130 210 Z"/>
+                                <path d="M170 200 L190 210 L170 220 L150 210 Z"/>
+                                
+                                <!-- Film Reel -->
+                                <circle cx="250" cy="220" r="20"/>
+                                <circle cx="250" cy="220" r="15"/>
+                                <circle cx="250" cy="200" r="3"/>
+                                <circle cx="270" cy="220" r="3"/>
+                                <circle cx="250" cy="240" r="3"/>
+                                <circle cx="230" cy="220" r="3"/>
+                                
+                                <!-- Trophy -->
+                                <rect x="50" y="280" width="20" height="30" rx="10"/>
+                                <ellipse cx="60" cy="280" rx="15" ry="8"/>
+                                <rect x="58" y="290" width="4" height="10"/>
+                                <rect x="56" y="295" width="8" height="3"/>
+                            </g>
+                        </svg>
+                    {% endif %}
                 </div>
             </div>
         </div>
-        <div class="footer-text">
-            <p>SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXX TO 6XL</p>
-        </div>
-    </section>
-
-    <!-- Tissot Vision in the Wild Section -->
-    <section class="wild-section">
-        <div class="container">
-            <h3 class="wild-title">Tissot vison in the wild</h3>
-            <div class="row g-3">
-                {% for i in (1..6) %}
-                <div class="col-6 col-md-4">
-                    <div class="image-card">
-                        <div class="image-wrapper">
-                            <img src="{{ 'product-' | append: i | append: '.jpg' | asset_url }}" alt="Tissot Vision Product {{ i }}" class="product-image">
-                            <div class="shop-icon">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <path d="M8 1V15M1 8H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    </div>
+    <div class="footer-text">
+        <p>SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL</p>
+    </div>
+</section>
 
 {% schema %}
 {
-  "name": "Gift Guide Top Bar",
+  "name": "Gift Guide Hero",
   "settings": [
     {
       "type": "text",
       "id": "title",
-      "label": "Title",
+      "label": "Hero Title",
       "default": "The Gift Guide"
     },
     {
       "type": "textarea",
       "id": "description",
-      "label": "Description",
-      "default": "Discover Joy: Your Ultimate Holiday Gift Destination"
+      "label": "Hero Description",
+      "default": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season."
     },
     {
       "type": "text",
@@ -140,12 +126,12 @@ Keeps your existing top bar; hero image sits right under it with no Dawn padding
     {
       "type": "image_picker",
       "id": "background_image",
-      "label": "Background Image"
+      "label": "Background Illustration"
     }
   ],
   "presets": [
     {
-      "name": "Gift Guide Top Bar"
+      "name": "Gift Guide Hero"
     }
   ]
 }
