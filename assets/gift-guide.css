@@ -110,16 +110,11 @@ display:flex;
 /* first frame in home page */
 
 
-.secondframe{
-  margin:0;
-  width:100%;
-  height:392px;
-  background-color:#09c;
-}
 
 .secondframe {
   margin:0;
-    
+  width:100%;
+  height:392px;
   display: flex;
   justify-content: space-between;
   align-items: center;
