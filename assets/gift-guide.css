@@ -135,20 +135,16 @@ background-color:red;
 }
 
 
-.seconimageinframe {
-    background-color:red;
+
+.seconimageinframe{
+   background-color:red;
   width: 890px;
   height:100%;
   display: block;
   object-fit: contain;
   margin-top:0px;
   margin-left:38%;
-
-
-
 }
-
-
 
 .imageinframe {
   display: block;  /* يمنع المسافة اللي بتظهر مع inline elements */
