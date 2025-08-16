@@ -19,7 +19,6 @@
 
 
 .firstframe {
-background-color:green;
 display:flex;
   position: relative;
   height:450px;
@@ -59,6 +58,7 @@ display:flex;
   background-color: #F5F5F5;
   padding: 10px 50px;         /* top/bottom - left/right */
   height: 64px;
+  z-index:10;
 }
 
 /* first image in nav */
