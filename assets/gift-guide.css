@@ -17,8 +17,16 @@
   gap:360px;
 }  
 
+.imageinframe
+{
+  width: 1440;
+height: 390;
+angle: 0 deg;
+opacity: 1;
+top: 64px;
 
- .firstframe {
+}
+ /* .firstframe {
 background-color:green;
 display:flex;
   position: relative;
@@ -39,7 +47,7 @@ margin-top: -105px;
   height: calc(80% + var(--shift)); /* نعوّض الإزاحة */
   margin-top: calc(-1 * var(--shift));
 } 
-
+ */
 
 
 
