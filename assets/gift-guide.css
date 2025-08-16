@@ -155,7 +155,8 @@ vertical-align: middle;
   margin:0;
   background-color:red;
   padding: 0px 67px 30px;
-  height:auto;
+  height:402px;
+  width:100%
 }
 .gift-guide-container {
   margin:0px;
