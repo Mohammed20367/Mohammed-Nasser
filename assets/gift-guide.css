@@ -114,8 +114,8 @@ background-color:#09c;
 }
 
 .seconimageinframe {
-  width: 890px;
-  height:402px;
+  width: 66%;
+  height:100%;
   display: block;
   object-fit: contain;
   margin-top:442px;
