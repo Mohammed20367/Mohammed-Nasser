@@ -230,7 +230,8 @@ opacity: 1;
 
 .part-two{
   width: min(100%, 1337px);   /* نفس عرض فيجما كحد أقصى */
-  padding: clamp(12px, 3vw, 24px);
+  margin: 0 auto;
+ 
 }
 
 .wild-title{
