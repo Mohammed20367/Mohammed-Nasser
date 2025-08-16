@@ -4,7 +4,10 @@ Only styles for the small strip above hero
 */
 
 /* Main Container for the top bar */
-
+.section
+{
+    margin:0;
+}
 .gift-top-bar {
   background: transparent;
   position: relative;
