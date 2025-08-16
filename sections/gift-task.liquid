@@ -1,82 +1,66 @@
+{% comment %}
+Gift Guid - Banner (Custom) | Step 1 : scaffold only
+This section will host the hero (banner) for the figma design.
+No css and js yet – they will be added in the next step.
+{% endcomment %}
+
+
+<!--how to link css file by html file-->
 {{ 'gift-guide.css' | asset_url | stylesheet_tag }}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lustria&display=swap" rel="stylesheet">
 
-<div class = "page">
-    <div class="section1">
-            {% comment %} <nav class='nav'>
-            <div class="gift-top-bar">
-            <div>
+<head>
+  {{ content_for_header }}
+  <!--  Jost font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<section id="gift-hero-{{ section.id }}" class="gift-hero" role="banner" aria-label="Gift Guid hero banner">
+  <div class="gift-top-bar">
+    <div >
             <img class="gift-icon--tisso"
-                src="{{ 'tisso.svg' | asset_url }}"
-                alt="Tisso Vison"
-                width="151" height="19" loading="lazy">
-            </div>
-
-            <div class="gift-top-bar_message">
-            Find the ideal gift for your loved ones.
-            </div>
-
-            <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
-            <span class="gift-icon--arrow-text">CHOOSE GIFT</span>
-            <img class="gift-icon gift-icon--arrow"
-                src="{{ 'Arrow.svg' | asset_url }}"
-                alt="" aria-hidden="true"
-                width="24" height="1" loading="lazy">
-                 </button>
-                </div>
-                </nav> {% endcomment %}
-
-                <div class="gift-top-bar">
-  <img src="{{ 'tisso.svg' | asset_url }}" class="gift-icon--tisso" alt="Tisso Vison" />
-  <p class="gift-top-bar_message">Find the ideal gift for your loved ones.</p>
-  <a href="#" class="gift-button gift-button--highlight">
-    <span class="gift-icon--arrow-text">CHOOSE GIFT</span>
-    <span class="gift-icon--arrow"><img class="gift-icon gift-icon--arrow"
-                src="{{ 'Arrow.svg' | asset_url }}"
-                alt="" aria-hidden="true"
-                width="24" height="1" loading="lazy"></span>
-  </a>
-</div>
-
-    </div>
-<div class="navplusfpage">
- 
-
-{% comment %} <div class="firstframe">
-    <img class="imageinframe"
-         src="{{ 'Frame.svg' | asset_url }}"
-         alt=""
-         width="1440" height="780" loading="eager">
-  </div>
-
-  <div class="secondframe">
-    <div>
-      <h1>Hi</h1>
-    </div>
-    <div class ="parentofseconimageinframe">
-      <img class="seconimageinframe"
-           src="{{ 'Frame.svg' | asset_url }}"
+           src="{{ 'tisso.svg' | asset_url }}"
            alt=""
-           width="1440" height="780" loading="lazy">
+           aria-hidden="true"
+           width="16" height="16" loading="lazy">     
     </div>
-  </div>
-</div> {% endcomment %}
+    <div class="gift-top-bar_message">
+      Find the ideal gift for your loved ones.
+    </div>
 
+    <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
+      <span>CHOOSE GIFT</span>
+      <img class="gift-icon gift-icon--arrow"
+           src="{{ 'Arrow.svg' | asset_url }}"
+           alt=""
+           aria-hidden="true"
+           width="10" height="10" loading="lazy">
+    </button>
 </div>
 
+<div class = "firstframe">
+  <img class="imageinframe" src ="{{ 'Frame.svg' | asset_url }}" alt = "" width="10" height="10">
+</div>
+<!--second image for first section-->
+<div class = "secondframe" style="margin-top:100px">
+  <div>
+    <h1> Hi </h1>
+  </div>
 
+  <div>
+  <img class="seconimageinframe" src ="{{ 'Frame.svg' | asset_url }}" alt = "" width="10" height="10">
+  </div>
+</div>
+
+</section>
 
 {% schema %}
 {
-  "name": "task",
+  "name": "Gift Guide Top Bar",
   "settings": [],
   "presets": [
-    { "name": "task" }
+    { "name": "Gift Guide Top Bar" }
   ]
 }
 {% endschema %}
