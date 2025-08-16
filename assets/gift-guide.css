@@ -10,18 +10,21 @@ Only styles for the small strip above hero
   height:2000px;
 }
 
-.section1
+.page
 {
-  width: 1440px;
-  height:878px;
-    margin:0;
-}
-.section2
-{
-  width: 1337px;;
-  height:981px;;
+width:1440px;
+height:2000px;
+gap :90px;
 }
 
+.nav
+{
+    width:1440px;
+    height:64px;
+    margin:10px 50px;
+    gap:360px
+
+}
 .gift-top-bar {
   background: transparent;
   position: relative;
@@ -90,6 +93,8 @@ Only styles for the small strip above hero
   width: 24px;
   height: 100%;
 }
+
+
 
 /* first frame in home page */
 .firstframe {
