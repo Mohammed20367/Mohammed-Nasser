@@ -51,7 +51,7 @@ margin-top: -105px;
   position: absolute;
   left: 0;
   top: 0;
-  width: 1440px;                 /* يفضل 100% لو العرض مرن */
+                 /* يفضل 100% لو العرض مرن */
   height: calc(100% + var(--shift));  /* نزود الارتفاع قد الإزاحة */
   margin-top: calc(-1 * var(--shift));/* نزق الصورة لفوق */
   object-fit: cover;             /* ملء مع قصّ */
