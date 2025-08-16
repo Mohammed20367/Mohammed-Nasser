@@ -13,7 +13,7 @@
  height:auto;
   
 }
-.section1{ height:auto; } 
+
 .nav
 {
   width:100%;
@@ -228,12 +228,13 @@ opacity: 1;
 
 
  .section2 { background:#09c;
+  
  }
 
 .part-two{
   width: min(100%, 1337px);   /* نفس عرض فيجما كحد أقصى */
   margin: 0 auto;
-  padding: clamp(12px, 3vw, 24px);
+
 }
 
 .wild-title{
