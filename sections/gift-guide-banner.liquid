@@ -23,7 +23,7 @@ Keeps your existing top bar; hero image sits right under it with no Dawn padding
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-<section id="gift-hero-{{ section.id }}" aria-label="Gift Guid hero banner">
+<section id="gift-hero-{{ section.id }}">
 
   <!-- Top bar -->
   <div class="gift-top-bar">
@@ -47,25 +47,27 @@ Keeps your existing top bar; hero image sits right under it with no Dawn padding
     </button>
   </div>
 
-  <!-- Hero banner -->
-  <div class="gift-hero">
-    <img class="gift-hero-bg"
-         src="{{ 'Frame.svg' | asset_url }}"
-         alt="Gift Guide"
-         width="1440" height="780" loading="eager">
+  <!-- Banner image -->
+  <div class="gift-hero-image">
+    <img src="{{ 'Frame.svg' | asset_url }}" alt="Gift Guide" loading="eager">
+  </div>
 
-    <div class="gift-hero-content">
-      <h1 class="gift-hero-title">The Gift Guide</h1>
-      <p class="gift-hero-subtitle">
-        Discover Joy: Your Ultimate Holiday Gift Destination. <br>
-        Explore our curated selection and find the perfect gifts to <br>
-        delight your loved ones this holiday season.
-      </p>
-      <a href="#shop" class="gift-hero-btn">SHOP NOW →</a>
-    </div>
+  <!-- Text content -->
+  <div class="gift-hero-text">
+    <h1>The Gift Guide</h1>
+    <p>
+      Discover Joy: Your Ultimate Holiday Gift Destination. <br>
+      Explore our curated selection and find the perfect gifts <br>
+      to delight your loved ones this holiday season.
+    </p>
+    <a href="#shop" class="gift-hero-btn">SHOP NOW →</a>
   </div>
 
 </section>
+
+<!-- ربط ملف الـ CSS -->
+{{ 'gift-guide.css' | asset_url | stylesheet_tag }}
+
 
 {% schema %}
 {
