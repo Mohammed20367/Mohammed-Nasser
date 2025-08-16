@@ -309,95 +309,76 @@ vertical-align: middle;
 
 /* أرقام فيجما */
 :root{
-  --frame-w: 1339px;   /* عرض الكونتينر الأبيض الداخلي */
-  --gap: 20px;
-  --card-w: calc((var(--frame-w) - 2 * var(--gap)) / 3); /* (1339 - 40)/3 = 433 */
+  --frame-w: 1339px;      /* عرض الكونتينر */
+  --card-w: 433px;
   --card-h: 444px;
-  --radius: 12px;
+  --gap: 20px;            /* الجاب بين الكروت (أفقي + رأسي) */
+  --title-gap: 12px;      /* المسافة بين العنوان والشبكة */
 }
 
 /* الديف الكبير الأبيض */
 .wild{
   background:#fff;
-  margin:0;
-  padding: 24px 0;
-
+  margin: 0;
+  padding: 16px 0 24px;   /* قلّل البادينج العام */
+  border-top: 0; outline: 0;
 }
 
-/* الكونتينر: يثبت على 1339px ويتوسّط */
+/* الكونتينر الداخلي بعرض ثابت ويتوسّط */
 .wild__inner{
   max-width: var(--frame-w);
   margin-inline: auto;
-  padding-inline: 0;     /* لو عايز حواف جانبية زوّدها هنا */
+  padding-inline: 0;      /* لو عايز حواف جانبية زوّدها هنا */
 }
 
-/* العنوان حسب فيجما */
+/* العنوان من فيجما (Lustria 36px) + مسافة صغيرة تحت */
 .wild__title{
   font-family: 'Lustria', serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 120%;
-  margin: 0 0 16px;
+  margin: 0 0 var(--title-gap) !important; /* قلّل المسافة */
 }
 
-/* الشبكة: 3 أعمدة ثابتة بالمقاس */
+/* الشبكة: 3 أعمدة ثابتة 433px + جاب 20px بالضبط */
 .wild__grid{
   display: grid;
   grid-template-columns: repeat(3, var(--card-w));
   grid-auto-rows: var(--card-h);
-  gap: var(--gap);
+  column-gap: var(--gap);
+  row-gap: var(--gap);
+  margin-top: 0 !important;           /* امنع أي مارجن من الثيم */
 }
+.wild__grid > *{ margin: 0 !important; } /* يلغى أي مارجن موروث */
 
 /* الكارت */
 .wild__item{
   width: var(--card-w);
   height: var(--card-h);
-  box-sizing: border-box;         /* عشان البوردر ميزوّدش المقاس */
+  box-sizing: border-box;             /* البوردر جوه المقاس */
   border: 1.5px solid #000;
-  border-radius: var(--radius);
+  border-radius: 12px;
   overflow: hidden;
   position: relative;
-  display: block;
-  background: #f6f6f6;
+  background:#f6f6f6;
+  display:block;
 }
-
 .wild__img{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  display: block;                     /* يمنع فراغ أسفل الصورة */
 }
 
-/* زر + */
-.wild__plus{
-  position: absolute;
-  top: 12px; right: 12px;
-  width: 32px; height: 32px;
-  border-radius: 50%;
-  display: grid; place-items: center;
-  color: #fff;
-  background: rgba(0,0,0,.6);
-  border: 1px solid rgba(255,255,255,.85);
-  box-shadow: 0 2px 6px rgba(0,0,0,.18);
-  gap:30px;
-}
-
-/* ريسبونسيف تحت 1339px: نحافظ على 3 أعمدة لكن بعرض مرن ونفس النسبة */
+/* ريسبونسيف: تحت 1339px نحافظ على الجاب ونسبة الكارت */
 @media (max-width: 1339px){
-  .wild__inner{ max-width: 100%; padding-inline: 16px; }
+  .wild__inner{ padding-inline: 16px; }
   .wild__grid{ grid-template-columns: repeat(3, 1fr); }
-  .wild__item{
-    width: auto; height: auto;
-    aspect-ratio: 433 / 444;   /* نفس النسبة */
-  }
+  .wild__item{ width:auto; height:auto; aspect-ratio: 433 / 444; }
 }
-
-/* 2 أعمدة على التابلت */
 @media (max-width: 992px){
   .wild__grid{ grid-template-columns: repeat(2, 1fr); }
 }
-
-/* عمود واحد على الموبايل */
 @media (max-width: 576px){
   .wild__grid{ grid-template-columns: 1fr; }
 }
