@@ -12,7 +12,6 @@
 {
   width:1440px;
   height:64px;
-  padding:10px 50px 10px 50px;
   gap:360px;
   background-color:#09c;
 
@@ -21,6 +20,7 @@
 
 .gift-top-bar {
   background: transparent;
+  position: relative;
   z-index: 10;
   display: flex;              /* Horizontal layout */
   align-items: center;        /* Vertical centering */
