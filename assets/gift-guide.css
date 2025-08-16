@@ -197,7 +197,6 @@ vertical-align: middle;
 .gift-hero{ --hero-h: clamp(200px,24vw,260px); --shift-y:-60px; }
 .gift-hero__art{
   min-height: var(--hero-h);
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: right var(--shift-y);
 }
