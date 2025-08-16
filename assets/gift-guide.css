@@ -16,7 +16,7 @@
   height:67px;
   gap:360px;
 }  
-/* .firstframe {
+.firstframe {
 background-color:green;
 display:flex;
   position: relative;
@@ -34,28 +34,8 @@ margin-top: -105px;
   object-fit: cover;
   position: absolute;
   z-index: 1;
-} */
-
-.firstframe{
-  background-color: green;
-  position: relative;
-  width: 1440px;
-  height: 392px;
-  overflow: hidden;
 }
 
-/* غيّر القيمة دي حسب الإزاحة اللي عايزها */
-:root { --shift: 120px; }
-
-.imageinframe{
-  position: absolute;
-  height: calc(100% + var(--shift));  /* نزود الارتفاع قد الإزاحة */
-  margin-top: calc(-1 * var(--shift));/* نزق الصورة لفوق */
-  object-fit: cover;             /* ملء مع قصّ */
-  object-position: center top;   /* اختيار الكادر */
-  display: block;
-  z-index: 1;
-}
 
 .secondframe
 {
