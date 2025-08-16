@@ -25,6 +25,19 @@ gap :90px;
     gap:360px
 
 }
+
+.section1
+{
+  width: 1440px;
+  height:878px;
+    margin:0;
+}
+.section2
+{
+  width: 1337px;;
+  height:981px;;
+}
+
 .gift-top-bar {
   background: transparent;
   position: relative;
@@ -93,8 +106,6 @@ gap :90px;
   width: 24px;
   height: 100%;
 }
-
-
 
 /* first frame in home page */
 .firstframe {
