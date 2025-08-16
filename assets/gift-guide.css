@@ -120,7 +120,7 @@ display:flex;
   gap: 24px;
 }
 .contentdiv{
-font-family: Jost;
+font-family: 'Jost', sans-serif;
 font-weight: 500;
 font-style: Medium;
 font-size: 70px;
