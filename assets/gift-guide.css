@@ -115,14 +115,10 @@ margin-top: -120px;
   height:402px;
   display: block;
   object-fit: contain;
+  margin-top:442px;
+  margin-left:550px;
+
 }
 
 
 
-.imageinframe {
-  display: block;  /* يمنع المسافة اللي بتظهر مع inline elements */
-}
-
-.seconimageinframe {
-  display: block;
-}
