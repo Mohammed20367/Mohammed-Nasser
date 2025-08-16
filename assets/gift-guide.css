@@ -18,7 +18,7 @@
 }  
 
 
-/* .firstframe {
+ .firstframe {
 background-color:green;
 display:flex;
   position: relative;
@@ -36,29 +36,12 @@ margin-top: -105px;
   object-fit: cover;
   position: absolute;
   z-index: 1;
-} */
-
-:root { --shift: 120px; }
-
-.firstframe{
-  width: 1440px;
-  height: 392px;
-  background-color: #0b6f17;
-  position: relative;
-  overflow: hidden;
-}
-
-.imageinframe{
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 1440px;                 /* أو 100% لو مرن */
   height: calc(100% + var(--shift)); /* نعوّض الإزاحة */
   margin-top: calc(-1 * var(--shift));
-  object-fit: cover;             /* تملأ وتقص */
-  object-position: center top;   /* كادر من فوق */
-  display: block;
-}
+} 
+
+
+
 
 .secondframe
 {
