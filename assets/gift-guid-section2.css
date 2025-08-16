@@ -1,6 +1,12 @@
 
 /*second section*/
 
+.parentofimages
+{
+    width:1337px;
+    height:981px;
+    gap:30px;
+}
 
 .part-two {
   max-width: 1300px;
