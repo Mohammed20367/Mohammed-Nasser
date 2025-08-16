@@ -115,56 +115,73 @@ display:flex;
 
 
 
-.gift-guide-section {
+/* ارتفاع الهيرو + تمركز الكادر */
+.gift-hero{
+  --hero-h: clamp(200px, 24vw, 260px); /* زي الصورة المرجعية */
+  --shift-y: -60px;                    /* زقّة لفوق لضبط الكادر */
+  background:#fff;
   margin:0;
-  background-color:red;
-  padding: 0px 67px 30px;
-  height:402px;
-  width:100%;
 }
-.gift-guide-container {
-  margin:0px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 40px;
-}
-.gift-guide-text {
-  flex: 1;
-}
-.gift-guide-text h2 {
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-.gift-guide-text p {
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-.gift-guide-btn {
-  display: inline-block;
-  padding: 12px 24px;
-  background: #000;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-.gift-guide-btn:hover {
-  background: #333;
-}
-.gift-guide-image {
 
-  margin:0;
-  flex: 1;
-  text-align: right;
+/* تقسيم 50/50 */
+.gift-hero__inner{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  align-items:center;
+  gap: clamp(16px, 3vw, 40px);
+  min-height: var(--hero-h);
+  max-width: 1440px;
+  margin-inline:auto;
+  padding: clamp(12px, 3vw, 24px);
 }
-.gift-guide-image img {
-  max-width: 100%;
-  height: auto;
+
+/* النص */
+.gift-hero__title{
+  font-weight:700;
+  font-size: clamp(28px, 5vw, 48px);
+  line-height:1;
+  margin:0 0 10px;
+}
+.gift-hero__text{
+  font-size: clamp(14px, 1.2vw, 16px);
+  line-height:1.45;
+  margin:0 0 14px;
+  max-width: 46ch;
+}
+.gift-btn{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:10px 18px; background:#000; color:#fff; text-decoration:none;
+}
+
+/* الصورة الخلفية (المسار جاي من HTML) */
+.gift-hero__art{
+  min-height: var(--hero-h);
+  background-image: var(--hero-art);
+  background-repeat:no-repeat;
+  background-size: cover;                       /* تملأ وتقص */
+  background-position: right var(--shift-y);    /* يمين + زقّة لفوق */
+  border: 1px solid #e8e8e8;                    /* خط رفيع زي المرجع */
+}
+
+/* الشريط السفلي */
+.gift-hero__ticker{
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:12px;
+  padding:8px 12px;
+  background:#efefef;
+  border-top:1px solid #e1e1e1;
+}
+
+/* موبايل: الصورة فوق والنص تحت */
+@media (max-width: 768px){
+  .gift-hero__inner{ grid-template-columns:1fr; }
+  .gift-hero__art{
+    order:-1;
+    min-height: clamp(160px, 40vw, 220px);
+    background-position: center var(--shift-y);
+  }
 }
 
 

@@ -59,26 +59,30 @@ Keeps your existing top bar; hero image sits right under it with no Dawn padding
 
 
 <div class="fr2">
-  <section class="gift-guide-section">
-  <div class="gift-guide-container">
-    <!-- النصوص -->
-    <div class="gift-guide-text">
-      <h2>The Gift Guide</h2>
-      <p>
-        Discover Joy: Your Ultimate Holiday Gift Destination. <br>
-        Explore our curated selection and find the perfect gifts to <br>
-        delight your loved ones this holiday season.
-      </p>
-      <a href="/collections/gift-guide" class="gift-guide-btn">SHOP NOW →</a>
+  <section class="gift-hero">
+    <div class="gift-hero__inner">
+      <!-- النص -->
+      <div class="gift-hero__copy">
+        <h2 class="gift-hero__title">The Gift Guide</h2>
+        <p class="gift-hero__text">
+          Discover Joy: Your Ultimate Holiday Gift Destination.
+          Explore our curated selection and find the perfect gifts to
+          delight your loved ones this holiday season.
+        </p>
+        <a href="/collections/gift-guide" class="gift-btn">SHOP NOW →</a>
+      </div>
+
+      <!-- الصورة (كمّ خلفية مع المتغيّر) -->
+      <div class="gift-hero__art" style="--hero-art: url('{{ 'Frame.svg' | asset_url }}');"></div>
     </div>
 
-    <!-- الصورة -->
-    <div class="gift-guide-image">
-      <img src="{{ 'Frame.svg' | asset_url }}" alt="Gift Guide Image" class="img">
+    <!-- الشريط السفلي -->
+    <div class="gift-hero__ticker">
+      SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL
     </div>
-  </div>
-</section>
-  </div>
+  </section>
+</div>
+
   
 
   </div>
