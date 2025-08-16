@@ -4,75 +4,211 @@ Only styles for the small strip above hero
 */
 
 /* Main Container for the top bar */
-.gift-top-bar {
-    display: flex; /* Horizontal layout */
-    align-items: center; /* Vertical centering */
-    justify-content: space-between;
-    gap: 5px; /* Space between text and button */
-    background-color:#F5F5F5;
-    padding: 10px 50px; /* top/bottom - left/right */
-    height :64px
-}
-
-/*first image in nav*/
-.gift-icon--tisso
+.section
 {
-    width:151px;
-    height:19px;
+    margin:0;
+}
+.gift-top-bar {
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  display: flex;              /* Horizontal layout */
+  align-items: center;        /* Vertical centering */
+  justify-content: space-between;
+  gap: 5px;                   /* Space between text and button */
+  background-color: #F5F5F5;
+  padding: 10px 50px;         /* top/bottom - left/right */
+  height: 64px;
 }
 
+/* first image in nav */
+.gift-icon--tisso {
+  width: 151px;
+  height: 19px;
+}
 
 /* Center message text */
 .gift-top-bar_message {
-    display : flex;
-    font-size: 16px;
-     font-family: 'Jost', sans-serif;
-    font-weight: 400;
-    align-items: center;       
-    justify-content: center;  
-    
+  display: flex;
+  font-size: 16px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Button */
 .gift-button {
-    width:207px;
-    height:44px;
-    display: inline-flex;
-    justify-content:center;
-    align-items: center;
-    gap: 20px; /* space between text and arrow */
-    padding: 12px 16px; /* top/bottom - left/right */
-    border: 1px solid #000;
-    background: transparent;
-    text-decoration: none;
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.25s ease, color 0.25s ease;
+  width: 207px;
+  height: 44px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* space between text and arrow */
+  padding: 12px 16px; /* top/bottom - left/right */
+  border: 1px solid #000;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.25s ease, color 0.25s ease;
 }
 
 /* Yellow button -- highlighted */
 .gift-button--highlight {
-    background-color: #FFF544;
-    border-color: #FFF544;
-    font-weight: 400;
+  background-color: #FFF544;
+  border-color: #FFF544;
+  font-weight: 400;
 }
 
 /* Arrow text container */
 .gift-icon--arrow-text {
-    display: inline-block;
-    transition: transform 0.25s ease; /* Subtle slide on hover */
+  display: inline-block;
+  transition: transform 0.25s ease; /* Subtle slide on hover */
 }
 
 .gift-button:hover .gift-icon--arrow-text {
-    transform: translateX(4px);
+  transform: translateX(4px);
 }
 
 /* Arrow line */
 .gift-icon--arrow {
-    display: inline-block;
-    width: 24px;
-    height: 100%;
+  display: inline-block;
+  width: 24px;
+  height: 100%;
+}
+
+/* first frame in home page */
+.firstframe {
+
+display:flex;
+  position: relative;
+  height:20%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.imageinframe {
+margin-top: -120px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* second frame */
+.secondframe {
+    background-color:#09c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-top: 24px; /* مسافة طبيعية بعد البلوك الأول */
+}
+
+.secondframe > div {
+  flex: 1; /* كل ديف ياخد 50% */
+}
+
+.secondframe h1 {
+background-color:red;
+  margin: 0;
+  text-align: left;
+}
+
+.parentofseconimageinframe
+{
+    height:402px;
+
+}
+
+.seconimageinframe {
+    background-color:red;
+  width: 890px;
+  height:100%;
+  display: block;
+  object-fit: contain;
+  margin-top:0px;
+  margin-left:38%;
+
+
+
+}
+
+
+
+.imageinframe {
+  display: block;  /* يمنع المسافة اللي بتظهر مع inline elements */
+}
+
+.seconimageinframe {
+  display: block;
+}
+
+
+
+/*second section*/
+
+
+.part-two {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3,  1fr);
+  gap: 15px;
+}
+
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+
+
+.plus-icon {
+  position: absolute;
+  top: 10px;        
+  right: 10px; 
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  background: rgba(0,0,0,0.6);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 
 
 
+
+
+
+@media (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
