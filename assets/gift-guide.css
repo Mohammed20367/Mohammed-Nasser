@@ -20,13 +20,13 @@
 
 display:flex;
   position: relative;
-  height:20%;
+  height:392px;
   width: 100%;
   overflow: hidden;
 }
 
 .imageinframe {
-margin-top: -120px;
+margin-top: -110px;
   display: block;
   width: 100%;
   height: 100%;
