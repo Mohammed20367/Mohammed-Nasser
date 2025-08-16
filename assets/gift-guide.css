@@ -29,7 +29,7 @@ display:flex;
 margin-top: -110px;
   display: block;
   width: 100%;
-  height: 392px;
+  height: 100%;
   object-fit: cover;
   position: relative;
   z-index: 1;
