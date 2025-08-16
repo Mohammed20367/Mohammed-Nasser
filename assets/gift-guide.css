@@ -36,25 +36,30 @@ margin-top: -105px;
   z-index: 1;
 } */
 
-.firstframe {
+.firstframe{
   background-color: green;
   position: relative;
+  width: 1440px;
   height: 392px;
-  width: 100%;
   overflow: hidden;
 }
 
-.imageinframe {
- 
+/* غيّر القيمة دي حسب الإزاحة اللي عايزها */
+:root { --shift: 120px; }
+
+.imageinframe{
   position: absolute;
-  top: 0;
   left: 0;
-  width: 1440px;
-  height: 120%;     /* أكبر من 100% عشان تغطي بعد المارجن */
-  object-fit: cover;
-  margin-top: -120px;
+  top: 0;
+  width: 1440px;                 /* يفضل 100% لو العرض مرن */
+  height: calc(100% + var(--shift));  /* نزود الارتفاع قد الإزاحة */
+  margin-top: calc(-1 * var(--shift));/* نزق الصورة لفوق */
+  object-fit: cover;             /* ملء مع قصّ */
+  object-position: center top;   /* اختيار الكادر */
+  display: block;
   z-index: 1;
 }
+
 .secondframe
 {
   width:100%;
