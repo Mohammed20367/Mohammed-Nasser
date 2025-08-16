@@ -75,6 +75,7 @@ Only styles for the small strip above hero
 
 /* first frame in home page */
 .firstframe {
+background-color:red;
 display:flex;
   position: relative;
   height:20%;
