@@ -109,8 +109,6 @@ display:flex;
 
 /* first frame in home page */
 
-
-
 .secondframe {
   
   margin:0;
@@ -122,41 +120,6 @@ display:flex;
   gap: 24px;
 }
 
-.secondframe > div {
-  margin:0;
-  flex: 1; /* كل ديف ياخد 50% */
-}
-
-.secondframe h1 {
-
-background-color:red;
-  margin: 0;
-  text-align: left;
-}
-
-
-.seconimageinframe {
-    background-color:red;
-  width: 890px;
-  height:100%;
-  display: block;
-  object-fit: contain;
-  margin-top:0px;
-  margin-left:38%;
-
-
-
-}
-
-
-
-.imageinframe {
-  display: block;  /* يمنع المسافة اللي بتظهر مع inline elements */
-}
-
-.seconimageinframe {
-  display: block;
-}*/
 
 
 
