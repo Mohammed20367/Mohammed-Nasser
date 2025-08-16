@@ -1,8 +1,7 @@
-/* Reset section padding */
-#shopify-section-{{ section.id }} {
-  --section-padding-top: 0px !important;
-  --section-padding-bottom: 0px !important;
+/* Reset section */
+#shopify-section-gift-hero {
   margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* Top bar */
@@ -10,67 +9,42 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 5px;
-  background-color: #F5F5F5;
+  background: #F5F5F5;
   padding: 10px 50px;
   height: 64px;
 }
 
-.gift-top-bar_message {
-  font-size: 16px;
-  font-family: 'Jost', sans-serif;
-  font-weight: 400;
-}
-
-/* Button */
-.gift-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 20px;
-  padding: 12px 16px;
-  border: 1px solid #000;
-  cursor: pointer;
-  background: transparent;
-}
-
 .gift-button--highlight {
   background-color: #FFF544;
-  border-color: #FFF544;
+  border: 1px solid #FFF544;
 }
 
-/* Hero banner */
-.gift-hero {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.gift-hero-bg {
-  display: block;
+/* Banner image */
+.gift-hero-image img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  display: block;
 }
 
-.gift-hero-content {
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  transform: translateY(-50%);
-  max-width: 500px;
+/* Text section */
+.gift-hero-text {
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: left;
   font-family: 'Jost', sans-serif;
+  padding: 0 20px;
 }
 
-.gift-hero-title {
+.gift-hero-text h1 {
   font-size: 48px;
   font-weight: 600;
-  margin: 0 0 16px 0;
+  margin-bottom: 16px;
 }
 
-.gift-hero-subtitle {
+.gift-hero-text p {
   font-size: 16px;
-  margin-bottom: 24px;
   line-height: 1.5;
+  margin-bottom: 24px;
 }
 
 .gift-hero-btn {
