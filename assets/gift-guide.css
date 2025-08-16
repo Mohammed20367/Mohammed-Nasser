@@ -77,7 +77,6 @@ Only styles for the small strip above hero
 .firstframe {
   position: relative;
   width: 100%;
-  aspect-ratio: 1440 / 780; /* يحافظ على النسبة بدل height ثابتة */
   overflow: hidden;
 }
 
