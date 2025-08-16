@@ -224,3 +224,38 @@ vertical-align: middle;
   .wild-title{ margin-bottom: 14px; }
 }
 
+
+
+/* نفس زر + الأبيض الصغير */
+:root{
+  --badge: 24px;     /* حجم الدايرة */
+  --stroke: 1.5px;   /* سُمك أذرع + */
+  --cross: 10px;     /* طول أذرع + */
+}
+
+.wild__item{ position: relative; }
+
+.wild__plus{
+  position: absolute;
+  /* الموضع كنِسب مئوية لكل كارت */
+  left: var(--x, 86%);   /* default لو منسّبتش */
+  top:  var(--y, 20%);
+  transform: translate(-50%, -50%);
+  width: var(--badge); height: var(--badge);
+  border-radius: 50%;
+  background:#fff;
+  border:1px solid rgba(0,0,0,.15);
+  box-shadow:0 1px 4px rgba(0,0,0,.18);
+  display:block;
+  pointer-events:auto;
+}
+
+/* نرسم علامة + */
+.wild__plus::before,
+.wild__plus::after{
+  content:"";
+  position:absolute; left:50%; top:50%;
+  background:#000; transform:translate(-50%,-50%);
+}
+.wild__plus::before{ width:var(--cross); height:var(--stroke); }
+.wild__plus::after { width:var(--stroke); height:var(--cross); }
