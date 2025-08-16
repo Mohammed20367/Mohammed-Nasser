@@ -10,8 +10,13 @@ gap :90px;
     width:1440px;
     height:64px;
     margin:10px 50px;
-    
+    gap:360px
 
+}
+.navplusfpage
+{
+    width:1440px;;
+    height:878px;
 }
 
 .gift-top-bar {
@@ -83,11 +88,7 @@ gap :90px;
   height: 100%;
 }
 
-.navplusfpage
-{
-    width:1440px;;
-    height:878px;
-}
+
 
 .firstframe
 {
