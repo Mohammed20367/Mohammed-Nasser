@@ -214,3 +214,103 @@ vertical-align: middle;
 
 
 
+
+/* -------------------- Variables -------------------- */
+.gift-hero{
+  /* ارتفاع الهيرو على الديسكتوب، مرن بالمقاس */
+  --hero-h: clamp(320px, 40vw, 420px);
+  /* مقدار الزقّة لفوق في الصورة (عدّلها لو محتاج نفس الكادر بالظبط) */
+  --hero-shift-y: -90px; /* جرّب -60px/-120px حسب رؤيتك */
+  background:#fff;
+}
+
+/* -------------------- Layout -------------------- */
+.gift-hero__inner{
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* 50/50 */
+  align-items: center;
+  gap: clamp(16px, 3vw, 40px);
+  min-height: var(--hero-h);
+  max-width: 1440px;
+  margin-inline: auto;
+  padding: clamp(16px, 4vw, 48px);
+}
+
+.gift-hero__copy{
+  max-width: 620px;
+}
+
+.gift-hero__art{
+  min-height: var(--hero-h);
+  background-image: url("{{ 'Frame.svg' | asset_url }}");
+  background-repeat: no-repeat;
+  background-size: cover;                 /* تملى وتقص الزيادة */
+  background-position: right var(--hero-shift-y); /* الكادر يمين ومزحزح لفوق */
+  border: 1px solid #eaeaea;              /* خط رفيع زي المعاينة (اختياري) */
+}
+
+/* -------------------- Typography -------------------- */
+.gift-hero__title{
+  font-family: 'Jost', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 700;
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1;
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+}
+
+.gift-hero__text{
+  font-family: 'Jost', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: clamp(14px, 1.2vw, 18px);
+  line-height: 1.45;
+  margin: 0 0 24px;
+  max-width: 56ch;
+  color: #222;
+}
+
+/* -------------------- Button -------------------- */
+.gift-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  border: 1px solid #000;
+  text-decoration: none;
+  color: #000;
+  transition: transform .2s ease;
+}
+.gift-btn--primary{
+  background: #FFF544;
+  border-color: #FFF544;
+}
+.gift-btn:hover{ transform: translateY(-1px); }
+.gift-btn__icon{ width: 24px; height: 24px; }
+
+/* -------------------- Bottom ticker -------------------- */
+.gift-hero__ticker{
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 12px;
+  padding: 8px 12px;
+  background: #efefef;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 1024px){
+  .gift-hero{
+    --hero-shift-y: -60px;   /* قلّل الزقّة شوية على التابلت */
+  }
+}
+
+@media (max-width: 768px){
+  .gift-hero__inner{
+    grid-template-columns: 1fr;   /* عمود واحد */
+  }
+  .gift-hero__art{
+    order: -1;                    /* خَلّي الصورة فوق العنوان */
+    min-height: clamp(220px, 50vw, 340px);
+    background-position: center var(--hero-shift-y);
+  }
+}
