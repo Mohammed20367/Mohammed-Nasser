@@ -301,3 +301,57 @@ opacity: 1;
   .grid-container{ grid-template-columns: 1fr; }
   .wild-title{ margin-bottom: 14px; }
 }
+
+
+/* عرّف القيم لتعديلها بسرعة */
+:root{
+  --bw: 1.5px;          /* سمك بوردر الكارت */
+  --badge: 24px;        /* قطر الدايرة (فيجما ~22-24) */
+  --badge-gap: 14px;    /* الأوفست من الحافة */
+  --cross: 10px;        /* طول أذرع علامة + */
+  --stroke: 1.5px;      /* سمك أذرع + */
+}
+
+/* مهم: الكارت لازم يكون position:relative; (عندك موجود) */
+
+/* زر + أبيض بحد رفيع وظل خفيف زي فيجما */
+.wild__plus{
+  position:absolute;
+  top: calc(var(--badge-gap) + var(--bw));
+  right: calc(var(--badge-gap) + var(--bw));
+  width: var(--badge);
+  height: var(--badge);
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.15);
+  box-shadow: 0 1px 4px rgba(0,0,0,.18);
+  display:block;
+  cursor: pointer;
+}
+
+/* نرسم علامة + بخطين عشان تبقى في النص بالملّي */
+.wild__plus::before,
+.wild__plus::after{
+  content:"";
+  position:absolute;
+  left:50%; top:50%;
+  background:#000;
+  transform: translate(-50%, -50%);
+}
+
+/* الذراع الأفقي */
+.wild__plus::before{
+  width: var(--cross);
+  height: var(--stroke);
+}
+
+/* الذراع الرأسي */
+.wild__plus::after{
+  width: var(--stroke);
+  height: var(--cross);
+}
+
+/* Hover خفيف (اختياري) */
+.wild__plus:hover{
+  box-shadow: 0 2px 6px rgba(0,0,0,.24);
+}
