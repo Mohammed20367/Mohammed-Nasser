@@ -41,18 +41,27 @@ Keeps your existing top bar; hero image sits right under it with no Dawn padding
       Find the ideal gift for your loved ones.
     </div>
 
-    <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
+    {% comment %} <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
       <span class="gift-icon--arrow-text">CHOOSE GIFT</span>
       <img class="gift-icon gift-icon--arrow"
            src="{{ 'Arrow.svg' | asset_url }}"
            alt="" aria-hidden="true"
            width="24" height="1" loading="lazy">
-    </button>
+    </button> {% endcomment %}
+
+    <div class="button-container">
+        <button class="original-button">
+             CHOOSE GIFT
+        </button>
+        <button class="overlay-button">
+              SHOP NOW
+        </button>
+</div>
       </div><!--end of navbar-->
 
 
 
-      
+
     </div>
 
 
