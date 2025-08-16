@@ -38,14 +38,6 @@ display:flex;
   z-index: 1;
 } 
  
-
-.secondframe{
-  margin:0;
-  width:100%;
-  height:392px;
-}
-
-
 .gift-top-bar {
   background: transparent;
   position: relative;
@@ -119,42 +111,6 @@ display:flex;
 
 
 
-/* second frame */
-.secondframe {
-  margin:0;
-    background-color:#09c;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  margin-top: 24px; /* مسافة طبيعية بعد البلوك الأول */
-}
-
-.secondframe > div {
-  margin:0;
-  flex: 1; /* كل ديف ياخد 50% */
-}
-
-.secondframe h1 {
-
-background-color:red;
-  margin: 0;
-  text-align: left;
-}
-
-
-.seconimageinframe {
-    background-color:red;
-  width: 890px;
-  height:100%;
-  display: block;
-  object-fit: contain;
-  margin-top:0px;
-  margin-left:38%;
-
-
-
-}
 
 
 
@@ -164,7 +120,7 @@ background-color:red;
 
 .seconimageinframe {
   display: block;
-}
+}*/
 
 
 
