@@ -1,128 +1,107 @@
-/*
-Gift Guide - Top Bar (A)
-Only styles for the small strip above hero
-*/
+/* ===== Reset بسيط يمنع فراغات المتصفح الافتراضية ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+}
 
-/* Main Container for the top bar */
+/* ===== Top bar (زي ما هو) ===== */
 .gift-top-bar {
-  background: transparent;
-  position: relative;
+  position: sticky;         /* يثبت في أعلى الصفحة بدون ما يغطي اللي تحت */
+  top: 0;
   z-index: 10;
-  display: flex;              /* Horizontal layout */
-  align-items: center;        /* Vertical centering */
+
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 5px;                   /* Space between text and button */
+  gap: 5px;
+
   background-color: #F5F5F5;
-  padding: 10px 50px;         /* top/bottom - left/right */
+  padding: 10px 50px;
   height: 64px;
+  box-sizing: border-box;
 }
 
-/* first image in nav */
-.gift-icon--tisso {
-  width: 151px;
-  height: 19px;
-}
+.gift-icon--tisso { width: 151px; height: 19px; }
 
-/* Center message text */
 .gift-top-bar_message {
   display: flex;
-  font-size: 16px;
-  font-family: 'Jost', sans-serif;
-  font-weight: 400;
   align-items: center;
   justify-content: center;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
 }
 
-/* Button */
 .gift-button {
   width: 207px;
   height: 44px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* space between text and arrow */
-  padding: 12px 16px; /* top/bottom - left/right */
+  gap: 20px;
+  padding: 12px 16px;
   border: 1px solid #000;
   background: transparent;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.25s ease, color 0.25s ease;
+  transition: transform .2s ease, background-color .25s ease, color .25s ease;
 }
 
-/* Yellow button -- highlighted */
 .gift-button--highlight {
   background-color: #FFF544;
   border-color: #FFF544;
   font-weight: 400;
 }
 
-/* Arrow text container */
-.gift-icon--arrow-text {
-  display: inline-block;
-  transition: transform 0.25s ease; /* Subtle slide on hover */
+.gift-icon--arrow-text { transition: transform .25s ease; }
+.gift-button:hover .gift-icon--arrow-text { transform: translateX(4px); }
+.gift-icon--arrow { width: 24px; height: 100%; }
+
+/* ===== أول صورة تحت الناف مباشرة ===== */
+.firstframe{
+  margin: 0;              /* مفيش مسافات فوق/تحت */
+  padding: 0;
+  line-height: 0;         /* يمنع فجوة تحت الصورة */
 }
 
-.gift-button:hover .gift-icon--arrow-text {
-  transform: translateX(4px);
-}
-
-/* Arrow line */
-.gift-icon--arrow {
-  display: inline-block;
-  width: 24px;
-  height: 100%;
-}
-
-/* first frame in home page */
-.firstframe {
-display:flex;
-  position: relative;
+.imageinframe{
+  display: block;         /* يمنع فجوة inline */
   width: 100%;
-  overflow: hidden;
-}
-
-.imageinframe {
-margin-top: -120px;
-  display: block;
-  width: 100%;
-  height: 20%;
-  object-fit: cover;
+  height: 780px;          /* نفس المقاس اللي كنت شغال بيه */
+  object-fit: cover;      /* تغطّي العرض كله */
+  margin: 0;
   position: relative;
   z-index: 1;
 }
 
-
-/* second frame */
+/* ===== البلوك التاني ===== */
 .secondframe {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 24px;
-  margin-top: 24px; /* مسافة طبيعية بعد البلوك الأول */
+  margin: 24px 0 0;       /* مسافة طبيعية بعد البلوك الأول */
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
-.secondframe > div {
-  flex: 1; /* كل ديف ياخد 50% */
-}
+.secondframe > div { flex: 1; }
 
 .secondframe h1 {
   margin: 0;
   text-align: left;
+  font-family: 'Jost', sans-serif;
 }
 
-.seconimageinframe {
-  width: 1440px;
-  height:780px;
+.seconimageinframe{
   display: block;
+  width: 100%;
+  height: 780px;
   object-fit: contain;
 }
 
-
-
-.imageinframe {
-  display: block;  /* يمنع المسافة اللي بتظهر مع inline elements */
-}
-
-.seconimageinframe {
-  display: block;
+/* ===== حِتّات كانت بتسبب فراغات – اتأكد إنها صفر ===== */
+#gift-hero-{{ section.id }} {
+  margin: 0 !important;
+  padding: 0 !important;
 }

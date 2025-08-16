@@ -1,57 +1,72 @@
 {% comment %}
-Gift Guid - Banner (Custom) | Step 1 : scaffold only
-This section will host the hero (banner) for the figma design.
-No css and js yet – they will be added in the next step.
+Gift Guid - Banner (Custom)
+Keeps your existing top bar; hero image sits right under it with no Dawn padding.
 {% endcomment %}
 
-
-<!--how to link css file by html file-->
 {{ 'gift-guide.css' | asset_url | stylesheet_tag }}
 
-<head>
-  {{ content_for_header }}
-  <!--  Jost font link -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
+{%- comment -%}
+  Dawn بيضيف padding/margin على كل سكشن تلقائيًا.
+  السطرين دول بيصفروا الـ padding/top/bottom للسكشن ده تحديدًا.
+{%- endcomment -%}
+<style>
+  #shopify-section-{{ section.id }}{
+    --section-padding-top: 0px !important;
+    --section-padding-bottom: 0px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+</style>
 
-<section id="gift-hero-{{ section.id }}" class="gift-hero" role="banner" aria-label="Gift Guid hero banner">
+<!-- لو عايز تسيب الخط هنا مؤقتًا ماشي، بس الأفضل نقله لـ layout/theme.liquid -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<section id="gift-hero-{{ section.id }}" aria-label="Gift Guid hero banner">
+
+  <!-- Top bar (زي ما هو) -->
   <div class="gift-top-bar">
-    <div >
-            <img class="gift-icon--tisso"
+    <div>
+      <img class="gift-icon--tisso"
            src="{{ 'tisso.svg' | asset_url }}"
-           alt=""
-           aria-hidden="true"
-           width="16" height="16" loading="lazy">     
+           alt="Tisso Vison"
+           width="151" height="19" loading="lazy">
     </div>
+
     <div class="gift-top-bar_message">
       Find the ideal gift for your loved ones.
     </div>
 
     <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
-      <span>CHOOSE GIFT</span>
+      <span class="gift-icon--arrow-text">CHOOSE GIFT</span>
       <img class="gift-icon gift-icon--arrow"
            src="{{ 'Arrow.svg' | asset_url }}"
-           alt=""
-           aria-hidden="true"
-           width="10" height="10" loading="lazy">
+           alt="" aria-hidden="true"
+           width="24" height="1" loading="lazy">
     </button>
-</div>
-
-<div class = "firstframe">
-  <img class="imageinframe" src ="{{ 'Frame.svg' | asset_url }}" alt = "" width="10" height="10">
-</div>
-<!--second image for first section-->
-<div class = "secondframe" style="margin-top:100px">
-  <div>
-    <h1> Hi </h1>
   </div>
 
-  <div>
-  <img class="seconimageinframe" src ="{{ 'Frame.svg' | asset_url }}" alt = "" width="10" height="10">
+  <!-- أول صورة: تيجي مباشرة تحت الناف -->
+  <div class="firstframe">
+    <img class="imageinframe"
+         src="{{ 'Frame.svg' | asset_url }}"
+         alt=""
+         width="1440" height="780" loading="eager">
   </div>
-</div>
+
+  <!-- بلوكك التاني زي ما هو -->
+  <div class="secondframe">
+    <div>
+      <h1>Hi</h1>
+    </div>
+    <div>
+      <img class="seconimageinframe"
+           src="{{ 'Frame.svg' | asset_url }}"
+           alt=""
+           width="1440" height="780" loading="lazy">
+    </div>
+  </div>
 
 </section>
 
