@@ -73,8 +73,10 @@ Keeps your existing top bar; hero image sits right under it with no Dawn padding
       </div>
 
       <!-- الصورة (كمّ خلفية مع المتغيّر) -->
-      <div class="gift-hero__art" style="--hero-art: url('{{ 'Frame.svg' | asset_url }}');"></div>
-    </div>
+     <div class="gift-hero__art">
+  <img src="{{ 'Frame.svg' | asset_url }}" alt="" class="gift-hero__img">
+</div>
+</div>
 
     <!-- الشريط السفلي -->
     <div class="gift-hero__ticker">
