@@ -9,14 +9,7 @@ Keeps your existing top bar; hero image sits right under it with no Dawn padding
   Dawn بيضيف padding/margin على كل سكشن تلقائيًا.
   السطرين دول بيصفروا الـ padding/top/bottom للسكشن ده تحديدًا.
 {%- endcomment -%}
-<style>
-  #shopify-section-{{ section.id }}{
-    --section-padding-top: 0px !important;
-    --section-padding-bottom: 0px !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-  }
-</style>
+
 
 <!-- لو عايز تسيب الخط هنا مؤقتًا ماشي، بس الأفضل نقله لـ layout/theme.liquid -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,111 +20,92 @@ Keeps your existing top bar; hero image sits right under it with no Dawn padding
 <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lustria&display=swap" rel="stylesheet">
 
 
-<div classe = "page">
-  <div class="section1"> <!--contain nav + fram1 + fram2 + footer-->
-    <div class='gift-top-bar'> <!--navbar-->
- <div>
-      <img class="gift-icon--tisso"
-           src="{{ 'tisso.svg' | asset_url }}"
-           alt="Tisso Vison"
-           width="151" height="19" loading="lazy">
-    </div>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TISSO VISON - Find the ideal gift for your loved ones</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-6 col-md-4">
+                    <h1 class="brand-logo">TISSO VISON</h1>
+                </div>
+                <div class="col-6 col-md-4 text-center d-none d-md-block">
+                    <p class="tagline">Find the ideal gift for your loved ones.</p>
+                </div>
+                <div class="col-6 col-md-4 text-end">
+                    <button class="btn btn-primary choose-gift-btn">
+                        CHOOSE GIFT
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M8 1L15 8L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <div class="gift-top-bar_message">
-      Find the ideal gift for your loved ones.
-    </div>
+    <!-- Hero Section - The Gift Guide -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h2 class="hero-title">The Gift Guide</h2>
+                        <p class="hero-description">
+                            Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.
+                        </p>
+                        <button class="btn btn-dark shop-now-btn">
+                            SHOP NOW
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M8 1L15 8L8 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-illustration">
+                        <!-- SVG Illustration will be added via CSS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-text">
+            <p>SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXX TO 6XL</p>
+        </div>
+    </section>
 
- <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
-      <span class="gift-icon--arrow-text">CHOOSE GIFT</span>
-      <img class="gift-icon gift-icon--arrow"
-           src="{{ 'Arrow.svg' | asset_url }}"
-           alt="" aria-hidden="true"
-           width="24" height="1" loading="lazy">
-    </button> 
+    <!-- Tissot Vision in the Wild Section -->
+    <section class="wild-section">
+        <div class="container">
+            <h3 class="wild-title">Tissot vison in the wild</h3>
+            <div class="row g-3">
+                {% for i in (1..6) %}
+                <div class="col-6 col-md-4">
+                    <div class="image-card">
+                        <div class="image-wrapper">
+                            <img src="{{ 'product-' | append: i | append: '.jpg' | asset_url }}" alt="Tissot Vision Product {{ i }}" class="product-image">
+                            <div class="shop-icon">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 1V15M1 8H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 
-
-      </div><!--end of navbar-->
-      
-
-
-
-    </div>  
-
-
-  <!-- أول صورة: تيجي مباشرة تحت الناف -->
-  {% comment %} <div class="firstframe">
-    <img class="imageinframe"
-         src="{{ 'Frame.svg' | asset_url }}"
-         alt=""
-         width="1440" height="780" loading="eager">
-  </div>
-
-  <!-- بلوكك التاني زي ما هو -->
-  <div class="secondframe">
-    <div>
-      <h1>Hi</h1>
-    </div>
-    <div class ="parentofseconimageinframe">
-      <img class="seconimageinframe"
-           src="{{ 'Frame.svg' | asset_url }}"
-           alt=""
-           width="1440" height="780" loading="lazy">
-    </div>
-  </div> {% endcomment %}
-
-
-</div>
-
-{% comment %} <div class="section2">
-<section class="part-two">
-  <div class ="parentofimages">
-    <div>
-      <span class="spantisso">Tisso vison in the wild</span>
-      </div>
- <div class="grid-container">
-    <div class="grid-item">
-      <img src="{{ 'image 822.svg' | asset_url }}" alt="لازم تكتبها" width="10" height="10">
-            <span class="plus-icon">+</span>
-
-    </div>
-    <div class="grid-item">
-      <img src="{{ 'image 823.svg' | asset_url }}" alt="لازم تكتبها "width="10" height="10">
-            <span class="plus-icon">+</span>
-
-    </div>
-    <div class="grid-item">
-      <img src="{{ 'image 824.svg' | asset_url }}" alt="لازم تكتبها"width="10" height="10">
-            <span class="plus-icon">+</span>
-
-    </div>
-    <div class="grid-item">
-      <img src="{{ 'image 825.svg' | asset_url }}" alt="لازم تكتبها"width="10" height="10">
-            <span class="plus-icon">+</span>
-
-    </div>
-    <div class="grid-item ">
-      <img src="{{ 'image 825.svg' | asset_url }}" alt="لازم تكتبها"width="10" height="10">
-            <span class="plus-icon">+</span>
-
-    </div>
-    <div class="grid-item">
-      <img src="{{ 'image 826.svg' | asset_url }}" alt="لازم تكتبها"width="10" height="10">
-        <span class="plus-icon">+</span>
-    </div>
-</div>
-</div>
-</section> {% endcomment %}
-
-
-
-</div>
-
-{% schema %}
-{
-  "name": "Gift Guide Top Bar",
-  "settings": [],
-  "presets": [
-    { "name": "Gift Guide Top Bar" }
-  ]
-}
-{% endschema %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
