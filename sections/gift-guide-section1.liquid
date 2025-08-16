@@ -56,46 +56,31 @@ Keeps your existing top bar; hero image sits right under it with no Dawn padding
          width="10" height="10" loading="eager">
   </div> <!--end to first frame-->
 
-  {% comment %}
-Gift Guide — Responsive Hero (copy left + art right)
-{% endcomment %}
-
-{{ 'gift-guide.css' | asset_url | stylesheet_tag }}
-
-<style>
-  /* شيل padding الافتراضي بتاع Dawn للسكشن ده */
-  #shopify-section-{{ section.id }}{
-    --section-padding-top: 0 !important;
-    --section-padding-bottom: 0 !important;
-    margin: 0 !important;
-  }
-</style>
-
-<section class="gift-hero">
-  <div class="gift-hero__inner">
-    <div class="gift-hero__copy">
-      <h1 class="gift-hero__title">The Gift Guide</h1>
-      <p class="gift-hero__text">
-        Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection
-        and find the perfect gifts to delight your loved ones this holiday season.
-      </p>
-
-      <a href="#" class="gift-btn gift-btn--primary">
-        <span>SHOP NOW</span>
-        <img src="{{ 'Arrow.svg' | asset_url }}" alt="" aria-hidden="true" class="gift-btn__icon" width="10" height="">
-      </a>
+  <div class="secondframe">
+    <div class="divleft">
+      <div  class="contentdiv">
+      The Gift Guide
+      </div>
+      <div class="contentinleftdiv">
+        Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.
+        </div>
+        <div class="showbottom">
+           <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
+      <span class="gift-icon--arrow-text">Shop</span>
+      <img class="gift-icon gift-icon--arrow"
+           src="{{ 'Arrow.svg' | asset_url }}"
+           alt="" aria-hidden="true"
+           width="24" height="1" loading="lazy">
+    </button>
+          </div>
     </div>
-
-    <!-- العمود اليمين: الصورة كخلفية لضبط الكادر بسهولة -->
-    <div class="gift-hero__art" aria-hidden="true"></div>
+    <div>
+      <img class="seconimageinframe"
+           src="{{ 'Frame.svg' | asset_url }}"
+           alt=""
+           width="10" height="10" loading="lazy">
+    </div>
   </div>
-
-  <!-- الشريط السفلي الرفيع -->
-  <div class="gift-hero__ticker">
-    SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL
-  </div>
-</section>
-
  
     
 </div>
@@ -156,9 +141,9 @@ Gift Guide — Responsive Hero (copy left + art right)
 </div>
 </section> {% endcomment %}
 
+</div>
 
-
-
+</div>
 
 {% schema %}
 {
