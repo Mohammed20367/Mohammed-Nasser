@@ -4,10 +4,19 @@ Only styles for the small strip above hero
 */
 
 /* Main Container for the top bar */
-.section
+.parentall
 {
+  width:1440px;
+  height:2000px;
+}
+
+.section1
+{
+  width: 1440px;
+  height:878px;
     margin:0;
 }
+
 .gift-top-bar {
   background: transparent;
   position: relative;
