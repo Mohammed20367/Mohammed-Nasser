@@ -16,11 +16,23 @@
   height:67px;
   gap:360px;
 }  
-.firstframe
-{
-  width:100%;
-  height:390px;
-  background-color:green;
+.firstframe {
+
+display:flex;
+  position: relative;
+  height:20%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.imageinframe {
+margin-top: -120px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
 }
 
 .secondframe
@@ -100,24 +112,7 @@
 }
 
 /* first frame in home page */
-.firstframe {
 
-display:flex;
-  position: relative;
-  height:20%;
-  width: 100%;
-  overflow: hidden;
-}
-
-.imageinframe {
-margin-top: -120px;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: relative;
-  z-index: 1;
-}
 
 
 /* second frame */
