@@ -117,11 +117,12 @@ margin-top: -120px;
   object-fit: contain;
 }
 
-.firstframe,
-.secondframe,
-.firstframe img,
-.secondframe img {
-  margin: 0;
-  padding: 0;
-  line-height: 0;  /* يمنع أي مسافة من ال line-height */
+
+
+.imageinframe {
+  display: block;  /* يمنع المسافة اللي بتظهر مع inline elements */
+}
+
+.seconimageinframe {
+  display: block;
 }
