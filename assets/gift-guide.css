@@ -156,7 +156,7 @@ vertical-align: middle;
   background-color:red;
   padding: 0px 67px 30px;
   height:402px;
-  width:100%
+  width:100%;
 }
 .gift-guide-container {
   margin:0px;
@@ -193,15 +193,12 @@ vertical-align: middle;
   background: #333;
 }
 .gift-guide-image {
+
   margin:0;
   flex: 1;
   text-align: right;
 }
 .gift-guide-image img {
-  height:402px;
-width:890px;
-margin-top:0px;
-  margin-left:50px;
   max-width: 100%;
   height: auto;
 }
