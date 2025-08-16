@@ -1,9 +1,30 @@
-/*
-Gift Guide - Top Bar (A)
-Only styles for the small strip above hero
-*/
+.page
+{
+  width:1440px;
+  height:2000px;
+  gap:90px;
+}
 
-/* Main Container for the top bar */
+.section1
+{
+  width:1440px;
+  height:878px;
+}
+.nav
+{
+  width:1440px;
+  height:67px;
+  gap:360px;
+}
+
+
+
+
+
+
+
+
+
 .section
 {
     margin:0;
@@ -212,3 +233,6 @@ background-color:red;
     grid-template-columns: 1fr;
   }
 }
+
+
+
