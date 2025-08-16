@@ -128,10 +128,18 @@ leading-trim: NONE;
 line-height: 100%;
 letter-spacing: 0px;
 vertical-align: middle;
-
+}
+.contentinleftdiv{
+font-family: 'Jost', sans-serif;
+font-weight: 400;
+font-style: Regular;
+font-size: 20px;
+leading-trim: NONE;
+line-height: 140%;
+letter-spacing: 0px;
+vertical-align: middle;
 
 }
-
 
 
 /*second section*/
