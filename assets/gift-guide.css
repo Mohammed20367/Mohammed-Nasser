@@ -198,6 +198,7 @@ vertical-align: middle;
   text-align: right;
 }
 .gift-guide-image img {
+  width:890px;
   max-width: 100%;
   height: auto;
 }
