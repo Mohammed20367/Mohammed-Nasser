@@ -144,13 +144,9 @@ background-color:red;
   text-align: left;
 }
 
-.parentofseconimageinframe
-{
-    height:402px;
-
-}
 
 .seconimageinframe {
+  margin:0;
     background-color:red;
   width: 890px;
   height:100%;
