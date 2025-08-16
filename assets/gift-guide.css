@@ -230,13 +230,13 @@ opacity: 1;
  .section2 { background:#09c;
   gap:30px;
   height:1222px;
-  
+  margin:20px 20px;
  }
 
 .part-two{
   width: min(100%, 1337px);   /* نفس عرض فيجما كحد أقصى */
   margin: 0 auto;
-height:981px;
+
 }
 
 .wild-title{
