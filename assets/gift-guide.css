@@ -184,6 +184,16 @@ display:flex;
   }
 }
 
+.gift-hero{ --hero-h: clamp(200px,24vw,260px); --shift-y:-60px; }
+.gift-hero__art{ position:relative; min-height:var(--hero-h); overflow:hidden; border:1px solid #e8e8e8; }
+.gift-hero__img{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;                 /* تملى وتتقص */
+  object-position:right var(--shift-y); /* نفس الكادر */
+  display:block;
+}
+
 
 
 
