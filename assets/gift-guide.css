@@ -321,9 +321,7 @@ vertical-align: middle;
   background:#fff;
   margin:0;
   padding: 24px 0;
-  /* تأكيد عدم وجود خط تجريبي */
-  border-top: 0 !important;
-  outline: none !important;
+
 }
 
 /* الكونتينر: يثبت على 1339px ويتوسّط */
@@ -381,6 +379,7 @@ vertical-align: middle;
   background: rgba(0,0,0,.6);
   border: 1px solid rgba(255,255,255,.85);
   box-shadow: 0 2px 6px rgba(0,0,0,.18);
+  gap:30px;
 }
 
 /* ريسبونسيف تحت 1339px: نحافظ على 3 أعمدة لكن بعرض مرن ونفس النسبة */
