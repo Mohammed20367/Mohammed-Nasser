@@ -2,7 +2,10 @@
 Gift Guide - Top Bar (A)
 Only styles for the small strip above hero
 */
-
+.page{
+width:1440px;
+height:2000px;
+}
 /* Main Container for the top bar */
 .gift-top-bar {
   background: transparent;
