@@ -151,64 +151,57 @@ vertical-align: middle;
 
 
 
-.gift-guide-hero {
-  position: relative;
-  background-color: #fff;
-  background-image: url("{{ 'Frame.png' | asset_url }}"); /* ← خلي دي الصورة */
-  background-repeat: no-repeat;
-  background-position: right center;
-  background-size: 50%; /* غير النسبة حسب ما تحب */
-  padding: 80px 40px 40px;
+.gift-guide-section {
+  margin:0;
+  background-color:red;
+  padding: 0px 67px 30px;
+  height:auto;
 }
-
-.gift-guide-wrapper {
+.gift-guide-container {
+  margin:0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
+  gap: 40px;
 }
-
 .gift-guide-text {
-  max-width: 500px;
+  flex: 1;
 }
-
 .gift-guide-text h2 {
-  font-size: 42px;
+  font-size: 36px;
   font-weight: bold;
   margin-bottom: 20px;
 }
-
 .gift-guide-text p {
   font-size: 16px;
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
-
 .gift-guide-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
+  display: inline-block;
+  padding: 12px 24px;
   background: #000;
   color: #fff;
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
 }
-
 .gift-guide-btn:hover {
   background: #333;
 }
+.gift-guide-image {
 
-.gift-guide-btn span {
-  font-size: 18px;
+  margin:0;
+  flex: 1;
+  text-align: right;
+}
+.gift-guide-image img {
+  max-width: 100%;
+  height: auto;
 }
 
-.gift-guide-bottom {
-  border-top: 1px solid #e5e5e5;
-  text-align: center;
-  padding: 12px;
-  font-size: 12px;
-  color: #555;
-}
 
 
 
