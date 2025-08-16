@@ -15,12 +15,18 @@
   width:100%;
   height:67px;
   gap:360px;
-}   
+}  
+.firstframe
+{
+  width:100%;
+  height:390px;
+}
+
 .secondframe
 {
   width:100%;
   height:392px;
-  
+
 }
 
 .gift-top-bar {
