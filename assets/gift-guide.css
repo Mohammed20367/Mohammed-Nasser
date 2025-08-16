@@ -7,6 +7,7 @@
 
  .section1
 {
+  position:relative;
   width:1440px;
   height:878px;
 }
@@ -29,8 +30,7 @@
   background-color: #F5F5F5;
   padding: 10px 50px;         /* top/bottom - left/right */
   width:1400px;
-  height:64px;
-  
+  height:64pxك
 }
 
 /* first image in nav */
