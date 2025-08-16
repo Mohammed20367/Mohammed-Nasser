@@ -192,6 +192,8 @@ vertical-align: middle;
   background: #333;
 }
 .gift-guide-image {
+  height:402px;
+  width:890px;
   margin:0;
   flex: 1;
   text-align: right;
