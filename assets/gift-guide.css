@@ -75,6 +75,7 @@ Only styles for the small strip above hero
 
 /* first frame in home page */
 .firstframe {
+display:flex;
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -90,6 +91,8 @@ margin-top: -150px;
   position: relative;
   z-index: 1;
 }
+
+
 
 
 
