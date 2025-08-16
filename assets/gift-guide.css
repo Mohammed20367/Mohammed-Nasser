@@ -17,6 +17,22 @@
   gap:360px;
 }  
 .firstframe {
+  background-color: green; /* أو أي لون للخلفية */
+  position: relative;
+  width: 1440px;
+  height: 392px;
+  overflow: hidden;
+}
+
+.imageinframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;            /* تملأ الديف وتقص الزيادة */
+  object-position: center -120px; /* تزق الصورة لفوق (زي margin-top) */
+  display: block;
+}
+
+/* .firstframe {
 background-color:green;
 display:flex;
   position: relative;
@@ -34,7 +50,7 @@ margin-top: -105px;
   object-fit: cover;
   position: absolute;
   z-index: 1;
-}
+} */
 
 
 .secondframe
