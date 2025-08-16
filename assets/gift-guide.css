@@ -1,5 +1,7 @@
  .page
 {
+  margin:0;
+  padding:0;
   width:1440px;
   height:2000px;
   gap:90px;
