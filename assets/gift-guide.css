@@ -119,6 +119,10 @@ display:flex;
   align-items: center;
   gap: 24px;
 }
+.divleft{
+  width:483px;
+  height:84px
+}
 .contentdiv{
 font-family: 'Jost', sans-serif;
 font-weight: 500;
