@@ -25,7 +25,7 @@ Keeps your existing top bar; hero image sits right under it with no Dawn padding
 
 <section id="gift-hero-{{ section.id }}" aria-label="Gift Guid hero banner">
 
-  <!-- Top bar (زي ما هو) -->
+  <!-- Top bar -->
   <div class="gift-top-bar">
     <div>
       <img class="gift-icon--tisso"
@@ -47,24 +47,21 @@ Keeps your existing top bar; hero image sits right under it with no Dawn padding
     </button>
   </div>
 
-  <!-- أول صورة: تيجي مباشرة تحت الناف -->
-  <div class="firstframe">
-    <img class="imageinframe"
+  <!-- Hero banner -->
+  <div class="gift-hero">
+    <img class="gift-hero-bg"
          src="{{ 'Frame.svg' | asset_url }}"
-         alt=""
+         alt="Gift Guide"
          width="1440" height="780" loading="eager">
-  </div>
 
-  <!-- بلوكك التاني زي ما هو -->
-  <div class="secondframe">
-    <div>
-      <h1>Hi</h1>
-    </div>
-    <div>
-      <img class="seconimageinframe"
-           src="{{ 'Frame.svg' | asset_url }}"
-           alt=""
-           width="1440" height="780" loading="lazy">
+    <div class="gift-hero-content">
+      <h1 class="gift-hero-title">The Gift Guide</h1>
+      <p class="gift-hero-subtitle">
+        Discover Joy: Your Ultimate Holiday Gift Destination. <br>
+        Explore our curated selection and find the perfect gifts to <br>
+        delight your loved ones this holiday season.
+      </p>
+      <a href="#shop" class="gift-hero-btn">SHOP NOW →</a>
     </div>
   </div>
 
