@@ -164,14 +164,6 @@ display:flex;
 }
 
 /* الشريط السفلي */
-.gift-hero__ticker{
-  text-align:center;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  font-size:12px;
-  padding:8px 12px;
-  background:#efefef;
-  border-top:1px solid #e1e1e1;
   font-family: Jost;
 font-weight: 400;
 font-style: Regular;
