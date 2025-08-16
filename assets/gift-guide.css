@@ -1,124 +1,83 @@
-/*
-Gift Guide - Top Bar (A)
-Only styles for the small strip above hero
-*/
+/* Reset section padding */
+#shopify-section-{{ section.id }} {
+  --section-padding-top: 0px !important;
+  --section-padding-bottom: 0px !important;
+  margin: 0 !important;
+}
 
-/* Main Container for the top bar */
+/* Top bar */
 .gift-top-bar {
-  background: transparent;
-  position: relative;
-  z-index: 10;
-  display: flex;              /* Horizontal layout */
-  align-items: center;        /* Vertical centering */
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 5px;                   /* Space between text and button */
+  gap: 5px;
   background-color: #F5F5F5;
-  padding: 10px 50px;         /* top/bottom - left/right */
+  padding: 10px 50px;
   height: 64px;
 }
 
-/* first image in nav */
-.gift-icon--tisso {
-  width: 151px;
-  height: 19px;
-}
-
-/* Center message text */
 .gift-top-bar_message {
-  display: flex;
   font-size: 16px;
   font-family: 'Jost', sans-serif;
   font-weight: 400;
-  align-items: center;
-  justify-content: center;
 }
 
 /* Button */
 .gift-button {
-  width: 207px;
-  height: 44px;
   display: inline-flex;
-  justify-content: center;
   align-items: center;
-  gap: 20px; /* space between text and arrow */
-  padding: 12px 16px; /* top/bottom - left/right */
+  gap: 20px;
+  padding: 12px 16px;
   border: 1px solid #000;
-  background: transparent;
-  text-decoration: none;
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.25s ease, color 0.25s ease;
+  background: transparent;
 }
 
-/* Yellow button -- highlighted */
 .gift-button--highlight {
   background-color: #FFF544;
   border-color: #FFF544;
-  font-weight: 400;
 }
 
-/* Arrow text container */
-.gift-icon--arrow-text {
-  display: inline-block;
-  transition: transform 0.25s ease; /* Subtle slide on hover */
-}
-
-.gift-button:hover .gift-icon--arrow-text {
-  transform: translateX(4px);
-}
-
-/* Arrow line */
-.gift-icon--arrow {
-  display: inline-block;
-  width: 24px;
-  height: 100%;
-}
-
-/* first frame in home page */
-.firstframe {
-display:flex;
+/* Hero banner */
+.gift-hero {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
 
-.imageinframe {
-margin-top: -120px;
+.gift-hero-bg {
   display: block;
   width: 100%;
-  height: 20%;
+  height: auto;
   object-fit: cover;
-  position: relative;
-  z-index: 1;
 }
 
-
-/* second frame */
-.secondframe {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  margin-top: 24px; /* مسافة طبيعية بعد البلوك الأول */
+.gift-hero-content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  max-width: 500px;
+  font-family: 'Jost', sans-serif;
 }
 
-.secondframe > div {
-  flex: 1; /* كل ديف ياخد 50% */
+.gift-hero-title {
+  font-size: 48px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
 }
 
-.secondframe h1 {
-  margin: 0;
-  text-align: left;
+.gift-hero-subtitle {
+  font-size: 16px;
+  margin-bottom: 24px;
+  line-height: 1.5;
 }
 
-.seconimageinframe {
-  width: 890px;
-  height:402px;
-  display: block;
-  object-fit: contain;
-  margin-top:442px;
-  margin-left:550px;
-
+.gift-hero-btn {
+  display: inline-block;
+  background: black;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-size: 14px;
 }
-
-
-
