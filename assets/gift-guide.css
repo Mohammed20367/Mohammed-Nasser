@@ -78,6 +78,7 @@ Only styles for the small strip above hero
 display:flex;
   position: relative;
   width: 100%;
+  height:20%;
   overflow: hidden;
 }
 
