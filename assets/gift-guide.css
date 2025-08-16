@@ -152,33 +152,43 @@ vertical-align: middle;
 
 
 .gift-guide-section {
-  margin:0;
-  background-color:red;
-  padding: 0px 67px 30px;
-  height:auto;
+  margin: 0;
+  background-color: red;
+  padding: 0; /* شيل البادينج اللي كان بيزود مسافات */
+  height: auto;
 }
+
 .gift-guide-container {
-  margin:0px;
+  margin: 0;
   display: flex;
-  align-items: center;
+  align-items: stretch; /* مهم عشان الصورة تتمدد مع النص */
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
   gap: 40px;
+  min-height: 500px; /* ارتفاع افتراضي، تقدر تغيره */
 }
+
 .gift-guide-text {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px; /* عشان الكلام مايلزقش في الحواف */
 }
+
 .gift-guide-text h2 {
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 20px;
 }
+
 .gift-guide-text p {
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 20px;
 }
+
 .gift-guide-btn {
   display: inline-block;
   padding: 12px 24px;
@@ -188,18 +198,21 @@ vertical-align: middle;
   font-weight: bold;
   transition: 0.3s;
 }
+
 .gift-guide-btn:hover {
   background: #333;
 }
-.gift-guide-image {
 
-  margin:0;
+.gift-guide-image {
   flex: 1;
-  text-align: right;
+  margin: 0;
 }
+
 .gift-guide-image img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* يملأ الديف الأحمر */
+  display: block;
 }
 
 
