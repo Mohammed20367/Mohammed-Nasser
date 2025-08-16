@@ -29,7 +29,6 @@ display:flex;
   overflow: hidden;
   margin-top: -128px;
 }
-:root { --shift: 120px; }
 .imageinframe {
   display: block;
   width: 100%;
@@ -44,7 +43,6 @@ display:flex;
 
 .secondframe
 {
-  margin:0;
   width:100%;
   height:392px;
 
@@ -125,6 +123,7 @@ display:flex;
 
 /* second frame */
 .secondframe {
+  margin:0;
     background-color:#09c;
   display: flex;
   justify-content: space-between;
