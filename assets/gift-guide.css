@@ -199,6 +199,7 @@ display:flex;
   width: 100%;
   height: 100%;
   object-fit: cover;          /* تملى الديف كله */
+  transform: translateY(80px);   /* نزّل الصورة 20px لتحت */
   object-position: 5% 60%; /* نزّل الصورة لتحت */
   object-position: 5% 200%;
   display: block;
