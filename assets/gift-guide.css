@@ -149,12 +149,11 @@ display:flex;
 
 /* first frame in home page */
 
-.gift-hero__inner
+.secondframe
 {
-  width:36%;
-  background-color:red;
+  display:grid;
+grid-template-columns: repeat(3, minmax(0, 1fr)) !important;  
 }
-
 
 
 
