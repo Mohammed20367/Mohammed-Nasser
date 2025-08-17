@@ -205,20 +205,7 @@ display:flex;
   display: block;
 }
 /* قد ايه تنزل الصورة؟ عدّل القيمة دي */
-.gift-hero__art { --shiftY: 20px; } /* جرّب 20px/60px حسب ما تحب */
 
-.gift-hero__art{
-  position: relative;
-  height: 402px;
-  overflow: hidden;
-}
-
-.gift-hero__img{
-  position: absolute;
-  left: 0; right: 0;
-  width: 100%;
-  display: block;
-}
 
 
 
