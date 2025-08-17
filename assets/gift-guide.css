@@ -163,7 +163,7 @@ display:flex;
 
 .gift-hero__copy{
   /* اشيل العرض والارتفاع الثابتين */
-  width: 100%;
+  width: 550px;
   height: 100%;
   padding: 40px 48px;        /* استخدم padding بدل height */
   background: green;         /* لو عايز الأخضر يملأ العمود كله */
