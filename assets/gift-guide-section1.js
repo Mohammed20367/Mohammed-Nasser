@@ -1,162 +1,153 @@
-// Product Popup Modal - JavaScript Functionality
+ // DOM elements
+      const openModalBtn = document.getElementById("openModalBtn");
+      const modalOverlay = document.getElementById("modalOverlay");
+      const modalContent = document.getElementById("modalContent");
+      const closeModalBtn = document.getElementById("closeModalBtn");
+      const colorBtns = document.querySelectorAll(".color-option");
+      const addToCartBtn = document.getElementById("addToCartBtn");
 
-// DOM Elements
-const productPopupOverlay = document.getElementById("productPopupOverlay");
-const productPopupContent = document.getElementById("productPopupContent");
-const closeProductPopup = document.getElementById("closeProductPopup");
-const colorOptions = document.querySelectorAll(".color-option");
-const addToCartButton = document.getElementById("addToCartButton");
+      // Custom Select elements
+      const selectTrigger = document.getElementById("selectTrigger");
+      const selectOptions = document.getElementById("selectOptions");
+      const selectText = document.getElementById("selectText");
+      const dropdownArrow = document.getElementById("dropdownArrow");
+      const customSelect = document.getElementById("customSelect");
 
-// Size Dropdown Elements
-const sizeDropdown = document.getElementById("sizeDropdown");
-const sizeDropdownTrigger = document.getElementById("sizeDropdownTrigger");
-const sizeDropdownOptions = document.getElementById("sizeDropdownOptions");
-const sizeDropdownText = document.getElementById("sizeDropdownText");
-const sizeDropdownArrow = document.getElementById("sizeDropdownArrow");
+      // State variables
+      let selectedColor = "blue";
+      let selectedSize = "";
+      let isOpen = false;
 
-// State Variables
-let selectedColor = "white";
-let selectedSize = "";
-let isDropdownOpen = false;
+      // Initialize the page
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add event listeners
+        openModalBtn.addEventListener("click", openModal);
+        closeModalBtn.addEventListener("click", closeModal);
+        modalOverlay.addEventListener("click", closeModal);
+        modalContent.addEventListener("click", function (e) {
+          e.stopPropagation();
+        });
 
-// Initialize Popup Functionality
-function initializeProductPopup() {
-    // Close button event listener
-    closeProductPopup.addEventListener("click", closePopup);
-    
-    // Overlay click to close (but not content click)
-    productPopupOverlay.addEventListener("click", handleOverlayClick);
-    productPopupContent.addEventListener("click", function(e) {
-        e.stopPropagation();
-    });
-
-    // Color selection event listeners
-    colorOptions.forEach(function(colorBtn) {
-        colorBtn.addEventListener("click", function() {
+        // Color button event listeners
+        colorBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
             selectColor(this.getAttribute("data-color"));
+          });
         });
-    });
 
-    // Size dropdown event listeners
-    sizeDropdownTrigger.addEventListener("click", toggleSizeDropdown);
+        // Add to cart button event listener
+        addToCartBtn.addEventListener("click", addToCart);
 
-    // Size option selection
-    const sizeOptions = document.querySelectorAll(".dropdown-option");
-    sizeOptions.forEach(function(option) {
-        option.addEventListener("click", function() {
-            const size = this.getAttribute("data-size");
-            const sizeText = this.textContent;
-            selectSize(size, sizeText);
+        // Escape key event listener
+        document.addEventListener("keydown", handleEscape);
+
+        // Custom Select Functionality
+        selectTrigger.addEventListener("click", function () {
+          toggleDropdown();
         });
-    });
 
-    // Add to cart button
-    addToCartButton.addEventListener("click", handleAddToCart);
+        // Handle option selection
+        document.querySelectorAll(".select-option").forEach((option) => {
+          option.addEventListener("click", function () {
+            const value = this.getAttribute("data-value");
+            const text = this.textContent;
 
-    // Close dropdown when clicking outside
-    document.addEventListener("click", function(event) {
-        if (!sizeDropdown.contains(event.target) && isDropdownOpen) {
-            toggleSizeDropdown();
+            selectedSize = value;
+
+            // Update selected text
+            selectText.textContent = text;
+            selectText.classList.remove("placeholder");
+
+            // Update selected option styling
+            document.querySelectorAll(".select-option").forEach((opt) => {
+              opt.classList.remove("selected");
+            });
+            this.classList.add("selected");
+
+            // Close dropdown
+            toggleDropdown();
+          });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", function (event) {
+          if (!customSelect.contains(event.target) && isOpen) {
+            toggleDropdown();
+          }
+        });
+      });
+
+      // Open modal function
+      function openModal() {
+        modalOverlay.classList.remove("hidden");
+        // Prevent body scroll when modal is open
+        document.body.style.overflow = "hidden";
+      }
+
+      // Close modal function
+      function closeModal() {
+        modalOverlay.classList.add("hidden");
+        // Restore body scroll when modal is closed
+        document.body.style.overflow = "auto";
+      }
+
+      // Color selection functionality
+      function selectColor(color) {
+        selectedColor = color;
+
+        // Remove active class from all color options
+        const colorOptions = document.querySelectorAll(".color-option");
+        colorOptions.forEach((option) => {
+          option.classList.remove("blue", "black");
+          option.style.backgroundColor = "";
+          option.style.color = "#333";
+        });
+
+        // Add active styling to selected color
+        const selectedOption = event.target;
+        if (color === "blue") {
+          selectedOption.style.backgroundColor = "#4a90e2";
+          selectedOption.style.color = "white";
+          selectedOption.classList.add("blue");
+        } else if (color === "black") {
+          selectedOption.style.backgroundColor = "#333";
+          selectedOption.style.color = "white";
+          selectedOption.classList.add("black");
         }
-    });
+      }
 
-    // Escape key to close popup
-    document.addEventListener("keydown", function(event) {
-        if (event.key === "Escape" && !productPopupOverlay.classList.contains("popup-hidden")) {
-            closePopup();
+      // Toggle dropdown function
+      function toggleDropdown() {
+        isOpen = !isOpen;
+        selectOptions.classList.toggle("show", isOpen);
+        dropdownArrow.classList.toggle("rotated", isOpen);
+        selectTrigger.classList.toggle("active", isOpen);
+      }
+
+      // Add to cart function
+      function addToCart() {
+        if (!selectedSize) {
+          alert("Please select a size first!");
+          return;
         }
-    });
-}
+        alert(
+          `Added to cart: ${selectedSize.toUpperCase()} ${selectedColor} Tailored Jacket`
+        );
+        closeModal();
+      }
 
-// Open Popup Function
-function openProductPopup() {
-    productPopupOverlay.classList.remove("popup-hidden");
-    document.body.style.overflow = "hidden"; // Prevent background scroll
-}
+      // Handle escape key
+      function handleEscape(event) {
+        if (
+          event.key === "Escape" &&
+          !modalOverlay.classList.contains("hidden")
+        ) {
+          closeModal();
+        }
+      }
 
-// Close Popup Function
-function closePopup() {
-    productPopupOverlay.classList.add("popup-hidden");
-    document.body.style.overflow = "auto"; // Restore background scroll
-    
-    // Close dropdown if open
-    if (isDropdownOpen) {
-        toggleSizeDropdown();
-    }
-}
-
-// Handle Overlay Click
-function handleOverlayClick(e) {
-    if (e.target === productPopupOverlay) {
-        closePopup();
-    }
-}
-
-// Color Selection Function
-function selectColor(color) {
-    selectedColor = color;
-
-    // Remove selected class from all color options
-    colorOptions.forEach(function(btn) {
-        btn.classList.remove("color-selected");
-    });
-
-    // Add selected class to clicked option
-    event.target.classList.add("color-selected");
-}
-
-// Size Selection Function
-function selectSize(size, sizeText) {
-    selectedSize = size;
-
-    // Update dropdown text
-    sizeDropdownText.textContent = sizeText;
-    sizeDropdownText.classList.remove("dropdown-placeholder");
-
-    // Update selected option styling
-    const sizeOptions = document.querySelectorAll(".dropdown-option");
-    sizeOptions.forEach(function(option) {
-        option.classList.remove("option-selected");
-    });
-    event.target.classList.add("option-selected");
-
-    // Close dropdown
-    toggleSizeDropdown();
-}
-
-// Toggle Size Dropdown
-function toggleSizeDropdown() {
-    isDropdownOpen = !isDropdownOpen;
-    
-    sizeDropdownOptions.classList.toggle("dropdown-show", isDropdownOpen);
-    sizeDropdownArrow.classList.toggle("dropdown-rotated", isDropdownOpen);
-    sizeDropdownTrigger.classList.toggle("dropdown-active", isDropdownOpen);
-}
-
-// Handle Add to Cart
-function handleAddToCart() {
-    if (!selectedSize) {
-        alert("Please select a size first!");
-        return;
-    }
-    
-    // هنا تقدر تحط الكود بتاع Shopify للإضافة للسلة
-    alert(`Added to cart: ${selectedSize.toUpperCase()} ${selectedColor} Orange Wide Leg - 980,00€`);
-    
-    // يمكنك إغلاق الـ popup بعد الإضافة للسلة
-    closePopup();
-}
-
-// Initialize when DOM is loaded
-document.addEventListener("DOMContentLoaded", function() {
-    initializeProductPopup();
-});
-
-// Cleanup function
-window.addEventListener("beforeunload", function() {
-    document.body.style.overflow = "auto";
-});
-
-// Export functions for external use (إذا كنت محتاج تستدعي الـ popup من مكان تاني)
-window.openProductPopup = openProductPopup;
-window.closeProductPopup = closePopup;
+      // Cleanup function for when page is unloaded
+      window.addEventListener("beforeunload", function () {
+        // Ensure body scroll is restored
+        document.body.style.overflow = "auto";
+      });
