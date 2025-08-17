@@ -53,7 +53,7 @@ The task Contain :-
          width="10" height="10" loading="eager">
   </div> <!--end to first frame-->
 
-  {% comment %} <div class="secondframe">
+   <div class="secondframe">
     <div class="divleft">
       <div  class="contentdiv">
       The Gift Guide
@@ -76,8 +76,25 @@ The task Contain :-
            src="{{ 'Frame.svg' | asset_url }}"
            alt=""
            width="10" height="10" loading="lazy">
-    </div> {% endcomment %}
+    </div> 
 
+{% comment %} <div class = "secondframe"> <!--Second frame in first section-->
+   <!--content and left div-->
+    <!-- النص -->
+    <div class="gift-hero__copy">
+      <h2 class="gift-hero__title">The Gift Guide</h2>
+      <p class="gift-hero__text">
+        Discover Joy: Your Ultimate Holiday Gift Destination.
+        Explore our curated selection and find the perfect gifts to
+        delight your loved ones this holiday season.
+      </p>
+      <a href="/collections/gift-guide" class="gift-btn">SHOP NOW →</a>
+    </div>
+
+    <!-- الصورة -->
+    <div class="gift-hero__art" > <!--div of image-->
+     <img src="{{ 'Frame.png' | asset_url }}" alt="image in section 1" class="gift-hero__img"> 
+  </div> {% endcomment %}
 
   <!-- الشريط السفلي -->
   
