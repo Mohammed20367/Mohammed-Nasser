@@ -266,7 +266,11 @@ vertical-align: middle;
   position: absolute;
   top: 12px;
   right: 12px;
-  
+  width: 22;
+height: 22;
+angle: 0 deg;
+opacity: 1;
+
   border-radius: 50%;
   display: grid;
   place-items: center;
