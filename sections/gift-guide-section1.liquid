@@ -138,77 +138,95 @@ The task Contain :-
   </section>
 </div> 
 
-<!-- Product Popup -->
-<div id="productPopupOverlay" class="popup-overlay " role="dialog" aria-modal="true" aria-labelledby="popupTitle">
-  <div class="popup-content">
-    <!-- Close -->
-    <button id="closeProductPopup" class="popup-close-btn" aria-label="Close">×</button>
-
-    <!-- Product -->
-    <div class="product-container">
-      <!-- Image -->
-      <div class="product-image-section">
-        <!-- استخدم الـ placeholder أو استبدله بصورة منتج -->
-        <div class="product-image-placeholder"></div>
-        <!-- أو:
-        <img src="your-product.jpg" alt="Product" style="width:120px;height:160px;object-fit:cover;border-radius:8px;">
-        -->
-      </div>
-
-      <!-- Details -->
-      <div class="product-details-section">
-        <h1 id="popupTitle" class="product-name">Orange Wide Leg</h1>
-        <div class="product-price">980,00€</div>
-        <p class="product-description">
-          This one-piece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.
-        </p>
-
-        <!-- Options -->
-        <div class="product-options-container">
-          <!-- Color -->
-          <div class="option-group">
-            <label class="option-title">Color</label>
-            <div class="color-selector-container">
-              <button type="button" class="color-option color-selected" data-color="white">White</button>
-              <button type="button" class="color-option" data-color="black">Black</button>
-            </div>
-          </div>
-
-          <!-- Size -->
-          <div class="option-group">
-            <label class="option-title">Size</label>
-            <div class="size-selector-container">
-              <div class="custom-dropdown" id="sizeDropdown">
-                <button type="button" class="dropdown-trigger" id="sizeDropdownTrigger" aria-haspopup="listbox" aria-expanded="false">
-                  <span id="sizeDropdownText" class="dropdown-text dropdown-placeholder">Choose your size</span>
-                  <span class="dropdown-arrow-container">
-                    <svg class="dropdown-arrow" id="sizeDropdownArrow" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true">
-                      <path d="M1 1L6 6L11 1" stroke="#666" stroke-width="1.5" stroke-linecap="round"/>
-                    </svg>
-                  </span>
-                </button>
-                <div class="dropdown-options" id="sizeDropdownOptions" role="listbox">
-                  <button type="button" class="dropdown-option" role="option" data-size="xs">XS</button>
-                  <button type="button" class="dropdown-option" role="option" data-size="s">S</button>
-                  <button type="button" class="dropdown-option" role="option" data-size="m">M</button>
-                  <button type="button" class="dropdown-option" role="option" data-size="l">L</button>
-                  <button type="button" class="dropdown-option" role="option" data-size="xl">XL</button>
-                  <button type="button" class="dropdown-option" role="option" data-size="xxl">XXL</button>
+    <div class="product-layout">
+            <div class="details-section">
+              <div class="product-info" style="display: flex; gap: 5px">
+                <div class="image-section">
+                  <div class="product-image"></div>
                 </div>
+                <div>
+                  <h1 class="product-title">Tailored Jacket</h1>
+                  <div class="product-price">980,00€</div>
+                  <p class="product-description">
+                    This one-piece swimsuit is crafted from jersey featuring an
+                    allover micro Monogram motif in relief.
+                  </p>
+                </div>
+              </div>
+
+              <div class="product-options">
+                <div class="option-group">
+                  <label class="option-label">Color</label>
+                  <div class="color-options">
+                    <button class="color-option blue" data-color="blue">
+                      Blue
+                    </button>
+                    <button class="color-option black" data-color="black">
+                      Black
+                    </button>
+                  </div>
+                </div>
+
+                <div class="option-group">
+                  <label class="option-label">Size</label>
+                  <div class="size-selector">
+                    <div class="custom-select" id="customSelect">
+                      <div class="select-trigger" id="selectTrigger">
+                        <span
+                          class="select-text placeholder"
+                          style="padding: 10px; text-align: center; width: 100%"
+                          id="selectText"
+                          >Choose your size</span
+                        >
+                        <div
+                          style="
+                            display: flex;
+                            align-items: center;
+                            border-left: 2px solid #111010;
+                            height: 40.4px;
+                            padding: 10px;
+                          "
+                        >
+                          <div class="dropdown-arrow" id="dropdownArrow">
+                            <svg
+                              width="16"
+                              height="10"
+                              viewBox="0 0 16 10"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M2 2L8 8L14 2"
+                                stroke="black"
+                                stroke-width="1.5"
+                                stroke-linecap="square"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="select-options" id="selectOptions">
+                        <div class="select-option" data-value="xs">XS</div>
+                        <div class="select-option" data-value="s">S</div>
+                        <div class="select-option" data-value="m">M</div>
+                        <div class="select-option" data-value="l">L</div>
+                        <div class="select-option" data-value="xl">XL</div>
+                        <div class="select-option" data-value="xxl">XXL</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Add to Cart Button -->
+                <button id="addToCartBtn" class="add-to-cart-btn">
+                  ADD TO CART
+                </button>
               </div>
             </div>
           </div>
-
-          <!-- CTA -->
-          <button id="addToCartButton" class="add-to-cart-button" type="button">
-            ADD TO CART <span class="button-arrow" aria-hidden="true">→</span>
-          </button>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
      
 
 
