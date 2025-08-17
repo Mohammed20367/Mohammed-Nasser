@@ -156,7 +156,6 @@ display:flex;
   background-color:red;
   display:grid;
   grid-template-columns: minmax(0,1fr) minmax(0,1fr);
-  align-items:center;
   min-height: 402px;
   max-width: 1440px;
  
