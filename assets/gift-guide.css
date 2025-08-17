@@ -172,12 +172,7 @@ display:flex;
 }
 
 
-.gift-hero__art
-{ 
-  width:910px;
-  background-color:red;
-  height: 402px; 
-}
+
 .gift-hero__img{
   /* padding:10px 0px 0px 100px; */
   padding-left:20px
