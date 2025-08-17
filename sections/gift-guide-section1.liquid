@@ -105,55 +105,51 @@ The task Contain :-
   </div>   
 </div>
 
- <div class="section2">
-  <section class="part-two">
-    <h2 class="wild-title">Tisso vison in the wild</h2>
+ <section class="part-two">
+  <h2 class="wild-title">Tisso vision in the wild</h2>
 
-    <div class="grid-container">
-      <div class="grid-item">
-        <img src="{{ 'image 822.svg' | asset_url }}" alt="Look 1">
-        <span class="plus-icon1" data-popup-open="look-1" role="button" tabindex="0" aria-label="Open quick view for Look 1">
-          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
-        </span>
-      </div>
-
-      <div class="grid-item">
-        <img src="{{ 'image 823.png' | asset_url }}" alt="Look 2">
-        <span class="plus-icon2" data-popup-open="look-2" role="button" tabindex="0" aria-label="Open quick view for Look 2">
-          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
-        </span>
-      </div>
-
-      <div class="grid-item">
-        <img src="{{ 'image 824.svg' | asset_url }}" alt="Look 3">
-        <span class="plus-icon3" data-popup-open="look-3" role="button" tabindex="0" aria-label="Open quick view for Look 3">
-          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
-        </span>
-      </div>
-
-      <div class="grid-item">
-        <img src="{{ 'image 825.svg' | asset_url }}" alt="Look 4">
-        <span class="plus-icon4" data-popup-open="look-4" role="button" tabindex="0" aria-label="Open quick view for Look 4">
-          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
-        </span>
-      </div>
-
-      <div class="grid-item">
-        <img src="{{ 'image 826.svg' | asset_url }}" alt="Look 5">
-        <span class="plus-icon5" data-popup-open="look-5" role="button" tabindex="0" aria-label="Open quick view for Look 5">
-          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
-        </span>
-      </div>
-
-      <div class="grid-item">
-        <img src="{{ 'image 827.svg' | asset_url }}" alt="Look 6">
-        <span class="plus-icon6" data-popup-open="look-6" role="button" tabindex="0" aria-label="Open quick view for Look 6">
-          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
-        </span>
-      </div>
+  <div class="grid-container">
+    <!-- Grid Item -->
+    <div class="grid-item">
+      <img src="{{ 'image823.png' | asset_url }}" alt="Look 1">
+      <span class="plus-icon" data-popup-open="look-1">
+        <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="plus in card">
+      </span>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Popup -->
+<div class="gift-popup" data-popup="look-1" aria-hidden="true"
+     data-variant-map='{
+       "Black": { "S": 11111111, "M": 11111112, "L": 11111113 },
+       "Blue": { "S": 11111114, "M": 11111115, "L": 11111116 }
+     }'>
+  <div class="gift-card">
+    <button class="gift-close">×</button>
+    <img src="{{ 'image823.png' | asset_url }}" alt="Tailored Jacket">
+    <h4>Tailored Jacket</h4>
+    <div class="price">980,00€</div>
+    <p>This jacket is crafted from premium materials.</p>
+
+    <label>Color</label>
+    <div class="colors">
+      <button class="color-swatch" data-color="Black">Black</button>
+      <button class="color-swatch" data-color="Blue">Blue</button>
+    </div>
+
+    <label>Size</label>
+    <select class="size-select">
+      <option disabled selected>Select size</option>
+      <option>S</option>
+      <option>M</option>
+      <option>L</option>
+    </select>
+
+    <button class="add-to-cart">ADD TO CART</button>
+  </div>
 </div>
+
 
 <!--تجربه بالليل-->
 
