@@ -201,7 +201,7 @@ vertical-align: middle;
 .gift-hero__art{
 
   position:relative;
-  height: 392px
+  height: 392px;
   min-height: var(--hero-h);
   overflow:hidden;
 }
