@@ -192,13 +192,14 @@ display:flex;
 .gift-hero__art{
  background-color:red;
   overflow: hidden;
-  
+  width:100%;
+  object-fit:cover;
 }
 
 .gift-hero__img{
    /* padding-left:60px;  ← شيلها */ */
   width:100%;
-  object-fit:fill;
+  object-fit:cover;
 }
 
 
