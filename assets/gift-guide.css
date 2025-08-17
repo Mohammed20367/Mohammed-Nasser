@@ -326,32 +326,3 @@ vertical-align: middle;
 
 
 
-/* لازم الكارت relative */
-.grid-item { position: relative; }
-
-/* موضع علامة + بالنسبة للصورة */
-.grid-item .plus-icon{
-  position: absolute;
-  left: var(--x, 86%);   /* fallback */
-  top:  var(--y, 20%);
-  transform: translate(-50%, -50%);
-  z-index: 3;
-
-  width: 24px; height: 24px;
-  border-radius: 50%;
-  background: #fff;
-  border: 1px solid rgba(0,0,0,.15);
-  box-shadow: 0 1px 4px rgba(0,0,0,.18);
-  cursor: pointer;
-}
-
-/* رسم علامة + بـ pseudo-elements */
-.grid-item .plus-icon::before,
-.grid-item .plus-icon::after{
-  content:"";
-  position:absolute; left:50%; top:50%;
-  transform:translate(-50%,-50%);
-  background:#000;
-}
-.grid-item .plus-icon::before{ width:10px; height:1.5px; }
-.grid-item .plus-icon::after { width:1.5px; height:10px; }
