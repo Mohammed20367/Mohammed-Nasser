@@ -145,6 +145,73 @@ display:flex;
 }
 
 
+
+
+/* الزرار الأساسي */
+.gift-button {
+  width: 207px;
+  height: 44px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 16px;
+  border: 1px solid #000;
+  background: #FFF544;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* الفيل الأحمر */
+.gift-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #e30613;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .55s ease;
+  z-index: 0;
+}
+.gift-button:hover::before {
+  transform: scaleX(1);
+}
+
+/* النص */
+.gift-icon--arrow-text {
+  position: relative;
+  z-index: 2;
+  color: #000;
+  transition: color .35s ease;
+}
+.gift-button:hover .gift-icon--arrow-text {
+  color: #fff;
+}
+
+/* السهم */
+.gift-icon--arrow {
+  position: relative;
+  z-index: 2;
+}
+
+/* نسخة السهم الأبيض */
+.gift-icon--arrow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('{{ "Arrow.svg" | asset_url }}') no-repeat center/contain;
+  filter: brightness(0) invert(1); /* يخليه أبيض */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .55s ease;
+}
+
+/* وقت الهوفر: نكشف النسخة البيضاء مع نفس سرعة الفيل */
+.gift-button:hover .gift-icon--arrow::after {
+  transform: scaleX(1);
+}
+
 /* first frame in home page */
 
 
