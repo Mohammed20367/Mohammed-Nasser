@@ -205,7 +205,7 @@ display:flex;
   display: block;
 }
 /* قد ايه تنزل الصورة؟ عدّل القيمة دي */
-.gift-hero__art { --shiftY: 0px; } /* جرّب 20px/60px حسب ما تحب */
+.gift-hero__art { --shiftY: 20px; } /* جرّب 20px/60px حسب ما تحب */
 
 .gift-hero__art{
   position: relative;
@@ -220,10 +220,26 @@ display:flex;
   height: calc(100% + var(--shiftY)); /* نكبر الصورة رأسيًا */
   top: calc(-1 * var(--shiftY));      /* نرفعها لفوق بنفس المقدار */
   object-fit: cover;                  /* تفضل مالية الديف */
-  object-position: 5% 50%;            /* يمين/شمال زي ما ظبطتها قبل كده */
+  object-position: 5% 100%;            /* يمين/شمال زي ما ظبطتها قبل كده */
   display: block;
 }
 
+.gift-hero__art{
+  position: relative;
+  height: 402px;
+  overflow: hidden;
+}
+
+.gift-hero__img{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 120%;            /* كبرنا الصورة 20% زيادة */
+  top: -20px;              /* هنا اتحكم بقى في النزول/الطلوع */
+  object-fit: cover;
+  object-position: 5% center; /* تظبط يمين/شمال زي ما تحب */
+  display: block;
+}
 
 
 
