@@ -156,7 +156,6 @@ display:flex;
   margin: 0 auto;            /* وسّط الكونتينر */
   max-width: 1440px;
   display:grid;
-  grid-template-columns: 1fr 1fr;
   min-height:402px;
   background: transparent;   /* شيل الأحمر من الأب لو مش محتاجه */
 }
