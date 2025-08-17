@@ -162,6 +162,7 @@ display:flex;
 
 /* الصورة تحت وتاخد عرض الجريد كله */
 .gift-hero__art{
+  background-color:red;
   grid-column: 2;       /* من أول عمود لآخر عمود (3) */
 }
 
