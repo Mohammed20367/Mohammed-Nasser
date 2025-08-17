@@ -189,6 +189,21 @@ display:flex;
   display: block;
 }
 
+.gift-hero__art{
+  background: red;
+  height: 402px;
+  overflow: hidden;
+}
+
+.gift-hero__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* تملى الديف كله */
+  object-position: center bottom; /* نزّل الصورة لتحت */
+  display: block;
+}
+
+
 
 
 
