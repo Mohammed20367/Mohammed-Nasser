@@ -157,10 +157,9 @@ display:flex;
   display:grid;
   grid-template-columns: minmax(0,1fr) minmax(0,1fr);
   align-items:center;
-  gap: clamp(16px, 3vw, 40px);
   min-height: 402px;
   max-width: 1440px;
-  margin-inline:auto;
+ 
   padding: clamp(12px, 3vw, 24px);
 }
 
