@@ -225,6 +225,7 @@ display:flex;
 }
 
 .gift-hero__art{
+  width:100%
   position: relative;
   height: 402px;
   overflow: hidden;
