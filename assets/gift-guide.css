@@ -391,7 +391,7 @@ display:flex;
 
       /* Product Layout */
       .product-layout {
-        width:250px;
+        width:500px;
         display: flex;
         min-height: 500px;
         position: relative;
