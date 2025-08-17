@@ -207,7 +207,7 @@ vertical-align: middle;
 }
 .gift-hero__img{
   position:absolute; inset:0;
-  width:100%; height:100%;
+  
   display:block;
   object-fit: cover;                  /* تملى وتتقص */
   object-position: right var(--shift-y);
