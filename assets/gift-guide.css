@@ -168,6 +168,7 @@ display:flex;
 
 /* الشريط السفلي */
 .gift-hero__ticker{
+  width:100%;
   text-align:center;
   text-transform:uppercase;
   letter-spacing:.08em;
