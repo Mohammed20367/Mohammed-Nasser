@@ -152,50 +152,40 @@ display:flex;
 
 /* الحاوية: عمودان (النص يتمدّد + الصورة 890px)، وتوسيط رأسي */
 .gift-hero__inner{
-  margin:0px;
   width: min(100%, 1440px);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0,1fr) 890px;
+  grid-template-columns: 1fr 890px;  /* باقي العرض للنص + 890px للصورة */
   align-items: center;
   min-height: 402px;
 }
 
-/* كتلة النص: من غير width ثابت، مع أقصى عرض مريح وميل يسار */
+/* عمود النص: من غير مقاسات ثابتة */
 .gift-hero__copy{
-  background-color:#09c;
-  width: 402px;                 /* كان 500px */
-  height: 402px;                /* كان 100% */
+  width: auto;               /* كان 402px */
+  height: auto;              /* كان 402px */
   padding: 40px 48px;
-  /* background: green;  ← لون فحص، اشيله لو خلصت */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 16px;
-  max-width: 520px;
+  /* background-color:#09c;  <-- لون فحص فقط */
 }
 
-/* صندوق الصورة */
+/* عمود الصورة: ارتفاع ثابت، العرض جاي من عمود الجريد (890px) */
 .gift-hero__art{
-  margin:0px;
-  background-color:red;
-  width:890px;
   height: 402px;
   overflow: hidden;
-  /* background-color: red; ← لون فحص */
+  /* background-color:red;   <-- لون فحص فقط */
 }
 
-/* الصورة نفسها */
 .gift-hero__img{
-  /* كان ناقص ; بعد الـ padding وده عطّل اللي بعده */
-  /* padding: 10px 0 0 100px;  ← شيّله لو بيزق الصورة */
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-/* موبايل: صف واحد */
+/* موبايل */
 @media (max-width: 992px){
   .gift-hero__inner{ grid-template-columns: 1fr; }
 }
