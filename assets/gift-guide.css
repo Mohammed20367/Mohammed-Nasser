@@ -152,38 +152,39 @@ display:flex;
 
 /* الحاوية: عمودان (النص يتمدّد + الصورة 890px)، وتوسيط رأسي */
 .gift-hero__inner{
+  margin: 0 auto;
+  max-width: 1440px;
   display: grid;
-  grid-template-columns: minmax(0,1fr) 700px; /* النص يتمدّد + الصورة 700px */
-  align-items: center;
+  grid-template-columns: minmax(0,1fr) 700px;
+  align-items: stretch;
   min-height: 402px;
 }
 
-/* زوّد الأسبقية وحدد المساحة بوضوح */
-.gift-hero__inner .gift-hero__copy{
-  background:#0c9;
-    align-items: stretch;   /* بدل center */
-
-  padding-top:50px;
-  padding-left:67px;
-  width:auto;     /* بلاش 100% لو الأب مش محدد عرض */
-  height:auto;    /* بلاش 100% */
+.gift-hero__copy{
+  padding: 50px 48px 48px 67px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
 }
 
-.gift-hero__inner .gift-hero__title{
-  margin:0 0 12px;
-  font-family:'Jost', sans-serif;
-  font-weight:500;          /* بدل font-style */
-  font-size:70px;
-  line-height:1;
+.gift-hero__title{
+  margin: 0 0 12px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 70px;
+  line-height: 1;
 }
 
-.gift-hero__inner .gift-hero__text{
-  margin:0;
-  font-family:'Jost', sans-serif;
-  font-weight:400;
-  font-size:20px;
-  line-height:1.4;
+.gift-hero__text{
+  margin: 0;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
 }
+
 
 
 
