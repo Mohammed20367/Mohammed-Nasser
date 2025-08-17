@@ -1,22 +1,20 @@
 {% comment %}
 Gift Guid - Banner (Custom)
-Keeps your existing top bar; hero image sits right under it with no Dawn padding.
+First i want to thank who make ui of this task.
+The task Contain :-
+--Page =>with width 1440px and hieght 2000px
+----Section 1 
+------Navbar.
+------Frame image 1. 
+------2 div =>1 contain content and another contain image.
+------footer.
+----Section2
+-----items =>images to Add Card.
 {% endcomment %}
 
-{{ 'gift-guide.css' | asset_url | stylesheet_tag }}
+ {{ 'gift-guide.css' | asset_url | stylesheet_tag }} {% comment %} =>this link with css file in html {% endcomment %}
 
-{%- comment -%}
-  Dawn بيضيف padding/margin على كل سكشن تلقائيًا.
-  السطرين دول بيصفروا الـ padding/top/bottom للسكشن ده تحديدًا.
-{%- endcomment -%}
-<style>
-  #shopify-section-{{ section.id }}{
-    --section-padding-top: 0px !important;
-    --section-padding-bottom: 0px !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-  }
-</style>
+
 
 <!-- لو عايز تسيب الخط هنا مؤقتًا ماشي، بس الأفضل نقله لـ layout/theme.liquid -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
