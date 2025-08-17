@@ -153,43 +153,79 @@ display:flex;
 /* مقاسات الهيرو والتحريك لفوق */
 
 .gift-hero__inner{
-  margin: 0 auto;
+  margin: 0 auto;            /* وسّط الكونتينر */
   max-width: 1440px;
-  display: grid;
-  grid-template-columns: minmax(0,1fr) 910px; /* نص يتمدّد + صورة ثابتة */
-  align-items: center;                        /* توسيط رأسي */
-  min-height: 402px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  min-height:402px;
+  background: transparent;   /* شيل الأحمر من الأب لو مش محتاجه */
 }
 
 .gift-hero__copy{
-  width: auto;     /* كان 500px */
-  height: auto;
-  /* background: green;  لون فحص بس */
+  /* اشيل العرض والارتفاع الثابتين */
+  width: 500px;
+  height: 100%;
+  background: green;         /* لو عايز الأخضر يملأ العمود كله */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 0 48px; /* اختياري */
+  justify-content: center;   /* وسّط النص عموديًا */
 }
 
-.gift-hero__art{
-  /* بلاش display:flex ولا width ثابت هنا */
-  height: 402px;
-  overflow: hidden;
-  background-color: red; /* فحص */
-}
 
+.gift-hero__art
+{ 
+
+  width:910px;
+  background-color:red;
+  height: 402px; 
+  overflow: hidden; 
+}
 .gift-hero__img{
+  padding:10px 0px 0px 100px
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: 10% 100px; /* يمين/تحت زي ما تحب */
+  
+  object-fit: cover;          /* يملأ الصندوق وقد يَقص */
   display: block;
 }
 
 
-
 /* قد ايه تنزل الصورة؟ عدّل القيمة دي */
+.gift-hero__art { --shiftY: 20px; } /* جرّب 20px/60px حسب ما تحب */
 
+.gift-hero__art{
+  position: relative;
+  height: 402px;
+  overflow: hidden;
+}
+
+.gift-hero__img{
+  position: absolute;
+  left: 0; right: 0;
+  width: 100%;
+  height: calc(100% + var(--shiftY)); /* نكبر الصورة رأسيًا */
+  top: calc(-1 * var(--shiftY));      /* نرفعها لفوق بنفس المقدار */
+  object-fit: cover;                  /* تفضل مالية الديف */
+  object-position: 5% 100%;            /* يمين/شمال زي ما ظبطتها قبل كده */
+  display: block;
+}
+
+.gift-hero__art{
+  position: relative;
+  height: 402px;
+  overflow: hidden;
+}
+
+.gift-hero__img{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;            /* كبرنا الصورة 20% زيادة */
+  top: 50px;              /* هنا اتحكم بقى في النزول/الطلوع */
+  object-fit: cover;
+  object-position: 5% center; /* تظبط يمين/شمال زي ما تحب */
+  display: block;
+}
 
 
 
@@ -223,6 +259,8 @@ display:flex;
     height: clamp(160px, 40vw, 220px);
   }
 }
+
+
 
 
 
