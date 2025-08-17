@@ -146,8 +146,7 @@ display:flex;
 
 
 
-
-/* الزرار الأساسي */
+/* الزرار */
 .gift-button {
   width: 207px;
   height: 44px;
@@ -168,7 +167,7 @@ display:flex;
   content: "";
   position: absolute;
   inset: 0;
-  background: #e30613;
+  background: #e30613;   /* اللون اللي بيدخل */
   transform: scaleX(0);
   transform-origin: left;
   transition: transform .55s ease;
@@ -183,31 +182,36 @@ display:flex;
   position: relative;
   z-index: 2;
   color: #000;
-  transition: color .35s ease;
+  transition: color .35s ease, transform .25s ease;
 }
 .gift-button:hover .gift-icon--arrow-text {
   color: #fff;
+  transform: translateX(4px);
 }
 
-/* السهم */
+/* السهم الأساسي */
 .gift-icon--arrow {
   position: relative;
   z-index: 2;
+  color: #000; /* أول ما يبدأ أسود */
+  width: 24px;
+  height: 24px;
 }
 
-/* نسخة السهم الأبيض */
+/* نسخة بيضاء من السهم بتتكشف مع الفيل */
 .gift-icon--arrow::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: url('{{ "Arrow.svg" | asset_url }}') no-repeat center/contain;
-  filter: brightness(0) invert(1); /* يخليه أبيض */
+  background-color: #fff; /* الأبيض */
+  mask: url('{{ "Arrow.svg" | asset_url }}') no-repeat center/contain;
+  -webkit-mask: url('{{ "Arrow.svg" | asset_url }}') no-repeat center/contain;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform .55s ease;
 }
 
-/* وقت الهوفر: نكشف النسخة البيضاء مع نفس سرعة الفيل */
+/* عند الهوفر: نكشف النسخة البيضاء تدريجي */
 .gift-button:hover .gift-icon--arrow::after {
   transform: scaleX(1);
 }
