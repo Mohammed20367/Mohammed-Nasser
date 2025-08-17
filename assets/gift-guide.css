@@ -260,9 +260,9 @@ display:flex;
 /* زرار + */
 .plus-icon1{
   position: absolute;
-  top: 12px;
+  top: 60%;
   right: 12px;
-  
+  /* هنلعب ف ال6 ف التوب والرايت والليفت لحد مانوصل*/
  
 }
 .plus-icon2{
