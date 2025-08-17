@@ -78,7 +78,7 @@ The task Contain :-
            width="10" height="10" loading="lazy">
     </div> {% endcomment %}
 
-<div class = "secondframe"> <!--Second frame in first section-->
+{% comment %} <div class = "secondframe"> <!--Second frame in first section-->
    <!--content and left div-->
   <div class="gift-hero__inner">
     <!-- النص -->
@@ -105,7 +105,40 @@ The task Contain :-
 </div>
 
   </div>   
+</div> {% endcomment %}
+
+<div class="secondframe"> <!-- Second frame in first section -->
+
+  <div class="gift-hero__inner">
+    <!-- النص -->
+    <div class="gift-hero__copy">
+      <h2 class="gift-hero__title">The Gift Guide</h2>
+      <p class="gift-hero__text">
+        Discover Joy: Your Ultimate Holiday Gift Destination.
+        Explore our curated selection and find the perfect gifts to
+        delight your loved ones this holiday season.
+      </p>
+      <a href="/collections/gift-guide" class="gift-btn">SHOP NOW →</a>
+    </div>
+
+    <!-- الصورة -->
+    <div class="gift-hero__art">
+      <img
+        src="{{ 'Frame.svg' | asset_url }}"
+        alt="Gift guide illustration"
+        class="gift-hero__img"
+        loading="lazy"
+        decoding="async">
+    </div>
+  </div>
+
+  <!-- الشريط السفلي -->
+  <div class="gift-hero__ticker">
+    SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL
+  </div>
+
 </div>
+
 
  <div class="section2">
   <section class="part-two">
