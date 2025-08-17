@@ -178,7 +178,7 @@ display:flex;
 /* صندوق الصورة */
 .gift-hero__art{
   margin:0px;
-  /* background-color:red; */
+  background-color:red;
   width:890px;
   height: 402px;
   overflow: hidden;
