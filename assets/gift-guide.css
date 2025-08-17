@@ -153,39 +153,37 @@ display:flex;
 /* مقاسات الهيرو والتحريك لفوق */
 
 .gift-hero__inner{
-  margin: 0 auto;            /* وسّط الكونتينر */
+  margin: 0 auto;
   max-width: 1440px;
-  display:grid;
-  min-height:402px;
-  background: transparent;   /* شيل الأحمر من الأب لو مش محتاجه */
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 910px; /* نص يتمدّد + صورة ثابتة */
+  align-items: center;                        /* توسيط رأسي */
+  min-height: 402px;
 }
 
 .gift-hero__copy{
-  /* اشيل العرض والارتفاع الثابتين */
-  width: 500px;
-  height: 100%;
-  background: green;         /* لو عايز الأخضر يملأ العمود كله */
+  width: auto;     /* كان 500px */
+  height: auto;
+  /* background: green;  لون فحص بس */
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* وسّط النص عموديًا */
+  justify-content: center;
+  padding: 0 48px; /* اختياري */
 }
 
-
-.gift-hero__art
-{ 
-  display:flex;
-  overflow:hidden;
-  width:910px;
-  background-color:red;
-  height: 402px; 
+.gift-hero__art{
+  /* بلاش display:flex ولا width ثابت هنا */
+  height: 402px;
+  overflow: hidden;
+  background-color: red; /* فحص */
 }
+
 .gift-hero__img{
-  /* padding:10px 0px 0px 100px; */
-  /* padding-left:20px */
   width: 100%;
-  height: 102%;
-  object-position : -6px 100px ;
-  object-fit: cover;  
+  height: 100%;
+  object-fit: cover;
+  object-position: 10% 100px; /* يمين/تحت زي ما تحب */
+  display: block;
 }
 
 
