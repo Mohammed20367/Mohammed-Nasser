@@ -187,6 +187,15 @@ display:flex;
   display: block;
   padding: 10px 0 0 100px;     /* اتأكد إنها مقفولة بفاصلة منقوطة */
 }
+.gift-hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 402px;          /* طول ثابت لكل الأعمدة */
+}
+.gift-hero__copy,
+.gift-hero__art {
+  height: 100%;           /* كل واحد يملأ عموده */
+}
 
 
 /* مقاسات الهيرو والتحريك لفوق */
