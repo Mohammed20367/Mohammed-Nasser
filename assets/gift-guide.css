@@ -152,55 +152,6 @@ display:flex;
 
 /* مقاسات الهيرو والتحريك لفوق */
 
-/* .gift-hero__inner{
-  margin: 0 auto;            /* وسّط الكونتينر */
-  max-width: 1440px;
-  display:grid;
-  min-height:402px;
-  background: transparent;   /* شيل الأحمر من الأب لو مش محتاجه */
-}
-
-.gift-hero__copy{
-  /* اشيل العرض والارتفاع الثابتين */
-  width: 100%;
-  height: 100%;
-  padding: 40px 48px;        /* استخدم padding بدل height */
-  background: green;         /* لو عايز الأخضر يملأ العمود كله */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;   /* وسّط النص عموديًا */
-}
-
-.gift-hero__art{
-  position:relative;
-  min-height:402px;
-  overflow:hidden;
-  background:#09b;
-}
-.gift-hero__img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-} */
-
-.gift-hero__inner{
-  margin: 0 auto;
-  max-width: 1440px;
-  display: grid;
-  grid-template-columns: minmax(0,1fr) 890px; /* جنب بعض */
-  align-items: center;
-  gap: 24px;                /* مسافة بين العمودين (اختياري) */
-  min-height: 402px;
-}
-
-/* يفضل ما نخليش الأبناء بعرض ثابت */
-.gift-hero__copy{ width:auto; height:auto; }
-.gift-hero__art{ height:402px; } /* بدلاً من min-height */
-
-
-
-
 
 /* الشريط السفلي */
 .gift-hero__ticker{
