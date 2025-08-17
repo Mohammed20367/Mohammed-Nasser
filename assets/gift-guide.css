@@ -190,19 +190,16 @@ display:flex;
 
 /* سيب العرض ييجي من عمود الجريد – متحطّش width هنا */
 .gift-hero__art{
-  width: 100%;
-  height: 402px;          /* ادّي للصندوق ارتفاع */
+ background-color:red;
   overflow: hidden;
-  background-color: red;
+  width:100%;
+  object-fit:cover;
 }
 
 .gift-hero__img{
-  /* شيل التعليق المكسور اللي فيه */ 
-  width: 100%;
-  height: 100%;           /* عشان object-fit يشتغل */
-  display: block;
-  object-fit: cover;      /* تملى الديف بالكامل */
-  object-position: center;/* غيّرها للييمين/تحت لو عايز */
+   /* padding-left:60px;  ← شيلها */ */
+  width:100%;
+  object-fit:cover;
 }
 
 
