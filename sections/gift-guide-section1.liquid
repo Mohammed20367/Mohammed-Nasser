@@ -14,9 +14,7 @@ The task Contain :-
 
  {{ 'gift-guide.css' | asset_url | stylesheet_tag }} {% comment %} =>this link with css file in html {% endcomment %}
 
-
-
-<!-- لو عايز تسيب الخط هنا مؤقتًا ماشي، بس الأفضل نقله لـ layout/theme.liquid -->
+<!--link the Font Family using in task-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -24,8 +22,9 @@ The task Contain :-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lustria&display=swap" rel="stylesheet">
 
+<!--Start the task-->
 
-<div classe = "page">
+<div classe = "page">  <!--All page that contain 2 section-->
   <div class="section1"> <!--contain nav + fram1 + fram2 + footer-->
     <div class='gift-top-bar'> <!--navbar-->
  <div>
@@ -79,7 +78,7 @@ The task Contain :-
            width="10" height="10" loading="lazy">
     </div> {% endcomment %}
 
-
+<div class = "secondframe"> <!--Second frame in first section-->
    <section class="gift-hero" style="--shift-y:-60px;">
   <div class="gift-hero__inner">
     <!-- النص -->
@@ -105,9 +104,7 @@ The task Contain :-
   </div>
 </section>
 
-  </div>
- 
-    
+  </div>   
 </div>
 
  <div class="section2">
@@ -206,7 +203,6 @@ The task Contain :-
 
 </div>
 
-</div>
 
 {% schema %}
 {
