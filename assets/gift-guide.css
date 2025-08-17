@@ -190,7 +190,6 @@ display:flex;
 }
 
 .gift-hero__art{
-  overflow:hidden;
   background: red;
   height: 402px;
   overflow: hidden;
