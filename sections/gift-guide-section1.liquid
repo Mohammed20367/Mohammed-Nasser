@@ -138,7 +138,73 @@ The task Contain :-
   </section>
 </div> 
 
+<!-- Product Popup Modal - HTML Structure -->
+<div id="productPopupOverlay" class="popup-overlay popup-hidden">
+    <div id="productPopupContent" class="popup-content">
+        <!-- Close Button -->
+        <button id="closeProductPopup" class="popup-close-btn">×</button>
 
+        <!-- Product Layout -->
+        <div class="product-container">
+            <!-- Product Image Section -->
+            <div class="product-image-section">
+                <div class="product-image-placeholder"></div>
+            </div>
+
+            <!-- Product Details Section -->
+            <div class="product-details-section">
+                <h1 class="product-name">Orange Wide Leg</h1>
+                <div class="product-price">980,00€</div>
+                <p class="product-description">
+                    This one-piece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.
+                </p>
+
+                <!-- Product Options -->
+                <div class="product-options-container">
+                    <!-- Color Options -->
+                    <div class="option-group">
+                        <label class="option-title">Color</label>
+                        <div class="color-selector-container">
+                            <button class="color-option color-selected" data-color="white">White</button>
+                            <button class="color-option" data-color="black">Black</button>
+                        </div>
+                    </div>
+
+                    <!-- Size Selector -->
+                    <div class="option-group">
+                        <label class="option-title">Size</label>
+                        <div class="size-selector-container">
+                            <div class="custom-dropdown" id="sizeDropdown">
+                                <div class="dropdown-trigger" id="sizeDropdownTrigger">
+                                    <span class="dropdown-text dropdown-placeholder" id="sizeDropdownText">Choose your size</span>
+                                    <div class="dropdown-arrow-container">
+                                        <svg class="dropdown-arrow" id="sizeDropdownArrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                                            <path d="M1 1L6 6L11 1" stroke="#666" stroke-width="1.5" stroke-linecap="round"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="dropdown-options" id="sizeDropdownOptions">
+                                    <div class="dropdown-option" data-size="xs">XS</div>
+                                    <div class="dropdown-option" data-size="s">S</div>
+                                    <div class="dropdown-option" data-size="m">M</div>
+                                    <div class="dropdown-option" data-size="l">L</div>
+                                    <div class="dropdown-option" data-size="xl">XL</div>
+                                    <div class="dropdown-option" data-size="xxl">XXL</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add to Cart Button -->
+                    <button id="addToCartButton" class="add-to-cart-button">
+                        ADD TO CART
+                        <span class="button-arrow">→</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
      
 
 
