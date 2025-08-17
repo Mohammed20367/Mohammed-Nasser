@@ -204,42 +204,22 @@ display:flex;
   object-position: 5% 200%;
   display: block;
 }
-/* قد ايه تنزل الصورة؟ عدّل القيمة دي */
-.gift-hero__art { --shiftY: 20px; } /* جرّب 20px/60px حسب ما تحب */
 
-.gift-hero__art{
+.gift-hero__art {
   position: relative;
   height: 402px;
   overflow: hidden;
+  background: red; /* للفحص */
 }
 
-.gift-hero__img{
-  position: absolute;
-  left: 0; right: 0;
+.gift-hero__img {
   width: 100%;
-  height: calc(100% + var(--shiftY)); /* نكبر الصورة رأسيًا */
-  top: calc(-1 * var(--shiftY));      /* نرفعها لفوق بنفس المقدار */
-  object-fit: cover;                  /* تفضل مالية الديف */
-  object-position: 5% 100%;            /* يمين/شمال زي ما ظبطتها قبل كده */
+  height: 100%;
+  object-position: 5% 150%;   /* 50% = في النص أفقياً , 80% = نازلة لتحت */
   display: block;
+  object-fit: cover;           
 }
 
-.gift-hero__art{
-  position: relative;
-  height: 402px;
-  overflow: hidden;
-}
-
-.gift-hero__img{
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 120%;            /* كبرنا الصورة 20% زيادة */
-  top: -20px;              /* هنا اتحكم بقى في النزول/الطلوع */
-  object-fit: cover;
-  object-position: 5% center; /* تظبط يمين/شمال زي ما تحب */
-  display: block;
-}
 
 
 
