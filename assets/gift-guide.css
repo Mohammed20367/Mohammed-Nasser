@@ -158,6 +158,10 @@ display:flex;
   min-height: 402px;
 }
 
+.gift-hero__copy
+{
+  background-color: green;
+}
 /* سيب العرض ييجي من عمود الجريد – متحطّش width هنا */
 .gift-hero__art{
   background-color:red;
