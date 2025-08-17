@@ -13,6 +13,7 @@ The task Contain :-
 {% endcomment %}
 
 {{ 'gift-guide.css' | asset_url | stylesheet_tag }} {% comment %} =>this link with css file in html {% endcomment %}
+{{ 'gift-guide-section1.js' | asset_url | script_tag }} {% comment %} =>this link with JS file in html {% endcomment %}
 
 <!--link the Font Family using in task-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -105,6 +106,37 @@ The task Contain :-
   </div>   
 </div>
 
+ <div class="section2">
+  <section class="part-two">
+    <h2 class="wild-title">Tisso vison in the wild</h2>
+
+    <div class="grid-container">
+      <div class="grid-item">
+        <img src="{{ 'image 822.svg' | asset_url }}" alt="Look 1">
+ <span class="plus-icon1"><img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="plus in card"></span>      </div>
+
+      <div class="grid-item">
+        <img src="{{ 'image 823.png' | asset_url }}" alt="Look 2">
+ <span class="plus-icon2"><img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="plus in card"></span>      </div>
+
+      <div class="grid-item">
+        <img src="{{ 'image 824.svg' | asset_url }}" alt="Look 3">
+ <span class="plus-icon3"><img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="plus in card"></span>      </div>
+
+      <div class="grid-item">
+        <img src="{{ 'image 825.svg' | asset_url }}" alt="Look 4">
+ <span class="plus-icon4"><img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="plus in card"></span>      </div>
+
+      <div class="grid-item">
+        <img src="{{ 'image 826.svg' | asset_url }}" alt="Look 5">
+ <span class="plus-icon5"><img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="plus in card"></span>      </div>
+
+      <div class="grid-item">
+        <img src="{{ 'image 827.svg' | asset_url }}" alt="Look 5">
+ <span class="plus-icon6"><img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="plus in card"></span>      </div>
+    </div>
+  </section>
+</div> 
 <!-- Product Popup Modal - HTML Structure -->
 
 
@@ -174,7 +206,6 @@ The task Contain :-
         </div>
     </div>
 </div>
- 
 <!--تجربه بالليل-->
 
 
@@ -328,7 +359,6 @@ The task Contain :-
 </div>
 </div>
 </section> {% endcomment %}
-{{ 'gift-guide-section1.js' | asset_url | script_tag }} {% comment %} =>this link with JS file in html {% endcomment %}
 
 </div>
 
