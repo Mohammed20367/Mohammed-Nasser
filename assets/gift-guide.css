@@ -215,9 +215,9 @@ display:flex;
 .gift-hero__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;           
   object-position: 5% 150%;   /* 50% = في النص أفقياً , 80% = نازلة لتحت */
   display: block;
+  object-fit: cover;           
 }
 
 
