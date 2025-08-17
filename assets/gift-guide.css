@@ -235,7 +235,7 @@ display:flex;
   position: absolute;
   left: 0;
   width: 100%;
-  height: calc(100% + var(--y));   /* نزوّد الارتفاع */
+  height: calc(100% + var(50));   /* نزوّد الارتفاع */
   top: calc(-1 * var(--y));        /* نرفعها لفوق نفس المقدار */
   object-fit: cover;
   object-position: 5% center;      /* يمين/شمال زي ما ظابطه */
