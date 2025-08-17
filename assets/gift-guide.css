@@ -200,7 +200,7 @@ display:flex;
   height: 100%;
   object-fit: cover;          /* تملى الديف كله */
   object-position: 5% 60%; /* نزّل الصورة لتحت */
-  object-position: 10%;
+  object-position: 5% 110%;
   display: block;
 }
 
