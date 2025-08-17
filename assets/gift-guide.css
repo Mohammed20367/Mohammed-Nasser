@@ -164,7 +164,7 @@ display:flex;
 /* كتلة النص: من غير width ثابت، مع أقصى عرض مريح وميل يسار */
 .gift-hero__copy{
   background-color:#09c;
-  width: 402px;                 /* كان 500px */
+  width: 500px;                 /* كان 500px */
   height: 402px;                /* كان 100% */
   padding: 40px 48px;
   /* background: green;  ← لون فحص، اشيله لو خلصت */
