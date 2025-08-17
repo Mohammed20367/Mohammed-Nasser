@@ -169,7 +169,6 @@ display:flex;
 
 .gift-hero__inner .gift-hero__title{
   margin:0 0 12px;
-  background:red;
   font-family:'Jost', sans-serif;
   font-weight:500;          /* بدل font-style */
   font-size:70px;
