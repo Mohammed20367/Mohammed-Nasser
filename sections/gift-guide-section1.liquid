@@ -138,7 +138,60 @@ The task Contain :-
   </section>
 </div> 
 <!--تجربه بالليل-->
-    <div class="product-layout">
+
+<!-- داخل كل .grid-item غيّر السبآن بتاعة البلس كده -->
+<span class="plus-icon1" data-popup-open="look-1">
+  <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="Open quick view">
+</span>
+
+<!-- مثال لباقي الكروت -->
+<span class="plus-icon2" data-popup-open="look-2"><img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt=""></span>
+<span class="plus-icon3" data-popup-open="look-3"><img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt=""></span>
+<span class="plus-icon4" data-popup-open="look-4"><img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt=""></span>
+<span class="plus-icon5" data-popup-open="look-5"><img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt=""></span>
+<span class="plus-icon6" data-popup-open="look-6"><img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt=""></span>
+
+<!-- احط البوبات تحت الشبكة (مرة لكل صورة) -->
+<div class="gift-popup" data-popup="look-1" aria-hidden="true">
+  <div class="gift-popup__card" role="dialog" aria-modal="true" aria-label="Orange Wide Leg">
+    <button class="gift-popup__close" type="button" aria-label="Close">&times;</button>
+
+    <!-- محتوى الكارد — عدل حسب كل منتج -->
+    <img class="gift-popup__img" src="{{ 'image-1.jpg' | asset_url }}" alt="">
+    <h4 class="gift-popup__title">Orange Wide Leg</h4>
+    <div class="gift-popup__price">980,00€</div>
+    <p class="gift-popup__desc">This onepiece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.</p>
+
+    <label class="gift-popup__label">Color</label>
+    <div class="gift-popup__swatches">
+      <button type="button" class="swatch is-active">White</button>
+      <button type="button" class="swatch">Black</button>
+    </div>
+
+    <label class="gift-popup__label">Size</label>
+    <div class="gift-popup__select">
+      <select>
+        <option selected>Choose your size</option>
+        <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+    </div>
+
+    <button class="gift-popup__cta" type="button">
+      ADD TO CART
+      <img class="gift-popup__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="" aria-hidden="true">
+    </button>
+  </div>
+</div>
+
+<!-- انسخ البلوك أعلاه وغيّر data-popup والمحتوى لكل من look-2 .. look-6 -->
+<div class="gift-popup" data-popup="look-2" aria-hidden="true"> ... محتوى المنتج 2 ... </div>
+<div class="gift-popup" data-popup="look-3" aria-hidden="true"> ... </div>
+<div class="gift-popup" data-popup="look-4" aria-hidden="true"> ... </div>
+<div class="gift-popup" data-popup="look-5" aria-hidden="true"> ... </div>
+<div class="gift-popup" data-popup="look-6" aria-hidden="true"> ... </div>
+
+
+    {% comment %} <div class="product-layout">
             <div class="details-section">
               <div class="product-info" style="display: flex; gap: 5px">
                 <div class="image-section">
@@ -227,7 +280,10 @@ The task Contain :-
         </div>
       </div>
     </div>
-     
+      {% endcomment %}
+
+
+
 
 
 
