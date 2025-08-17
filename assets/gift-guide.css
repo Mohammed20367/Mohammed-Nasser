@@ -183,7 +183,7 @@ display:flex;
   /* padding-left:20px */
   width: 100%;
   height: 120%;
-  object-position : top left ;
+  object-position : bottom left ;
   object-fit: cover;  
 }
 
