@@ -175,6 +175,7 @@ display:flex;
 
 .gift-hero__art
 { 
+  width:890px;
   background-color:red;
   height: 402px; 
   overflow: hidden; 
