@@ -141,13 +141,11 @@ display:flex;
   margin:0 0 10px;
 }
 .gift-hero__text{
-  width: 483;
+width: 483;
 height: 84;
-angle: 0 deg;
 opacity: 1;
 top: 609px;
 left: 67px;
-
 font-family: 'Jost', sans-serif;
 font-weight: 400;
 font-style: Regular;
