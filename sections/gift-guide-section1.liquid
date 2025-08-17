@@ -136,299 +136,165 @@ The task Contain :-
  <span class="plus-icon6"><img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="plus in card"></span>      </div>
     </div>
   </section> {% endcomment %}
-
-  <section class="part-two">
+  
+  <!-- سكشن الصور كما هو لكن مع data-popup-open لكل + -->
+<section class="part-two">
   <h2 class="wild-title">Tisso vison in the wild</h2>
 
   <div class="grid-container">
     <div class="grid-item">
       <img src="{{ 'image 822.svg' | asset_url }}" alt="Look 1">
-      <span class="plus-icon1" data-popup-open="look-1" role="button" tabindex="0" aria-label="Open quick view for Look 1">
+      <span class="plus-icon1" data-popup-open="look-1" role="button" tabindex="0">
         <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
       </span>
     </div>
 
     <div class="grid-item">
       <img src="{{ 'image 823.png' | asset_url }}" alt="Look 2">
-      <span class="plus-icon2" data-popup-open="look-2" role="button" tabindex="0" aria-label="Open quick view for Look 2">
+      <span class="plus-icon2" data-popup-open="look-2" role="button" tabindex="0">
         <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
       </span>
     </div>
 
     <div class="grid-item">
       <img src="{{ 'image 824.svg' | asset_url }}" alt="Look 3">
-      <span class="plus-icon3" data-popup-open="look-3" role="button" tabindex="0" aria-label="Open quick view for Look 3">
+      <span class="plus-icon3" data-popup-open="look-3" role="button" tabindex="0">
         <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
       </span>
     </div>
 
     <div class="grid-item">
       <img src="{{ 'image 825.svg' | asset_url }}" alt="Look 4">
-      <span class="plus-icon4" data-popup-open="look-4" role="button" tabindex="0" aria-label="Open quick view for Look 4">
+      <span class="plus-icon4" data-popup-open="look-4" role="button" tabindex="0">
         <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
       </span>
     </div>
 
     <div class="grid-item">
       <img src="{{ 'image 826.svg' | asset_url }}" alt="Look 5">
-      <span class="plus-icon5" data-popup-open="look-5" role="button" tabindex="0" aria-label="Open quick view for Look 5">
+      <span class="plus-icon5" data-popup-open="look-5" role="button" tabindex="0">
         <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
       </span>
     </div>
 
     <div class="grid-item">
       <img src="{{ 'image 827.svg' | asset_url }}" alt="Look 6">
-      <span class="plus-icon6" data-popup-open="look-6" role="button" tabindex="0" aria-label="Open quick view for Look 6">
+      <span class="plus-icon6" data-popup-open="look-6" role="button" tabindex="0">
         <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
       </span>
     </div>
   </div>
+</section>
 
-  <!-- Popups (واحد لكل صورة) -->
-  <div class="gift-popup" data-popup="look-1" aria-hidden="true">
-    <div class="gift-popup__card" role="dialog" aria-modal="true" aria-label="Look 1">
-      <button class="gift-popup__close" type="button" aria-label="Close">&times;</button>
-      <img class="gift-popup__img" src="{{ 'image 822.svg' | asset_url }}" alt="">
-      <h4 class="gift-popup__title">Orange Wide Leg</h4>
-      <div class="gift-popup__price">980,00€</div>
-      <p class="gift-popup__desc">This onepiece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.</p>
-      <label class="gift-popup__label">Color</label>
-      <div class="gift-popup__swatches">
-        <button type="button" class="swatch is-active">White</button>
-        <button type="button" class="swatch">Black</button>
-      </div>
-      <label class="gift-popup__label">Size</label>
-      <div class="gift-popup__select">
-        <select>
-          <option selected>Choose your size</option>
-          <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-        </select>
-      </div>
-      <button class="gift-popup__cta" type="button">
-        ADD TO CART
-        <img class="gift-popup__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="" aria-hidden="true">
-      </button>
+<!-- البوبات الستة (غيّر المحتوى لكل واحدة) -->
+<div class="gift-popup" data-popup="look-1" aria-hidden="true">
+  <div class="gift-popup__card" role="dialog" aria-modal="true" aria-label="Look 1">
+    <button class="gift-popup__close" type="button" aria-label="Close">&times;</button>
+    <img class="gift-popup__img" src="{{ 'image 822.svg' | asset_url }}" alt="">
+    <h4 class="gift-popup__title">Orange Wide Leg</h4>
+    <div class="gift-popup__price">980,00€</div>
+    <p class="gift-popup__desc">Sample text for look 1.</p>
+    <label class="gift-popup__label">Color</label>
+    <div class="gift-popup__swatches">
+      <button type="button" class="swatch is-active">White</button>
+      <button type="button" class="swatch">Black</button>
     </div>
-  </div>
-
-  <div class="gift-popup" data-popup="look-2" aria-hidden="true">
-    <div class="gift-popup__card" role="dialog" aria-modal="true" aria-label="Look 2">
-      <button class="gift-popup__close" type="button" aria-label="Close">&times;</button>
-      <img class="gift-popup__img" src="{{ 'image 823.png' | asset_url }}" alt="">
-      <h4 class="gift-popup__title">Tailored Jacket</h4>
-      <div class="gift-popup__price">980,00€</div>
-      <p class="gift-popup__desc">This onepiece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.</p>
-      <label class="gift-popup__label">Color</label>
-      <div class="gift-popup__swatches">
-        <button type="button" class="swatch is-active">Blue</button>
-        <button type="button" class="swatch">Black</button>
-      </div>
-      <label class="gift-popup__label">Size</label>
-      <div class="gift-popup__select">
-        <select>
-          <option selected>Choose your size</option>
-          <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-        </select>
-      </div>
-      <button class="gift-popup__cta" type="button">
-        ADD TO CART
-        <img class="gift-popup__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="" aria-hidden="true">
-      </button>
+    <label class="gift-popup__label">Size</label>
+    <div class="gift-popup__select">
+      <select>
+        <option selected>Choose your size</option>
+        <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
     </div>
+    <button class="gift-popup__cta" type="button">ADD TO CART</button>
   </div>
+</div>
 
-  <div class="gift-popup" data-popup="look-3" aria-hidden="true">
-    <div class="gift-popup__card" role="dialog" aria-modal="true" aria-label="Look 3">
-      <button class="gift-popup__close" type="button" aria-label="Close">&times;</button>
-      <img class="gift-popup__img" src="{{ 'image 824.svg' | asset_url }}" alt="">
-      <h4 class="gift-popup__title">Accordion Pleated Dress</h4>
-      <div class="gift-popup__price">980,00€</div>
-      <p class="gift-popup__desc">This onepiece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.</p>
-      <label class="gift-popup__label">Color</label>
-      <div class="gift-popup__swatches">
-        <button type="button" class="swatch is-active">Red</button>
-        <button type="button" class="swatch">Grey</button>
-      </div>
-      <label class="gift-popup__label">Size</label>
-      <div class="gift-popup__select">
-        <select>
-          <option selected>Choose your size</option>
-          <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-        </select>
-      </div>
-      <button class="gift-popup__cta" type="button">
-        ADD TO CART
-        <img class="gift-popup__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="" aria-hidden="true">
-      </button>
+<div class="gift-popup" data-popup="look-2" aria-hidden="true">
+  <div class="gift-popup__card" role="dialog" aria-modal="true" aria-label="Look 2">
+    <button class="gift-popup__close" type="button" aria-label="Close">&times;</button>
+    <img class="gift-popup__img" src="{{ 'image 823.png' | asset_url }}" alt="">
+    <h4 class="gift-popup__title">Tailored Jacket</h4>
+    <div class="gift-popup__price">980,00€</div>
+    <p class="gift-popup__desc">Sample text for look 2.</p>
+    <label class="gift-popup__label">Color</label>
+    <div class="gift-popup__swatches">
+      <button type="button" class="swatch is-active">Blue</button>
+      <button type="button" class="swatch">Black</button>
     </div>
-  </div>
-
-  <div class="gift-popup" data-popup="look-4" aria-hidden="true">
-    <div class="gift-popup__card" role="dialog" aria-modal="true" aria-label="Look 4">
-      <button class="gift-popup__close" type="button" aria-label="Close">&times;</button>
-      <img class="gift-popup__img" src="{{ 'image 825.svg' | asset_url }}" alt="">
-      <h4 class="gift-popup__title">Green Trench Coat</h4>
-      <div class="gift-popup__price">980,00€</div>
-      <p class="gift-popup__desc">This onepiece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.</p>
-      <label class="gift-popup__label">Color</label>
-      <div class="gift-popup__swatches">
-        <button type="button" class="swatch is-active">White</button>
-        <button type="button" class="swatch">Black</button>
-      </div>
-      <label class="gift-popup__label">Size</label>
-      <div class="gift-popup__select">
-        <select>
-          <option selected>Choose your size</option>
-          <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-        </select>
-      </div>
-      <button class="gift-popup__cta" type="button">
-        ADD TO CART
-        <img class="gift-popup__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="" aria-hidden="true">
-      </button>
+    <label class="gift-popup__label">Size</label>
+    <div class="gift-popup__select">
+      <select>
+        <option selected>Choose your size</option>
+        <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
     </div>
+    <button class="gift-popup__cta" type="button">ADD TO CART</button>
   </div>
+</div>
 
-  <div class="gift-pop
+<div class="gift-popup" data-popup="look-3" aria-hidden="true"><div class="gift-popup__card"><button class="gift-popup__close" type="button" aria-label="Close">&times;</button><img class="gift-popup__img" src="{{ 'image 824.svg' | asset_url }}" alt=""><h4 class="gift-popup__title">Accordion Pleated Dress</h4><div class="gift-popup__price">980,00€</div><p class="gift-popup__desc">Sample text for look 3.</p><label class="gift-popup__label">Color</label><div class="gift-popup__swatches"><button type="button" class="swatch is-active">Red</button><button type="button" class="swatch">Grey</button></div><label class="gift-popup__label">Size</label><div class="gift-popup__select"><select><option selected>Choose your size</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option></select></div><button class="gift-popup__cta" type="button">ADD TO CART</button></div></div>
 
-    <script>
-(function () {
-  // 1) اربط كل أزرار + تلقائيًا بـ data-popup-open
-  function ensureTriggers() {
-    document.querySelectorAll('.grid-item [class*="plus-icon"]').forEach(function (el) {
-      if (!el.getAttribute('data-popup-open')) {
-        // استخرج الرقم من اسم الكلاس (plus-icon1 → 1)
-        var m = Array.from(el.classList).join(' ').match(/plus-icon(\d+)/);
-        if (m) el.setAttribute('data-popup-open', 'look-' + m[1]);
-      }
-      el.setAttribute('role','button');
-      el.setAttribute('tabindex','0');
-      el.style.cursor = 'pointer';
-    });
+<div class="gift-popup" data-popup="look-4" aria-hidden="true"><div class="gift-popup__card"><button class="gift-popup__close" type="button" aria-label="Close">&times;</button><img class="gift-popup__img" src="{{ 'image 825.svg' | asset_url }}" alt=""><h4 class="gift-popup__title">Green Trench Coat</h4><div class="gift-popup__price">980,00€</div><p class="gift-popup__desc">Sample text for look 4.</p><label class="gift-popup__label">Color</label><div class="gift-popup__swatches"><button type="button" class="swatch is-active">White</button><button type="button" class="swatch">Black</button></div><label class="gift-popup__label">Size</label><div class="gift-popup__select"><select><option selected>Choose your size</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option></select></div><button class="gift-popup__cta" type="button">ADD TO CART</button></div></div>
+
+<div class="gift-popup" data-popup="look-5" aria-hidden="true"><div class="gift-popup__card"><button class="gift-popup__close" type="button" aria-label="Close">&times;</button><img class="gift-popup__img" src="{{ 'image 826.svg' | asset_url }}" alt=""><h4 class="gift-popup__title">Tennis Blue T-Shirt</h4><div class="gift-popup__price">980,00€</div><p class="gift-popup__desc">Sample text for look 5.</p><label class="gift-popup__label">Color</label><div class="gift-popup__swatches"><button type="button" class="swatch is-active">Grey</button><button type="button" class="swatch">Black</button></div><label class="gift-popup__label">Size</label><div class="gift-popup__select"><select><option selected>Choose your size</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option></select></div><button class="gift-popup__cta" type="button">ADD TO CART</button></div></div>
+
+<div class="gift-popup" data-popup="look-6" aria-hidden="true"><div class="gift-popup__card"><button class="gift-popup__close" type="button" aria-label="Close">&times;</button><img class="gift-popup__img" src="{{ 'image 827.svg' | asset_url }}" alt=""><h4 class="gift-popup__title">Long Sleeve Tennis Top</h4><div class="gift-popup__price">980,00€</div><p class="gift-popup__desc">Sample text for look 6.</p><label class="gift-popup__label">Color</label><div class="gift-popup__swatches"><button type="button" class="swatch is-active">Blue</button><button type="button" class="swatch">Black</button></div><label class="gift-popup__label">Size</label><div class="gift-popup__select"><select><option selected>Choose your size</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option></select></div><button class="gift-popup__cta" type="button">ADD TO CART</button></div></div>
+
+<!-- CSS مصغّر (لو مش موجود في ملفك) -->
+<style>
+.gift-popup{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;z-index:1000}
+.gift-popup.is-open{display:block}
+.gift-popup__card{width:250px;background:#fff;border-radius:8px;position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);padding:14px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+.gift-popup__close{position:absolute;top:6px;right:8px;font-size:20px;background:transparent;border:0;cursor:pointer}
+.gift-popup__img{width:100%;height:140px;object-fit:cover;border-radius:6px}
+.gift-popup__title{font-size:14px;margin:10px 0 4px}
+.gift-popup__price{font-size:13px;margin-bottom:8px}
+.gift-popup__desc{font-size:12px;line-height:1.4;color:#444;margin-bottom:10px}
+.gift-popup__label{display:block;font-size:12px;margin:8px 0 6px}
+.gift-popup__swatches{display:flex;gap:8px}
+.swatch{font-size:12px;padding:8px 10px;border:1px solid #000;background:#fff;cursor:pointer}
+.swatch.is-active{background:#000;color:#fff}
+.gift-popup__select select{width:100%;padding:10px 12px;border:1px solid #000;background:#fff;font-size:12px}
+.gift-popup__cta{width:100%;margin-top:12px;background:#000;color:#fff;border:0;padding:12px 14px;cursor:pointer}
+</style>
+
+<!-- JS بسيط جدًا بيفتح/يقفل -->
+<script>
+(function(){
+  function openPopup(id){
+    var p = document.querySelector('.gift-popup[data-popup="'+id+'"]');
+    if(p){ p.classList.add('is-open'); p.setAttribute('aria-hidden','false'); }
+  }
+  function closePopup(p){
+    p.classList.remove('is-open'); p.setAttribute('aria-hidden','true');
   }
 
-  // 2) لو البوب اب مش موجود هيعمل واحد تجريبي 250px تلقائيًا
-  function ensurePopup(id, imgSrc, title) {
-    var selector = '.gift-popup[data-popup="'+id+'"]';
-    if (document.querySelector(selector)) return;
+  // فتح بالضغط على +
+  document.addEventListener('click', function(e){
+    var trg = e.target.closest('[data-popup-open]');
+    if(trg){
+      e.preventDefault();
+      openPopup(trg.getAttribute('data-popup-open'));
+    }
+  }, true); // capture عشان يشتغل حتى لو فيه stopPropagation
 
-    var wrap = document.createElement('div');
-    wrap.className = 'gift-popup';
-    wrap.setAttribute('data-popup', id);
-    wrap.setAttribute('aria-hidden','true');
-    wrap.innerHTML = `
-      <div class="gift-popup__card" role="dialog" aria-modal="true" aria-label="${title||'Quick view'}">
-        <button class="gift-popup__close" type="button" aria-label="Close">&times;</button>
-        ${imgSrc ? `<img class="gift-popup__img" src="${imgSrc}" alt="">` : ``}
-        <h4 class="gift-popup__title">${title||'Product title'}</h4>
-        <div class="gift-popup__price">980,00€</div>
-        <p class="gift-popup__desc">Sample popup (250px width). Replace with your real content.</p>
-        <label class="gift-popup__label">Color</label>
-        <div class="gift-popup__swatches">
-          <button type="button" class="swatch is-active">Option A</button>
-          <button type="button" class="swatch">Option B</button>
-        </div>
-        <label class="gift-popup__label">Size</label>
-        <div class="gift-popup__select">
-          <select><option selected>Choose your size</option><option>XS</option><option>S</option><option>M</option></select>
-        </div>
-        <button class="gift-popup__cta" type="button">ADD TO CART</button>
-      </div>`;
-    document.body.appendChild(wrap);
-  }
+  // إغلاق X أو الضغط على الخلفية
+  document.addEventListener('click', function(e){
+    if(e.target.closest('.gift-popup__close')){
+      closePopup(e.target.closest('.gift-popup'));
+    } else if(e.target.classList.contains('gift-popup')){
+      closePopup(e.target);
+    }
+  });
 
-  // 3) ستايل أساسي سريع (لو ملف CSS مش موجود)
-  function injectCSS() {
-    if (document.getElementById('gift-popup-inline-css')) return;
-    var css = `
-      .gift-popup{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;z-index:1000}
-      .gift-popup.is-open{display:block}
-      .gift-popup__card{width:250px;background:#fff;border-radius:8px;position:absolute;top:50%;left:50%;
-        transform:translate(-50%,-50%);padding:14px;box-shadow:0 10px 30px rgba(0,0,0,.15);font-family:inherit}
-      .gift-popup__close{position:absolute;top:6px;right:8px;font-size:20px;line-height:1;background:transparent;border:0;cursor:pointer}
-      .gift-popup__img{width:100%;height:140px;object-fit:cover;border-radius:6px}
-      .gift-popup__title{font-size:14px;margin:10px 0 4px}
-      .gift-popup__price{font-size:13px;margin-bottom:8px}
-      .gift-popup__desc{font-size:12px;line-height:1.4;color:#444;margin-bottom:10px}
-      .gift-popup__label{display:block;font-size:12px;margin:8px 0 6px}
-      .gift-popup__swatches{display:flex;gap:8px}
-      .swatch{font-size:12px;padding:8px 10px;border:1px solid #000;background:#fff;cursor:pointer}
-      .swatch.is-active{background:#000;color:#fff}
-      .gift-popup__select select{width:100%;padding:10px 12px;border:1px solid #000;background:#fff;font-size:12px}
-      .gift-popup__cta{width:100%;margin-top:12px;background:#000;color:#fff;border:0;padding:12px 14px;cursor:pointer}
-    `;
-    var tag = document.createElement('style');
-    tag.id = 'gift-popup-inline-css';
-    tag.appendChild(document.createTextNode(css));
-    document.head.appendChild(tag);
-  }
-
-  // 4) فتح/إغلاق
-  function bindHandlers() {
-    document.body.addEventListener('click', function (e) {
-      // فتح
-      var trigger = e.target.closest('[data-popup-open]');
-      if (trigger) {
-        var id = trigger.getAttribute('data-popup-open');
-        var popup = document.querySelector('.gift-popup[data-popup="'+id+'"]');
-        if (popup) {
-          popup.classList.add('is-open');
-          popup.setAttribute('aria-hidden','false');
-          popup.querySelector('.gift-popup__close')?.focus();
-          e.preventDefault();
-          return;
-        }
-      }
-      // إغلاق بالـ X
-      if (e.target.closest('.gift-popup__close')) {
-        var p = e.target.closest('.gift-popup');
-        p.classList.remove('is-open');
-        p.setAttribute('aria-hidden','true');
-        return;
-      }
-      // إغلاق بالضغط على الخلفية
-      if (e.target.classList.contains('gift-popup')) {
-        e.target.classList.remove('is-open');
-        e.target.setAttribute('aria-hidden','true');
-      }
-    });
-
-    // إغلاق بـ ESC
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('.gift-popup.is-open').forEach(function(p){
-          p.classList.remove('is-open');
-          p.setAttribute('aria-hidden','true');
-        });
-      }
-    });
-  }
-
-  // init بعد ما عناصر الشبكة تبقى في الدوم
-  function init() {
-    injectCSS();
-    ensureTriggers();
-
-    // أنشئ بوب-اب تجريبي لكل كارت لو مش موجود
-    document.querySelectorAll('.grid-item').forEach(function (card, i) {
-      var n = i + 1;
-      var id = 'look-' + n;
-      var img = card.querySelector('img');
-      ensurePopup(id, img ? img.getAttribute('src') : '', img ? img.getAttribute('alt') : ('Look '+n));
-      // اربط السبآن/الصورة بـ data-popup-open لو مش متضبوطة
-      var plus = card.querySelector('[data-popup-open]') || card.querySelector('[class*="plus-icon"]');
-      if (plus && !plus.getAttribute('data-popup-open')) plus.setAttribute('data-popup-open', id);
-    });
-
-    bindHandlers();
-  }
-
-  // اشتغل فورًا لو الـ DOM جاهز
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  // إغلاق بـ ESC
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      document.querySelectorAll('.gift-popup.is-open').forEach(closePopup);
+    }
+  });
 })();
 </script>
 
