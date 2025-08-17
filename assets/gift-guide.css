@@ -197,10 +197,10 @@ display:flex;
 
 .gift-hero__img{
   width: 100%;
-  height: 100%;
+  height: 110%;
   object-fit: cover;          /* تملى الديف كله */
   object-position: 5% 60%; /* نزّل الصورة لتحت */
-  object-position: 5% 110%;
+  object-position: 2% 110%;
   display: block;
 }
 
