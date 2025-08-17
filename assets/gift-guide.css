@@ -189,7 +189,21 @@ display:flex;
   display: block;
 }
 
+.gift-hero__art{
+  background: red;
+  height: 402px;
+  overflow: hidden;
+}
 
+.gift-hero__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* تملى الديف كله */
+  /*transform: translateY(105px);   /* نزّل الصورة 20px لتحت */
+
+  object-position: 5% 200%;
+  display: block;
+}
 /* قد ايه تنزل الصورة؟ عدّل القيمة دي */
 .gift-hero__art { --shiftY: 20px; } /* جرّب 20px/60px حسب ما تحب */
 
@@ -220,8 +234,8 @@ display:flex;
   position: absolute;
   left: 0;
   width: 100%;
-  height: 100%;            /* كبرنا الصورة 20% زيادة */
-  top: 50px;              /* هنا اتحكم بقى في النزول/الطلوع */
+  height: 120%;            /* كبرنا الصورة 20% زيادة */
+  top: -20px;              /* هنا اتحكم بقى في النزول/الطلوع */
   object-fit: cover;
   object-position: 5% center; /* تظبط يمين/شمال زي ما تحب */
   display: block;
