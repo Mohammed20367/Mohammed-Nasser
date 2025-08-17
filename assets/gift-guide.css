@@ -257,6 +257,11 @@ display:flex;
   object-fit: cover;                         /* تقطيع نظيف */
 }
 
+.pngimage
+{
+  object-fit:contain;
+}
+
 /* زرار + */
 .plus-icon1{
   position: absolute;
