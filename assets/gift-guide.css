@@ -205,7 +205,7 @@ display:flex;
   display: block;
 }
 /* قد ايه تنزل الصورة؟ عدّل القيمة دي */
-.gift-hero__art { --shiftY: 40px; } /* جرّب 20px/60px حسب ما تحب */
+.gift-hero__art { --shiftY: 0px; } /* جرّب 20px/60px حسب ما تحب */
 
 .gift-hero__art{
   position: relative;
