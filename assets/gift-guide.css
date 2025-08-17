@@ -165,7 +165,6 @@ display:flex;
   /* اشيل العرض والارتفاع الثابتين */
   width: 550px;
   height: 100%;
-  padding: 40px 48px;        /* استخدم padding بدل height */
   background: green;         /* لو عايز الأخضر يملأ العمود كله */
   display: flex;
   flex-direction: column;
@@ -175,7 +174,7 @@ display:flex;
 
 .gift-hero__art
 { 
-  width:890px;
+  width:910px;
   background-color:red;
   height: 402px; 
   overflow: hidden; 
