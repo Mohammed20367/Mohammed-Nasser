@@ -182,8 +182,8 @@ display:flex;
 .gift-hero__img{
   /* padding:10px 0px 0px 100px; */
   /* padding-left:20px */
-  width: 100%;
-  height: 105%;
+  width: 120%;
+  height: 100%;
   object-position : -6px 100px ;
   object-fit: cover;  
 }
