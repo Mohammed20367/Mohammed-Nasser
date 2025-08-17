@@ -192,22 +192,6 @@ display:flex;
 
 /* قد ايه تنزل الصورة؟ عدّل القيمة دي */
 
-.gift-hero__art{
-  position: relative;
-  height: 402px;
-  overflow: hidden;
-}
-
-.gift-hero__img{
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 100%;            /* كبرنا الصورة 20% زيادة */
-  top: 50px;              /* هنا اتحكم بقى في النزول/الطلوع */
-  object-fit: cover;
-  object-position: 5% center; /* تظبط يمين/شمال زي ما تحب */
-  display: block;
-}
 
 
 
