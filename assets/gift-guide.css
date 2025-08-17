@@ -152,6 +152,7 @@ display:flex;
 
 .gift-hero__inner{
   width: min(100%, 1440px);
+  background-color:red;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 550px 890px; /* مطابق لفجما */
