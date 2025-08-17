@@ -160,6 +160,7 @@ display:flex;
 
 /* سيب العرض ييجي من عمود الجريد – متحطّش width هنا */
 .gift-hero__art{
+  background-color:red;
   height: 402px;
   overflow: hidden;
   /* background-color: red;  // فحص فقط */
