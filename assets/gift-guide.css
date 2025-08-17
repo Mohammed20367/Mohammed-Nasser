@@ -190,16 +190,16 @@ display:flex;
 
 /* سيب العرض ييجي من عمود الجريد – متحطّش width هنا */
 .gift-hero__art{
- background-color:red;
+  width: 100%;
+  aspect-ratio: 890 / 402; /* من فيجما */
   overflow: hidden;
-  width:100%;
-  object-fit:cover;
+  background-color: red;
 }
-
 .gift-hero__img{
-   /* padding-left:60px;  ← شيلها */ */
-  width:100%;
-  object-fit:cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 
