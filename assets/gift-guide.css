@@ -174,18 +174,16 @@ display:flex;
 
 .gift-hero__art
 { 
-
   width:910px;
   background-color:red;
   height: 402px; 
   overflow: hidden; 
 }
 .gift-hero__img{
-  padding:10px 0px 0px 100px
+  /* padding:10px 0px 0px 100px */
   width: 100%;
   height: 100%;
   object-fit: cover;          /* يملأ الصندوق وقد يَقص */
-  display: block;
 }
 
 
