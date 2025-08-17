@@ -715,3 +715,65 @@ display:flex;
         position: relative;
         z-index: 2;
       }
+
+
+      /* Overlay */
+.gift-popup{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  display: none;
+  z-index: 1000;
+}
+
+/* Card */
+.gift-popup__card{
+  width: 250px;            /* 👈 المطلوب */
+  background: #fff;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+  font-family: 'Jost', sans-serif;
+}
+
+/* Close */
+.gift-popup__close{
+  position: absolute;
+  top: 6px; right: 8px;
+  font-size: 20px;
+  line-height: 1;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+/* Content bits */
+.gift-popup__img{ width: 100%; height: 140px; object-fit: cover; border-radius: 6px; }
+.gift-popup__title{ font-size: 14px; margin: 10px 0 4px; }
+.gift-popup__price{ font-size: 13px; margin-bottom: 8px; }
+.gift-popup__desc{ font-size: 12px; line-height: 1.4; color:#444; margin-bottom: 10px; }
+
+.gift-popup__label{ display:block; font-size:12px; margin: 8px 0 6px; }
+.gift-popup__swatches{ display:flex; gap:8px; }
+.swatch{
+  font-size:12px; padding:8px 10px; border:1px solid #000; background:#fff; cursor:pointer;
+}
+.swatch.is-active{ background:#000; color:#fff; }
+
+.gift-popup__select select{
+  width: 100%; padding: 10px 12px; border:1px solid #000; background:#fff; font-size:12px;
+}
+
+.gift-popup__cta{
+  width: 100%; margin-top: 12px;
+  background:#000; color:#fff; border:0; padding: 12px 14px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  letter-spacing:.03em;
+}
+.gift-popup__arrow{ width:18px; height:auto; filter:brightness(0) invert(1); }
+
+/* Visible state */
+.gift-popup.is-open{ display:block; }
