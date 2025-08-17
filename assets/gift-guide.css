@@ -165,10 +165,30 @@ display:flex;
 .gift-hero__art { height:402px; overflow:hidden; }
 .gift-hero__img  { width:100%; height:100%; object-fit:cover; display:block; }
 
+.gift-hero__art{
+  height: 402px;
+  overflow: hidden;
+  background-color: red; /* فحص */
+}
+.gift-hero__img{
+  padding: 10px 0 0 100px; /* لو محتاجه فعلاً */
+  /* 🚨 كان ناقص ; هنا فوق */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
 /* موبايل (اختياري) */
 @media (max-width: 992px){
   .gift-hero__inner{ grid-template-columns: 1fr; }
 }
+
+
+
+
+
 
 
 /* مقاسات الهيرو والتحريك لفوق */
