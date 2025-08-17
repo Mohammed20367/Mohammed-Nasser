@@ -150,62 +150,6 @@ display:flex;
 /* first frame in home page */
 
 
-/* البلوك الأساسي */
-.gift-hero__inner{
-  margin: 0 auto;
-  max-width: 1440px;
-  display: grid;
-  grid-template-columns: minmax(0,1fr) 910px; /* نص يتمدّد + صورة ثابتة */
-  align-items: center;
-  gap: 24px;
-  min-height: 402px;
-  background: transparent;
-}
-
-/* النص: من غير عرض ثابت */
-.gift-hero__copy{
-  width: auto;
-  height: auto;
-  padding: 40px 48px;
-  /* background: green;  ← لون فحص فقط */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* الصورة: بدون width ثابت على الطفل */
-.gift-hero__art{
-  height: 402px;
-  overflow: hidden;
-  background-color: red; /* فحص */
-}
-.gift-hero__img{
-  padding: 10px 0 0 100px; /* لو محتاجه فعلاً */
-  /* 🚨 كان ناقص ; هنا فوق */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* لو عندك ticker داخل نفس الجريد وعايزه يعرض كامل */
-.gift-hero__ticker{ grid-column: 1 / -1; }
-
-/* موبايل: صف واحد */
-@media (max-width: 992px){
-  .gift-hero__inner{ grid-template-columns: 1fr; }
-  .gift-hero__art{ height: 320px; }
-}
-.gift-hero__inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: stretch;   /* خلي الأعمدة تبقى نفس الارتفاع */
-  min-height: 402px;
-}
-.gift-hero__copy,
-.gift-hero__art {
-  height: auto;           /* سيب الارتفاع يتحدد من الـ grid */
-}
 
 
 /* مقاسات الهيرو والتحريك لفوق */
