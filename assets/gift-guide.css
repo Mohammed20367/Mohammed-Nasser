@@ -205,6 +205,20 @@ display:flex;
   display: block;
 }
 
+.gift-hero__art {
+  position: relative;
+  overflow: hidden;
+  height: 402px;
+  background: red; /* مؤقت للفحص */
+}
+
+.gift-hero__img {
+  width: 100%;
+  height: 120%;             /* زوّد الحجم عشان تفضل مالية الديف */
+  object-fit: cover;
+  object-position: center bottom; /* تلزق الصورة لتحت */
+  display: block;
+}
 
 
 
