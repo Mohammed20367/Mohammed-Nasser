@@ -155,7 +155,7 @@ display:flex;
   
   --hero-h: clamp(200px, 24vw, 260px);
   --shift-y: -60px; /* عدّلها -50/-70 حسب اللقطة */
-
+  background-color:green;
   margin:0;
 }
 
