@@ -149,21 +149,22 @@ display:flex;
 
 /* first frame in home page */
 
-.secondframe
-{
-display:grid;
-grid-template-columns: repeat(3, minmax(0, 1fr)) !important;  
-}
-.gift-hero__copy
-{
-  grid-column: span 1 / span 1 !important;
+.secondframe{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 أعمدة متساوية */
+  gap: 0;
 }
 
-.gift-hero__art
-{
-  grid-column: span 3 / span 3 !important;
-
+/* الكتلة اليسار تاخد عمود واحد (الأول) في الصف الأول */
+.gift-hero__copy{
+  grid-column: 1 / span 1;   /* من العمود 1 وتمتد عمود واحد */
 }
+
+/* الصورة تحت وتاخد عرض الجريد كله */
+.gift-hero__art{
+  grid-column: 1 / -1;       /* من أول عمود لآخر عمود (3) */
+}
+
 
 
 /* مقاسات الهيرو والتحريك لفوق */
