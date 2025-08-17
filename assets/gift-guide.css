@@ -150,51 +150,51 @@ display:flex;
 /* first frame in home page */
 
 
-.gift-hero__inner {
-  margin: 0 auto;              /* وسّط الكونتينر */
+/* البلوك الأساسي */
+.gift-hero__inner{
+  margin: 0 auto;
   max-width: 1440px;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* عمودين متساويين */
-  min-height: 402px;           /* طول القسم */
+  grid-template-columns: minmax(0,1fr) 910px; /* نص يتمدّد + صورة ثابتة */
+  align-items: center;
+  gap: 24px;
+  min-height: 402px;
   background: transparent;
 }
 
-.gift-hero__copy {
-  background: green;           /* للتوضيح بس */
+/* النص: من غير عرض ثابت */
+.gift-hero__copy{
+  width: auto;
+  height: auto;
+  padding: 40px 48px;
+  /* background: green;  ← لون فحص فقط */
   display: flex;
   flex-direction: column;
-  justify-content: center;     /* وسّط النص عمودي */
-  width: 100%;                 /* ياخد عرض العمود */
-  height: auto;                /* الطول يجي من المحتوى */
-  box-sizing: border-box;      /* يمنع أي overflow */
-  padding: 20px;               /* شوية مسافة داخلية */
+  justify-content: center;
 }
 
-.gift-hero__art {
-  background-color: red;       /* للتوضيح */
+/* الصورة: بدون width ثابت على الطفل */
+.gift-hero__art{
+  height: 402px;
   overflow: hidden;
-  width: 100%;                 /* ياخد عرض العمود */
-  height: 100%;                /* يملأ ارتفاع الـ grid */
-  display: flex;
-  align-items: center;         /* وسّط المحتوى عمودي */
-  justify-content: center;     /* وسّط المحتوى أفقي */
+  background-color: red; /* فحص */
 }
-
-.gift-hero__img {
+.gift-hero__img{
+  padding: 10px 0 0 100px; /* لو محتاجه فعلاً */
+  /* 🚨 كان ناقص ; هنا فوق */
   width: 100%;
   height: 100%;
-  object-fit: cover;           /* يملأ العمود ويقص الزائد */
+  object-fit: cover;
   display: block;
-  padding: 10px 0 0 100px;     /* اتأكد إنها مقفولة بفاصلة منقوطة */
 }
-.gift-hero__inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 402px;          /* طول ثابت لكل الأعمدة */
-}
-.gift-hero__copy,
-.gift-hero__art {
-  height: 100%;           /* كل واحد يملأ عموده */
+
+/* لو عندك ticker داخل نفس الجريد وعايزه يعرض كامل */
+.gift-hero__ticker{ grid-column: 1 / -1; }
+
+/* موبايل: صف واحد */
+@media (max-width: 992px){
+  .gift-hero__inner{ grid-template-columns: 1fr; }
+  .gift-hero__art{ height: 320px; }
 }
 
 
