@@ -175,7 +175,7 @@ display:flex;
 
 .gift-hero__art
 { 
-  background-image:url({{ 'Frame.svg' | asset_url }})
+background-image: url("{{ 'Frame.svg' | asset_url }}");
   width:910px;
   background-color:red;
   height: 402px; 
