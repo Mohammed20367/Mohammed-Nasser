@@ -243,6 +243,30 @@ display:flex;
 }
 
 
+.gift-hero__art{
+  position: relative;
+  height: 402px;
+  overflow: hidden;
+  /* عدّل القيمة دي بس عشان تزود/تقلل نزول الصورة */
+  --shiftY: -90px; /* سالب = ترفع الصورة لأعلى لِتُظهر الجزء السفلي أكثر */
+}
+
+.gift-hero__img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* تغطية مضمونة للصندوق */
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  display: block;
+
+  /* تحكّم في المكان */
+  transform: translate(-50%, calc(-50% + var(--shiftY)));
+  object-fit: cover;      /* احتياطي */
+  object-position: 5% 50%;/* يمين/شمال زي ما تحب (غيّر 5%) */
+}
 
 
 /* الشريط السفلي */
