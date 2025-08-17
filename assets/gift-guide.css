@@ -268,7 +268,11 @@ display:flex;
   display: grid;
   place-items: center;
 }
-
+.plusimage
+{
+   width: 22px !important;
+  height: 22px;
+}
 
 /* ريسبونسيف */
 @media (max-width: 992px){
