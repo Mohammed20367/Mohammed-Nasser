@@ -217,10 +217,6 @@ display:flex;
   position: absolute;
   left: 0; right: 0;
   width: 100%;
-  height: calc(100% + var(--shiftY)); /* نكبر الصورة رأسيًا */
-  top: calc(-1 * var(--shiftY));      /* نرفعها لفوق بنفس المقدار */
-  object-fit: cover;                  /* تفضل مالية الديف */
-           /* يمين/شمال زي ما ظبطتها قبل كده */
   display: block;
 }
 
