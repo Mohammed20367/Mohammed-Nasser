@@ -150,40 +150,7 @@ display:flex;
 /* first frame in home page */
 
 
-.gift-hero__inner{
-  width: min(100%, 1440px);
-  background-color:red;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 550px 890px; /* مطابق لفجما */
-  align-items: center;
-  min-height: 402px;
-  gap: 0; /* مفيش مسافة بين العمودين */
-}
-
-.gift-hero__copy{ width:auto; height:auto; }         /* سيب الطفل ياخد خلية الجريد */
-.gift-hero__art { height:402px; overflow:hidden; }
-.gift-hero__img  { width:100%; height:100%; object-fit:cover; display:block; }
-
-.gift-hero__art{
-  height: 402px;
-  overflow: hidden;
-  background-color: red; /* فحص */
-}
-.gift-hero__img{
-  padding: 10px 0 0 100px; /* لو محتاجه فعلاً */
-  /* 🚨 كان ناقص ; هنا فوق */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-
-/* موبايل (اختياري) */
-@media (max-width: 992px){
-  .gift-hero__inner{ grid-template-columns: 1fr; }
-}
+.gift-hero__inner{ margin: 0 auto; /* وسّط الكونتينر */ max-width: 1440px; display:grid; grid-template-columns: 1fr 1fr; min-height:402px; background: transparent; /* شيل الأحمر من الأب لو مش محتاجه */ } .gift-hero__copy{ /* اشيل العرض والارتفاع الثابتين */ width: 500px; height: 100%; background: green; /* لو عايز الأخضر يملأ العمود كله */ display: flex; flex-direction: column; justify-content: center; /* وسّط النص عموديًا */ } .gift-hero__art { width:910px; background-color:red; height: 402px; overflow: hidden; } .gift-hero__img{ padding:10px 0px 0px 100px width: 100%; height: 100%; object-fit: cover; /* يملأ الصندوق وقد يَقص */ display: block; }
 
 
 
