@@ -161,13 +161,11 @@ display:flex;
   min-height: 402px;
 }
 
-/* كتلة النص: من غير width ثابت، مع أقصى عرض مريح وميل يسار */
 .gift-hero__copy{
   background-color:#09c;
   width: 500px;                 /* كان 500px */
   height: 402px;                /* كان 100% */
-  padding: 40px 48px;
-  /* background: green;  ← لون فحص، اشيله لو خلصت */
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
