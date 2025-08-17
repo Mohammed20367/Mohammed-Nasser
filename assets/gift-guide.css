@@ -199,8 +199,9 @@ vertical-align: middle;
 
 /* الصورة (مضمونة الظهور) */
 .gift-hero__art{
+
   position:relative;
-  height: var(--hero-h);
+  height: 402px;
   min-height: var(--hero-h);
   overflow:hidden;
 }
