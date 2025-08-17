@@ -200,20 +200,12 @@ display:flex;
   height: 100%;
   object-fit: cover;          /* تملى الديف كله */
   /*transform: translateY(105px);   /* نزّل الصورة 20px لتحت */
+
   object-position: 5% 200%;
   display: block;
 }
 
 
-.gift-hero__art{
-  height:402px;
-  overflow:hidden;
-  /* غيّر الرابط حسب ملفك */
-  background: red url("{{ 'Frame.svg' | asset_url }}") no-repeat;
-  background-size: cover;                /* تملى الصندوق من غير تشويه */
-  background-position: 5% 90%;           /* X% يمين/شمال ، Y% فوق/تحت */
-  /* مثال: 5% يمين + 90% لتحت */
-}
 
 
 
