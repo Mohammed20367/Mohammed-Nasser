@@ -143,13 +143,26 @@ display:flex;
   width: 24px;
   height: 100%;
 }
-.gift-button .gift-icon--arrow,
-.gift-button .gift-icon--arrow-text{
-  position: relative;  /* لازم عشان z-index يشتغل */
-  z-index: 1;
+.gift-icon--arrow {
+  position: relative;
+  display: inline-block;
 }
-.gift-button::before{
-  z-index: 0; /* وتأكد إن parent عنده position: relative; */
+
+/* النسخة البيضاء فوق */
+.gift-icon--arrow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('{{ "Arrow.svg" | asset_url }}') no-repeat center/contain;
+  filter: brightness(0) invert(1); /* أبيض */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .55s ease;
+}
+
+/* وقت الهوفر */
+.gift-button:hover .gift-icon--arrow::after {
+  transform: scaleX(1); /* تكشف النسخة البيضاء تدريجي مع الفيل */
 }
 
 
