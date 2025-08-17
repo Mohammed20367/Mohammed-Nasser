@@ -175,11 +175,10 @@ display:flex;
 
 .gift-hero__art
 { 
-background-image: url("{{ 'Frame.svg' | asset_url }}");
   width:910px;
-  
   height: 402px; 
   overflow: hidden; 
+  background-image: url("{{ 'Frame.svg' | asset_url }}");
 }
 /* .gift-hero__img{
   padding-top:30px;
