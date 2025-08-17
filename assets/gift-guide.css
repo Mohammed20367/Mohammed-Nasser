@@ -176,7 +176,12 @@ display:flex;
   position:relative;
   min-height:402px;
   overflow:hidden;
-  background:#09b;
+  background:#09c;
+  width: 890;
+height: 402;
+angle: 0 deg;
+opacity: 1;
+
 }
 .gift-hero__img{
   width:100%;
