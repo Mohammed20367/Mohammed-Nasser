@@ -294,82 +294,79 @@ vertical-align: middle;
 
 
 
-/* المتغير ده عشان تغيّر لون الفيل بسهولة لو حبيت */
-:root{
-  --gift-fill: #E30613; /* أحمر مؤقتًا */
-}
 
-/* شكل الزرار الأساسي (عدّل القيم لو عندك ستايل مسبق) */
-.gift-button{
-  position: relative;
-  overflow: hidden;
+
+
+/* Button */
+.gift-button {
+  width: 207px;
+  height: 44px;
   display: inline-flex;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
-  padding: 12px 18px;
-  border-radius: 999px;
-  border: 1px solid #111;
-  background: #fff;
-  color: #111;
+  gap: 20px;
+  padding: 12px 16px;
+  border: 1px solid #000;
+  background: transparent;
+  text-decoration: none;
   cursor: pointer;
-  transition: color .35s ease, border-color .35s ease, background-color .35s ease;
+  position: relative;          /* مهم للفيل */
+  overflow: hidden;            /* عشان الفيل ما يطلعش برا */
+  transition: color 0.35s ease, border-color 0.35s ease;
 }
 
-/* طبقة الفيل اللي هتزحف من الشمال لليمين */
-.gift-button::before{
+/* Yellow button -- highlighted */
+.gift-button--highlight {
+  background-color: #FFF544;
+  border-color: #FFF544;
+  font-weight: 400;
+}
+
+/* fill effect */
+.gift-button::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, var(--gift-fill), var(--gift-fill));
+  background: #e30613;          /* أحمر مؤقتًا */
   transform: scaleX(0);
-  transform-origin: left center; /* يبدأ من الشمال */
-  transition: transform .55s ease; /* هادي شوية */
+  transform-origin: left center;
+  transition: transform 0.55s ease;
   z-index: 0;
-  pointer-events: none;
-  will-change: transform;
 }
 
-/* نخلي النص والسهم فوق طبقة الفيل */
+/* text & arrow فوق الفيل */
 .gift-button .gift-icon--arrow-text,
-.gift-button .gift-icon--arrow{
+.gift-button .gift-icon--arrow {
   position: relative;
   z-index: 1;
-  transition: color .35s ease, filter .35s ease, opacity .35s ease;
+  transition: color 0.35s ease, filter 0.35s ease;
 }
 
-/* الحالة Hover/Focus */
-.gift-button:hover::before,
-.gift-button:focus-visible::before{
+/* Hover: شغّل الفيل */
+.gift-button:hover::before {
   transform: scaleX(1);
 }
 
-.gift-button:hover,
-.gift-button:focus-visible{
-  color: #fff;               /* النص يبقى أبيض */
-  border-color: var(--gift-fill);
+/* Hover: النص والسهم أبيض */
+.gift-button:hover .gift-icon--arrow-text {
+  color: #fff;
 }
-
-/* السهم صورة SVG سوداء؟ خلّيه أبيض بـ filter */
-.gift-button:hover .gift-icon--arrow,
-.gift-button:focus-visible .gift-icon--arrow{
+.gift-button:hover .gift-icon--arrow {
   filter: brightness(0) invert(1);
 }
 
-/* تحسين وصول */
-.gift-button:focus-visible{
-  outline: 2px solid color-mix(in srgb, var(--gift-fill) 60%, #000 40%);
-  outline-offset: 2px;
+/* Arrow text container */
+.gift-icon--arrow-text {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+.gift-button:hover .gift-icon--arrow-text {
+  transform: translateX(4px);
 }
 
-/* لو حد مفعّل تقليل الحركة */
-@media (prefers-reduced-motion: reduce){
-  .gift-button,
-  .gift-button::before,
-  .gift-button .gift-icon--arrow,
-  .gift-button .gift-icon--arrow-text{
-    transition: none;
-  }
+/* Arrow line */
+.gift-icon--arrow {
+  display: inline-block;
+  width: 24px;
+  height: 100%;
 }
-
-
-
