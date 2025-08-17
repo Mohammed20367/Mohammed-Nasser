@@ -107,7 +107,7 @@ The task Contain :-
   </div>   
 </div>
 
- <div class="section2">
+ {% comment %} <div class="section2">
   <section class="part-two">
     <h2 class="wild-title">Tisso vison in the wild</h2>
 
@@ -137,7 +137,52 @@ The task Contain :-
         <span class="plus-icon"><img src="{{ 'plus.svg' | asset_url }}" alt="plus in card"></span>
       </div>
     </div>
-  </section>
+  </section> {% endcomment %}
+
+  <div class="grid-container">
+  <div class="grid-item">
+    <img src="{{ 'image 822.svg' | asset_url }}" alt="Look 1">
+    <span class="plus-icon"
+          style="--x: 34%; --y: 42%;"
+          data-pop="look-1" role="button" aria-label="Show details"></span>
+  </div>
+
+  <div class="grid-item">
+    <img src="{{ 'image 823.svg' | asset_url }}" alt="Look 2">
+    <span class="plus-icon"
+          style="--x: 63%; --y: 33%;"
+          data-pop="look-2" role="button" aria-label="Show details"></span>
+  </div>
+
+  <div class="grid-item">
+    <img src="{{ 'image 824.svg' | asset_url }}" alt="Look 3">
+    <span class="plus-icon"
+          style="--x: 69%; --y: 20%;"
+          data-pop="look-3" role="button" aria-label="Show details"></span>
+  </div>
+
+  <div class="grid-item">
+    <img src="{{ 'image 825.svg' | asset_url }}" alt="Look 4">
+    <span class="plus-icon"
+          style="--x: 41%; --y: 22%;"
+          data-pop="look-4" role="button" aria-label="Show details"></span>
+  </div>
+
+  <div class="grid-item">
+    <img src="{{ 'image 826.svg' | asset_url }}" alt="Look 5">
+    <span class="plus-icon"
+          style="--x: 60%; --y: 28%;"
+          data-pop="look-5" role="button" aria-label="Show details"></span>
+  </div>
+
+  <div class="grid-item">
+    <img src="{{ 'image 827.svg' | asset_url }}" alt="Look 6">
+    <span class="plus-icon"
+          style="--x: 84%; --y: 56%;"
+          data-pop="look-6" role="button" aria-label="Show details"></span>
+  </div>
+</div>
+
 </div> 
 
 
