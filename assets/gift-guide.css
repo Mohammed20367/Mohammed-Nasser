@@ -152,13 +152,7 @@ display:flex;
 
 /* مقاسات الهيرو والتحريك لفوق */
 
-.gift-hero__inner{
-  margin: 0 auto;            /* وسّط الكونتينر */
-  max-width: 1440px;
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  min-height:402px;
-}
+
 
 .gift-hero__copy{
   /* اشيل العرض والارتفاع الثابتين */
