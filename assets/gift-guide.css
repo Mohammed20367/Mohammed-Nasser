@@ -173,7 +173,6 @@ display:flex;
   max-width: 520px;
 }
 
-/* صندوق الصورة */
 .gift-hero__art{
   margin:0px;
   background-color:red;
@@ -182,13 +181,11 @@ display:flex;
   overflow: hidden;
 }
 
-/* الصورة نفسها */
 .gift-hero__img{
   padding: 10px 0 0 100px;  
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 /* موبايل: صف واحد */
