@@ -152,6 +152,7 @@ display:flex;
 
 /* الحاوية: عمودان (النص يتمدّد + الصورة 890px)، وتوسيط رأسي */
 .gift-hero__inner{
+  background-color:#09c;
   display: grid;
   grid-template-columns: minmax(0,1fr) 700px; /* النص يتمدّد + الصورة 700px */
   align-items: center;
