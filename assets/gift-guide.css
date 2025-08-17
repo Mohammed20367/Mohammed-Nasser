@@ -152,27 +152,15 @@ display:flex;
 
 /* مقاسات الهيرو والتحريك لفوق */
 
-.gift-hero__inner{
-  margin: 0 auto;            /* وسّط الكونتينر */
-  max-width: 1440px;
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  min-height:402px;
-  background: transparent;   /* شيل الأحمر من الأب لو مش محتاجه */
+
+
+
+.gift-hero__art
+{ 
+  width:910px;
+  background-color:red;
+  height: 402px; 
 }
-
-.gift-hero__copy{
-  /* اشيل العرض والارتفاع الثابتين */
-  width: 500px;
-  height: 100%;
-  background: green;         /* لو عايز الأخضر يملأ العمود كله */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;   /* وسّط النص عموديًا */
-}
-
-
-
 .gift-hero__img{
   /* padding:10px 0px 0px 100px; */
   padding-left:20px
