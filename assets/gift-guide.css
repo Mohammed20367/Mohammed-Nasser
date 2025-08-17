@@ -176,6 +176,7 @@ display:flex;
 
 /* صندوق الصورة */
 .gift-hero__art{
+  background-color:red;
   height: 402px;
   overflow: hidden;
   /* background-color: red; ← لون فحص */
