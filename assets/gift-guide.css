@@ -149,69 +149,27 @@ display:flex;
 
 /* first frame in home page */
 
-
-/* الحاوية: عمودان (النص يتمدّد + الصورة 890px)، وتوسيط رأسي */
-.gift-hero__inner{
-  display: grid;
-  grid-template-columns: minmax(0,1fr) 700px; /* النص يتمدّد + الصورة 700px */
-  align-items: center;
-  min-height: 402px;
+.secondframe{
+  display: grid;            /* required to enable grid layout */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-/* زوّد الأسبقية وحدد المساحة بوضوح */
-.gift-hero__inner .gift-hero__copy{
-  background:#0c9;
-    align-items: stretch;   /* بدل center */
+/* الكتلة اليسار تاخد عمود واحد (الأول) في الصف الأول */
+.gift-hero__copy{
+ grid-column: span 1 / span 1;}
 
-  padding-top:50px;
-  padding-left:67px;
-  width:auto;     /* بلاش 100% لو الأب مش محدد عرض */
-  height:auto;    /* بلاش 100% */
-}
-
-.gift-hero__inner .gift-hero__title{
-  margin:0 0 12px;
-  font-family:'Jost', sans-serif;
-  font-weight:500;          /* بدل font-style */
-  font-size:70px;
-  line-height:1;
-}
-
-.gift-hero__inner .gift-hero__text{
-  margin:0;
-  font-family:'Jost', sans-serif;
-  font-weight:400;
-  font-size:20px;
-  line-height:1.4;
-}
-
-
-
-/* سيب العرض ييجي من عمود الجريد – متحطّش width هنا */
+/* الصورة تحت وتاخد عرض الجريد كله */
 .gift-hero__art{
-  background-color:red;
-  height: 402px;
-  overflow: hidden;
-  object-fit:cover;
+
+  grid-column: span 2/span 2;
+      /* من أول عمود لآخر عمود (3) */
 }
 
-.gift-hero__img{
-   /* padding-left:60px;  ← شيلها */ */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: right bottom;        /* يمين + تحت */
-  display: block;
+
+.gift-hero__img
+{
+  width:100%;
 }
-
-/* لو عايز تحكم أدق: */
-.gift-hero__art{ --x: 95%; --y: 90%; }  /* غيّر النِسَب حسب مزاجك */
-.gift-hero__img{ object-position: var(--x) var(--y); }
-
-
-
-
-
 
 /* مقاسات الهيرو والتحريك لفوق */
 
@@ -300,24 +258,53 @@ display:flex;
 }
 
 /* زرار + */
-.plus-icon{
+.plus-icon1{
+  position: absolute;
+  top: 55%;
+  right: 65px;
+  /* هنلعب ف ال6 ف التوب والرايت والليفت لحد مانوصل*/
+ 
+}
+.plus-icon2{
   position: absolute;
   top: 12px;
   right: 12px;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 18px;
-  color: #fff;
-  background: rgba(0,0,0,.6);
-  border: 1px solid rgba(255,255,255,.85);
-  box-shadow: 0 2px 6px rgba(0,0,0,.18);
-  user-select: none;
-  transition: transform .15s ease, background .15s ease;
+  
+ 
 }
-.grid-item:hover .plus-icon{ transform: scale(1.06); }
+.plus-icon3{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  
+ 
+}
+.plus-icon4{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  
+ 
+}
+.plus-icon5{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  
+ 
+}
+.plus-icon6{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  
+ 
+}
+.plusimage
+{
+   width: 22px !important;
+  height: 22px !important;
+}
 
 /* ريسبونسيف */
 @media (max-width: 992px){
