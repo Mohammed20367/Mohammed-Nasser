@@ -176,7 +176,9 @@ display:flex;
 .gift-hero__art
 { 
   width:910px;
+  background-color:red;
   height: 402px; 
+  overflow: hidden; 
   background-image: url("{{ 'Frame.svg' | asset_url }}");
 }
 /* .gift-hero__img{
