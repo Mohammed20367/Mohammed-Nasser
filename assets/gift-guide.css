@@ -175,18 +175,19 @@ display:flex;
 
 .gift-hero__art
 { 
+  background-image:url({{ 'Frame.svg' | asset_url }})
   width:910px;
   background-color:red;
   height: 402px; 
   overflow: hidden; 
 }
-.gift-hero__img{
+/* .gift-hero__img{
   padding-top:30px;
   width: 100%;
   height: 100%;
   object-fit: cover; 
-  object-position:50px 100px;
-}
+  object-position:50px 80px;
+} */
 
 
 /* قد ايه تنزل الصورة؟ عدّل القيمة دي */
