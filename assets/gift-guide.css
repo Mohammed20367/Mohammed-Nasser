@@ -203,7 +203,6 @@ vertical-align: middle;
   height: var(--hero-h);
   min-height: var(--hero-h);
   overflow:hidden;
-  border: 1px solid #e8e8e8;         /* خط رفيع زي المرجع */
 }
 .gift-hero__img{
   position:absolute; inset:0;
