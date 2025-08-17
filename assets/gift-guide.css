@@ -238,7 +238,7 @@ display:flex;
   height: 100%;            /* كبرنا الصورة 20% زيادة */
   top: 90px;              /* هنا اتحكم بقى في النزول/الطلوع */
   object-fit: cover;
-  object-position: 5% center; /* تظبط يمين/شمال زي ما تحب */
+  object-position: 5% ; /* تظبط يمين/شمال زي ما تحب */
   display: block;
 }
 
