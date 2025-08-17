@@ -216,6 +216,13 @@ display:flex;
     height: 320px; /* مثال */
   }
 }
+.gift-hero__inner{
+  margin: 0 auto;
+  max-width: 1440px;
+  display: grid;
+  grid-template-columns: 1fr 890px; /* النص يتمدّد والصورة ثابتة */
+  min-height: 402px;
+}
 
 
 
