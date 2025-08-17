@@ -199,6 +199,7 @@ display:flex;
 
 /* النص */
 .gift-hero__copy{
+  width:550px;
   display: flex;
   flex-direction: column;
   justify-content: center;
