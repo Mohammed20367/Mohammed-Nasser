@@ -196,6 +196,16 @@ display:flex;
   .gift-hero__inner{ grid-template-columns: 1fr; }
   .gift-hero__art{ height: 320px; }
 }
+.gift-hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;   /* خلي الأعمدة تبقى نفس الارتفاع */
+  min-height: 402px;
+}
+.gift-hero__copy,
+.gift-hero__art {
+  height: auto;           /* سيب الارتفاع يتحدد من الـ grid */
+}
 
 
 /* مقاسات الهيرو والتحريك لفوق */
