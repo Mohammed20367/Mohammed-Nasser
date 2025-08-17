@@ -161,6 +161,8 @@ display:flex;
 /* زوّد الأسبقية وحدد المساحة بوضوح */
 .gift-hero__inner .gift-hero__copy{
   background:#0c9;
+    align-items: stretch;   /* بدل center */
+
   padding-top:50px;
   padding-left:67px;
   width:auto;     /* بلاش 100% لو الأب مش محدد عرض */
