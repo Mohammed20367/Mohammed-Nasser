@@ -143,6 +143,14 @@ display:flex;
   width: 24px;
   height: 100%;
 }
+.gift-button .gift-icon--arrow,
+.gift-button .gift-icon--arrow-text{
+  position: relative;  /* لازم عشان z-index يشتغل */
+  z-index: 1;
+}
+.gift-button::before{
+  z-index: 0; /* وتأكد إن parent عنده position: relative; */
+}
 
 
 /* first frame in home page */
