@@ -149,20 +149,23 @@ display:flex;
 
 /* first frame in home page */
 
-.grid-cols-3 {
+.secondframe{
   display: grid;            /* required to enable grid layout */
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-/* col-span-1 */
-.col-span-1 {
-  grid-column: span 1 / span 1;
+/* الكتلة اليسار تاخد عمود واحد (الأول) في الصف الأول */
+.gift-hero__copy{
+ grid-column: span 1 / span 1;}
+
+/* الصورة تحت وتاخد عرض الجريد كله */
+.gift-hero__art{
+  background-color:red;
+  grid-column: span 2/span 2;
+      /* من أول عمود لآخر عمود (3) */
 }
 
-/* col-span-2 */
-.col-span-2 {
-  grid-column: span 2 / span 2;
-}
+
 
 
 /* مقاسات الهيرو والتحريك لفوق */
