@@ -174,11 +174,10 @@ display:flex;
 
 .gift-hero__art{
   position:relative;
-  min-height:402px;
-  overflow:hidden;
+ 
   background:#09c;
   width: 890;
-  height: 402;
+  height: 402px;
   opacity: 1;
   padding:0px 0px 0px 50px;
 
