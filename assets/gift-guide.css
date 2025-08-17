@@ -224,22 +224,24 @@ display:flex;
   display: block;
 }
 
-.gift-hero__art{
+.gift-hero__art{ 
   position: relative;
   height: 402px;
   overflow: hidden;
+  --y: 90px;           /* قدّ إيه عايزها تبان نازلة */
 }
 
 .gift-hero__img{
   position: absolute;
   left: 0;
   width: 100%;
-  height: 100%;            /* كبرنا الصورة 20% زيادة */
-  top: 100px;              /* هنا اتحكم بقى في النزول/الطلوع */
+  height: calc(100% + var(--y));   /* نزوّد الارتفاع */
+  top: calc(-1 * var(--y));        /* نرفعها لفوق نفس المقدار */
   object-fit: cover;
-  object-position: 5% center; /* تظبط يمين/شمال زي ما تحب */
+  object-position: 5% center;      /* يمين/شمال زي ما ظابطه */
   display: block;
 }
+
 
 
 
