@@ -149,7 +149,11 @@ display:flex;
 /* first frame in home page */
 
 
-
+.secondframe
+{
+  width:100%;
+  height:390px;
+}
 
 /* مقاسات الهيرو والتحريك لفوق */
 .gift-hero{
