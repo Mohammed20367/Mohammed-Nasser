@@ -153,7 +153,6 @@ display:flex;
 /* مقاسات الهيرو والتحريك لفوق */
 .gift-hero{
 width:100%;
-height:402px;
   background-color:green;
   margin:0;
 }
