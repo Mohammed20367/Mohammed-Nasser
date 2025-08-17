@@ -145,6 +145,7 @@ display:flex;
   line-height:1.45;
   margin:0 0 14px;
   max-width: 46ch;
+  color:#000000;
 }
 .gift-btn{
   display:inline-flex; align-items:center; gap:10px;
