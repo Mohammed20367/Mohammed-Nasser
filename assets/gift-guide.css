@@ -177,14 +177,13 @@ display:flex;
   font-size:12px;
   padding:10px 50px;
   font-family: 'Jost', sans-serif;
-font-weight: 400;
-font-style: Regular;
-font-size: 16px;
-leading-trim: NONE;
-line-height: 13.42px;
-letter-spacing: 0px;
-text-align: center;
-vertical-align: middle;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 13.42px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
 
 }
 
