@@ -137,187 +137,6 @@ The task Contain :-
     </div>
   </section>
 </div> 
-{% comment %}
-  Grid of products with modal popup per product
-{% endcomment %}
-
-<style>
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .product-card {
-    position: relative;
-  }
-  .product-card img {
-    width: 100%;
-    border-radius: 6px;
-  }
-  .plus-icon {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    cursor: pointer;
-    background: white;
-    border-radius: 50%;
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 18px;
-  }
-  /* Overlay */
-  .modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-  .modal-overlay.active {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  /* Popup box */
-  .modal-box {
-    background: #fff;
-    border-radius: 12px;
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-    width: 800px;
-    max-width: 95%;
-    position: relative;
-  }
-  .modal-box img {
-    width: 45%;
-    border-radius: 10px;
-    object-fit: cover;
-  }
-  .modal-content {
-    flex: 1;
-  }
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
-    border: none;
-    background: none;
-  }
-  .product-title { font-size: 22px; font-weight: bold; margin-bottom: 8px; }
-  .product-price { font-size: 20px; margin-bottom: 10px; }
-  .product-description { font-size: 14px; color: #555; margin-bottom: 15px; }
-  .option-label { font-weight: bold; margin: 12px 0 5px; display: block; }
-  .color-options, .size-options {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-  }
-  .add-to-cart {
-    width: 100%;
-    background: black;
-    color: white;
-    padding: 12px;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    text-transform: uppercase;
-  }
-</style>
-
-<div class="product-grid">
-  {% for product in collections.frontpage.products %}
-  <div class="product-card">
-    <img src="{{ product.featured_image | img_url: '400x' }}" alt="{{ product.title }}">
-    <span class="plus-icon" data-target="popup-{{ product.id }}">+</span>
-  </div>
-
-  <!-- Popup -->
-  <div id="popup-{{ product.id }}" class="modal-overlay">
-    <div class="modal-box">
-      <button class="close-btn">&times;</button>
-      <img src="{{ product.featured_image | img_url: '600x' }}" alt="{{ product.title }}">
-      <div class="modal-content">
-        <h2 class="product-title">{{ product.title }}</h2>
-        <div class="product-price">{{ product.price | money }}</div>
-        <p class="product-description">{{ product.description | strip_html | truncate: 180 }}</p>
-
-        <!-- Color Options (if product has option 'Color') -->
-        {% if product.options contains 'Color' %}
-          <label class="option-label">Color</label>
-          <select class="color-options">
-            {% for option in product.options_with_values %}
-              {% if option.name == 'Color' %}
-                {% for value in option.values %}
-                  <option>{{ value }}</option>
-                {% endfor %}
-              {% endif %}
-            {% endfor %}
-          </select>
-        {% endif %}
-
-        <!-- Size Options (if product has option 'Size') -->
-        {% if product.options contains 'Size' %}
-          <label class="option-label">Size</label>
-          <select class="size-options">
-            <option>Choose your size</option>
-            {% for option in product.options_with_values %}
-              {% if option.name == 'Size' %}
-                {% for value in option.values %}
-                  <option>{{ value }}</option>
-                {% endfor %}
-              {% endif %}
-            {% endfor %}
-          </select>
-        {% endif %}
-
-        <!-- Add to Cart form -->
-        <form method="post" action="/cart/add">
-          <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-          <button type="submit" class="add-to-cart">Add to Cart</button>
-        </form>
-      </div>
-    </div>
-  </div>
-  {% endfor %}
-</div>
-
-<script>
-  document.querySelectorAll(".plus-icon").forEach(icon => {
-    icon.addEventListener("click", function() {
-      const targetId = this.getAttribute("data-target");
-      document.getElementById(targetId).classList.add("active");
-      document.body.style.overflow = "hidden";
-    });
-  });
-
-  document.querySelectorAll(".close-btn").forEach(btn => {
-    btn.addEventListener("click", function() {
-      this.closest(".modal-overlay").classList.remove("active");
-      document.body.style.overflow = "auto";
-    });
-  });
-
-  document.querySelectorAll(".modal-overlay").forEach(overlay => {
-    overlay.addEventListener("click", function(e) {
-      if (e.target === overlay) {
-        overlay.classList.remove("active");
-        document.body.style.overflow = "auto";
-      }
-    });
-  });
-</script>
 
 
       
@@ -377,7 +196,85 @@ The task Contain :-
 
 </div>
 
+<!--تجربة-->
 
+<div class="product-layout">
+            <div class="details-section">
+              <div class="product-info" style="display: flex; gap: 5px">
+                <div class="image-section">
+                  <div class="product-image"></div>
+                </div>
+                <div>
+                  <h1 class="product-title">Tailored Jacket</h1>
+                  <div class="product-price">980,00€</div>
+                  <p class="product-description">
+                    This one-piece swimsuit is crafted from jersey featuring an
+                    allover micro Monogram motif in relief.
+                  </p>
+                </div>
+              </div>
+
+              <div class="product-options">
+                <div class="option-group">
+                  <label class="option-label">Color</label>
+                  <div class="color-options">
+                    <button class="color-option blue" data-color="blue">
+                      Blue
+                    </button>
+                    <button class="color-option black" data-color="black">
+                      Black
+                    </button>
+                  </div>
+                </div>
+
+                <div class="option-group">
+                  <label class="option-label">Size</label>
+                  <div class="size-selector">
+                    <div class="custom-select" id="customSelect">
+                      <div class="select-trigger" id="selectTrigger">
+                        <span
+                          class="select-text placeholder"
+                          style="padding: 10px; text-align: center; width: 100%"
+                          id="selectText"
+                          >Choose your size</span
+                        >
+                        <div
+                          style="
+                            display: flex;
+                            align-items: center;
+                            border-left: 2px solid #111010;
+                            height: 40.4px;
+                            padding: 10px;
+                          "
+                        >
+                          <div class="dropdown-arrow" id="dropdownArrow">
+                            <svg
+                              width="16"
+                              height="10"
+                              viewBox="0 0 16 10"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M2 2L8 8L14 2"
+                                stroke="black"
+                                stroke-width="1.5"
+                                stroke-linecap="square"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="select-options" id="selectOptions">
+                        <div class="select-option" data-value="xs">XS</div>
+                        <div class="select-option" data-value="s">S</div>
+                        <div class="select-option" data-value="m">M</div>
+                        <div class="select-option" data-value="l">L</div>
+                        <div class="select-option" data-value="xl">XL</div>
+                        <div class="select-option" data-value="xxl">XXL</div>
+                      </div>
+                    </div>
+                  </div>
 {% schema %}
 {
   "name": "Task",
