@@ -192,16 +192,14 @@ display:flex;
 .gift-hero__art{
   height: 402px;
   overflow: hidden;
-  object-fit:cover;
+  
 }
 
 .gift-hero__img{
    /* padding-left:60px;  ← شيلها */ */
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: right bottom;        /* يمين + تحت */
-  display: block;
+  
 }
 
 /* لو عايز تحكم أدق: */
