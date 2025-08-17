@@ -191,24 +191,6 @@ display:flex;
 
 
 /* قد ايه تنزل الصورة؟ عدّل القيمة دي */
-.gift-hero__art { --shiftY: 20px; } /* جرّب 20px/60px حسب ما تحب */
-
-.gift-hero__art{
-  position: relative;
-  height: 402px;
-  overflow: hidden;
-}
-
-.gift-hero__img{
-  position: absolute;
-  left: 0; right: 0;
-  width: 100%;
-  height: calc(100% + var(--shiftY)); /* نكبر الصورة رأسيًا */
-  top: calc(-1 * var(--shiftY));      /* نرفعها لفوق بنفس المقدار */
-  object-fit: cover;                  /* تفضل مالية الديف */
-  object-position: 5% 100%;            /* يمين/شمال زي ما ظبطتها قبل كده */
-  display: block;
-}
 
 .gift-hero__art{
   position: relative;
