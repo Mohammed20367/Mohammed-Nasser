@@ -235,7 +235,7 @@ display:flex;
   left: 0;
   width: 100%;
   height: 120%;            /* كبرنا الصورة 20% زيادة */
-  top: 0px;              /* هنا اتحكم بقى في النزول/الطلوع */
+  top: 20px;              /* هنا اتحكم بقى في النزول/الطلوع */
   object-fit: cover;
   object-position: 5% center; /* تظبط يمين/شمال زي ما تحب */
   display: block;
