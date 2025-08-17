@@ -198,16 +198,20 @@ vertical-align: middle;
 }
 
 /* الصورة (مضمونة الظهور) */
-.gift-hero__art{
- 
+.gift-hero__art{ 
 width:75%
   position:relative;
   height: 392px;
   min-height: var(--hero-h);
   overflow:hidden;
 }
+
+.gift-hero__art
+{
+   background-color:#09c;
+}
 .gift-hero__img{
-   background-color:red;
+  
 }
 
 /* الشريط السفلي */
