@@ -53,7 +53,7 @@ The task Contain :-
          width="10" height="10" loading="eager">
   </div> <!--end to first frame-->
 
-  <div class="secondframe">
+  {% comment %} <div class="secondframe">
     <div class="divleft">
       <div  class="contentdiv">
       The Gift Guide
@@ -76,9 +76,9 @@ The task Contain :-
            src="{{ 'Frame.svg' | asset_url }}"
            alt=""
            width="10" height="10" loading="lazy">
-    </div> 
+    </div> {% endcomment %}
 
-{% comment %} <div class = "secondframe"> <!--Second frame in first section-->
+<div class = "secondframe"> <!--Second frame in first section-->
    <!--content and left div-->
   <div class="gift-hero__inner">
     <!-- النص -->
@@ -95,7 +95,7 @@ The task Contain :-
     <!-- الصورة -->
     <div class="gift-hero__art" > <!--div of image-->
      <img src="{{ 'Frame.svg' | asset_url }}" alt="image in section 1" class="gift-hero__img"> 
-  </div> {% endcomment %}
+  </div>
 
   <!-- الشريط السفلي -->
   <div class="gift-hero__ticker">
