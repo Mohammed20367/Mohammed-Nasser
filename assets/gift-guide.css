@@ -152,9 +152,8 @@ display:flex;
 
 /* مقاسات الهيرو والتحريك لفوق */
 .gift-hero{
-  
-  --hero-h: clamp(200px, 24vw, 260px);
-  --shift-y: -60px; /* عدّلها -50/-70 حسب اللقطة */
+width:100%;
+height:402px;
   background-color:green;
   margin:0;
 }
