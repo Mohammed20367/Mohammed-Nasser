@@ -185,7 +185,6 @@ display:flex;
   height: 100%;
   
   object-fit: cover;          /* يملأ الصندوق وقد يَقص */
-  display: block;
 }
 
 
