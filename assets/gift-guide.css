@@ -236,6 +236,7 @@ display:flex;
  .section2 { 
   gap:30px;
   margin:20px 20px;
+  display:flex;
  }
 
 .part-two{
