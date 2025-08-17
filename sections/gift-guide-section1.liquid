@@ -49,7 +49,7 @@ The task Contain :-
     <div class="firstframe"> <!--first frame-->
     <img class="imageinframe"
          src="{{ 'Frame.svg' | asset_url }}"
-         alt=""
+         alt="image in section 1"
          width="10" height="10" loading="eager">
   </div> <!--end to first frame-->
 
@@ -79,7 +79,7 @@ The task Contain :-
     </div> {% endcomment %}
 
 <div class = "secondframe"> <!--Second frame in first section-->
-   <section class="gift-hero" style="--shift-y:-60px;">
+   <!--content and left div-->
   <div class="gift-hero__inner">
     <!-- النص -->
     <div class="gift-hero__copy">
@@ -93,16 +93,16 @@ The task Contain :-
     </div>
 
     <!-- الصورة -->
-    <div class="gift-hero__art">
-      <img src="{{ 'Frame.svg' | asset_url }}" alt="" class="gift-hero__img">
-    </div>
+    <div class="gift-hero__art" > <!--div of image-->
+     <img src="{{ 'Frame.svg' | asset_url }}" alt="image in section 1" class="gift-hero__img"> 
   </div>
 
   <!-- الشريط السفلي -->
-  <div class="gift-hero__ticker">
+  
+</div>
+<div class="gift-hero__ticker">
     SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL
   </div>
-</section>
 
   </div>   
 </div>
@@ -114,32 +114,27 @@ The task Contain :-
     <div class="grid-container">
       <div class="grid-item">
         <img src="{{ 'image 822.svg' | asset_url }}" alt="Look 1">
-        <span class="plus-icon">+</span>
-      </div>
+ <span class="plus-icon"><img src="{{ 'plus.svg' | asset_url }}" alt="plus in card"></span>      </div>
 
       <div class="grid-item">
         <img src="{{ 'image 823.svg' | asset_url }}" alt="Look 2">
-        <span class="plus-icon">+</span>
-      </div>
+ <span class="plus-icon"><img src="{{ 'plus.svg' | asset_url }}" alt="plus in card"></span>      </div>
 
       <div class="grid-item">
         <img src="{{ 'image 824.svg' | asset_url }}" alt="Look 3">
-        <span class="plus-icon">+</span>
-      </div>
+ <span class="plus-icon"><img src="{{ 'plus.svg' | asset_url }}" alt="plus in card"></span>      </div>
 
       <div class="grid-item">
         <img src="{{ 'image 825.svg' | asset_url }}" alt="Look 4">
-        <span class="plus-icon">+</span>
-      </div>
+ <span class="plus-icon"><img src="{{ 'plus.svg' | asset_url }}" alt="plus in card"></span>      </div>
 
       <div class="grid-item">
         <img src="{{ 'image 826.svg' | asset_url }}" alt="Look 5">
-        <span class="plus-icon">+</span>
-      </div>
+ <span class="plus-icon"><img src="{{ 'plus.svg' | asset_url }}" alt="plus in card"></span>      </div>
 
       <div class="grid-item">
         <img src="{{ 'image 827.svg' | asset_url }}" alt="Look 6">
-        <span class="plus-icon">+</span>
+        <span ><img src="{{ 'plus.svg' | asset_url }}" alt="plus in card" class="plus-icon"></span>
       </div>
     </div>
   </section>
@@ -206,10 +201,10 @@ The task Contain :-
 
 {% schema %}
 {
-  "name": "Gift Guide Top Bar",
+  "name": "Task",
   "settings": [],
   "presets": [
-    { "name": "Gift Guide Top Bar" }
+    { "name": "Task" }
   ]
 }
 {% endschema %}

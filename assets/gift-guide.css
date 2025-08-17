@@ -50,6 +50,7 @@ display:flex;
   background-color: #F5F5F5;
   padding: 10px 50px;         /* top/bottom - left/right */
   height: 64px;
+  
 }
 
 /* first image in nav */
@@ -76,13 +77,15 @@ display:flex;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* space between text and arrow */
-  padding: 12px 16px; /* top/bottom - left/right */
+  gap: 20px;
+  padding: 12px 16px;
   border: 1px solid #000;
   background: transparent;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.25s ease, color 0.25s ease;
+  position: relative;          /* مهم للفيل */
+  overflow: hidden;            /* عشان الفيل ما يطلعش برا */
+  transition: color 0.35s ease, border-color 0.35s ease;
 }
 
 /* Yellow button -- highlighted */
@@ -92,12 +95,45 @@ display:flex;
   font-weight: 400;
 }
 
+/* fill effect */
+.gift-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000000;          /* أحمر مؤقتًا */
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.4s ease;
+  z-index: 0;
+}
+
+/* text & arrow فوق الفيل */
+.gift-button .gift-icon--arrow-text,
+.gift-button .gift-icon--arrow {
+  position: relative;
+  z-index: 1;
+  transition: color 0.35s ease, filter 0.35s ease;
+}
+
+/* Hover: شغّل الفيل */
+.gift-button:hover::before {
+  transform: scaleX(1);
+}
+
+/* Hover: النص والسهم أبيض */
+.gift-button:hover .gift-icon--arrow-text {
+    transition: transform 0.4s ease;
+  color: #fff;
+}
+.gift-button:hover .gift-icon--arrow {
+  filter: brightness(0) invert(1);
+}
+
 /* Arrow text container */
 .gift-icon--arrow-text {
   display: inline-block;
-  transition: transform 0.25s ease; /* Subtle slide on hover */
+  transition: transform 0.25s ease;
 }
-
 .gift-button:hover .gift-icon--arrow-text {
   transform: translateX(4px);
 }
@@ -109,74 +145,76 @@ display:flex;
   height: 100%;
 }
 
+
+
 /* first frame in home page */
+
+
+/* الحاوية: عمودان (النص يتمدّد + الصورة 890px)، وتوسيط رأسي */
+.gift-hero__inner{
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 700px; /* النص يتمدّد + الصورة 700px */
+  align-items: center;
+  min-height: 402px;
+}
+
+/* زوّد الأسبقية وحدد المساحة بوضوح */
+.gift-hero__inner .gift-hero__copy{
+  background:#0c9;
+    align-items: stretch;   /* بدل center */
+
+  padding-top:50px;
+  padding-left:67px;
+  width:auto;     /* بلاش 100% لو الأب مش محدد عرض */
+  height:auto;    /* بلاش 100% */
+}
+
+.gift-hero__inner .gift-hero__title{
+  margin:0 0 12px;
+  font-family:'Jost', sans-serif;
+  font-weight:500;          /* بدل font-style */
+  font-size:70px;
+  line-height:1;
+}
+
+.gift-hero__inner .gift-hero__text{
+  margin:0;
+  font-family:'Jost', sans-serif;
+  font-weight:400;
+  font-size:20px;
+  line-height:1.4;
+}
+
+
+
+/* سيب العرض ييجي من عمود الجريد – متحطّش width هنا */
+.gift-hero__art{
+  background-color:red;
+  height: 402px;
+  overflow: hidden;
+  object-fit:cover;
+}
+
+.gift-hero__img{
+   /* padding-left:60px;  ← شيلها */ */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right bottom;        /* يمين + تحت */
+  display: block;
+}
+
+/* لو عايز تحكم أدق: */
+.gift-hero__art{ --x: 95%; --y: 90%; }  /* غيّر النِسَب حسب مزاجك */
+.gift-hero__img{ object-position: var(--x) var(--y); }
+
+
 
 
 
 
 /* مقاسات الهيرو والتحريك لفوق */
-.gift-hero{
-  --hero-h: clamp(200px, 24vw, 260px);
-  --shift-y: -60px; /* عدّلها -50/-70 حسب اللقطة */
-  background:#fff;
-  margin:0;
-}
 
-.gift-hero__inner{
-  display:grid;
-  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
-  align-items:center;
-  gap: clamp(16px, 3vw, 40px);
-  min-height: var(--hero-h);
-  max-width: 1440px;
-  margin-inline:auto;
-  padding: clamp(12px, 3vw, 24px);
-}
-
-/* النص */
-.gift-hero__title{
-  font-weight:700;
-  font-size: clamp(28px, 5vw, 48px);
-  line-height:1;
-  margin:0 0 10px;
-}
-.gift-hero__text{
-width: 483;
-height: 84;
-opacity: 1;
-top: 609px;
-left: 67px;
-font-family: 'Jost', sans-serif;
-font-weight: 400;
-font-style: Regular;
-font-size: 20px;
-leading-trim: NONE;
-line-height: 140%;
-letter-spacing: 0px;
-vertical-align: middle;
-
-  color:#000000;
-}
-.gift-btn{
-  display:inline-flex; align-items:center; gap:10px;
-  padding:10px 18px; background:#000; color:#fff; text-decoration:none;
-}
-
-/* الصورة (مضمونة الظهور) */
-.gift-hero__art{
-  position:relative;
-  height: var(--hero-h);
-  min-height: var(--hero-h);
-  overflow:hidden;
-  border: 1px solid #e8e8e8;         /* خط رفيع زي المرجع */
-}
-.gift-hero__img{
-  position:absolute; inset:0;
-  width:100%; height:100%;
-  display:block;
-  object-fit: cover;                  /* تملى وتتقص */
-  object-position: right var(--shift-y);
-}
 
 /* الشريط السفلي */
 .gift-hero__ticker{
@@ -293,35 +331,6 @@ vertical-align: middle;
 
 
 
-/* مهم: الكارت نفسه لازم يكون relative */
-.grid-item, .wild__item { position: relative; }
-
-/* موضع علامة + بالنِّسب. مع فوال باك وقهر لأي right/top قديمة */
-.grid-item .plus-icon,
-.wild__item .wild__plus{
-  position: absolute;
-  right: auto !important;
-  bottom: auto !important;
-  left: var(--x, 86%) !important;   /* افتراضي لو منستش تمرر قيم */
-  top:  var(--y, 20%) !important;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-
-  width: 24px; height: 24px;
-  border-radius: 50%;
-  background: #fff;
-  border: 1px solid rgba(0,0,0,.15);
-  box-shadow: 0 1px 4px rgba(0,0,0,.18);
-}
-
-/* رسم علامة + */
-.grid-item .plus-icon::before, .grid-item .plus-icon::after,
-.wild__item .wild__plus::before, .wild__item .wild__plus::after{
-  content:""; position:absolute; left:50%; top:50%;
-  background:#000; transform:translate(-50%,-50%);
-}
-.grid-item .plus-icon::before, .wild__item .wild__plus::before{ width:10px; height:1.5px; }
-.grid-item .plus-icon::after,  .wild__item .wild__plus::after { width:1.5px; height:10px; }
 
 
 
