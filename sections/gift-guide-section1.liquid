@@ -137,8 +137,7 @@ The task Contain :-
     </div>
   </section> {% endcomment %}
   
-  <!-- سكشن الصور كما هو لكن مع data-popup-open لكل + -->
-<section class="part-two">
+  <section class="part-two">
   <h2 class="wild-title">Tisso vison in the wild</h2>
 
   <div class="grid-container">
@@ -186,42 +185,26 @@ The task Contain :-
   </div>
 </section>
 
-<!-- البوبات الستة (غيّر المحتوى لكل واحدة) -->
-<div class="gift-popup" data-popup="look-1" aria-hidden="true">
-  <div class="gift-popup__card" role="dialog" aria-modal="true" aria-label="Look 1">
-    <button class="gift-popup__close" type="button" aria-label="Close">&times;</button>
-    <img class="gift-popup__img" src="{{ 'image 822.svg' | asset_url }}" alt="">
-    <h4 class="gift-popup__title">Orange Wide Leg</h4>
-    <div class="gift-popup__price">980,00€</div>
-    <p class="gift-popup__desc">Sample text for look 1.</p>
-    <label class="gift-popup__label">Color</label>
-    <div class="gift-popup__swatches">
-      <button type="button" class="swatch is-active">White</button>
-      <button type="button" class="swatch">Black</button>
-    </div>
-    <label class="gift-popup__label">Size</label>
-    <div class="gift-popup__select">
-      <select>
-        <option selected>Choose your size</option>
-        <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-      </select>
-    </div>
-    <button class="gift-popup__cta" type="button">ADD TO CART</button>
-  </div>
-</div>
-
+<!-- مثال على بوب-اب واحد (كرر لكل Look) -->
 <div class="gift-popup" data-popup="look-2" aria-hidden="true">
   <div class="gift-popup__card" role="dialog" aria-modal="true" aria-label="Look 2">
     <button class="gift-popup__close" type="button" aria-label="Close">&times;</button>
-    <img class="gift-popup__img" src="{{ 'image 823.png' | asset_url }}" alt="">
+
+    <div class="gift-popup__media">
+      <img class="gift-popup__img" src="{{ 'image 823.png' | asset_url }}" alt="">
+      <span class="gift-chip"></span>
+    </div>
+
     <h4 class="gift-popup__title">Tailored Jacket</h4>
     <div class="gift-popup__price">980,00€</div>
-    <p class="gift-popup__desc">Sample text for look 2.</p>
+    <p class="gift-popup__desc">This onepiece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.</p>
+
     <label class="gift-popup__label">Color</label>
     <div class="gift-popup__swatches">
-      <button type="button" class="swatch is-active">Blue</button>
-      <button type="button" class="swatch">Black</button>
+      <button type="button" class="swatch is-active" data-color="#1E3A8A">Blue</button>
+      <button type="button" class="swatch" data-color="#000000">Black</button>
     </div>
+
     <label class="gift-popup__label">Size</label>
     <div class="gift-popup__select">
       <select>
@@ -229,73 +212,70 @@ The task Contain :-
         <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
       </select>
     </div>
-    <button class="gift-popup__cta" type="button">ADD TO CART</button>
+
+    <button class="gift-popup__cta" type="button">
+      ADD TO CART →
+    </button>
   </div>
 </div>
 
-<div class="gift-popup" data-popup="look-3" aria-hidden="true"><div class="gift-popup__card"><button class="gift-popup__close" type="button" aria-label="Close">&times;</button><img class="gift-popup__img" src="{{ 'image 824.svg' | asset_url }}" alt=""><h4 class="gift-popup__title">Accordion Pleated Dress</h4><div class="gift-popup__price">980,00€</div><p class="gift-popup__desc">Sample text for look 3.</p><label class="gift-popup__label">Color</label><div class="gift-popup__swatches"><button type="button" class="swatch is-active">Red</button><button type="button" class="swatch">Grey</button></div><label class="gift-popup__label">Size</label><div class="gift-popup__select"><select><option selected>Choose your size</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option></select></div><button class="gift-popup__cta" type="button">ADD TO CART</button></div></div>
-
-<div class="gift-popup" data-popup="look-4" aria-hidden="true"><div class="gift-popup__card"><button class="gift-popup__close" type="button" aria-label="Close">&times;</button><img class="gift-popup__img" src="{{ 'image 825.svg' | asset_url }}" alt=""><h4 class="gift-popup__title">Green Trench Coat</h4><div class="gift-popup__price">980,00€</div><p class="gift-popup__desc">Sample text for look 4.</p><label class="gift-popup__label">Color</label><div class="gift-popup__swatches"><button type="button" class="swatch is-active">White</button><button type="button" class="swatch">Black</button></div><label class="gift-popup__label">Size</label><div class="gift-popup__select"><select><option selected>Choose your size</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option></select></div><button class="gift-popup__cta" type="button">ADD TO CART</button></div></div>
-
-<div class="gift-popup" data-popup="look-5" aria-hidden="true"><div class="gift-popup__card"><button class="gift-popup__close" type="button" aria-label="Close">&times;</button><img class="gift-popup__img" src="{{ 'image 826.svg' | asset_url }}" alt=""><h4 class="gift-popup__title">Tennis Blue T-Shirt</h4><div class="gift-popup__price">980,00€</div><p class="gift-popup__desc">Sample text for look 5.</p><label class="gift-popup__label">Color</label><div class="gift-popup__swatches"><button type="button" class="swatch is-active">Grey</button><button type="button" class="swatch">Black</button></div><label class="gift-popup__label">Size</label><div class="gift-popup__select"><select><option selected>Choose your size</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option></select></div><button class="gift-popup__cta" type="button">ADD TO CART</button></div></div>
-
-<div class="gift-popup" data-popup="look-6" aria-hidden="true"><div class="gift-popup__card"><button class="gift-popup__close" type="button" aria-label="Close">&times;</button><img class="gift-popup__img" src="{{ 'image 827.svg' | asset_url }}" alt=""><h4 class="gift-popup__title">Long Sleeve Tennis Top</h4><div class="gift-popup__price">980,00€</div><p class="gift-popup__desc">Sample text for look 6.</p><label class="gift-popup__label">Color</label><div class="gift-popup__swatches"><button type="button" class="swatch is-active">Blue</button><button type="button" class="swatch">Black</button></div><label class="gift-popup__label">Size</label><div class="gift-popup__select"><select><option selected>Choose your size</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option></select></div><button class="gift-popup__cta" type="button">ADD TO CART</button></div></div>
-
-<!-- CSS مصغّر (لو مش موجود في ملفك) -->
 <style>
 .gift-popup{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;z-index:1000}
 .gift-popup.is-open{display:block}
-.gift-popup__card{width:250px;background:#fff;border-radius:8px;position:absolute;top:50%;left:50%;
-  transform:translate(-50%,-50%);padding:14px;box-shadow:0 10px 30px rgba(0,0,0,.15)}
-.gift-popup__close{position:absolute;top:6px;right:8px;font-size:20px;background:transparent;border:0;cursor:pointer}
-.gift-popup__img{width:100%;height:140px;object-fit:cover;border-radius:6px}
-.gift-popup__title{font-size:14px;margin:10px 0 4px}
-.gift-popup__price{font-size:13px;margin-bottom:8px}
-.gift-popup__desc{font-size:12px;line-height:1.4;color:#444;margin-bottom:10px}
-.gift-popup__label{display:block;font-size:12px;margin:8px 0 6px}
+.gift-popup__card{width:250px;background:#fff;border-radius:12px;border:1px solid #E5E7EB;
+  box-shadow:0 8px 30px rgba(0,0,0,.15);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  padding:12px;font-family:'Jost',sans-serif;color:#111}
+.gift-popup__close{position:absolute;top:8px;right:10px;width:28px;height:28px;border-radius:50%;
+  background:#F3F4F6;border:1px solid #E5E7EB;font-size:18px;cursor:pointer}
+.gift-popup__media{position:relative}
+.gift-popup__img{width:100%;height:150px;object-fit:cover;border-radius:10px}
+.gift-chip{position:absolute;top:8px;left:8px;width:16px;height:16px;border-radius:50%;border:2px solid #fff;
+  box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+.gift-popup__title{font-size:15px;font-weight:500;margin:10px 0 2px}
+.gift-popup__price{font-size:14px;font-weight:500;margin-bottom:6px}
+.gift-popup__desc{font-size:12px;line-height:1.5;color:#5B5B5B;margin-bottom:10px}
+.gift-popup__label{display:block;font-size:12px;color:#111;margin:8px 0 6px}
 .gift-popup__swatches{display:flex;gap:8px}
-.swatch{font-size:12px;padding:8px 10px;border:1px solid #000;background:#fff;cursor:pointer}
-.swatch.is-active{background:#000;color:#fff}
-.gift-popup__select select{width:100%;padding:10px 12px;border:1px solid #000;background:#fff;font-size:12px}
-.gift-popup__cta{width:100%;margin-top:12px;background:#000;color:#fff;border:0;padding:12px 14px;cursor:pointer}
+.swatch{position:relative;font-size:12px;padding:10px 12px 10px 30px;
+  border:1px solid #111;background:#fff;color:#111;border-radius:4px;cursor:pointer}
+.swatch::before{content:"";position:absolute;top:50%;left:10px;transform:translateY(-50%);
+  width:12px;height:12px;border-radius:2px;background:var(--swatch-color,#000)}
+.swatch.is-active{background:#000;color:#fff;border-color:#000}
+.swatch.is-active::before{display:none}
+.gift-popup__select select{width:100%;padding:10px 12px;font-size:12px;color:#111;
+  border:1px solid #111;border-radius:4px}
+.gift-popup__cta{width:100%;margin-top:12px;height:44px;background:#000;color:#fff;
+  border:0;border-radius:6px;font-weight:500;cursor:pointer}
 </style>
 
-<!-- JS بسيط جدًا بيفتح/يقفل -->
 <script>
-(function(){
-  function openPopup(id){
-    var p = document.querySelector('.gift-popup[data-popup="'+id+'"]');
-    if(p){ p.classList.add('is-open'); p.setAttribute('aria-hidden','false'); }
+document.addEventListener('DOMContentLoaded', function(){
+  function initPopupColors(scope){
+    (scope||document).querySelectorAll('.gift-popup').forEach(function(popup){
+      popup.querySelectorAll('.swatch').forEach(function(btn){
+        var c=btn.dataset.color||'#000';
+        btn.style.setProperty('--swatch-color',c);
+      });
+      var active=popup.querySelector('.swatch.is-active');
+      if(active){
+        var chip=popup.querySelector('.gift-chip');
+        if(chip){ chip.style.backgroundColor=active.dataset.color||'#000'; }
+      }
+    });
   }
-  function closePopup(p){
-    p.classList.remove('is-open'); p.setAttribute('aria-hidden','true');
-  }
-
-  // فتح بالضغط على +
-  document.addEventListener('click', function(e){
-    var trg = e.target.closest('[data-popup-open]');
-    if(trg){
-      e.preventDefault();
-      openPopup(trg.getAttribute('data-popup-open'));
-    }
-  }, true); // capture عشان يشتغل حتى لو فيه stopPropagation
-
-  // إغلاق X أو الضغط على الخلفية
-  document.addEventListener('click', function(e){
-    if(e.target.closest('.gift-popup__close')){
-      closePopup(e.target.closest('.gift-popup'));
-    } else if(e.target.classList.contains('gift-popup')){
-      closePopup(e.target);
-    }
+  document.body.addEventListener('click',function(e){
+    var sw=e.target.closest('.swatch'); if(!sw) return;
+    var wrap=sw.closest('.gift-popup'); if(!wrap) return;
+    wrap.querySelectorAll('.swatch').forEach(function(b){b.classList.remove('is-active');});
+    sw.classList.add('is-active');
+    var chip=wrap.querySelector('.gift-chip'); if(chip){chip.style.backgroundColor=sw.dataset.color||'#000';}
   });
-
-  // إغلاق بـ ESC
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape'){
-      document.querySelectorAll('.gift-popup.is-open').forEach(closePopup);
-    }
-  });
-})();
+  initPopupColors();
+  document.body.addEventListener('click',function(e){
+    var trg=e.target.closest('[data-popup-open]'); if(!trg) return;
+    setTimeout(function(){initPopupColors();},0);
+  },true);
+});
 </script>
 
 </div> 
