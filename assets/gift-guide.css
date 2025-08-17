@@ -177,7 +177,7 @@ display:flex;
   overflow:hidden;
   width:910px;
   background-color:red;
-  height: 402px; 
+  height: auto; 
 }
 .gift-hero__img{
   /* padding:10px 0px 0px 100px; */
