@@ -189,7 +189,18 @@ display:flex;
 
 
 /* سيب العرض ييجي من عمود الجريد – متحطّش width هنا */
+.gift-hero__art{
+ 
+  overflow: hidden;
+  
+}
 
+.gift-hero__img{
+   /* padding-left:60px;  ← شيلها */ */
+  width: 100%;
+  height: 100%;
+  
+}
 
 
 
