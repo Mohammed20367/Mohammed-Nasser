@@ -269,6 +269,7 @@ display:flex;
   place-items: center;
 }
 
+
 /* ريسبونسيف */
 @media (max-width: 992px){
   .grid-container{ grid-template-columns: repeat(2, minmax(0,1fr)); }
