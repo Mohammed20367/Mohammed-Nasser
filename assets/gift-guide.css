@@ -156,7 +156,6 @@ display:flex;
   margin: 0 auto;            /* وسّط الكونتينر */
   max-width: 1440px;
   display:grid;
-  grid-template-columns: 1fr 1fr;
   min-height:402px;
   background: transparent;   /* شيل الأحمر من الأب لو مش محتاجه */
 }
@@ -177,7 +176,7 @@ display:flex;
   overflow:hidden;
   width:910px;
   background-color:red;
-
+  height: 402px; 
 }
 .gift-hero__img{
   /* padding:10px 0px 0px 100px; */
