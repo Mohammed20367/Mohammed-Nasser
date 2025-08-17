@@ -141,10 +141,15 @@ display:flex;
   margin:0 0 10px;
 }
 .gift-hero__text{
-  font-size: clamp(14px, 1.2vw, 16px);
-  line-height:1.45;
-  margin:0 0 14px;
-  max-width: 46ch;
+font-family: 'Jost', sans-serif;
+font-weight: 400;
+font-style: Regular;
+font-size: 20px;
+leading-trim: NONE;
+line-height: 140%;
+letter-spacing: 0px;
+vertical-align: middle;
+
   color:#000000;
 }
 .gift-btn{
