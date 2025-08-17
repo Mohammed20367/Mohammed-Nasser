@@ -199,6 +199,7 @@ vertical-align: middle;
 
 /* الصورة (مضمونة الظهور) */
 .gift-hero__art{
+ 
 width:75%
   position:relative;
   height: 392px;
@@ -206,7 +207,7 @@ width:75%
   overflow:hidden;
 }
 .gift-hero__img{
- 
+   background-color:red;
 }
 
 /* الشريط السفلي */
