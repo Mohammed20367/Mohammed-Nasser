@@ -233,7 +233,7 @@ display:flex;
 .gift-hero__img{
   position: absolute;
   left: 0;
-  width: 100%;
+  width: 90%;
   height: 120%;            /* كبرنا الصورة 20% زيادة */
   top: -20px;              /* هنا اتحكم بقى في النزول/الطلوع */
   object-fit: cover;
