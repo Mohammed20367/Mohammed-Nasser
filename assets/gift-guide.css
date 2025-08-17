@@ -165,6 +165,7 @@ display:flex;
 
 .gift-hero__copy
 {
+  margin:0px;
   width:550px;;
   height:402px;
   background-color:#09c;
