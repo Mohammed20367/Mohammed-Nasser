@@ -349,6 +349,7 @@ vertical-align: middle;
 
 /* Hover: النص والسهم أبيض */
 .gift-button:hover .gift-icon--arrow-text {
+    transition: transform 0.4s ease;
   color: #fff;
 }
 .gift-button:hover .gift-icon--arrow {
