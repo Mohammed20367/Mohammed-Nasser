@@ -326,38 +326,6 @@ display:flex;
 
 /*تجربه*/
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.look {
-  position: relative;
-}
-
-.plus-btn {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #fff;
-  border: 1px solid #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  line-height: 1;
-}
-.plus-btn::after {
-  content: "+";
-  font-weight: 700;
-  font-size: 18px;
-}
-
-/* --- الـ Modal --- */
 .modal {
   display: none;
   position: fixed;
@@ -367,21 +335,84 @@ display:flex;
   z-index: 1000;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
+/* ---------- Modal Box ---------- */
 .modal-content {
   background: #fff;
-  width: 400px;
-  max-width: 90%;
+  width: 500px;
+  max-width: 95%;
   padding: 20px;
   position: relative;
+  font-family: Arial, sans-serif;
 }
 
 .modal-close {
   position: absolute;
-  top: 10px; right: 10px;
+  top: 12px; right: 12px;
   font-size: 20px;
   cursor: pointer;
   background: none;
   border: none;
+}
+
+/* ---------- Inside Modal ---------- */
+.modal-header h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.modal-price {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.modal-desc {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+/* ---------- Color buttons ---------- */
+.color-options {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.color-options button {
+  border: 1px solid #000;
+  background: #fff;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.color-options button.active {
+  background: #000;
+  color: #fff;
+}
+
+/* ---------- Select size ---------- */
+.select-size {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 18px;
+  border: 1px solid #ddd;
+}
+
+/* ---------- Add to Cart ---------- */
+.add-to-cart {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
 }
