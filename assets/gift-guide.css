@@ -204,14 +204,13 @@ vertical-align: middle;
 .gift-hero__art{ 
   position:relative;
   height: 392px;
-  min-height: var(--hero-h);
   overflow:hidden;
 }
 
 .gift-hero__art
 {
-  width:890px;
   margin:0px;
+  width:890px;
   background-color:#09c;
 }
 .gift-hero__img{
