@@ -1,33 +1,33 @@
 {% comment %}
 Gift Guid - Banner (Custom)
-Keeps your existing top bar; hero image sits right under it with no Dawn padding.
+First i want to thank who make ui of this task.
+The task Contain :-
+--Page =>with width 1440px and hieght 2000px
+----Section 1 
+------Navbar.
+------Frame image 1. 
+------2 div =>1 contain content and another contain image.
+------footer.
+----Section2
+-----items =>images to Add Card.
 {% endcomment %}
 
-{{ 'gift-guide.css' | asset_url | stylesheet_tag }}
+ {{ 'gift-guide.css' | asset_url | stylesheet_tag }} {% comment %} =>this link with css file in html {% endcomment %}
 
-{%- comment -%}
-  Dawn بيضيف padding/margin على كل سكشن تلقائيًا.
-  السطرين دول بيصفروا الـ padding/top/bottom للسكشن ده تحديدًا.
-{%- endcomment -%}
-<style>
-  #shopify-section-{{ section.id }}{
-    --section-padding-top: 0px !important;
-    --section-padding-bottom: 0px !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-  }
-</style>
-
-<!-- لو عايز تسيب الخط هنا مؤقتًا ماشي، بس الأفضل نقله لـ layout/theme.liquid -->
+<!--link the Font Family using in task-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lustria&display=swap" rel="stylesheet">
 
-<section id="gift-hero-{{ section.id }}" class = "section" aria-label="Gift Guid hero banner">
+<!--Start the task-->
 
-  <!-- Top bar (زي ما هو) -->
-  <div class="gift-top-bar">
-    <div>
+<div classe = "page">  <!--All page that contain 2 section-->
+  <div class="section1"> <!--contain nav + fram1 + fram2 + footer-->
+    <div class='gift-top-bar'> <!--navbar-->
+ <div>
       <img class="gift-icon--tisso"
            src="{{ 'tisso.svg' | asset_url }}"
            alt="Tisso Vison"
@@ -45,30 +45,164 @@ Keeps your existing top bar; hero image sits right under it with no Dawn padding
            alt="" aria-hidden="true"
            width="24" height="1" loading="lazy">
     </button>
-  </div>
-
-  <!-- أول صورة: تيجي مباشرة تحت الناف -->
-  <div class="firstframe">
+      </div><!--end of navbar-->
+    <div class="firstframe"> <!--first frame-->
     <img class="imageinframe"
          src="{{ 'Frame.svg' | asset_url }}"
          alt=""
-         width="1440" height="780" loading="eager">
-  </div>
+         width="10" height="10" loading="eager">
+  </div> <!--end to first frame-->
 
-  <!-- بلوكك التاني زي ما هو -->
-  <div class="secondframe">
-    <div>
-      <h1>Hi</h1>
+  {% comment %} <div class="secondframe">
+    <div class="divleft">
+      <div  class="contentdiv">
+      The Gift Guide
+      </div>
+      <div class="contentinleftdiv">
+        Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.
+        </div>
+        <div class="showbottom">
+           <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
+      <span class="gift-icon--arrow-text">Shop</span>
+      <img class="gift-icon gift-icon--arrow"
+           src="{{ 'Arrow.svg' | asset_url }}"
+           alt="" aria-hidden="true"
+           width="24" height="1" loading="lazy">
+    </button>
+          </div>
     </div>
-    <div class ="parentofseconimageinframe">
+    <div>
       <img class="seconimageinframe"
            src="{{ 'Frame.svg' | asset_url }}"
            alt=""
-           width="1440" height="780" loading="lazy">
+           width="10" height="10" loading="lazy">
+    </div> {% endcomment %}
+
+<div class = "secondframe"> <!--Second frame in first section-->
+   <section class="gift-hero" style="--shift-y:-60px;">
+  <div class="gift-hero__inner">
+    <!-- النص -->
+    <div class="gift-hero__copy">
+      <h2 class="gift-hero__title">The Gift Guide</h2>
+      <p class="gift-hero__text">
+        Discover Joy: Your Ultimate Holiday Gift Destination.
+        Explore our curated selection and find the perfect gifts to
+        delight your loved ones this holiday season.
+      </p>
+      <a href="/collections/gift-guide" class="gift-btn">SHOP NOW →</a>
+    </div>
+
+    <!-- الصورة -->
+    <div class="gift-hero__art">
+      <img src="{{ 'Frame.svg' | asset_url }}" alt="" class="gift-hero__img">
     </div>
   </div>
 
+  <!-- الشريط السفلي -->
+  <div class="gift-hero__ticker">
+    SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL
+  </div>
 </section>
+
+  </div>   
+</div>
+
+ <div class="section2">
+  <section class="part-two">
+    <h2 class="wild-title">Tisso vison in the wild</h2>
+
+    <div class="grid-container">
+      <div class="grid-item">
+        <img src="{{ 'image 822.svg' | asset_url }}" alt="Look 1">
+        <span class="plus-icon">+</span>
+      </div>
+
+      <div class="grid-item">
+        <img src="{{ 'image 823.svg' | asset_url }}" alt="Look 2">
+        <span class="plus-icon">+</span>
+      </div>
+
+      <div class="grid-item">
+        <img src="{{ 'image 824.svg' | asset_url }}" alt="Look 3">
+        <span class="plus-icon">+</span>
+      </div>
+
+      <div class="grid-item">
+        <img src="{{ 'image 825.svg' | asset_url }}" alt="Look 4">
+        <span class="plus-icon">+</span>
+      </div>
+
+      <div class="grid-item">
+        <img src="{{ 'image 826.svg' | asset_url }}" alt="Look 5">
+        <span class="plus-icon">+</span>
+      </div>
+
+      <div class="grid-item">
+        <img src="{{ 'image 827.svg' | asset_url }}" alt="Look 6">
+        <span class="plus-icon">+</span>
+      </div>
+    </div>
+  </section>
+</div> 
+
+
+      
+</div>
+
+
+ 
+
+ 
+
+
+  <!-- أول صورة: تيجي مباشرة تحت الناف -->
+
+
+
+
+
+{% comment %} <div class="section2">
+<section class="part-two">
+  <div class ="parentofimages">
+    <div>
+      <span class="spantisso">Tisso vison in the wild</span>
+      </div>
+ <div class="grid-container">
+    <div class="grid-item">
+      <img src="{{ 'image 822.svg' | asset_url }}" alt="لازم تكتبها" width="10" height="10">
+            <span class="plus-icon">+</span>
+
+    </div>
+    <div class="grid-item">
+      <img src="{{ 'image 823.svg' | asset_url }}" alt="لازم تكتبها "width="10" height="10">
+            <span class="plus-icon">+</span>
+
+    </div>
+    <div class="grid-item">
+      <img src="{{ 'image 824.svg' | asset_url }}" alt="لازم تكتبها"width="10" height="10">
+            <span class="plus-icon">+</span>
+
+    </div>
+    <div class="grid-item">
+      <img src="{{ 'image 825.svg' | asset_url }}" alt="لازم تكتبها"width="10" height="10">
+            <span class="plus-icon">+</span>
+
+    </div>
+    <div class="grid-item ">
+      <img src="{{ 'image 825.svg' | asset_url }}" alt="لازم تكتبها"width="10" height="10">
+            <span class="plus-icon">+</span>
+
+    </div>
+    <div class="grid-item">
+      <img src="{{ 'image 826.svg' | asset_url }}" alt="لازم تكتبها"width="10" height="10">
+        <span class="plus-icon">+</span>
+    </div>
+</div>
+</div>
+</section> {% endcomment %}
+
+</div>
+
 
 {% schema %}
 {
