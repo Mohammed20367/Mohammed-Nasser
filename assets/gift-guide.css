@@ -198,10 +198,7 @@ display:flex;
 .gift-hero__img{
   width: 100%;
   height: 100%;
-  object-fit: contain;          /* تملى الديف كله */
-  /*transform: translateY(105px);   /* نزّل الصورة 20px لتحت */
-
-  object-position: 5% 200%;
+  object-fit: cover;
   display: block;
 }
 /* قد ايه تنزل الصورة؟ عدّل القيمة دي */
