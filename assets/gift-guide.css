@@ -330,7 +330,7 @@ vertical-align: middle;
   background: #000000;          /* أحمر مؤقتًا */
   transform: scaleX(0);
   transform-origin: left center;
-  transition: transform 0.s ease;
+  transition: transform 0.4s ease;
   z-index: 0;
 }
 
