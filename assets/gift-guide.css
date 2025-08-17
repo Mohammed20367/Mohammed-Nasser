@@ -164,6 +164,11 @@ display:flex;
   padding: clamp(12px, 3vw, 24px);
 }
 
+.gift-hero__copy
+{
+  background-color:#09c;
+}
+
 /* النص */
 .gift-hero__title{
   font-weight:700;
