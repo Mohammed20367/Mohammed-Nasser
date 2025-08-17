@@ -150,6 +150,43 @@ display:flex;
 /* first frame in home page */
 
 
+.gift-hero__inner {
+  margin: 0 auto;              /* وسّط الكونتينر */
+  max-width: 1440px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* عمودين متساويين */
+  min-height: 402px;           /* طول القسم */
+  background: transparent;
+}
+
+.gift-hero__copy {
+  background: green;           /* للتوضيح بس */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;     /* وسّط النص عمودي */
+  width: 100%;                 /* ياخد عرض العمود */
+  height: auto;                /* الطول يجي من المحتوى */
+  box-sizing: border-box;      /* يمنع أي overflow */
+  padding: 20px;               /* شوية مسافة داخلية */
+}
+
+.gift-hero__art {
+  background-color: red;       /* للتوضيح */
+  overflow: hidden;
+  width: 100%;                 /* ياخد عرض العمود */
+  height: 100%;                /* يملأ ارتفاع الـ grid */
+  display: flex;
+  align-items: center;         /* وسّط المحتوى عمودي */
+  justify-content: center;     /* وسّط المحتوى أفقي */
+}
+
+.gift-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           /* يملأ العمود ويقص الزائد */
+  display: block;
+  padding: 10px 0 0 100px;     /* اتأكد إنها مقفولة بفاصلة منقوطة */
+}
 
 
 /* مقاسات الهيرو والتحريك لفوق */
@@ -186,7 +223,7 @@ display:flex;
   }
 }
 
-.gift-hero__art{ position: relative; height: 402px; overflow: hidden; } .gift-hero__img{ position: absolute; left: 0; width: 100%; height: 100%; /* كبرنا الصورة 20% زيادة */ top: 90px; /* هنا اتحكم بقى في النزول/الطلوع */ object-fit: cover; object-position: 5% center; /* تظبط يمين/شمال زي ما تحب */ display: block; }
+
 
 
 
