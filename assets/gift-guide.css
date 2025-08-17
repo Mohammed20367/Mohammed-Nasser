@@ -50,7 +50,7 @@ display:flex;
   background-color: #F5F5F5;
   padding: 10px 50px;         /* top/bottom - left/right */
   height: 64px;
-    background-color:green;
+  
 }
 
 /* first image in nav */
@@ -152,9 +152,10 @@ display:flex;
 
 /* مقاسات الهيرو والتحريك لفوق */
 .gift-hero{
+  
   --hero-h: clamp(200px, 24vw, 260px);
   --shift-y: -60px; /* عدّلها -50/-70 حسب اللقطة */
-  background:#fff;
+
   margin:0;
 }
 
