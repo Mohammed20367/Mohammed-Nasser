@@ -159,7 +159,11 @@ grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   grid-column: span 1 / span 1 !important;
 }
 
+.gift-hero__art
+{
+  grid-column: span 3 / span 3 !important;
 
+}
 
 
 /* مقاسات الهيرو والتحريك لفوق */
