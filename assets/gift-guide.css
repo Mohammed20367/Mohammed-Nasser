@@ -206,11 +206,7 @@ vertical-align: middle;
   overflow:hidden;
 }
 .gift-hero__img{
-  position:absolute; inset:0;
-  
-  display:block;
-  object-fit: cover;                  /* تملى وتتقص */
-  object-position: right var(--shift-y);
+ 
 }
 
 /* الشريط السفلي */
