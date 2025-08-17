@@ -168,13 +168,14 @@ display:flex;
 
 /* الشريط السفلي */
 .gift-hero__ticker{
+  background-color:#F5F5F5;
   width:100%;
   height:34px;
   text-align:center;
   text-transform:uppercase;
   letter-spacing:.08em;
   font-size:12px;
-  padding:8px 12px;
+  padding:10px 50px;
   background:#efefef;
   font-family: 'Jost', sans-serif;
 font-weight: 400;
