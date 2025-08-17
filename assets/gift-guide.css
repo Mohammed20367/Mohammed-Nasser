@@ -163,7 +163,7 @@ display:flex;
   background-color:red;
   height: 402px;
   overflow: hidden;
-  /* background-color: red;  // فحص فقط */
+  object-fit:cover;
 }
 
 .gift-hero__img{
@@ -176,7 +176,7 @@ display:flex;
 }
 
 /* لو عايز تحكم أدق: */
-.gift-hero__art{ --x: 110%; --y: 150%; }  /* غيّر النِسَب حسب مزاجك */
+.gift-hero__art{ --x: 95%; --y: 90%; }  /* غيّر النِسَب حسب مزاجك */
 .gift-hero__img{ object-position: var(--x) var(--y); }
 
 
