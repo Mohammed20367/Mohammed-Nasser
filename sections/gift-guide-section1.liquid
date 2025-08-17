@@ -93,9 +93,12 @@ The task Contain :-
     </div>
 
     <!-- الصورة -->
-    <div class="gift-hero__art" > <!--div of image-->
+    <!-- اشيل <img> نهائيًا -->
+<div class="gift-hero__art" aria-label="gift art"></div>
+
+    {% comment %} <div class="gift-hero__art" > <!--div of image-->
      <img src="{{ 'Frame.svg' | asset_url }}" alt="image in section 1" class="gift-hero__img"> 
-  </div>
+  </div> {% endcomment %}
 
   <!-- الشريط السفلي -->
   <div class="gift-hero__ticker">

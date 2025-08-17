@@ -188,6 +188,15 @@ display:flex;
 }
 
 
+.gift-hero__art{
+  width:910px;
+  height:402px;
+  /* اللون اختياري كـ fallback أثناء التحميل */
+  background: #f00 url("{{ 'Frame.svg' | asset_url }}") no-repeat right top;
+  background-size: cover;  /* تملى الديف بالكامل */
+}
+
+
 /* قد ايه تنزل الصورة؟ عدّل القيمة دي */
 
 
