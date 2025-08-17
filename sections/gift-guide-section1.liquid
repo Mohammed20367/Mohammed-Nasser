@@ -105,51 +105,138 @@ The task Contain :-
   </div>   
 </div>
 
- <section class="part-two">
-  <h2 class="wild-title">Tisso vision in the wild</h2>
+ <div class="section2">
+  <section class="part-two">
+    <h2 class="wild-title">Tisso vison in the wild</h2>
 
-  <div class="grid-container">
-    <!-- Grid Item -->
-    <div class="grid-item">
-      <img src="{{ 'image823.png' | asset_url }}" alt="Look 1">
-      <span class="plus-icon" data-popup-open="look-1">
-        <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="plus in card">
-      </span>
+    <div class="grid-container">
+      <div class="grid-item">
+        <img src="{{ 'image 822.svg' | asset_url }}" alt="Look 1">
+        <span class="plus-icon1" data-popup-open="look-1" role="button" tabindex="0" aria-label="Open quick view for Look 1">
+          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
+        </span>
+      </div>
+
+      <div class="grid-item">
+        <img src="{{ 'image 823.png' | asset_url }}" alt="Look 2">
+        <span class="plus-icon2" data-popup-open="look-2" role="button" tabindex="0" aria-label="Open quick view for Look 2">
+          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
+        </span>
+      </div>
+
+      <div class="grid-item">
+        <img src="{{ 'image 824.svg' | asset_url }}" alt="Look 3">
+        <span class="plus-icon3" data-popup-open="look-3" role="button" tabindex="0" aria-label="Open quick view for Look 3">
+          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
+        </span>
+      </div>
+
+      <div class="grid-item">
+        <img src="{{ 'image 825.svg' | asset_url }}" alt="Look 4">
+        <span class="plus-icon4" data-popup-open="look-4" role="button" tabindex="0" aria-label="Open quick view for Look 4">
+          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
+        </span>
+      </div>
+
+      <div class="grid-item">
+        <img src="{{ 'image 826.svg' | asset_url }}" alt="Look 5">
+        <span class="plus-icon5" data-popup-open="look-5" role="button" tabindex="0" aria-label="Open quick view for Look 5">
+          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
+        </span>
+      </div>
+
+      <div class="grid-item">
+        <img src="{{ 'image 827.svg' | asset_url }}" alt="Look 6">
+        <span class="plus-icon6" data-popup-open="look-6" role="button" tabindex="0" aria-label="Open quick view for Look 6">
+          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
+        </span>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- Popup -->
-<div class="gift-popup" data-popup="look-1" aria-hidden="true"
-     data-variant-map='{
-       "Black": { "S": 11111111, "M": 11111112, "L": 11111113 },
-       "Blue": { "S": 11111114, "M": 11111115, "L": 11111116 }
-     }'>
-  <div class="gift-card">
-    <button class="gift-close">×</button>
-    <img src="{{ 'image823.png' | asset_url }}" alt="Tailored Jacket">
-    <h4>Tailored Jacket</h4>
-    <div class="price">980,00€</div>
-    <p>This jacket is crafted from premium materials.</p>
-
-    <label>Color</label>
-    <div class="colors">
-      <button class="color-swatch" data-color="Black">Black</button>
-      <button class="color-swatch" data-color="Blue">Blue</button>
-    </div>
-
-    <label>Size</label>
-    <select class="size-select">
-      <option disabled selected>Select size</option>
-      <option>S</option>
-      <option>M</option>
-      <option>L</option>
-    </select>
-
-    <button class="add-to-cart">ADD TO CART</button>
-  </div>
+  </section>
 </div>
+<style>
+  .gift-popup{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;z-index:1000}
+  .gift-popup.is-open{display:block}
+  .gift-card{width:250px;background:#fff;border-radius:8px;border:1px solid #D9D9D9;
+    box-shadow:0 6px 24px rgba(0,0,0,.15);position:absolute;top:50%;left:50%;
+    transform:translate(-50%,-50%);padding:10px;font-family:'Jost',sans-serif;color:#111}
+  .gift-close{position:absolute;top:6px;right:8px;background:transparent;border:0;font-size:18px;cursor:pointer}
+</style>
 
+<script>
+/* Debug helper: makes + open a basic popup even if none exist.
+   Also logs what happens so نعرف المشكلة كانت فين. */
+(function(){
+  function ensureTriggers(){
+    document.querySelectorAll('.grid-item [class*="plus-icon"]').forEach(function(el,i){
+      if(!el.getAttribute('data-popup-open')) el.setAttribute('data-popup-open','look-'+(i+1));
+      el.setAttribute('role','button'); el.setAttribute('tabindex','0'); el.style.cursor='pointer';
+    });
+  }
+
+  function ensurePopup(id){
+    var sel = '.gift-popup[data-popup="'+id+'"]';
+    if(document.querySelector(sel)) return;
+    var div = document.createElement('div');
+    div.className='gift-popup'; div.setAttribute('data-popup',id); div.setAttribute('aria-hidden','true');
+    div.innerHTML = '<div class="gift-card" role="dialog" aria-modal="true">'
+      +'<button class="gift-close" type="button" aria-label="Close">×</button>'
+      +'<h4 style="margin:0 0 8px;font-size:14px">Quick view: '+id+'</h4>'
+      +'<p style="font-size:12px;color:#555;margin:0">Temporary popup (250px). Replace with your real content.</p>'
+      +'</div>';
+    document.body.appendChild(div);
+    console.log('[gift] created fallback popup for', id);
+  }
+
+  function openPopup(id){
+    var p = document.querySelector('.gift-popup[data-popup="'+id+'"]');
+    if(!p){ console.warn('[gift] no popup found:', id); return; }
+    p.classList.add('is-open'); p.setAttribute('aria-hidden','false');
+    console.log('[gift] opened', id);
+  }
+  function closePopup(p){
+    p.classList.remove('is-open'); p.setAttribute('aria-hidden','true');
+  }
+
+  function init(){
+    ensureTriggers();
+
+    // لو مفيش أي بوب-أب، اعمل واحد افتراضي لكل +
+    document.querySelectorAll('[data-popup-open]').forEach(function(btn){
+      ensurePopup(btn.getAttribute('data-popup-open'));
+    });
+
+    // فتح من +
+    document.addEventListener('click', function(e){
+      var t = e.target.closest('[data-popup-open]');
+      if(!t) return;
+      e.preventDefault();
+      openPopup(t.getAttribute('data-popup-open'));
+    }, true); // capture عشان نتفادى أي stopPropagation
+
+    // إغلاق
+    document.addEventListener('click', function(e){
+      if(e.target.closest('.gift-close')){
+        closePopup(e.target.closest('.gift-popup'));
+      } else if(e.target.classList.contains('gift-popup')){
+        closePopup(e.target);
+      }
+    });
+
+    // ESC
+    document.addEventListener('keydown', function(e){
+      if(e.key==='Escape'){
+        document.querySelectorAll('.gift-popup.is-open').forEach(closePopup);
+      }
+    });
+
+    console.log('[gift] debug helper ready');
+  }
+
+  if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', init); }
+  else { init(); }
+})();
+</script>
 
 <!--تجربه بالليل-->
 
