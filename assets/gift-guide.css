@@ -149,6 +149,40 @@ display:flex;
 
 /* first frame in home page */
 
+.gift-hero__inner{
+  margin: 0 auto;            /* وسّط الكونتينر */
+  max-width: 1440px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  min-height:402px;
+  background: transparent;   /* شيل الأحمر من الأب لو مش محتاجه */
+}
+
+.gift-hero__copy{
+  /* اشيل العرض والارتفاع الثابتين */
+  width: 100%;
+  height: 100%;
+  padding: 40px 48px;        /* استخدم padding بدل height */
+  background: green;         /* لو عايز الأخضر يملأ العمود كله */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* وسّط النص عموديًا */
+}
+
+.gift-hero__art{
+  position:relative;
+  min-height:402px;
+  overflow:hidden;
+  background:#09b;
+}
+.gift-hero__img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+
 
 /* مقاسات الهيرو والتحريك لفوق */
 
