@@ -158,6 +158,7 @@ width:100%;
 }
 
 .gift-hero__inner{
+  background-color:red;
   display:grid;
   grid-template-columns: minmax(0,1fr) minmax(0,1fr);
   align-items:center;
