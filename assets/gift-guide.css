@@ -427,8 +427,12 @@ display:flex;
   top: 119px;
   left: 145px;
   opacity: 1;
-  font-size: 12px; 
-  line-height: 1.5;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-style: Light;
+  font-size: 14px;
+  line-height: 110.00000000000001%;
+  letter-spacing: -1%;
   color: #4B4B4B;
   margin: 0;
 }
