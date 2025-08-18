@@ -343,13 +343,27 @@ The task Contain :-
       <button type="button" class="gift-swatch">Black</button>
     </div>
     <label class="gift-field__label">Size</label>
-    <div class="gift-select">
-      <select>
-          <option value="" disabled selected hidden>Choose your size</option>
-        <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-      </select>
-      <span class="gift-select__chev">▾</span>
-    </div>
+    <label for="size" class="gift-field__label">Size</label>
+<div class="gift-select">
+  <select id="size" required>
+    <option value="" disabled selected hidden></option> <!-- فاضي عشان placeholder -->
+    <option value="XS">XS</option>
+    <option value="S">S</option>
+    <option value="M">M</option>
+    <option value="L">L</option>
+    <option value="XL">XL</option>
+  </select>
+
+  <!-- ✅ Placeholder خارجي -->
+  <span id="placeholder" class="gift-placeholder">Choose your size</span>
+
+  <span class="gift-select__chev">
+    <img src=src="{{ 'Line 25.svg' | asset_url }}" alt="divider" />
+    <svg id="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </span>
+</div>
     <button class="gift-cta" type="button">
       ADD TO CART
       <img class="gift-cta__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="">
