@@ -476,7 +476,7 @@ display:flex;
   margin-bottom:10px; /*ألمسافه بين كلمة سايز والزرار تحتها*/
   height: 30px; /* 👈 طول زرار اللون */
   border: 0.54px solid #111;
- 
+  border-radius: 4px;
   font-size: 13px; /* 👈 حجم خط الزرار */
   cursor: pointer;
   background: #fff;
@@ -491,6 +491,15 @@ display:flex;
 .gift-swatch.is-active {
   background: #000;
   color: #fff;
+}
+.gift-swatch span {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #111;
+  border-radius: 2px;
+  flex-shrink: 0;        /* مايصغرش */
+  align-self: center;    /* يوسّط عمودي داخل الزرار */
 }
 
 
