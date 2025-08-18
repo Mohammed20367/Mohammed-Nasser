@@ -675,3 +675,74 @@
     height: 100px;
   }
 }
+
+
+/* ===== Mobile Fixes ===== */
+@media (max-width: 767px) {
+  /* الهيدر */
+  .nav, .tisso-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+  }
+  .logo {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .menu-btn {
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Hero Section */
+  .hero-content {
+    text-align: center;
+    padding: 20px 15px;
+  }
+  .hero-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .hero-subtitle {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  .hero-btn {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 2px;
+  }
+  .hero-note {
+    font-size: 12px;
+    margin-top: 15px;
+    color: #555;
+  }
+
+  /* Gallery Section */
+  .tisso-gallery {
+    padding: 20px 10px;
+  }
+  .gallery-title {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  .tisso-gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .tisso-gallery-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
