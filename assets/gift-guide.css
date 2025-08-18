@@ -274,7 +274,15 @@ display:flex;
   word-spacing: -0.5px; /* تقليل المسافة بين الكلمات */
   letter-spacing: -0.2px; /* تقليل تباعد الأحرف */
 }
-
+.centered-text br {
+  content: "";
+  display: block;
+  margin-bottom: 8px; /* يمكن تعديل هذه القيمة */
+}
+.centered-text {
+  text-indent: -20px; /* تعديل هذه القيمة حسب الحاجة */
+  padding-left: 20px;
+}
 
 .gift-hero__img
 {
