@@ -382,37 +382,30 @@ display:flex;
   column-gap: 12px;
   margin-bottom: 14px; /* 👈 المسافة بين الصورة وباقي العناصر */
 }
-.gift-head__img {
-  width: 120px;  /* 👈 عرض الصورة */
-  height: 120px; /* 👈 طول الصورة */
-width: 120;
-height: 140;
-top: 36px;
-left: 17px;
-angle: 0 deg;
-opacity: 1;
-
+.gift-head__img {/* 👈 عرض الصورة */
+  width: 120;
+  height: 140;
+  top: 36px;
+  left: 17px;
+  opacity: 1;
   object-fit: cover;
   border-radius: 8px;
 }
-.gift-head__title {
-  font-size: 14px; /* 👈 حجم عنوان المنتج */
-  font-weight: 600;
+.gift-head__title {/* 👈 حجم عنوان المنتج */
+  
   margin: 0 0 6px;
   width: 136;
-height: 19;
-top: 49px;
-left: 145px;
-angle: 0 deg;
-opacity: 1;
-font-family: 'Jost', sans-serif;
-font-weight: 300;
-font-style: Light;
-font-size: 16px;
-leading-trim: NONE;
-line-height: 120%;
-letter-spacing: 0px;
-vertical-align: middle;
+  height: 19;
+  top: 49px;
+  left: 145px;
+  opacity: 1;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-style: Light;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0px;
+  vertical-align: middle;
 
 }
 .gift-head__price {
