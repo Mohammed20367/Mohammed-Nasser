@@ -578,8 +578,8 @@ position: relative;
   grid-template-columns: 1fr 1fr; /* زرارين جنب بعض */
   width: 100%;
   border: 1px solid #000;   /* إطار خارجي */
-  border-radius: 4px;
-  overflow: hidden;         /* يخلي الحدود نظيفة */
+  border-radius: 6px;       /* radius موحد */
+  overflow: hidden;         /* يخفي أي زوائد */
 }
 
 .gift-swatch {
@@ -598,7 +598,7 @@ position: relative;
   color: #fff;
 }
 
-/* يفصل بينهم بخط */
+/* خط الفاصل بينهم */
 .gift-swatches .gift-swatch + .gift-swatch {
   border-left: 2px solid #000;
 }
