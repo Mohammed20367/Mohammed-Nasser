@@ -243,6 +243,110 @@ display:flex;
 /* أنماط معدلة لمنع الطول الزائد */
 
 
+.gift-hero__copy {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Jost', sans-serif;
+}
+
+.gift-hero__title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.gift-hero__text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  max-width: 520px;
+  margin: 0 auto 30px;
+}
+
+/* الزرار CTA (اللي جهزناه قبل كده) */
+.cta-button {
+  width: auto;
+  min-width: 207px;
+  height: 44px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  border: 1px solid #000;
+  background: #000;              /* أسود أساسي */
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+  color: #fff;                   /* النص أبيض */
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* fill effect */
+.cta-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #FFF544;           /* أصفر */
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.4s ease;
+  z-index: 0;
+}
+
+/* النص والسهم فوق الفيل */
+.cta-button .cta-text,
+.cta-button .cta-arrow {
+  position: relative;
+  z-index: 1;
+  transition: color 0.35s ease, filter 0.35s ease;
+}
+
+/* Hover: شغّل الفيل */
+.cta-button:hover::before {
+  transform: scaleX(1);
+}
+
+/* Hover: النص أسود */
+.cta-button:hover .cta-text {
+  transition: transform 0.4s ease;
+  color: #000;
+}
+
+/* السهم: أبيض أساسي */
+.cta-arrow {
+  display: inline-block;
+  width: 20px;
+  height: auto;
+  filter: brightness(0) invert(1); /* أبيض */
+  transition: filter 0.35s ease, transform 0.25s ease;
+}
+
+/* Hover: السهم أسود ويتحرك يمين */
+.cta-button:hover .cta-arrow {
+  filter: none;
+  transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gift-hero__title {
+    font-size: 28px;
+  }
+
+  .gift-hero__text {
+    font-size: 16px;
+  }
+}
 
 
 
