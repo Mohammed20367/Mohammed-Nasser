@@ -177,11 +177,15 @@ display:flex;
 }
 
 .gift-hero__title {
-  font-size: clamp(32px, 5vw, 48px);
-  font-weight: 700;
-  color: #000;
-  margin-bottom: 15px;
-  line-height: 1.2;
+font-family: 'Jost', sans-serif;
+font-weight: 500;
+font-style: Medium;
+font-size: 70px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0px;
+vertical-align: middle;
+
 }
 
 .gift-hero__text-container {
