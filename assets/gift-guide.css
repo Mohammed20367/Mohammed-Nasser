@@ -509,7 +509,7 @@ position: relative;
 .gift-select select option {
   height:30px;
   text-align: center;        /* 👈 يخلي الكلام في النص */
-  padding: 4px 0;            /* 👈 يقلل الارتفاع لكل عنصر */
+  padding: 2px 0;            /* 👈 يقلل الارتفاع لكل عنصر */
   font-size: 12px;           /* 👈 نفس حجم الخط */
 }
 
