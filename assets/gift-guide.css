@@ -474,7 +474,8 @@ display:flex;
 }
 .gift-swatch {
   margin-bottom:10px; /*ألمسافه بين كلمة سايز والزرار تحتها*/
-  height: 30px; /* 👈 طول زرار اللون */
+    height: 40.441322326660156px;
+*/
   border: 0.54px solid #111;
   border-radius: 4px;
   font-size: 18px; /* 👈 حجم خط الزرار */
@@ -623,6 +624,7 @@ position: relative;
 
 .cwhite {
   width: 5.807142734527588px;
+  height: 40.441322326660156px;
   opacity: 1;
   border-width: 0.5px;
   background-color: #FFFFFF;
