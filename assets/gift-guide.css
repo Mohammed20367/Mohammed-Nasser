@@ -485,36 +485,6 @@ display:flex;
 
 
 
-.gift-swatches {
-  display: flex;
-  width: 100%;
-  border: 1px solid #111;
-  border-radius: 6px;
-  overflow: hidden; /* علشان الزرار يفضلوا لازقين */
-}
-
-.gift-swatch {
-  flex: 1; /* كل زرار ياخد نفس العرض */
-  height: 40px;
-  font-size: 14px;
-  cursor: pointer;
-  border: none;
-  background: #fff;
-  color: #111;
-  transition: all 0.2s ease;
-}
-
-.gift-swatch:not(:last-child) {
-  border-right: 1px solid #111; /* الخط الفاصل */
-}
-
-.gift-swatch.is-active {
-  background: #000;  /* يتلون بالأسود */
-  color: #fff;       /* النص يبقى أبيض */
-  font-weight: 600;
-}
-
-
 
 /* ============================= */
 /* Size Select */
