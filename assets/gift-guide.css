@@ -321,12 +321,26 @@ display:flex;
 
 
 /*تجربه*/
+
+/* ============================= */
+/* Popup Wrapper & Overlay */
+/* ============================= */
+.gift-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
+  z-index: 1000;
+}
+.gift-popup.is-open {
+  display: block;
+}
+
 /* ============================= */
 /* Popup Card */
 /* ============================= */
 .gift-popup__card.gift-popup--figma {
-  width: 340px;          /* 👈 عرض الكارد */
-  height: 550px;         /* 👈 ارتفاع الكارد ثابت */
+  width: 280px;
   background: #fff;
   border-radius: 8px;
   border: 1px solid #D9D9D9;
@@ -335,12 +349,27 @@ display:flex;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 20px;         /* 👈 مسافة داخلية موحدة */
+  padding: 12px;
   font-family: 'Jost', sans-serif;
   color: #111;
-  display: flex;
-  flex-direction: column; /* 👈 كل العناصر تحت بعض */
-  justify-content: flex-start;
+}
+
+/* ============================= */
+/* Close Button */
+/* ============================= */
+.gift-popup__close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: transparent;
+  border: 0;
+  font-size: 18px;
+  cursor: pointer;
+  color: #111;
+  transition: color 0.2s ease;
+}
+.gift-popup__close:hover {
+  color: #000;
 }
 
 /* ============================= */
@@ -348,29 +377,29 @@ display:flex;
 /* ============================= */
 .gift-head {
   display: grid;
-  grid-template-columns: 120px 1fr;
-  column-gap: 14px;
-  margin-bottom: 16px; /* 👈 مسافة بين الصورة والوصف */
+  grid-template-columns: 92px 1fr;
+  column-gap: 10px;
+  margin-bottom: 12px;
 }
 .gift-head__img {
-  width: 120px;
-  height: 120px;
+  width: 92px;
+  height: 92px;
   object-fit: cover;
   border-radius: 8px;
 }
 .gift-head__title {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
-  margin: 0 0 6px;
+  margin: 0 0 4px;
 }
 .gift-head__price {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
-  margin: 0 0 8px;
+  margin: 0 0 6px;
 }
 .gift-head__desc {
-  font-size: 12px;
-  line-height: 1.5;
+  font-size: 11px;
+  line-height: 1.45;
   color: #4B4B4B;
   margin: 0;
 }
@@ -382,7 +411,7 @@ display:flex;
   display: block;
   font-size: 12px;
   font-weight: 500;
-  margin: 18px 0 8px; /* 👈 مسافة فوق وتحت الليبل */
+  margin: 12px 0 6px;
   color: #111;
 }
 
@@ -392,16 +421,19 @@ display:flex;
 .gift-swatches {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px; /* 👈 مسافة بين الأزرار */
+  gap: 6px;
 }
 .gift-swatch {
-  height: 38px;
+  height: 32px;
   border: 1px solid #111;
   border-radius: 4px;
-  font-size: 13px;
+  font-size: 12px;
   cursor: pointer;
   background: #fff;
   transition: all 0.2s ease;
+}
+.gift-swatch:hover {
+  background: #f4f4f4;
 }
 .gift-swatch.is-active {
   background: #000;
@@ -411,16 +443,26 @@ display:flex;
 /* ============================= */
 /* Size Select */
 /* ============================= */
+.gift-select {
+  position: relative;
+}
 .gift-select select {
   width: 100%;
-  height: 42px; /* 👈 ارتفاع الـ select */
+  height: 36px;
   border: 1px solid #111;
   border-radius: 4px;
   padding: 0 34px 0 10px;
-  font-size: 13px;
+  font-size: 12px;
   background: #fff;
   appearance: none;
   cursor: pointer;
+}
+.gift-select__chev {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
 /* ============================= */
@@ -428,13 +470,13 @@ display:flex;
 /* ============================= */
 .gift-cta {
   width: 100%;
-  height: 46px; /* 👈 طول الزرار */
-  margin-top: auto; /* 👈 يثبت الزرار تحت */
+  height: 40px;
+  margin-top: 14px;
   background: #000;
   color: #fff;
   border: 0;
   border-radius: 4px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   cursor: pointer;
   display: flex;
@@ -442,8 +484,29 @@ display:flex;
   justify-content: center;
   gap: 10px;
   text-transform: uppercase;
+  transition: background 0.2s ease;
+}
+.gift-cta:hover {
+  background: #333;
 }
 .gift-cta__arrow {
   width: 18px;
   filter: brightness(0) invert(1);
+}
+
+/* ============================= */
+/* Responsive */
+/* ============================= */
+@media (max-width: 480px) {
+  .gift-popup__card.gift-popup--figma {
+    width: 90%;
+    padding: 14px;
+  }
+  .gift-head {
+    grid-template-columns: 80px 1fr;
+  }
+  .gift-head__img {
+    width: 80px;
+    height: 80px;
+  }
 }
