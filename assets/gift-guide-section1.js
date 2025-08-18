@@ -85,30 +85,8 @@
 //   }
 // });
 
-let isOpen = false;
-                let selectedValue = '';
-                let isDragging = false;
-                let startY = 0;
-                let scrollTop = 0;
- document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.custom-dropdown').forEach(function(dropdown) {
-    const dropdownHeader = dropdown.querySelector('.dropdown-header');
-    const dropdownOptions = dropdown.querySelector('.dropdown-options');
-    const dropdownText = dropdownHeader.querySelector('.dropdown-text');
-    let isOpen = false;
-    let selectedValue = '';
-    let isDragging = false;
-    let startY = 0;
-    let scrollTop = 0;
 
-    // فتح/إغلاق القائمة
-    dropdownHeader.addEventListener('click', function() {
-      if (isOpen) {
-        closeDropdown();
-      } else {
-        openDropdown();
-      }
-    });
+ 
 
     function openDropdown() {
       document.querySelectorAll('.dropdown-options.show').forEach(function(otherOptions) {
