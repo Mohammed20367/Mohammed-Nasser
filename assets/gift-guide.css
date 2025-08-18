@@ -745,3 +745,98 @@ display:flex;
 
 
 
+.gift-field__label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-family: 'Jost', sans-serif;
+  color: #333;
+}
+
+.gift-select {
+  position: relative;
+  display: inline-block;
+  width: 271px;     /* من Figma */
+  height: 40px;
+  background-color: #fff; /* خلفية بيضا */
+  color: #000;  
+}
+
+.gift-select select {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 0 45px 0 12px; 
+  font-size: 16px;                 
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  line-height: 100%;                
+  letter-spacing: -0.02em;          
+  cursor: pointer;
+  background-color: #fff;           /* ✅ خلفية بيضا للـ dropdown */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-align: center;               /* المقاسات في النص */
+  color: #000;
+}
+
+/* ✅ المقاسات في النص */
+.gift-select select option:not([disabled]) {
+  text-align: center;
+  height: 36px;           
+  line-height: 36px;      /* ← لو عايز تزود المسافة زوّد القيمة هنا */
+}
+
+/* ✅ الهوفر على الأوبشن */
+.gift-select select option:hover {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* ✅ السهم والفاصل */
+.gift-select__chev {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50px;         
+  display: flex;
+  align-items: center;      
+  justify-content: center; 
+  pointer-events: none;
+  background: transparent;
+}
+
+.gift-select__chev img {
+  position: absolute;
+  left: 0;                      
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  width: auto;
+}
+
+.gift-select__chev svg {
+  width: 16px;
+  height: 16px;
+  stroke: black;
+  transition: transform 0.2s ease;
+}
+
+/* ✅ placeholder */
+.gift-placeholder {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  vertical-align: middle;
+  color: #000; 
+}
