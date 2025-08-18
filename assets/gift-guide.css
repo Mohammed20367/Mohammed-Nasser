@@ -539,251 +539,116 @@ display:flex;
 /* ============================= */
 /* Size Select - Updated Style */
 /* ============================= */
- .open-popup-btn {
-            background: #000;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 4px;
-            font-family: 'Jost', sans-serif;
-        }
+.gift-field__label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  color: #333333;
+}
 
-        .open-popup-btn:hover {
-            background: #333;
-        }
+.gift-select {
+  position: relative;
+  display: inline-block;
+  width: 271px;
+  height: 40px;
+}
 
-        /* Popup Styles */
-        .gift-popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
+.gift-select select {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #D9D9D9;
+  border-radius: 4px;
+  padding: 0 45px 0 16px;
+  font-size: 16px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: transparent;
+  outline: none;
+  text-align: center; /* 👈 المقاس المختار يكون في النص */
+}
 
-        .gift-popup.is-open {
-            opacity: 1;
-            visibility: visible;
-        }
+.gift-select select:focus {
+  border-color: #000;
+  color: #000;
+}
 
-        .gift-popup__content {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            max-width: 500px;
-            width: 90%;
-            position: relative;
-        }
+.gift-select select option {
+  color: #000;
+  background: #fff;
+  padding: 8px 16px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  text-align: center; /* 👈 المقاس في النص */
+}
 
-        .gift-popup__close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            padding: 5px;
-            color: #666;
-        }
+.gift-select select option:hover {
+  background-color: #000 !important;
+  color: #fff !important;
+}
 
-        .gift-popup__close:hover {
-            color: #000;
-        }
+.gift-select select option:checked {
+  background-color: #000 !important;
+  color: #fff !important;
+}
 
-        .gift-popup h3 {
-            margin-bottom: 20px;
-            font-size: 24px;
-            color: #000;
-        }
+.gift-select select option:focus {
+  background-color: #000 !important;
+  color: #fff !important;
+}
 
-        /* Size Field Styles */
-        .size-field {
-            margin-bottom: 20px;
-        }
+.gift-placeholder {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000000;
+  transition: opacity 0.2s ease;
+}
 
-        .size-field__label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 14px;
-            font-weight: 400;
-            color: #333333;
-        }
+.gift-placeholder.hide {
+  opacity: 0;
+}
 
-        .custom-dropdown {
-            position: relative;
-            width: 100%;
-            max-width: 271px;
-        }
+.gift-select__chev {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 50px; /* 👈 هنا تقدر تغير المسافة بين الفاصل والسهم */
+}
 
-        .dropdown-header {
-            width: 100%;
-            height: 40px;
-            border: 1px solid #D9D9D9;
-            border-radius: 0;
-            background-color: #FFFFFF;
-            padding: 0 45px 0 16px;
-            font-size: 16px;
-            font-family: 'Jost', sans-serif;
-            font-weight: 400;
-            color: #000;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-            position: relative;
-            user-select: none;
-        }
+.gift-select__chev .divider {
+  width: 1px;
+  height: 20px;
+  background: #D9D9D9;
+}
 
-        .dropdown-header:hover {
-            border-color: #999;
-        }
+.gift-select__chev svg {
+  width: 16px;
+  height: 16px;
+  stroke: #000;
+  stroke-width: 2;
+  transition: transform 0.2s ease;
+}
 
-        .dropdown-header.active {
-            border-color: #000;
-            color: #000;
-            border-bottom: none;
-        }
+.gift-select select:focus + .gift-placeholder + .gift-select__chev svg {
+  transform: rotate(180deg);
+}
 
-        .dropdown-header.selected {
-            color: #000;
-        }
-
-        .dropdown-arrow {
-            position: absolute;
-            right: 16px;
-            top: 50%;
-            transform: translateY(-50%);
-            pointer-events: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .dropdown-divider {
-            width: 1px;
-            height: 20px;
-            background: #D9D9D9;
-        }
-
-        .dropdown-arrow svg {
-            width: 16px;
-            height: 16px;
-            stroke: #000;
-            stroke-width: 2;
-            transition: transform 0.2s ease;
-        }
-
-        .dropdown-header.active .dropdown-arrow svg {
-            transform: rotate(180deg);
-        }
-
-        .dropdown-options {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: white;
-            border: 1px solid #000;
-            border-top: none;
-            border-radius: 0;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.2s ease;
-            height: 120px;
-            overflow-y: auto;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-            cursor: grab;
-        }
-
-        .dropdown-options:active {
-            cursor: grabbing;
-        }
-
-        .dropdown-options::-webkit-scrollbar {
-            display: none;
-        }
-
-        .dropdown-options.show {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown-option {
-            padding: 8px 16px;
-            font-size: 16px;
-            font-family: 'Jost', sans-serif;
-            font-weight: 400;
-            color: #000;
-            cursor: pointer;
-            text-align: center;
-            border-bottom: 1px solid #f0f0f0;
-            transition: all 0.2s ease;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #fff;
-        }
-
-        .dropdown-option:last-child {
-            border-bottom: none;
-        }
-
-        .dropdown-option:hover {
-            background-color: #000;
-            color: #fff;
-        }
-
-        .dropdown-option.selected {
-            background-color: #000;
-            color: #fff;
-        }
-
-        /* Add to Cart Button */
-        .gift-cta {
-            background: #000;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 4px;
-            font-family: 'Jost', sans-serif;
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        .gift-cta:hover {
-            background: #333;
-        }
-
-        /* Demo container */
-        .demo-container {
-            text-align: center;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-            color: #333;
-        }
 /* ============================= */
 /* CTA Button */
 /* ============================= */
