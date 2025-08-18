@@ -522,12 +522,15 @@ width: 7px;
 }
 .cblue
 {
-    background-color:#0D499F;
+  background-color:#0D499F;
 }
 .cred
 {
-      background-color:#B20F36;
-
+  background-color:#B20F36;
+}
+.cgrey
+{
+  background-color:#AFAFB7;
 }
 
 /* ============================= */
