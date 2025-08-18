@@ -507,6 +507,10 @@ display:flex;
   height: 12px;
   border: 1px solid #111;
   border-radius: 2px;
+  width: 7px;
+  opacity: 1;
+  border-width: 0.5px;
+  border: 0.5px solid #000; /* علشان الأبيض يبان */
 }
 
 .gift-swatch.is-active {
@@ -514,36 +518,21 @@ display:flex;
   color: #fff;
 }
 
-.gift-swatch {
-  flex: 1;
-  height: 40px;
-  border: none;
-  font-size: 13px;
-  cursor: pointer;
-  background: #fff;
-  display: flex;             
-  align-items: center;        /* يوسّط عمودي */
-  justify-content: center;    /* يوسّط أفقي */
-  gap: 6px;                   /* مسافة بين المربع والكلمة */
-}
-
-.gift-swatch span {
-  display: inline-block;
-  width: 14px;          /* 👈 كبرته شوية عشان يبان */
-  height: 14px;
-  border: 1px solid #000;
-  border-radius: 2px;
-  flex-shrink: 0;       /* 👈 يمنع المربع من التمدد أو الاختفاء */
-}
-
 .cwhite {
+
+  background-color: #FFFFFF;
   background-color: #FFFFFF;
 }
-
-.cblack {
+.cblack
+{
+  width: 7px;
+  opacity: 1;
+  border-width: 0.5px;
   background-color: #000000;
+  border: 0.5px solid #FFFFFF; /* علشان الأبيض يبان */
+  border: 0.5px solid #000;   /* أسود، سمك نص بكسل، على الأربع جهات */
+  box-sizing: border-box;     /* عشان البوردر يبقى جوه الحدود */
 }
-
 
 /* ============================= */
 /* Size Select */
