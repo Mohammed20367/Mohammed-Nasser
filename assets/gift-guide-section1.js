@@ -64,3 +64,11 @@
     }
   });
 })();
+// نفس السكربت اللي عندك يشتغل
+document.addEventListener('click', function(e) {
+  let sw = e.target.closest('.gift-swatch');
+  if (!sw) return;
+  let wrap = sw.closest('.gift-swatches');
+  wrap.querySelectorAll('.gift-swatch').forEach(b => b.classList.remove('is-active'));
+  sw.classList.add('is-active');
+});
