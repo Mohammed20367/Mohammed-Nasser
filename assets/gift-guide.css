@@ -599,8 +599,23 @@ position: relative;
 }
 
 .gift-swatch {
-  display: flex;          /* 👈 يخلي المحتوى جوه الزرار في خط واحد */
-  align-items: center;    /* 👈 يوسّط العمودي */
-  justify-content: center;
-  gap: 6px;               /* 👈 مسافة بين المستطيل والكلمة */
+  flex: 1;
+  height: 40px;
+  border: 1px solid #111;
+  font-size: 13px;
+  cursor: pointer;
+  background: #fff;
+  display: flex;            /* 👈 المحتوى جوه الزرار */
+  align-items: center;      /* 👈 يوسّط كل حاجة عموديًا */
+  justify-content: center;  /* 👈 يخلي النص والمربع في النص */
+  gap: 8px;                 /* 👈 مسافة بين المربع والكلمة */
 }
+
+.color-box {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.color-box.white { background: #fff; border: 1px solid #000; }
+.color-box.black { background: #000; }
