@@ -468,9 +468,7 @@ display:flex;
   gap: 0;                 /* شلت أي مسافة بينهم */
   border: 1px solid #111; /* البوردر الخارجي */
   border-radius: 6px;     /* يدي كورنر ناعم للكادر كله */
-  overflow: hidden;  
-   flex: 1;                /* كل واحد ياخد نص العرض */
-  border: none;  
+  overflow: hidden;   
 }
 .gift-swatch {
   margin-bottom:10px; /*ألمسافه بين كلمة سايز والزرار تحتها*/
@@ -481,6 +479,8 @@ display:flex;
   cursor: pointer;
   background: #fff;
   transition: all 0.2s ease;
+   flex: 1;                /* كل واحد ياخد نص العرض */
+  border: none; 
 }
 .gift-swatch:hover {
   background: #f4f4f4;
