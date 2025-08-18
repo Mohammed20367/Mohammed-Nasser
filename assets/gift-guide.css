@@ -586,30 +586,7 @@ position: relative;
 
 
 
-.cwhite {
-  width: 5.807142734527588px;
-  height: 40.441322326660156px;
-  opacity: 1;
-  border-width: 0.5px;
-  background-color: #FFFFFF;
-  border: 0.5px solid #000; /* علشان الأبيض يبان */
-  background-color: #FFFFFF;
-    vertical-align: middle;   /* 👈 يحل مشكلة الرفعة */
 
-}
-
-.gift-swatch {
-  flex: 1;
-  height: 40px;
-  border: 1px solid #111;
-  font-size: 13px;
-  cursor: pointer;
-  background: #fff;
-  display: flex;            /* 👈 المحتوى جوه الزرار */
-  align-items: center;      /* 👈 يوسّط كل حاجة عموديًا */
-  justify-content: center;  /* 👈 يخلي النص والمربع في النص */
-  gap: 8px;                 /* 👈 مسافة بين المربع والكلمة */
-}
 
 .color-box {
   width: 12px;
