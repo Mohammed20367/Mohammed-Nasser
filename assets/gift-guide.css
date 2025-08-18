@@ -260,7 +260,7 @@ display:flex;
 }
 .gift-hero__text
 {
-margin:0px 0px 5px 25px;
+margin-bottom:30px;
 font-family: 'Jost', sans-serif;
 font-weight: 400;
 font-style: Regular;
