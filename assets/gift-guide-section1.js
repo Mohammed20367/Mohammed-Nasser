@@ -89,87 +89,112 @@
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  const dropdown = document.querySelector('[data-dropdown="size2"]');
-  if (!dropdown) return;
+    // تطبيق الوظائف على كل dropdown في الصفحة
+    document.querySelectorAll('.custom-dropdown').forEach(function(dropdown) {
+        const dropdownHeader = dropdown.querySelector('.dropdown-header');
+        const dropdownOptions = dropdown.querySelector('.dropdown-options');
+        const dropdownText = dropdownHeader.querySelector('.dropdown-text');
+        let isOpen = false;
+        let selectedValue = '';
+        let isDragging = false;
+        let startY = 0;
+        let scrollTop = 0;
 
-  const header = dropdown.querySelector('.dropdown-header');
-  const options = dropdown.querySelector('.dropdown-options');
-  const optionItems = dropdown.querySelectorAll('.dropdown-option');
-  const placeholder = header.getAttribute('data-placeholder');
+        // فتح/إغلاق القائمة
+        dropdownHeader.addEventListener('click', function() {
+            if (isOpen) {
+                closeDropdown();
+            } else {
+                openDropdown();
+            }
+        });
 
-  let isScrolling = false;
-  let startY = 0;
-  let scrollTop = 0;
+        function openDropdown() {
+            // إغلاق أي dropdown مفتوح
+            document.querySelectorAll('.dropdown-options.show').forEach(function(otherOptions) {
+                if (otherOptions !== dropdownOptions) {
+                    otherOptions.classList.remove('show');
+                    otherOptions.closest('.custom-dropdown').querySelector('.dropdown-header').classList.remove('active');
+                }
+            });
 
-  // Toggle dropdown
-  header.addEventListener('click', function() {
-    header.classList.toggle('active');
-    options.classList.toggle('show');
-  });
+            isOpen = true;
+            dropdownHeader.classList.add('active');
+            dropdownOptions.classList.add('show');
+        }
 
-  // اختيار مقاس
-  optionItems.forEach(option => {
-    option.addEventListener('click', function() {
-      if (!isScrolling) {
-        const value = this.getAttribute('data-value');
-        header.textContent = value;
-        header.classList.add('selected');
-        header.setAttribute('data-selected', value);
+        function closeDropdown() {
+            isOpen = false;
+            dropdownHeader.classList.remove('active');
+            dropdownOptions.classList.remove('show');
+        }
 
-        optionItems.forEach(opt => opt.classList.remove('selected'));
-        this.classList.add('selected');
+        // اختيار المقاس
+        dropdownOptions.addEventListener('click', function(e) {
+            if (e.target.classList.contains('dropdown-option') && !isDragging) {
+                // إزالة التحديد من جميع الخيارات
+                dropdownOptions.querySelectorAll('.dropdown-option').forEach(option => {
+                    option.classList.remove('selected');
+                });
 
-        header.classList.remove('active');
-        options.classList.remove('show');
+                // تحديد الخيار المختار
+                e.target.classList.add('selected');
+                selectedValue = e.target.dataset.value;
+                dropdownText.textContent = selectedValue;
+                
+                // تحديث حالة الهيدر
+                dropdownHeader.classList.add('selected');
+                
+                // إغلاق القائمة
+                closeDropdown();
+                
+                console.log('Selected size:', selectedValue);
+            }
+        });
 
-        console.log('Selected size:', value);
-      }
+        // Drag scroll functionality
+        dropdownOptions.addEventListener('mousedown', function(e) {
+            isDragging = true;
+            startY = e.pageY - dropdownOptions.offsetTop;
+            scrollTop = dropdownOptions.scrollTop;
+            dropdownOptions.style.cursor = 'grabbing';
+            e.preventDefault();
+        });
+
+        dropdownOptions.addEventListener('mouseleave', function() {
+            isDragging = false;
+            dropdownOptions.style.cursor = 'grab';
+        });
+
+        dropdownOptions.addEventListener('mouseup', function() {
+            isDragging = false;
+            dropdownOptions.style.cursor = 'grab';
+        });
+
+        dropdownOptions.addEventListener('mousemove', function(e) {
+            if (!isDragging) return;
+            e.preventDefault();
+            const y = e.pageY - dropdownOptions.offsetTop;
+            const walk = (y - startY) * 2;
+            dropdownOptions.scrollTop = scrollTop - walk;
+        });
+
+        // إغلاق القائمة عند الضغط خارجها
+        document.addEventListener('click', function(e) {
+            if (!dropdownHeader.contains(e.target) && !dropdownOptions.contains(e.target)) {
+                closeDropdown();
+            }
+        });
+
+        // منع الإغلاق عند السكرول داخل القائمة
+        dropdownOptions.addEventListener('scroll', function(e) {
+            e.stopPropagation();
+        });
+
+        // Reset drag state when mouse leaves window
+        document.addEventListener('mouseup', function() {
+            isDragging = false;
+            dropdownOptions.style.cursor = 'grab';
+        });
     });
-  });
-
-  // Drag Scroll
-  options.addEventListener('mousedown', function(e) {
-    isScrolling = true;
-    startY = e.pageY - options.offsetTop;
-    scrollTop = options.scrollTop;
-    options.style.cursor = 'grabbing';
-    e.preventDefault();
-  });
-
-  options.addEventListener('mouseleave', () => {
-    isScrolling = false;
-    options.style.cursor = 'grab';
-  });
-
-  options.addEventListener('mouseup', () => {
-    isScrolling = false;
-    options.style.cursor = 'grab';
-  });
-
-  options.addEventListener('mousemove', function(e) {
-    if (!isScrolling) return;
-    e.preventDefault();
-    const y = e.pageY - options.offsetTop;
-    const walk = (y - startY) * 2;
-    options.scrollTop = scrollTop - walk;
-  });
-
-  options.addEventListener('wheel', function(e) {
-    e.preventDefault();
-    this.scrollTop += e.deltaY * 0.5;
-  });
-
-  // Close when clicking outside
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('[data-dropdown="size2"]')) {
-      header.classList.remove('active');
-      options.classList.remove('show');
-      isScrolling = false;
-    }
-  });
-
-  document.addEventListener('mouseup', () => {
-    isScrolling = false;
-    options.style.cursor = 'grab';
-  });
 });
