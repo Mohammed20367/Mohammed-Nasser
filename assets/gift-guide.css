@@ -461,41 +461,27 @@ display:flex;
 /* Color Swatches */
 /* ============================= */
 .gift-swatches {
-  display: flex;
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
 }
-
 .gift-swatch {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;               /* مسافة بين المربع والكلمة */
-  padding: 8px 0;
-  background: #fff;
-  border: 1px solid #000;
-  font-size: 14px;
+  margin-bottom:10px; /*ألمسافه بين كلمة سايز والزرار تحتها*/
+  height: 36px; /* 👈 طول زرار اللون */
+  border: 1px solid #111;
+  border-radius: 4px;
+  font-size: 13px; /* 👈 حجم خط الزرار */
   cursor: pointer;
+  background: #fff;
   transition: all 0.2s ease;
 }
-
-.gift-swatch + .gift-swatch {
-  border-left: none;
+.gift-swatch:hover {
+  background: #f4f4f4;
 }
-
 .gift-swatch.is-active {
-  border: 2px solid #000;
-  background: #f9f9f9;
+  background: #000;
+  color: #fff;
 }
-
-.color-box {
-  width: 14px;
-  height: 14px;
-  border: 1px solid #111;
-  border-radius: 2px;
-  display: inline-block;
-}
-
 
 /* ============================= */
 /* Size Select */
