@@ -471,8 +471,10 @@ display:flex;
   overflow: hidden; 
   text-align:center;
   height: 40.441322326660156px;
-
-  
+   display: flex;
+  border: 1px solid #111;
+  border-radius: 6px;
+  overflow: hidden;
 }
 .gift-swatch {
   margin-bottom:10px; /*ألمسافه بين كلمة سايز والزرار تحتها*/
@@ -498,10 +500,7 @@ display:flex;
 
 
 .gift-swatches {
-  display: flex;
-  border: 1px solid #111;
-  border-radius: 6px;
-  overflow: hidden;
+ 
 }
 
 .gift-swatch {
