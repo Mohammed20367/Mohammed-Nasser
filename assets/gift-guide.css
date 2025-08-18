@@ -423,6 +423,7 @@ display:flex;
   vertical-align: middle;
 }
 .gift-head__desc {/* 👈 حجم وصف المنتج */
+  margin-top:20px;
   width: 146;
   height: 60;
   top: 119px;
