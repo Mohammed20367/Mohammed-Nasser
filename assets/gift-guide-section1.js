@@ -72,3 +72,17 @@ document.addEventListener('click', function(e) {
   wrap.querySelectorAll('.gift-swatch').forEach(b => b.classList.remove('is-active'));
   sw.classList.add('is-active');
 });
+
+
+document.querySelectorAll(".gift-select").forEach(wrapper => {
+  const select = wrapper.querySelector("select");
+  const placeholder = wrapper.querySelector(".gift-placeholder");
+
+  select.addEventListener("change", () => {
+    if (select.value !== "") {
+      placeholder.style.display = "none";
+    } else {
+      placeholder.style.display = "block";
+    }
+  });
+});
