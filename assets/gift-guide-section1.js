@@ -182,4 +182,4 @@ document.querySelectorAll(".gift-select").forEach(wrapper => {
                 if (options) options.style.cursor = 'grab';
             });
         });
-    </script>
+  
