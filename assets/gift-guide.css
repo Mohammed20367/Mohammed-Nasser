@@ -493,10 +493,10 @@ position: relative;
 }
 .gift-select select {
   width: 100%;
-  height: 30px; /* 👈 ارتفاع القائمة المنسدلة */
+  height: 40px; /* 👈 ارتفاع القائمة المنسدلة */
   border: 1px solid #111;
   border-radius: 4px;
-  padding: 0 34px 0 10px;
+  padding: 0 20px 0 10px;
   font-size: 13px; /* 👈 حجم الخط */
   background: #fff;
   appearance: none;
