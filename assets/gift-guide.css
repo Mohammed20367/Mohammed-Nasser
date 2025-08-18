@@ -260,7 +260,20 @@ display:flex;
   text-align: center;
   white-space: normal; /* التأكد من أن النص يتدفق بشكل طبيعي */
 }
+.gift-text-wrapper {
+  width: 55%; /* التحكم في العرض لإنشاء 3 سطور */
+  margin: 0 auto;
+  text-align: center;
+}
 
+.gift-hero__text {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+  white-space: normal;
+  word-spacing: -0.5px; /* تقليل المسافة بين الكلمات */
+  letter-spacing: -0.2px; /* تقليل تباعد الأحرف */
+}
 
 
 .gift-hero__img
