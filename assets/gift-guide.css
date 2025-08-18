@@ -601,3 +601,17 @@ position: relative;
   display: inline-block;
   vertical-align: middle;       /* 👈 ينزل النص في النص */
 }
+.gift-swatch {
+  flex: 1;
+  height: 40px;
+  border: 1px solid #111;
+  font-size: 13px;
+  cursor: pointer;
+  background: #fff;
+  display: flex;               
+  align-items: center;          /* يوسّط عمودي */
+  justify-content: center;      /* يوسّط أفقي */
+  gap: 6px;                     /* مسافة بين المربع والكلمة */
+  border-radius: 4px;
+  line-height: 1;               /* 👈 يمنع النص يطلع فوق */
+}
