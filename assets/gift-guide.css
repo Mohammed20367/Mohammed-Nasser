@@ -406,18 +406,28 @@ display:flex;
   letter-spacing: 0px;
   vertical-align: middle;
 }
-.gift-head__price {
+.gift-head__price {/* 👈 حجم السعر */
   width: 64;
   height: 19;
   top: 88px;
   left: 145px;
   opacity: 1;
-  font-size: 15px; /* 👈 حجم السعر */
-  font-weight: 700;
+  font-family: 'Lustria';
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0px;
+  vertical-align: middle;
   margin: 0 0 8px;
 }
-.gift-head__desc {
-  font-size: 12px; /* 👈 حجم وصف المنتج */
+.gift-head__desc {/* 👈 حجم وصف المنتج */
+  width: 146;
+  height: 60;
+  top: 119px;
+  left: 145px;
+  opacity: 1;
+  font-size: 12px; 
   line-height: 1.5;
   color: #4B4B4B;
   margin: 0;
