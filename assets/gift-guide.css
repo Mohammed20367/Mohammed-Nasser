@@ -453,6 +453,7 @@ display:flex;
   letter-spacing: 0%;
   display: block;
   margin: 0px 0 8px; /* 👈 المسافة بين الليبل والعنصر */
+  margin:0px;
   color: #333333;
 }
 
