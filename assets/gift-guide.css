@@ -477,7 +477,6 @@ display:flex;
   overflow: hidden;
 }
 .gift-swatch {
-  font-family: 'Jost', sans-serif;
   margin-bottom: 10px;        /* المسافة بين كلمة Size والزرار */
   flex: 1;                    /* كل واحد ياخد نص العرض */
   height: 40px;
@@ -503,7 +502,7 @@ display:flex;
 
 .gift-swatch span {
   display: inline-block;     /* 👈 مهم عشان يفضل مع الكلمة */
-  width: 271px;
+  width: 12px;
   height: 12px;
   border: 1px solid #111;
   border-radius: 2px;
@@ -514,8 +513,9 @@ display:flex;
   color: #fff;
 }
 
+
 .cwhite {
-  width: 7px;
+  width: 5.807142734527588px;
   opacity: 1;
   border-width: 0.5px;
   background-color: #FFFFFF;
