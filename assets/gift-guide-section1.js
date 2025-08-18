@@ -72,3 +72,15 @@ document.addEventListener('click', function(e) {
   wrap.querySelectorAll('.gift-swatch').forEach(b => b.classList.remove('is-active'));
   sw.classList.add('is-active');
 });
+
+
+
+const select = document.getElementById("size");
+const placeholder = document.getElementById("placeholder");
+
+// ✅ لما يختار أي مقاس، نخفي الـ placeholder
+select.addEventListener("change", () => {
+  if (select.value !== "") {
+    placeholder.style.display = "none";
+  }
+});
