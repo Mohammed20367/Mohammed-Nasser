@@ -1,158 +1,505 @@
 {% comment %}
-Gift Guide - Banner (Custom)
-Page width: 1440px | height: 2000px
-Contains:
-- Section 1: navbar, frame1, frame2, footer
-- Section 2: items grid with 6 popups
+Gift Guid - Banner (Custom)
+First i want to thank who make ui of this task.
+The task Contain :-
+--Page =>with width 1440px and hieght 2000px
+----Section 1 
+------Navbar.
+------Frame image 1. 
+------2 div =>1 contain content and another contain image.
+------footer.
+----Section2
+-----items =>images to Add Card.
 {% endcomment %}
 
-{{ 'gift-guide.css' | asset_url | stylesheet_tag }}
+ {{ 'gift-guide.css' | asset_url | stylesheet_tag }} {% comment %} =>this link with css file in html {% endcomment %}
 
-<!-- Fonts -->
+<!--link the Font Family using in task-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Lustria&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lustria&display=swap" rel="stylesheet">
 
-<!-- Start Page -->
-<div class="page">
+<!--Start the task-->
 
-  <!-- Section 1 -->
-  <div class="section1">
-
-    <!-- Navbar -->
-    <div class='gift-top-bar'>
-      <div>
-        <img class="gift-icon--tisso"
-             src="{{ 'tisso.svg' | asset_url }}"
-             alt="Tisso Vison"
-             width="151" height="19" loading="lazy">
-      </div>
-
-      <div class="gift-top-bar_message">
-        Find the ideal gift for your loved ones.
-      </div>
-
-      <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
-        <span class="gift-icon--arrow-text">CHOOSE GIFT</span>
-        <img class="gift-icon gift-icon--arrow"
-             src="{{ 'Arrow.svg' | asset_url }}"
-             alt="" aria-hidden="true"
-             width="24" height="1" loading="lazy">
-      </button>
+<div classe = "page">  <!--All page that contain 2 section-->
+  <div class="section1"> <!--contain nav + fram1 + fram2 + footer-->
+    <div class='gift-top-bar'> <!--navbar-->
+ <div>
+      <img class="gift-icon--tisso"
+           src="{{ 'tisso.svg' | asset_url }}"
+           alt="Tisso Vison"
+           width="151" height="19" loading="lazy">
     </div>
 
-    <!-- Frame 1 -->
-    <div class="firstframe">
-      <img class="imageinframe"
+    <div class="gift-top-bar_message">
+      Find the ideal gift for your loved ones.
+    </div>
+
+    <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
+      <span class="gift-icon--arrow-text">CHOOSE GIFT</span>
+      <img class="gift-icon gift-icon--arrow"
+           src="{{ 'Arrow.svg' | asset_url }}"
+           alt="" aria-hidden="true"
+           width="24" height="1" loading="lazy">
+    </button>
+      </div><!--end of navbar-->
+    <div class="firstframe"> <!--first frame-->
+    <img class="imageinframe"
+         src="{{ 'Frame.svg' | asset_url }}"
+         alt="image in section 1"
+         width="10" height="10" loading="eager">
+  </div> <!--end to first frame-->
+
+  {% comment %} <div class="secondframe">
+    <div class="divleft">
+      <div  class="contentdiv">
+      The Gift Guide
+      </div>
+      <div class="contentinleftdiv">
+        Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.
+        </div>
+        <div class="showbottom">
+           <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
+      <span class="gift-icon--arrow-text">Shop</span>
+      <img class="gift-icon gift-icon--arrow"
+           src="{{ 'Arrow.svg' | asset_url }}"
+           alt="" aria-hidden="true"
+           width="24" height="1" loading="lazy">
+    </button>
+          </div>
+    </div>
+    <div>
+      <img class="seconimageinframe"
            src="{{ 'Frame.svg' | asset_url }}"
-           alt="image in section 1"
-           width="10" height="10" loading="eager">
+           alt=""
+           width="10" height="10" loading="lazy">
+    </div> {% endcomment %}
+
+<div class = "secondframe"> <!--Second frame in first section-->
+   <!--content and left div-->
+    <!-- النص -->
+    <div class="gift-hero__copy">
+      <h2 class="gift-hero__title">The Gift Guide</h2>
+      <p class="gift-hero__text">
+        Discover Joy: Your Ultimate Holiday Gift Destination.
+        Explore our curated selection and find the perfect gifts to
+        delight your loved ones this holiday season.
+      </p>
+      <a href="/collections/gift-guide" class="gift-btn">SHOP NOW →</a>
     </div>
 
-    <!-- Frame 2 -->
-    <div class="secondframe">
-      <!-- النص -->
-      <div class="gift-hero__copy">
-        <h2 class="gift-hero__title">The Gift Guide</h2>
-        <p class="gift-hero__text">
-          Discover Joy: Your Ultimate Holiday Gift Destination.
-          Explore our curated selection and find the perfect gifts to
-          delight your loved ones this holiday season.
-        </p>
-        <a href="/collections/gift-guide" class="gift-btn">SHOP NOW →</a>
-      </div>
-
-      <!-- الصورة -->
-      <div class="gift-hero__art">
-        <img src="{{ 'Frame.png' | asset_url }}" alt="image in section 1" class="gift-hero__img"> 
-      </div>
-    </div>
-
-    <!-- Ticker -->
-    <div class="gift-hero__ticker">
-      SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL
-    </div>
-
+    <!-- الصورة -->
+    <div class="gift-hero__art" > <!--div of image-->
+     <img src="{{ 'Frame.png' | asset_url }}" alt="image in section 1" class="gift-hero__img"> 
   </div>
-  <!-- End Section 1 -->
-
-  <!-- Section 2 -->
-  <div class="section2">
-    <section class="part-two">
-      <h2 class="wild-title">Tisso vison in the wild</h2>
-
-      <div class="grid-container">
-        {% for i in (1..6) %}
-        <div class="grid-item">
-          <img src="{{ 'image 82' | append: i | append: '.svg' | asset_url }}" alt="Look {{ i }}">
-          <span class="plus-icon{{ i }}" data-popup-open="look-{{ i }}" role="button" tabindex="0">
-            <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
-          </span>
-        </div>
-        {% endfor %}
-      </div>
-    </section>
+</div>
+  
+  
+<div class="gift-hero__ticker">
+    SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL
   </div>
-  <!-- End Section 2 -->
 
-  <!-- Popups -->
-  {% assign looks = "Orange Wide Leg,Tailored Jacket,Accordion Pleated Dress,Green Trench Coat,Tennis Blue T-Shirt,Long Sleeve Tennis Top" | split: "," %}
-  {% for i in (1..6) %}
-  <div class="gift-popup" data-popup="look-{{ i }}" aria-hidden="true">
-    <div class="gift-popup__card gift-popup--figma">
-      <button class="gift-popup__close" type="button" aria-label="Close">×</button>
+  </div>   
+</div>
 
-      <div class="gift-head">
-        <img class="gift-head__img" src="{{ 'image 82' | append: i | append: '.svg' | asset_url }}" alt="{{ looks[i-1] }}">
-        <div class="gift-head__meta">
-          <h4 class="gift-head__title">{{ looks[i-1] }}</h4>
-          <div class="gift-head__price">980,00€</div>
-          <p class="gift-head__desc">This is the description for {{ looks[i-1] }}.</p>
-        </div>
+<div class="section2">
+  <section class="part-two">
+    <h2 class="wild-title">Tisso vison in the wild</h2>
+
+    <div class="grid-container">
+      <div class="grid-item">
+        <img src="{{ 'image 822.svg' | asset_url }}" alt="Look 1">
+        <span class="plus-icon1" data-popup-open="look-1" role="button" tabindex="0">
+          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
+        </span>
       </div>
 
-      <!-- Colors -->
-      <label class="gift-field__label">Color</label>
-      <div class="gift-swatches">
-        <span class="cwhite"></span><button type="button" class="gift-swatch">White</button>
-        <span class="cblack"></span><button type="button" class="gift-swatch">Black</button>
+      <div class="grid-item">
+        <img src="{{ 'image 823.png' | asset_url }}" alt="Look 2">
+        <span class="plus-icon2" data-popup-open="look-2" role="button" tabindex="0">
+          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
+        </span>
       </div>
 
-      <!-- Size Select -->
-      <label for="size-{{ i }}" class="gift-field__label">Size</label>
-      <div class="gift-select">
-        <select id="size-{{ i }}" required>
-          <option value="" disabled selected>Choose your size</option>
-          <option value="XS">XS</option>
-          <option value="S">S</option>
-          <option value="M">M</option>
-          <option value="L">L</option>
-          <option value="XL">XL</option>
-        </select>
-        <span class="gift-placeholder">Choose your size</span>
-        <div class="gift-select__chev">
-          <div class="divider"></div>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </div>
+      <div class="grid-item">
+        <img src="{{ 'image 824.svg' | asset_url }}" alt="Look 3">
+        <span class="plus-icon3" data-popup-open="look-3" role="button" tabindex="0">
+          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
+        </span>
       </div>
 
-      <!-- CTA -->
-      <button class="gift-cta" type="button">
-        ADD TO CART
-        <img class="gift-cta__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="">
-      </button>
+      <div class="grid-item">
+        <img src="{{ 'image 825.svg' | asset_url }}" alt="Look 4">
+        <span class="plus-icon4" data-popup-open="look-4" role="button" tabindex="0">
+          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
+        </span>
+      </div>
+
+      <div class="grid-item">
+        <img src="{{ 'image 826.svg' | asset_url }}" alt="Look 5">
+        <span class="plus-icon5" data-popup-open="look-5" role="button" tabindex="0">
+          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
+        </span>
+      </div>
+
+      <div class="grid-item">
+        <img src="{{ 'image 827.svg' | asset_url }}" alt="Look 6">
+        <span class="plus-icon6" data-popup-open="look-6" role="button" tabindex="0">
+          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
+        </span>
+      </div>
     </div>
+  </section>
+</div>
+<!-- Look 1 -->
+<div class="gift-popup" data-popup="look-1" aria-hidden="true">
+  <div class="gift-popup__card gift-popup--figma">
+    <button class="gift-popup__close" type="button" aria-label="Close">×</button>
+    <div class="gift-head">
+      <img class="gift-head__img" src="{{ 'image 822.svg' | asset_url }}" alt="Orange Wide Leg">
+      <div class="gift-head__meta">
+        <h4 class="gift-head__title">Orange Wide Leg</h4>
+        <div class="gift-head__price">980,00€</div>
+        <p class="gift-head__desc">This onepiece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.</p>
+      </div>
+    </div>
+
+    <label class="gift-field__label">Color</label>
+    <div class="gift-swatches">
+      <span class="cwhite"></span><button type="button" class="gift-swatch">White</button>
+      <span class="cblack"></span><button type="button" class="gift-swatch">Black</button>
+    </div>
+
+    <!-- Size Select -->
+   <!-- Size Select - Updated HTML -->
+<label for="size-1" class="gift-field__label">Size</label>
+<div class="gift-select">
+  <select id="size-1" required>
+    <option value="" disabled selected hidden></option>
+    <option value="XS">XS</option>
+    <option value="S">S</option>
+    <option value="M">M</option>
+    <option value="L">L</option>
+    <option value="XL">XL</option>
+  </select>
+  <span class="gift-placeholder">Choose your size</span>
+  <div class="gift-select__chev">
+    <div class="divider"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
   </div>
-  {% endfor %}
+</div>
+    <button class="gift-cta" type="button">
+      ADD TO CART
+      <img class="gift-cta__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="">
+    </button>
+  </div>
+</div>
+
+
+<!-- Look 2 -->
+<div class="gift-popup" data-popup="look-2" aria-hidden="true">
+  <div class="gift-popup__card gift-popup--figma">
+    <button class="gift-popup__close" type="button" aria-label="Close">×</button>
+    <div class="gift-head">
+      <img class="gift-head__img" src="{{ 'image 823.png' | asset_url }}" alt="Tailored Jacket">
+      <div class="gift-head__meta">
+        <h4 class="gift-head__title">Tailored Jacket</h4>
+        <div class="gift-head__price">980,00€</div>
+        <p class="gift-head__desc">This onepiece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.</p>
+      </div>
+    </div>
+
+    <label class="gift-field__label">Color</label>
+    <div class="gift-swatches">
+      <span class="cblue"></span><button type="button" class="gift-swatch">Blue</button>
+      <span class="cblack"></span><button type="button" class="gift-swatch">Black</button>
+    </div>
+
+    <!-- Size Select -->
+    <label for="size-2" class="gift-field__label">Size</label>
+    <div class="gift-select">
+      <select id="size-2" required>
+        <option value="" disabled selected hidden></option>
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+      <span class="gift-placeholder">Choose your size</span>
+      <span class="gift-select__chev">
+        <img src="{{ 'Line 25.svg' | asset_url }}" alt="divider" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </span>
+    </div>
+
+    <button class="gift-cta" type="button">
+      ADD TO CART
+      <img class="gift-cta__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="">
+    </button>
+  </div>
+</div>
+
+
+<!-- Look 3 -->
+<div class="gift-popup" data-popup="look-3" aria-hidden="true">
+  <div class="gift-popup__card gift-popup--figma">
+    <button class="gift-popup__close" type="button" aria-label="Close">×</button>
+    <div class="gift-head">
+      <img class="gift-head__img" src="{{ 'image 824.svg' | asset_url }}" alt="Accordion Pleated Dress">
+      <div class="gift-head__meta">
+        <h4 class="gift-head__title">Accordion Pleated Dress</h4>
+        <div class="gift-head__price">980,00€</div>
+        <p class="gift-head__desc">This pleated dress brings elegance with a modern cut and flowy fabric.</p>
+      </div>
+    </div>
+
+    <label class="gift-field__label">Color</label>
+    <div class="gift-swatches">
+      <span class="cred"></span><button type="button" class="gift-swatch">Red</button>
+      <span class="cgrey"></span><button type="button" class="gift-swatch">Grey</button>
+    </div>
+
+    <!-- Size Select -->
+    <label for="size-3" class="gift-field__label">Size</label>
+    <div class="gift-select">
+      <select id="size-3" required>
+        <option value="" disabled selected hidden></option>
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+      <span class="gift-placeholder">Choose your size</span>
+      <span class="gift-select__chev">
+        <img src="{{ 'Line 25.svg' | asset_url }}" alt="divider" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </span>
+    </div>
+
+    <button class="gift-cta" type="button">
+      ADD TO CART
+      <img class="gift-cta__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="">
+    </button>
+  </div>
+</div>
+
+
+<!-- Look 4 -->
+<div class="gift-popup" data-popup="look-4" aria-hidden="true">
+  <div class="gift-popup__card gift-popup--figma">
+    <button class="gift-popup__close" type="button" aria-label="Close">×</button>
+    <div class="gift-head">
+      <img class="gift-head__img" src="{{ 'image 825.svg' | asset_url }}" alt="Green Trench Coat">
+      <div class="gift-head__meta">
+        <h4 class="gift-head__title">Green Trench Coat</h4>
+        <div class="gift-head__price">980,00€</div>
+        <p class="gift-head__desc">Classic trench coat reimagined in bold green with a modern silhouette.</p>
+      </div>
+    </div>
+
+    <label class="gift-field__label">Color</label>
+    <div class="gift-swatches">
+      <span class="cwhite"></span><button type="button" class="gift-swatch">White</button>
+      <span class="cblack"></span><button type="button" class="gift-swatch">Black</button>
+    </div>
+
+    <!-- Size Select -->
+    <label for="size-4" class="gift-field__label">Size</label>
+    <div class="gift-select">
+      <select id="size-4" required>
+        <option value="" disabled selected hidden></option>
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+      <span class="gift-placeholder">Choose your size</span>
+      <span class="gift-select__chev">
+        <img src="{{ 'Line 25.svg' | asset_url }}" alt="divider" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </span>
+    </div>
+
+    <button class="gift-cta" type="button">
+      ADD TO CART
+      <img class="gift-cta__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="">
+    </button>
+  </div>
+</div>
+
+
+<!-- Look 5 -->
+<div class="gift-popup" data-popup="look-5" aria-hidden="true">
+  <div class="gift-popup__card gift-popup--figma">
+    <button class="gift-popup__close" type="button" aria-label="Close">×</button>
+    <div class="gift-head">
+      <img class="gift-head__img" src="{{ 'image 826.svg' | asset_url }}" alt="Tennis Blue T-Shirt">
+      <div class="gift-head__meta">
+        <h4 class="gift-head__title">Tennis Blue T-Shirt</h4>
+        <div class="gift-head__price">980,00€</div>
+        <p class="gift-head__desc">Sporty and stylish, this tennis t-shirt is crafted from breathable cotton.</p>
+      </div>
+    </div>
+
+    <label class="gift-field__label">Color</label>
+    <div class="gift-swatches">
+      <span class="cgrey"></span><button type="button" class="gift-swatch">Grey</button>
+      <span class="cblack"></span><button type="button" class="gift-swatch">Black</button>
+    </div>
+
+    <!-- Size Select -->
+    <label for="size-5" class="gift-field__label">Size</label>
+    <div class="gift-select">
+      <select id="size-5" required>
+        <option value="" disabled selected hidden></option>
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+      <span class="gift-placeholder">Choose your size</span>
+      <span class="gift-select__chev">
+        <img src="{{ 'Line 25.svg' | asset_url }}" alt="divider" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </span>
+    </div>
+
+    <button class="gift-cta" type="button">
+      ADD TO CART
+      <img class="gift-cta__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="">
+    </button>
+  </div>
+</div>
+
+
+<!-- Look 6 -->
+<div class="gift-popup" data-popup="look-6" aria-hidden="true">
+  <div class="gift-popup__card gift-popup--figma">
+    <button class="gift-popup__close" type="button" aria-label="Close">×</button>
+    <div class="gift-head">
+      <img class="gift-head__img" src="{{ 'image 827.svg' | asset_url }}" alt="Long Sleeve Tennis Top">
+      <div class="gift-head__meta">
+        <h4 class="gift-head__title">Long Sleeve Tennis Top</h4>
+        <div class="gift-head__price">980,00€</div>
+        <p class="gift-head__desc">A long sleeve version of the tennis top, perfect for cooler days on court.</p>
+      </div>
+    </div>
+
+    <label class="gift-field__label">Color</label>
+    <div class="gift-swatches">
+      <span class="cblue"></span><button type="button" class="gift-swatch">Blue</button>
+      <span class="cblack"></span><button type="button" class="gift-swatch">Black</button>
+    </div>
+
+    <!-- Size Select -->
+    <label for="size-6" class="gift-field__label">Size</label>
+    <div class="gift-select">
+      <select id="size-6" required>
+        <option value="" disabled selected hidden></option>
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+      <span class="gift-placeholder">Choose your size</span>
+      <span class="gift-select__chev">
+        <img src="{{ 'Line 25.svg' | asset_url }}" alt="divider" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </span>
+    </div>
+
+    <button class="gift-cta" type="button">
+      ADD TO CART
+      <img class="gift-cta__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="">
+    </button>
+  </div>
+</div>
+
+
+    {{ 'gift-guide-section1.js' | asset_url | script_tag }}
+
+      
+</div>
+
+
+ 
+
+ 
+
+
+  <!-- أول صورة: تيجي مباشرة تحت الناف -->
+
+
+
+
+
+{% comment %} <div class="section2">
+<section class="part-two">
+  <div class ="parentofimages">
+    <div>
+      <span class="spantisso">Tisso vison in the wild</span>
+      </div>
+ <div class="grid-container">
+    <div class="grid-item">
+      <img src="{{ 'image 822.svg' | asset_url }}" alt="لازم تكتبها" width="10" height="10">
+            <span class="plus-icon">+</span>
+
+    </div>
+    <div class="grid-item">
+      <img src="{{ 'image 823.svg' | asset_url }}" alt="لازم تكتبها "width="10" height="10">
+            <span class="plus-icon">+</span>
+
+    </div>
+    <div class="grid-item">
+      <img src="{{ 'image 824.svg' | asset_url }}" alt="لازم تكتبها"width="10" height="10">
+            <span class="plus-icon">+</span>
+
+    </div>
+    <div class="grid-item">
+      <img src="{{ 'image 825.svg' | asset_url }}" alt="لازم تكتبها"width="10" height="10">
+            <span class="plus-icon">+</span>
+
+    </div>
+    <div class="grid-item ">
+      <img src="{{ 'image 825.svg' | asset_url }}" alt="لازم تكتبها"width="10" height="10">
+            <span class="plus-icon">+</span>
+
+    </div>
+    <div class="grid-item">
+      <img src="{{ 'image 826.svg' | asset_url }}" alt="لازم تكتبها"width="10" height="10">
+        <span class="plus-icon">+</span>
+    </div>
+</div>
+</div>
+</section> {% endcomment %}
 
 </div>
-<!-- End Page -->
 
-<!-- Scripts -->
-{{ 'gift-guide-section1.js' | asset_url | script_tag }}
 
 {% schema %}
 {

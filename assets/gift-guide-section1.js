@@ -12,7 +12,7 @@
     p.setAttribute('aria-hidden','true');
   }
 
-  // فتح / غلق البوب أب
+  // فتح/غلق البوب أب
   document.addEventListener('click',function(e){
     var t = e.target.closest('[data-popup-open]');
     if(t){
@@ -27,7 +27,7 @@
     }
   });
 
-  // ESC
+  // ESC key closes any open popup
   document.addEventListener('keydown',function(e){
     if(e.key==='Escape'){
       document.querySelectorAll('.gift-popup.is-open').forEach(closePopup);
@@ -43,16 +43,44 @@
     sw.classList.add('is-active');
   });
 
-  // Placeholder control
-  document.querySelectorAll('.gift-select select').forEach(function(sel){
-    sel.addEventListener('change', function(){
-      let placeholder = sel.parentElement.querySelector('.gift-placeholder');
-      if(sel.value !== ""){
-        placeholder.style.display = "none";
-      } else {
-        placeholder.style.display = "block";
-      }
-    });
+  // Size select (change event)
+  document.addEventListener('change',function(e){
+    if(e.target.matches('.gift-select select')){
+      var select = e.target;
+      // لو محتاج تعمل شيء بالاختيار (زي update UI)
+      console.log('Selected size:', select.value);
+    }
   });
 
+  // Add to Cart button
+  document.addEventListener('click',function(e){
+    if(e.target.closest('.gift-cta')){
+      var btn = e.target.closest('.gift-cta');
+      var popup = btn.closest('.gift-popup');
+      // هنا ممكن تعمل كول للـ Shopify cart API
+      console.log('Add to cart from popup:', popup.dataset.popup);
+      // قفل البوب أب بعد ما يضيف
+      closePopup(popup);
+    }
+  });
 })();
+// نفس السكربت اللي عندك يشتغل
+document.addEventListener('click', function(e) {
+  let sw = e.target.closest('.gift-swatch');
+  if (!sw) return;
+  let wrap = sw.closest('.gift-swatches');
+  wrap.querySelectorAll('.gift-swatch').forEach(b => b.classList.remove('is-active'));
+  sw.classList.add('is-active');
+});
+
+
+
+const select = document.getElementById("size");
+const placeholder = document.getElementById("placeholder");
+
+// ✅ لما يختار أي مقاس، نخفي الـ placeholder
+select.addEventListener("change", () => {
+  if (select.value !== "") {
+    placeholder.style.display = "none";
+  }
+});
