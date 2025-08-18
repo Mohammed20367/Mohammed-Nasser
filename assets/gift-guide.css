@@ -248,8 +248,11 @@ display:flex;
 {
   padding:25px;
 }
+.gift-hero__text
+{
+    padding:25px;
 
-
+}
 
 /**/
 
