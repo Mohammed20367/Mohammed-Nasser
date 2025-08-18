@@ -461,27 +461,29 @@ display:flex;
 /* Color Swatches */
 /* ============================= */
 .gift-swatches {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
+  display: flex;
+  gap: 0; /* 👈 مفيش مسافة بينهم */
 }
+
 .gift-swatch {
-  margin-bottom:10px; /*ألمسافه بين كلمة سايز والزرار تحتها*/
-  height: 36px; /* 👈 طول زرار اللون */
-  border: 1px solid #111;
-  border-radius: 4px;
-  font-size: 13px; /* 👈 حجم خط الزرار */
-  cursor: pointer;
+  flex: 1;
+  padding: 8px 0;
   background: #fff;
+  border: 1px solid #000;
+  font-size: 14px;
+  cursor: pointer;
   transition: all 0.2s ease;
 }
-.gift-swatch:hover {
-  background: #f4f4f4;
+
+.gift-swatch:first-child {
+  border-right: none; /* عشان مايبقاش فيه خطين في النص */
 }
+
 .gift-swatch.is-active {
-  background: #000;
-  color: #fff;
+  border: 3px solid #000; /* 👈 يخلي الاختيار باين أكتر */
+  background: #f8f8f8;
 }
+
 
 /* ============================= */
 /* Size Select */
