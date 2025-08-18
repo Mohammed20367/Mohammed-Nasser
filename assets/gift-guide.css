@@ -185,7 +185,12 @@ display:flex;
   font-family: 'Jost', sans-serif;
 
 }
+.gift-hero__text
+{
+  font-family: 'Jost', sans-serif;
+  font-size:20px;
 
+}
 .gift-hero__text-container {
   margin-bottom: 25px;
 }
