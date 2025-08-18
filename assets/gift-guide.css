@@ -462,7 +462,7 @@ display:flex;
 /* ============================= */
 .gift-swatches {
   display: flex;
-  gap: 0; /* 👈 مفيش مسافة بينهم */
+  width: 100%;
 }
 
 .gift-swatch {
@@ -475,13 +475,15 @@ display:flex;
   transition: all 0.2s ease;
 }
 
-.gift-swatch:first-child {
-  border-right: none; /* عشان مايبقاش فيه خطين في النص */
+/* منع الخط المزدوج */
+.gift-swatch + .gift-swatch {
+  border-left: none;
 }
 
+/* اللي متعلم */
 .gift-swatch.is-active {
-  border: 3px solid #000; /* 👈 يخلي الاختيار باين أكتر */
-  background: #f8f8f8;
+  border: 2px solid #000;
+  background: #f9f9f9;
 }
 
 
