@@ -187,10 +187,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
-
-            }
-
-
-          
+            })
+        }) 
+    })
