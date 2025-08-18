@@ -164,6 +164,78 @@ display:flex;
   grid-column: span 2/span 2;
       /* من أول عمود لآخر عمود (3) */
 }
+.cta-button {
+  width: 207px;
+  height: 44px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 16px;
+  border: 1px solid #000;
+  background: #000;              /* أسود أساسي */
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+  color: #fff;                   /* النص أبيض */
+  font-weight: 400;
+}
+
+/* fill effect */
+.cta-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #FFF544;           /* أصفر */
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.4s ease;
+  z-index: 0;
+}
+
+/* النص والسهم فوق الفيل */
+.cta-button .cta-text,
+.cta-button .cta-arrow {
+  position: relative;
+  z-index: 1;
+  transition: color 0.35s ease, filter 0.35s ease;
+}
+
+/* Hover: شغّل الفيل */
+.cta-button:hover::before {
+  transform: scaleX(1);
+}
+
+/* Hover: النص يبقى أسود */
+.cta-button:hover .cta-text {
+  transition: transform 0.4s ease;
+  color: #000;
+}
+
+/* السهم: أبيض أساسي */
+.cta-arrow {
+  display: inline-block;
+  width: 24px;
+  height: 100%;
+  filter: brightness(0) invert(1); /* يخليه أبيض */
+  transition: filter 0.35s ease;
+}
+
+/* Hover: السهم يبقى أسود */
+.cta-button:hover .cta-arrow {
+  filter: none;
+}
+
+/* النص */
+.cta-text {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+.cta-button:hover .cta-text {
+  transform: translateX(4px);
+}
 
 
 /*الديف الي ع الشمال*/
