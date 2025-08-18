@@ -88,48 +88,98 @@ document.querySelectorAll(".gift-select").forEach(wrapper => {
 });
 
 
-// Custom Dropdown Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const dropdown = document.querySelector('.custom-dropdown');
-    const header = dropdown.querySelector('.dropdown-header');
-    const options = dropdown.querySelector('.dropdown-options');
-    const optionItems = dropdown.querySelectorAll('.dropdown-option');
-    const placeholder = header.getAttribute('data-placeholder');
-    
-    // Toggle dropdown
-    header.addEventListener('click', function() {
-        header.classList.toggle('active');
-        options.classList.toggle('show');
-    });
-    
-    // Handle option selection
-    optionItems.forEach(option => {
-        option.addEventListener('click', function() {
-            const value = this.getAttribute('data-value');
+ document.addEventListener('DOMContentLoaded', function() {
+            const dropdown = document.querySelector('.custom-dropdown');
+            const header = dropdown.querySelector('.dropdown-header');
+            const options = dropdown.querySelector('.dropdown-options');
+            const optionItems = dropdown.querySelectorAll('.dropdown-option');
+            const placeholder = header.getAttribute('data-placeholder');
             
-            // Update header
-            header.textContent = value;
-            header.classList.add('selected');
-            header.setAttribute('data-selected', value);
+            // 👈 متغيرات الـ drag scroll
+            let isScrolling = false;
+            let startY = 0;
+            let scrollTop = 0;
+
+            // Toggle dropdown
+            header.addEventListener('click', function() {
+                header.classList.toggle('active');
+                options.classList.toggle('show');
+            });
             
-            // Update selected option styling
-            optionItems.forEach(opt => opt.classList.remove('selected'));
-            this.classList.add('selected');
+            // Handle option selection
+            optionItems.forEach(option => {
+                option.addEventListener('click', function(e) {
+                    // منع الـ drag من التداخل مع الاختيار
+                    if (!isScrolling) {
+                        const value = this.getAttribute('data-value');
+                        
+                        // Update header - النص المختار يظهر على الشمال
+                        header.textContent = value;
+                        header.classList.add('selected');
+                        header.setAttribute('data-selected', value);
+                        
+                        // Update selected option styling
+                        optionItems.forEach(opt => opt.classList.remove('selected'));
+                        this.classList.add('selected');
+                        
+                        // Close dropdown
+                        header.classList.remove('active');
+                        options.classList.remove('show');
+                        
+                        console.log('Selected size:', value);
+                    }
+                });
+            });
+
+            // 👈 Drag Scroll functionality
+            options.addEventListener('mousedown', function(e) {
+                isScrolling = true;
+                startY = e.pageY - options.offsetTop;
+                scrollTop = options.scrollTop;
+                options.style.cursor = 'grabbing';
+                
+                // منع تحديد النص أثناء الـ drag
+                e.preventDefault();
+            });
+
+            options.addEventListener('mouseleave', function() {
+                isScrolling = false;
+                options.style.cursor = 'grab';
+            });
+
+            options.addEventListener('mouseup', function() {
+                isScrolling = false;
+                options.style.cursor = 'grab';
+            });
+
+            options.addEventListener('mousemove', function(e) {
+                if (!isScrolling) return;
+                
+                e.preventDefault();
+                const y = e.pageY - options.offsetTop;
+                const walk = (y - startY) * 2; // 👈 سرعة الـ scroll
+                options.scrollTop = scrollTop - walk;
+            });
+
+            // Mouse wheel scroll (إضافي)
+            options.addEventListener('wheel', function(e) {
+                e.preventDefault();
+                this.scrollTop += e.deltaY * 0.5;
+            });
             
-            // Close dropdown
-            header.classList.remove('active');
-            options.classList.remove('show');
-            
-            // Optional: Log the selected value
-            console.log('Selected size:', value);
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.custom-dropdown')) {
+                    header.classList.remove('active');
+                    options.classList.remove('show');
+                    isScrolling = false;
+                }
+            });
+
+            // 👈 إيقاف الـ scrolling عند mouse up في أي مكان
+            document.addEventListener('mouseup', function() {
+                isScrolling = false;
+                if (options) options.style.cursor = 'grab';
+            });
         });
-    });
-    
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!e.target.closest('.custom-dropdown')) {
-            header.classList.remove('active');
-            options.classList.remove('show');
-        }
-    });
-});
+    </script>
