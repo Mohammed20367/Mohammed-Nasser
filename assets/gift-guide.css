@@ -489,6 +489,7 @@ display:flex;
   
 }
 .gift-swatch:hover {
+  background: #f4f4f4;
 }
 .gift-swatch.is-active {
   background: #000;
@@ -622,12 +623,4 @@ position: relative;
 
 
 
-.cwhite {
-  width: 5.807142734527588px;
-  opacity: 1;
-  border-width: 0.5px;
-  background-color: #FFFFFF;
-  border: 0.5px solid #000; /* علشان الأبيض يبان */
-  background-color: #FFFFFF;
-}
 
