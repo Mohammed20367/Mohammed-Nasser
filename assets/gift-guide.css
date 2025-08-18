@@ -536,42 +536,6 @@ display:flex;
 /* ============================= */
 /* Size Select */
 /* ============================= */
-.gift-select {
-opacity: 1;
-border-width: 1px;
-position: relative;
-}
-.gift-select select {
-  width: 271px;             /* 👈 نفس العرض من Figma */
-  height: 40px;             /* 👈 ارتفاع البوكس نفسه */
-  border: 1px solid #000;   /* 👈 البوردر أسود */
-  border-radius: 4px;
-  padding: 0 12px;          /* مسافة داخلية */
-  font-size: 13px;
-  background: #fff;
-  appearance: none;
-  cursor: pointer;
-}
-
-/* التحكم في العناصر داخل القائمة */
-.gift-select select option {
-  height: 30px;             /* 👈 يخلي كل عنصر أنحف */
-  line-height: 30px;        /* 👈 يضبط ارتفاع السطر */
-  text-align: center;       /* 👈 النص في النص */
-  font-size: 13px;
-}
-
-
-
-
-.gift-select__chev {
-  
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
 
 /* ============================= */
 /* CTA Button */
