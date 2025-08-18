@@ -481,7 +481,7 @@ display:flex;
   cursor: pointer;
   background: #fff;
   transition: all 0.2s ease;
-  flex: 1;                /* كل واحد ياخد نص العرض */
+              /* كل واحد ياخد نص العرض */
   border: none; 
   text-align:center;
 }
