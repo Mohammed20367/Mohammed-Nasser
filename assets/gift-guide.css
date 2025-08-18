@@ -629,7 +629,7 @@ display:flex;
     transform: translateY(-10px);
     transition: all 0.2s ease;
     /* 👈 هنا الجديد - 3 مقاسات بس + scroll خفي */
-    max-height: 150px; /* تقريباً 3 خيارات × 50px لكل واحد */
+    max-height: 99px; /* تقريباً 3 خيارات × 50px لكل واحد */
     overflow-y: auto;
     overflow-x: hidden;
     /* إخفاء الـ scrollbar */
