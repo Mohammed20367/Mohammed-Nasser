@@ -92,7 +92,9 @@
 
 
 
-document.querySelectorAll('.custom-dropdown').forEach(function(dropdown) {
+document.addEventListener('DOMContentLoaded', function() {
+         
+            document.querySelectorAll('.custom-dropdown').forEach(function(dropdown) {
                 const dropdownHeader = dropdown.querySelector('.dropdown-header');
                 const dropdownOptions = dropdown.querySelector('.dropdown-options');
                 const dropdownText = dropdownHeader.querySelector('.dropdown-text');
