@@ -468,12 +468,13 @@ display:flex;
   gap: 0;                 /* شلت أي مسافة بينهم */
   border: 1px solid #111; /* البوردر الخارجي */
   border-radius: 6px;     /* يدي كورنر ناعم للكادر كله */
-  overflow: hidden;   
+  overflow: hidden; 
+    text-align:center;
+  
 }
 .gift-swatch {
-  text-align:center;
   margin-bottom:10px; /*ألمسافه بين كلمة سايز والزرار تحتها*/
-  height: 20px; /* 👈 طول زرار اللون */
+  height: 25px; /* 👈 طول زرار اللون */
   border: 0.54px solid #111;
   border-radius: 4px;
   font-size: 13px; /* 👈 حجم خط الزرار */
@@ -482,6 +483,7 @@ display:flex;
   transition: all 0.2s ease;
   flex: 1;                /* كل واحد ياخد نص العرض */
   border: none; 
+  text-align:center;
 }
 .gift-swatch:hover {
   background: #f4f4f4;
