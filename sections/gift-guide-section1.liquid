@@ -24,90 +24,183 @@ The task Contain :-
 
 <!--Start the task-->
 
-<div classe = "page">  <!--All page that contain 2 section-->
-  <div class="section1"> <!--contain nav + fram1 + fram2 + footer-->
-    <div class='gift-top-bar'> <!--navbar-->
- <div>
-      <img class="gift-icon--tisso"
-           src="{{ 'tisso.svg' | asset_url }}"
-           alt="Tisso Vison"
-           width="151" height="19" loading="lazy">
-    </div>
+<!-- Wrapper Page -->
+<div class="gg-page">
 
-    <div class="gift-top-bar_message">
-      Find the ideal gift for your loved ones.
-    </div>
+  <!-- Section 1 -->
+  <div class="gg-section">
 
-    <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
-      <span class="gift-icon--arrow-text">CHOOSE GIFT</span>
-      <img class="gift-icon gift-icon--arrow"
-           src="{{ 'Arrow.svg' | asset_url }}"
-           alt="" aria-hidden="true"
-           width="24" height="1" loading="lazy">
-    </button>
-      </div><!--end of navbar-->
-    <div class="firstframe"> <!--first frame-->
-    <img class="imageinframe"
-         src="{{ 'Frame.svg' | asset_url }}"
-         alt="image in section 1"
-         width="10" height="10" loading="eager">
-  </div> <!--end to first frame-->
-
-  {% comment %} <div class="secondframe">
-    <div class="divleft">
-      <div  class="contentdiv">
-      The Gift Guide
+    <!-- Top Bar -->
+    <div class="gg-topbar">
+      <div>
+        <img class="gg-topbar__logo"
+             src="{{ 'tisso.svg' | asset_url }}"
+             alt="Tisso Vison"
+             width="151" height="19" loading="lazy">
       </div>
-      <div class="contentinleftdiv">
-        Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.
-        </div>
-        <div class="showbottom">
-           <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
-      <span class="gift-icon--arrow-text">Shop</span>
-      <img class="gift-icon gift-icon--arrow"
-           src="{{ 'Arrow.svg' | asset_url }}"
-           alt="" aria-hidden="true"
-           width="24" height="1" loading="lazy">
-    </button>
-          </div>
+
+      <div class="gg-topbar__msg">
+        Find the ideal gift for your loved ones.
+      </div>
+
+      <button class="gg-btn gg-btn--highlight" type="button">
+        <span class="gg-btn__text">CHOOSE GIFT</span>
+        <img class="gg-btn__icon"
+             src="{{ 'Arrow.svg' | asset_url }}"
+             alt="" aria-hidden="true"
+             width="24" height="24" loading="lazy">
+      </button>
     </div>
-    <div>
-      <img class="seconimageinframe"
+
+    <!-- Hero Top Image -->
+    <div class="gg-hero-top">
+      <img class="gg-hero-top__img"
            src="{{ 'Frame.svg' | asset_url }}"
-           alt=""
-           width="10" height="10" loading="lazy">
-    </div> {% endcomment %}
-
-<div class = "secondframe"> <!--Second frame in first section-->
-   <!--content and left div-->
-    <!-- النص -->
-    <div class="gift-hero__copy">
-      <h2 class="gift-hero__title">The Gift Guide</h2>
-      <p class="gift-hero__text">
-        Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.
-      </p>
- <button class="cta-button" id="gift-topbar-cta" type="button">
-  <span class="cta-text">Shop Now</span>
-  <img class="cta-arrow"
-       src="{{ 'Arrow.svg' | asset_url }}"
-       alt="" aria-hidden="true"
-       width="24" height="1" loading="lazy">
-</button>
+           alt="Hero banner image"
+           width="1440" height="450" loading="eager">
     </div>
 
-    <!-- الصورة -->
-    <div class="gift-hero__art" > <!--div of image-->
-     <img src="{{ 'Frame.png' | asset_url }}" alt="image in section 1" class="gift-hero__img"> 
-  </div>
-</div>
-  
-  
-<div class="gift-hero__ticker">
-    SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL
+    <!-- Hero Content + Visual -->
+    <div class="gg-hero">
+      <div class="gg-hero__content">
+        <h2 class="gg-hero__title">The Gift Guide</h2>
+        <p class="gg-hero__text">
+          Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.
+        </p>
+        <button class="gg-btn gg-btn--inverse gg-hero__cta" type="button">
+          <span class="gg-btn__text">Shop Now</span>
+          <img class="gg-btn__icon"
+               src="{{ 'Arrow.svg' | asset_url }}"
+               alt="" aria-hidden="true"
+               width="24" height="24" loading="lazy">
+        </button>
+      </div>
+
+      <div class="gg-hero__art">
+        <img src="{{ 'Frame.png' | asset_url }}"
+             alt="Hero right image"
+             class="gg-hero__img">
+      </div>
+    </div>
+
+    <!-- Bottom Ticker -->
+    <div class="gg-ticker">
+      SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL
+    </div>
+
+  </div><!-- End Section 1 -->
+
+  <!-- Section 2 -->
+  <div class="gg-section">
+    <section class="gg-wild">
+      <h2 class="gg-wild__title">Tisso vision in the wild</h2>
+
+      <div class="gg-grid">
+
+        <!-- Card 1 -->
+        <div class="gg-card">
+          <img src="{{ 'image 822.svg' | asset_url }}" alt="Look 1" class="gg-card__img">
+          <span class="gg-card__plus gg-card__plus--1" data-popup-open="look-1" role="button" tabindex="0">
+            <img class="gg-card__plus-img" src="{{ 'plus.svg' | asset_url }}" alt="+">
+          </span>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="gg-card">
+          <img src="{{ 'image 823.png' | asset_url }}" alt="Look 2" class="gg-card__img">
+          <span class="gg-card__plus gg-card__plus--2" data-popup-open="look-2" role="button" tabindex="0">
+            <img class="gg-card__plus-img" src="{{ 'plus.svg' | asset_url }}" alt="+">
+          </span>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="gg-card">
+          <img src="{{ 'image 824.svg' | asset_url }}" alt="Look 3" class="gg-card__img">
+          <span class="gg-card__plus gg-card__plus--3" data-popup-open="look-3" role="button" tabindex="0">
+            <img class="gg-card__plus-img" src="{{ 'plus.svg' | asset_url }}" alt="+">
+          </span>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="gg-card">
+          <img src="{{ 'image 825.svg' | asset_url }}" alt="Look 4" class="gg-card__img">
+          <span class="gg-card__plus gg-card__plus--4" data-popup-open="look-4" role="button" tabindex="0">
+            <img class="gg-card__plus-img" src="{{ 'plus.svg' | asset_url }}" alt="+">
+          </span>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="gg-card">
+          <img src="{{ 'image 826.svg' | asset_url }}" alt="Look 5" class="gg-card__img">
+          <span class="gg-card__plus gg-card__plus--5" data-popup-open="look-5" role="button" tabindex="0">
+            <img class="gg-card__plus-img" src="{{ 'plus.svg' | asset_url }}" alt="+">
+          </span>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="gg-card">
+          <img src="{{ 'image 827.svg' | asset_url }}" alt="Look 6" class="gg-card__img">
+          <span class="gg-card__plus gg-card__plus--6" data-popup-open="look-6" role="button" tabindex="0">
+            <img class="gg-card__plus-img" src="{{ 'plus.svg' | asset_url }}" alt="+">
+          </span>
+        </div>
+
+      </div>
+    </section>
+  </div><!-- End Section 2 -->
+
+  <!-- Example Popup (Look 1) -->
+  <div class="gg-popup" data-popup="look-1" aria-hidden="true">
+    <div class="gg-popup__card">
+      <button class="gg-popup__close" type="button" aria-label="Close">×</button>
+
+      <div class="gg-popup__head">
+        <img class="gg-popup__img" src="{{ 'image 822.svg' | asset_url }}" alt="Orange Wide Leg">
+        <div>
+          <h4 class="gg-popup__title">Orange Wide Leg</h4>
+          <div class="gg-popup__price">980,00€</div>
+          <p class="gg-popup__desc">This onepiece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.</p>
+        </div>
+      </div>
+
+      <label class="gg-field__label">Color</label>
+      <div class="gg-swatches">
+        <button type="button" class="gg-swatch gg-c-white">White</button>
+        <button type="button" class="gg-swatch gg-c-black">Black</button>
+      </div>
+
+      <!-- Size Dropdown -->
+      <div class="gg-size">
+        <label class="gg-size__label">Size</label>
+        <div class="gg-dropdown">
+          <div class="gg-dropdown__header">
+            <span>Choose your size</span>
+            <div class="gg-dropdown__arrow">
+              <div class="gg-dropdown__divider"></div>
+              <svg class="gg-dropdown__chev" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                   stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </div>
+          <div class="gg-dropdown__menu">
+            <div class="gg-dropdown__option" data-value="XS">XS</div>
+            <div class="gg-dropdown__option" data-value="S">S</div>
+            <div class="gg-dropdown__option" data-value="M">M</div>
+            <div class="gg-dropdown__option" data-value="L">L</div>
+            <div class="gg-dropdown__option" data-value="XL">XL</div>
+          </div>
+        </div>
+      </div>
+
+      <button class="gg-popup__cta" type="button">
+        ADD TO CART
+        <img class="gg-popup__cta-icon" src="{{ 'Arrow.svg' | asset_url }}" alt="">
+      </button>
+    </div>
   </div>
 
-  </div>   
-</div>
+</div><!-- End Page -->
 
 <div class="section2">
   <section class="part-two">
