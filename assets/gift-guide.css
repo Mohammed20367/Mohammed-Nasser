@@ -584,23 +584,22 @@ display:flex;
   top: 0;
   right: 0;
   height: 100%;
-  width: 50px;
+  width: 50px;         
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center;      
+  justify-content: center; 
   pointer-events: none;
   background: transparent;
 }
 
 .gift-select__chev img {
   position: absolute;
-  left: 0;
+  left: 0;                      
   top: 50%;
   transform: translateY(-50%);
   height: 100%;
   width: auto;
 }
-
 
 .gift-select__chev svg {
   width: 16px;
@@ -608,6 +607,7 @@ display:flex;
   stroke: black;
   transition: transform 0.2s ease;
 }
+
 
 .gift-placeholder {
   position: absolute;
