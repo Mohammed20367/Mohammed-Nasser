@@ -576,3 +576,38 @@ position: relative;
 
 
 
+/* ============================= */
+/* Color Swatches */
+/* ============================= */
+.gift-swatches {
+  display: flex;                /* نخليهم جمب بعض */
+  gap: 0;                       /* نشيل المسافة بينهم */
+  border: 1px solid #111;       /* نفس البوردر الخارجي */
+  border-radius: 6px;
+  overflow: hidden;             /* عشان يبقوا متصلين */
+  width: 100%;
+  max-width: 271px;             /* 👈 نفس عرض البوكس في Figma */
+}
+
+.gift-swatch {
+  flex: 1;                      /* كل زرار ياخد نص العرض */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;                     /* مسافة بين اللون والنص */
+  padding: 8px 0;
+  font-size: 13px;
+  border: none;                 /* نشيل البوردر الداخلي */
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gift-swatch.is-active {
+  background: #000;             /* الزرار المختار يبقى اسود */
+  color: #fff;
+}
+
+.gift-swatch:hover {
+  background: #f4f4f4;
+}
