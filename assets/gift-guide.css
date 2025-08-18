@@ -341,7 +341,7 @@ display:flex;
 /* ============================= */
 .gift-popup__card.gift-popup--figma {
   height:auto;
-  width: 340px; /* 👈 زود/قلل عرض الكارد من هنا */
+  width: 311px; /* 👈 زود/قلل عرض الكارد من هنا */
   background: #fff;
   border-radius: 8px;
   border: 1px solid #D9D9D9;
