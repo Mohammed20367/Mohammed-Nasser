@@ -471,7 +471,7 @@ display:flex;
   overflow: hidden;   
 }
 .gift-swatch {
-  text-align:center
+  text-align:center;
   margin-bottom:10px; /*ألمسافه بين كلمة سايز والزرار تحتها*/
   height: 40.441322326660156px; /* 👈 طول زرار اللون */
   border: 0.54px solid #111;
