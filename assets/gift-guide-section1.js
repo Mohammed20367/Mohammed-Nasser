@@ -43,6 +43,47 @@
     sw.classList.add('is-active');
   });
 
+//   // Size select (change event)
+//   document.addEventListener('change',function(e){
+//     if(e.target.matches('.gift-select select')){
+//       var select = e.target;
+//       // لو محتاج تعمل شيء بالاختيار (زي update UI)
+//       console.log('Selected size:', select.value);
+//     }
+//   });
+
+//   // Add to Cart button
+//   document.addEventListener('click',function(e){
+//     if(e.target.closest('.gift-cta')){
+//       var btn = e.target.closest('.gift-cta');
+//       var popup = btn.closest('.gift-popup');
+//       // هنا ممكن تعمل كول للـ Shopify cart API
+//       console.log('Add to cart from popup:', popup.dataset.popup);
+//       // قفل البوب أب بعد ما يضيف
+//       closePopup(popup);
+//     }
+//   });
+// })();
+// // نفس السكربت اللي عندك يشتغل
+// document.addEventListener('click', function(e) {
+//   let sw = e.target.closest('.gift-swatch');
+//   if (!sw) return;
+//   let wrap = sw.closest('.gift-swatches');
+//   wrap.querySelectorAll('.gift-swatch').forEach(b => b.classList.remove('is-active'));
+//   sw.classList.add('is-active');
+// });
+
+
+
+// const select = document.getElementById("size");
+// const placeholder = document.getElementById("placeholder");
+
+// // ✅ لما يختار أي مقاس، نخفي الـ placeholder
+// select.addEventListener("change", () => {
+//   if (select.value !== "") {
+//     placeholder.style.display = "none";
+//   }
+// });
 
 
  
