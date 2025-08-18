@@ -492,26 +492,25 @@ border-width: 1px;
 position: relative;
 }
 .gift-select select {
-  text-align: left;          /* 👈 يخلي النص الأساسي شمال */
-  text-align-last: left;     /* 👈 بعض المتصفحات لازم تضيف دي علشان يثبت شمال */
-  width: 100%;
-  height: 40px;              /* 👈 قللنا الارتفاع من 40px لـ 32px */
-  border: 1px solid #111;
+  width: 271px;             /* 👈 نفس العرض من Figma */
+  height: 40px;             /* 👈 ارتفاع البوكس نفسه */
+  border: 1px solid #000;   /* 👈 البوردر أسود */
   border-radius: 4px;
-  padding: 0 20px 0 10px;
-  font-size: 12px;           /* 👈 صغرنا حجم الخط */
+  padding: 0 12px;          /* مسافة داخلية */
+  font-size: 13px;
   background: #fff;
   appearance: none;
   cursor: pointer;
 }
 
-/* العناصر داخل القائمة */
+/* التحكم في العناصر داخل القائمة */
 .gift-select select option {
-  height:30px;
-  text-align: center;        /* 👈 يخلي الكلام في النص */
-  padding: 2px 0;            /* 👈 يقلل الارتفاع لكل عنصر */
-  font-size: 12px;           /* 👈 نفس حجم الخط */
+  height: 30px;             /* 👈 يخلي كل عنصر أنحف */
+  line-height: 30px;        /* 👈 يضبط ارتفاع السطر */
+  text-align: center;       /* 👈 النص في النص */
+  font-size: 13px;
 }
+
 
 
 
