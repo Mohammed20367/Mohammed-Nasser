@@ -72,6 +72,3 @@ document.addEventListener('click', function(e) {
   wrap.querySelectorAll('.gift-swatch').forEach(b => b.classList.remove('is-active'));
   sw.classList.add('is-active');
 });
-
-
-
