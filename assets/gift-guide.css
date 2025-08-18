@@ -505,25 +505,26 @@ display:flex;
 .gift-swatch {
   flex: 1;
   height: 40px;
-  border: none;              /* 👈 شيل البوردر الداخلي */
+  border: none;
   font-size: 13px;
   cursor: pointer;
   background: #fff;
   display: flex;             
-  align-items: center;       /* 👈 يوسّط المربع والنص عمودي */
-  justify-content: center;   /* 👈 يوسّط أفقي */
-  gap: 6px;
+  align-items: center;       /* يوسّط المربع والنص عمودي */
+  justify-content: center;   /* يخليهم في النص أفقي */
+  gap: 6px;                  /* مسافة صغيرة بين المربع والكلمة */
 }
 
 .gift-swatch span {
-  width: 14px;
-  height: 14px;
+  display: inline-block;     /* 👈 مهم عشان يفضل مع الكلمة */
+  width: 12px;
+  height: 12px;
   border: 1px solid #111;
   border-radius: 2px;
 }
 
 .gift-swatch.is-active {
-  background: #000;   /* الزرار كله يتلون */
+  background: #000;
   color: #fff;
 }
 
