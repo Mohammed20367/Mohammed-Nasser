@@ -92,3 +92,100 @@
 
 
 
+document.querySelectorAll('.custom-dropdown').forEach(function(dropdown) {
+                const dropdownHeader = dropdown.querySelector('.dropdown-header');
+                const dropdownOptions = dropdown.querySelector('.dropdown-options');
+                const dropdownText = dropdownHeader.querySelector('.dropdown-text');
+                let isOpen = false;
+                let selectedValue = '';
+                let isDragging = false;
+                let startY = 0;
+                let scrollTop = 0;
+
+                // فتح/إغلاق القائمة
+                dropdownHeader.addEventListener('click', function() {
+                    if (isOpen) {
+                        closeDropdown();
+                    } else {
+                        openDropdown();
+                    }
+                });
+
+                function openDropdown() {
+                    // إغلاق أي dropdown مفتوح
+                    document.querySelectorAll('.dropdown-options.show').forEach(function(otherOptions) {
+                        if (otherOptions !== dropdownOptions) {
+                            otherOptions.classList.remove('show');
+                            otherOptions.closest('.custom-dropdown').querySelector('.dropdown-header').classList.remove('active');
+                        }
+                    });
+
+                    isOpen = true;
+                    dropdownHeader.classList.add('active');
+                    dropdownOptions.classList.add('show');
+                }
+
+                function closeDropdown() {
+                    isOpen = false;
+                    dropdownHeader.classList.remove('active');
+                    dropdownOptions.classList.remove('show');
+                }
+
+                // اختيار المقاس
+                dropdownOptions.addEventListener('click', function(e) {
+                    if (e.target.classList.contains('dropdown-option') && !isDragging) {
+                        // إزالة التحديد من جميع الخيارات
+                        dropdownOptions.querySelectorAll('.dropdown-option').forEach(option => {
+                            option.classList.remove('selected');
+                        });
+
+                        // تحديد الخيار المختار
+                        e.target.classList.add('selected');
+                        selectedValue = e.target.dataset.value;
+                        dropdownText.textContent = selectedValue;
+                        
+                        // تحديث حالة الهيدر
+                        dropdownHeader.classList.add('selected');
+                        
+                        // إغلاق القائمة
+                        closeDropdown();
+                        
+                        console.log('Selected size:', selectedValue);
+                    }
+                });
+
+                // Drag scroll functionality
+                dropdownOptions.addEventListener('mousedown', function(e) {
+                    isDragging = true;
+                    startY = e.pageY - dropdownOptions.offsetTop;
+                    scrollTop = dropdownOptions.scrollTop;
+                    dropdownOptions.style.cursor = 'grabbing';
+                    e.preventDefault();
+                });
+
+                dropdownOptions.addEventListener('mouseleave', function() {
+                    isDragging = false;
+                    dropdownOptions.style.cursor = 'grab';
+                });
+
+                dropdownOptions.addEventListener('mouseup', function() {
+                    isDragging = false;
+                    dropdownOptions.style.cursor = 'grab';
+                });
+
+                dropdownOptions.addEventListener('mousemove', function(e) {
+                    if (!isDragging) return;
+                    e.preventDefault();
+                    const y = e.pageY - dropdownOptions.offsetTop;
+                    const walk = (y - startY) * 2;
+                    dropdownOptions.scrollTop = scrollTop - walk;
+                });
+
+
+
+
+
+
+
+
+            }
