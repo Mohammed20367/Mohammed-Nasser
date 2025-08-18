@@ -598,3 +598,29 @@ position: relative;
 
 }
 
+.gift-swatches {
+  display: flex;
+  gap: 0; /* الزرارين لازقين ببعض */
+}
+
+.gift-swatch {
+  flex: 1;
+  height: 40px;
+  border: 1px solid #111;
+  font-size: 13px;
+  cursor: pointer;
+  background: #fff;
+  display: flex;               /* 👈 خلي الزرار نفسه فليكس */
+  align-items: center;         /* 👈 يوسّط المستطيل والنص عموديًا */
+  justify-content: center;     /* 👈 يخليهم في النص أفقيًا */
+  gap: 8px;                    /* 👈 مسافة بين المربع والكلمة */
+}
+
+.color-box {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.cwhite { background: #fff; border: 0.5px solid #000; }
+.cblack { background: #000; }
