@@ -5,15 +5,13 @@
   width:1440px;
   height:2000px;
   gap:90px;
-  overflow: hidden;
 }
 
 .section1
 {
   width:100%;
  height:auto;
-    overflow: hidden;
-
+  overflow: hidden;
 }
 
 .nav
