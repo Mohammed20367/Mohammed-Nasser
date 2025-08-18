@@ -408,6 +408,7 @@ display:flex;
   vertical-align: middle;
 }
 .gift-head__price {/* 👈 حجم السعر */
+  margin-top:20px;
   width: 64;
   height: 19;
   top: 88px;
