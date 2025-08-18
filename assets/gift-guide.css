@@ -473,17 +473,18 @@ display:flex;
   
 }
 .gift-swatch {
-  margin-bottom:10px; /*ألمسافه بين كلمة سايز والزرار تحتها*/
-  height: 30px; /* 👈 طول زرار اللون */
-  border: 0.54px solid #111;
-  border-radius: 4px;
-  font-size: 13px; /* 👈 حجم خط الزرار */
+  flex: 1;
+  height: 40px;
+  border: 1px solid #111;
+  font-size: 13px;
   cursor: pointer;
   background: #fff;
-  transition: all 0.2s ease;
-  flex: 1;                /* كل واحد ياخد نص العرض */
-  border: none; 
-  text-align:center;
+  display: flex;               
+  align-items: center;          /* يوسّط عمودي */
+  justify-content: center;      /* يوسّط أفقي */
+  gap: 6px;                     /* مسافة بين المربع والكلمة */
+  border-radius: 4px;
+  line-height: 1;               /* 👈 يمنع النص يطلع فوق */
 }
 .gift-swatch:hover {
   background: #f4f4f4;
@@ -600,18 +601,4 @@ position: relative;
 .gift-swatch span {
   display: inline-block;
   vertical-align: middle;       /* 👈 ينزل النص في النص */
-}
-.gift-swatch {
-  flex: 1;
-  height: 40px;
-  border: 1px solid #111;
-  font-size: 13px;
-  cursor: pointer;
-  background: #fff;
-  display: flex;               
-  align-items: center;          /* يوسّط عمودي */
-  justify-content: center;      /* يوسّط أفقي */
-  gap: 6px;                     /* مسافة بين المربع والكلمة */
-  border-radius: 4px;
-  line-height: 1;               /* 👈 يمنع النص يطلع فوق */
 }
