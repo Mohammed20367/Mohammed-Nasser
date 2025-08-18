@@ -1,20 +1,350 @@
+.page
+{
+  margin:0;
+  padding:0;
+  width:1440px;
+  height:2000px;
+  gap:90px;
+}
+
+.section1
+{
+  width:100%;
+ height:auto;
+  
+}
+
+.nav
+{
+  width:100%;
+  height:67px;
+  gap:360px;
+}  
+
+
+.firstframe {
+display:flex;
+  position: relative;
+  height:450px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: -128px;
+}
+.imageinframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: 1;
+} 
+ 
+.gift-top-bar {
+  background: transparent;
+  position: relative;
+  z-index: 10;
+  display: flex;              /* Horizontal layout */
+  align-items: center;        /* Vertical centering */
+  justify-content: space-between;
+  gap: 5px;                   /* Space between text and button */
+  background-color: #F5F5F5;
+  padding: 10px 50px;         /* top/bottom - left/right */
+  height: 64px;
+  
+}
+
+/* first image in nav */
+.gift-icon--tisso {
+  width: 151px;
+  height: 19px;
+}
+
+/* Center message text */
+.gift-top-bar_message {
+  display: flex;
+  font-size: 16px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  align-items: center;
+  justify-content: center;
+  color:#000000;
+}
+
+/* Button */
+.gift-button {
+  width: 207px;
+  height: 44px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 16px;
+  border: 1px solid #000;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;          /* مهم للفيل */
+  overflow: hidden;            /* عشان الفيل ما يطلعش برا */
+  transition: color 0.35s ease, border-color 0.35s ease;
+}
+
+/* Yellow button -- highlighted */
+.gift-button--highlight {
+  background-color: #FFF544;
+  border-color: #FFF544;
+  font-weight: 400;
+}
+
+/* fill effect */
+.gift-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000000;          /* أحمر مؤقتًا */
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.4s ease;
+  z-index: 0;
+}
+
+/* text & arrow فوق الفيل */
+.gift-button .gift-icon--arrow-text,
+.gift-button .gift-icon--arrow {
+  position: relative;
+  z-index: 1;
+  transition: color 0.35s ease, filter 0.35s ease;
+}
+
+/* Hover: شغّل الفيل */
+.gift-button:hover::before {
+  transform: scaleX(1);
+}
+
+/* Hover: النص والسهم أبيض */
+.gift-button:hover .gift-icon--arrow-text {
+    transition: transform 0.4s ease;
+  color: #fff;
+}
+.gift-button:hover .gift-icon--arrow {
+  filter: brightness(0) invert(1);
+}
+
+/* Arrow text container */
+.gift-icon--arrow-text {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+.gift-button:hover .gift-icon--arrow-text {
+  transform: translateX(4px);
+}
+
+/* Arrow line */
+.gift-icon--arrow {
+  display: inline-block;
+  width: 24px;
+  height: 100%;
+}
+
+
+
+/* first frame in home page */
+
+.secondframe{
+  display: grid;            /* required to enable grid layout */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* الكتلة اليسار تاخد عمود واحد (الأول) في الصف الأول */
+.gift-hero__copy{
+ grid-column: span 1 / span 1;}
+
+/* الصورة تحت وتاخد عرض الجريد كله */
+.gift-hero__art{
+
+  grid-column: span 2/span 2;
+      /* من أول عمود لآخر عمود (3) */
+}
+
+
+.gift-hero__img
+{
+  width:100%;
+}
+
+/* مقاسات الهيرو والتحريك لفوق */
+
+
+/* الشريط السفلي */
+.gift-hero__ticker{
+  background-color:#F5F5F5;
+  color:#000000;
+  width:100%;
+  height:34px;
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:12px;
+  padding:10px 50px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 13.42px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  gap:375px
+}
+
+/* موبايل: الصورة فوق */
+@media (max-width: 768px){
+  .gift-hero__inner{ grid-template-columns:1fr; }
+  .gift-hero__art{
+    order:-1;
+    height: clamp(160px, 40vw, 220px);
+  }
+}
+
+
+
+
+
+
+
+/second section/
+ .section2 { 
+  gap:30px;
+  margin:20px 20px;
+ }
+
+.part-two{
+  width: min(100%, 1337px);   /* نفس عرض فيجما كحد أقصى */
+  margin: 0 auto;
+  padding:30px 20px 20px 20px;
+  height:982px;
+  height:auto;
+  width:1337;
+
+}
+
+.wild-title{
+  font-family: 'Lustria', 'Jost', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: clamp(20px, 2.2vw, 28px);
+  margin: 8px 0 20px;
+}
+
+/* الشبكة */
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 20px;                               /* من فيجما */
+}
+
+/* كل كارت */
+.grid-item{
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
+  height:auto                     /* مربعات متساوية */
+  background:#f6f6f6;
+}
+
+.grid-item img{
+  width: 433px;
+  height: 444px;
+  display: block;
+  object-fit: cover;                         /* تقطيع نظيف */
+}
+
+
+
+/* زرار + */
+.plus-icon1{
+  position: absolute;
+  top: 55%;
+  right: 65px;
+  /* هنلعب ف ال6 ف التوب والرايت والليفت لحد مانوصل*/
+ 
+}
+.plus-icon2{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  
+ 
+}
+.plus-icon3{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  
+ 
+}
+.plus-icon4{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  
+ 
+}
+.plus-icon5{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  
+ 
+}
+.plus-icon6{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  
+ 
+}
+.plusimage
+{
+   width: 22px !important;
+  height: 22px !important;
+}
+
+/* ريسبونسيف */
+@media (max-width: 992px){
+  .grid-container{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+
+@media (max-width: 576px){
+  .grid-container{ grid-template-columns: 1fr; }
+  .wild-title{ margin-bottom: 14px; }
+}
+
+
+
+/*تجربه*/
+
+/* ============================= */
+/* Popup Wrapper & Overlay */
+/* ============================= */
 .gift-popup {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, .45);
+  background: rgba(0, 0, 0, 0.45);
   display: none;
   z-index: 1000;
 }
 .gift-popup.is-open {
   display: block;
 }
+
+/* ============================= */
+/* Popup Card */
+/* ============================= */
 .gift-popup__card.gift-popup--figma {
-  width: 250px;
-  height: 450px; /* ✅ ثابت الطول */
+  width: 280px;
   background: #fff;
   border-radius: 8px;
   border: 1px solid #D9D9D9;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, .15);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -22,27 +352,34 @@
   padding: 12px;
   font-family: 'Jost', sans-serif;
   color: #111;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* توزيع متوازن */
 }
 
+/* ============================= */
+/* Close Button */
+/* ============================= */
 .gift-popup__close {
   position: absolute;
-  top: 8px;
-  right: 10px;
+  top: 6px;
+  right: 8px;
   background: transparent;
   border: 0;
   font-size: 18px;
   cursor: pointer;
   color: #111;
+  transition: color 0.2s ease;
+}
+.gift-popup__close:hover {
+  color: #000;
 }
 
+/* ============================= */
+/* Product Head */
+/* ============================= */
 .gift-head {
   display: grid;
   grid-template-columns: 92px 1fr;
-  column-gap: 8px;
-  margin-bottom: 8px;
+  column-gap: 10px;
+  margin-bottom: 12px;
 }
 .gift-head__img {
   width: 92px;
@@ -51,14 +388,14 @@
   border-radius: 8px;
 }
 .gift-head__title {
-  font-size: 12px;
-  font-weight: 500;
-  margin: 0 0 2px;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 4px;
 }
 .gift-head__price {
   font-size: 14px;
   font-weight: 700;
-  margin: 0 0 4px;
+  margin: 0 0 6px;
 }
 .gift-head__desc {
   font-size: 11px;
@@ -67,15 +404,23 @@
   margin: 0;
 }
 
+/* ============================= */
+/* Fields & Labels */
+/* ============================= */
 .gift-field__label {
   display: block;
   font-size: 12px;
-  margin: 10px 0 6px;
+  font-weight: 500;
+  margin: 12px 0 6px;
+  color: #111;
 }
 
+/* ============================= */
+/* Color Swatches */
+/* ============================= */
 .gift-swatches {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 6px;
 }
 .gift-swatch {
@@ -84,12 +429,20 @@
   border-radius: 4px;
   font-size: 12px;
   cursor: pointer;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+.gift-swatch:hover {
+  background: #f4f4f4;
 }
 .gift-swatch.is-active {
   background: #000;
   color: #fff;
 }
 
+/* ============================= */
+/* Size Select */
+/* ============================= */
 .gift-select {
   position: relative;
 }
@@ -100,18 +453,25 @@
   border-radius: 4px;
   padding: 0 34px 0 10px;
   font-size: 12px;
+  background: #fff;
+  appearance: none;
+  cursor: pointer;
 }
 .gift-select__chev {
   position: absolute;
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
+  pointer-events: none;
 }
 
+/* ============================= */
+/* CTA Button */
+/* ============================= */
 .gift-cta {
   width: 100%;
   height: 40px;
-  margin-top: 10px;
+  margin-top: 14px;
   background: #000;
   color: #fff;
   border: 0;
@@ -124,8 +484,29 @@
   justify-content: center;
   gap: 10px;
   text-transform: uppercase;
+  transition: background 0.2s ease;
+}
+.gift-cta:hover {
+  background: #333;
 }
 .gift-cta__arrow {
   width: 18px;
   filter: brightness(0) invert(1);
+}
+
+/* ============================= */
+/* Responsive */
+/* ============================= */
+@media (max-width: 480px) {
+  .gift-popup__card.gift-popup--figma {
+    width: 90%;
+    padding: 14px;
+  }
+  .gift-head {
+    grid-template-columns: 80px 1fr;
+  }
+  .gift-head__img {
+    width: 80px;
+    height: 80px;
+  }
 }
