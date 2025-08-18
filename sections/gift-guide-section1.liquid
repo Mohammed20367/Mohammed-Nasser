@@ -86,8 +86,13 @@ The task Contain :-
       <p class="gift-hero__text">
         Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.
       </p>
-      <a href="/collections/gift-guide" class="gift-btn">SHOP NOW →</a>
-    </div>
+ <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
+      <span class="gift-icon--arrow-text">Shoop Now</span>
+      <img class="gift-icon gift-icon--arrow"
+           src="{{ 'Arrow.svg' | asset_url }}"
+           alt="" aria-hidden="true"
+           width="24" height="1" loading="lazy">
+    </button>    </div>
 
     <!-- الصورة -->
     <div class="gift-hero__art" > <!--div of image-->
