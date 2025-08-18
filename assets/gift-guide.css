@@ -594,45 +594,6 @@ position: relative;
   background-color: #FFFFFF;
   border: 0.5px solid #000; /* علشان الأبيض يبان */
   background-color: #FFFFFF;
-    vertical-align: middle;   /* 👈 يحل مشكلة الرفعة */
-
+  
 }
 
-.gift-swatches {
-  display: flex;
-  gap: 0; /* يخليهم لازقين ببعض */
-}
-
-.gift-swatch {
-  flex: 1;
-  height: 40px;
-  border: 1px solid #111;
-  font-size: 13px;
-  cursor: pointer;
-  background: #fff;
-  display: flex;               /* يخلّي محتوى الزرار في صف */
-  align-items: center;         /* يوسّط المستطيل والنص عمودي */
-  justify-content: center;     /* يوسّط الكل أفقي */
-  gap: 6px;                    /* مسافة بين المربع والكلمة */
-  border-radius: 4px;
-}
-
-.gift-swatch.is-active {
-  background: #000;
-  color: #fff;
-}
-
-.color-box {
-  width: 12px;
-  height: 12px;
-  border-radius: 2px;
-}
-
-.cwhite {
-  background: #fff;
-  border: 1px solid #000; /* علشان الأبيض يبان */
-}
-
-.cblack {
-  background: #000;
-}
