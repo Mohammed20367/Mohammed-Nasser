@@ -88,24 +88,7 @@
 
  
 
-    function openDropdown() {
-      document.querySelectorAll('.dropdown-options.show').forEach(function(otherOptions) {
-        if (otherOptions !== dropdownOptions) {
-          otherOptions.classList.remove('show');
-          otherOptions.closest('.custom-dropdown').querySelector('.dropdown-header').classList.remove('active');
-        }
-      });
-
-      isOpen = true;
-      dropdownHeader.classList.add('active');
-      dropdownOptions.classList.add('show');
-    }
-
-    function closeDropdown() {
-      isOpen = false;
-      dropdownHeader.classList.remove('active');
-      dropdownOptions.classList.remove('show');
-    }
+    
 
     // اختيار المقاس
 //     dropdownOptions.addEventListener('click', function(e) {
