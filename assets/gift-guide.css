@@ -177,7 +177,7 @@ display:flex;
 }
 
 .gift-hero__title {
-  font-size: 70px;
+  font-size: clamp(32px, 5vw, 48px);
   font-weight: 700;
   color: #000;
   margin-bottom: 15px;
