@@ -461,53 +461,84 @@ display:flex;
 /* Color Swatches */
 /* ============================= */
 .gift-swatches {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  display: flex;          /* خليتهم جمب بعض */
+  gap: 0;                 /* شلت أي مسافة بينهم */
+  border: 1px solid #111; /* البوردر الخارجي */
+  border-radius: 6px;     /* يدي كورنر ناعم للكادر كله */
+  overflow: hidden; 
+  text-align:center;
+  height: 40.441322326660156px;
+
+  
+}
+.gift-swatch {
+  margin-bottom:10px; /*ألمسافه بين كلمة سايز والزرار تحتها*/
+ /* 👈 طول زرار اللون */
+  border: 0.54px solid #111;
+  border-radius: 4px;
+  font-size: 18px; /* 👈 حجم خط الزرار */
+  cursor: pointer;
+  background: #fff;
+  transition: all 0.2s ease;
+  flex: 1;                /* كل واحد ياخد نص العرض */
+  border: none; 
+  text-align:center;
+  
+}
+.gift-swatch:hover {
+  background: #f4f4f4;
+}
+.gift-swatch.is-active {
+  background: #000;
+  color: #fff;
+}
+
+
+.gift-swatches {
   display: flex;
   border: 1px solid #111;
   border-radius: 6px;
   overflow: hidden;
-  height: 40px;
 }
 
 .gift-swatch {
-  flex: 1;                        /* كل زرار ياخد نفس العرض */
-  height: 100%;                   /* نفس طول الـ container */
+  flex: 1;
+  height: 40px;
+  border: none;
   font-size: 13px;
   cursor: pointer;
   background: #fff;
-  border: none;                    /* شيل أي بوردر داخلي */
-  display: flex;
-  align-items: center;             /* وسّط عمودي */
-  justify-content: center;         /* وسّط أفقي */
-  gap: 6px;                        /* مسافة بين المربع والكلمة */
-  transition: all 0.2s ease;
-  color: #000;
+  display: flex;             
+  align-items: center;       /* يوسّط المربع والنص عمودي */
+  justify-content: center;   /* يخليهم في النص أفقي */
+  gap: 6px;                  /* مسافة صغيرة بين المربع والكلمة */
 }
 
 .gift-swatch span {
-  display: inline-block;
+  display: inline-block;     /* 👈 مهم عشان يفضل مع الكلمة */
   width: 12px;
   height: 12px;
   border: 1px solid #111;
   border-radius: 2px;
 }
 
-/* عند hover */
-.gift-swatch:hover {
-  background: #f4f4f4;
-}
-
-/* الزرار المختار */
 .gift-swatch.is-active {
   background: #000;
   color: #fff;
 }
 
-/* 👈 شيل أي تأثير افتراضي للـ focus (الرمادي اللي على White) */
-.gift-swatch:focus {
-  outline: none;
-  box-shadow: none;
-}
 
+.cwhite {
+  width: 5.807142734527588px;
+  opacity: 1;
+  border-width: 0.5px;
+  background-color: #FFFFFF;
+  border: 0.5px solid #000; /* علشان الأبيض يبان */
+  background-color: #FFFFFF;
+}
 
 /* ============================= */
 /* Size Select */
