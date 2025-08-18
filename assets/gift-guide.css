@@ -487,6 +487,12 @@ display:flex;
 /* Size Select */
 /* ============================= */
 .gift-select {
+width: 271px;
+height: 99px;
+top: 64px;
+opacity: 1;
+border-width: 1px;
+
   position: relative;
 }
 .gift-select select {
