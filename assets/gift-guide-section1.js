@@ -145,3 +145,29 @@
                         console.log('Selected size:', selectedValue);
                     }
                 });
+
+dropdownOptions.addEventListener('mousedown', function(e) {
+                    isDragging = true;
+                    startY = e.pageY - dropdownOptions.offsetTop;
+                    scrollTop = dropdownOptions.scrollTop;
+                    dropdownOptions.style.cursor = 'grabbing';
+                    e.preventDefault();
+                });
+
+                dropdownOptions.addEventListener('mouseleave', function() {
+                    isDragging = false;
+                    dropdownOptions.style.cursor = 'grab';
+                });
+
+                dropdownOptions.addEventListener('mouseup', function() {
+                    isDragging = false;
+                    dropdownOptions.style.cursor = 'grab';
+                });
+
+                dropdownOptions.addEventListener('mousemove', function(e) {
+                    if (!isDragging) return;
+                    e.preventDefault();
+                    const y = e.pageY - dropdownOptions.offsetTop;
+                    const walk = (y - startY) * 2;
+                    dropdownOptions.scrollTop = scrollTop - walk;
+                });
