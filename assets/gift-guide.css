@@ -248,6 +248,21 @@ display:flex;
   }
 }
 
+.gift-hero__text-container {
+  max-width: 400px; /* تقليل العرض لتحقيق 3 سطور */
+  margin: 0 auto 30px;
+}
+
+.gift-hero__text {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+  white-space: normal; /* التأكد من أن النص يتدفق بشكل طبيعي */
+}
+
+
+
 .gift-hero__img
 {
   width:100%;
