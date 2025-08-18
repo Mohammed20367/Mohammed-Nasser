@@ -540,27 +540,12 @@ display:flex;
 /* Size Select - Updated Style */
 /* ============================= */
  @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap');
-
-.size-field__label {
-    display: block;
-    margin-bottom: 12px;
-    font-size: 16px;
-    font-weight: 500;
-    color: #333333;
-}
-
-.custom-dropdown {
-    position: relative;
-    width: 271px;
-}
-
 .dropdown-header {
     width: 100%;
     height: 40px;
     border: 1px solid #CCCCCC;
-    border-radius: 0;
     background-color: #FFFFFF;
-    padding: 0 50px 0 16px;
+    padding: 0 0 0 16px;
     font-size: 16px;
     font-family: 'Jost', sans-serif;
     font-weight: 400;
@@ -568,43 +553,22 @@ display:flex;
     cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    text-align: left;
-    transition: all 0.2s ease;
+    justify-content: space-between; /* 👈 النص شمال والسهم يمين */
     position: relative;
-    user-select: none;
-    direction: ltr;
 }
 
-.dropdown-header:hover {
-    border-color: #999;
-}
-
-.dropdown-header.active {
-    border-color: #000;
-    color: #000;
-    border-bottom: none;
-}
-
-.dropdown-header.selected {
-    color: #000;
-    font-weight: 400;
-    text-align: center;
-    justify-content: center;
-}
-
-.dropdown-arrow {
-    position: absolute;
-    right: 0px;
-    top: 0px;
+.dropdown-header .dropdown-arrow {
     width: 50px;
-    height: 40px;
-    border-left: 2px solid #CCCCCC; /* 👈 هنا تقدر تزود الـ border-width */
-    pointer-events: none;
+    height: 100%;
+    border-left: 2px solid #CCCCCC;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #FFFFFF;
+    background: #fff;
+}
+
+.dropdown-header.active .dropdown-arrow {
+    border-left-color: #000;
 }
 
 .dropdown-arrow svg {
@@ -613,85 +577,11 @@ display:flex;
     stroke: #000;
     stroke-width: 2;
     transition: transform 0.2s ease;
-    margin-left: 8px; /* 👈 السهم بعيد عن الفاصل شوية */
 }
-
-.dropdown-header.active .dropdown-arrow {
-    border-left-color: #000;
-}
-
 .dropdown-header.active .dropdown-arrow svg {
     transform: rotate(180deg);
 }
 
-.dropdown-options {
-    position: absolute;
-    top: 40px;
-    left: 0;
-    width: 271px;
-    height: 99px;
-    background: white;
-    border: 1px solid #000;
-    border-top: none;
-    border-radius: 0;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-5px);
-    transition: all 0.2s ease;
-    overflow-y: auto;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    cursor: grab;
-    user-select: none;
-}
-
-.dropdown-options:active {
-    cursor: grabbing;
-}
-
-.dropdown-options::-webkit-scrollbar {
-    display: none;
-}
-
-.dropdown-options.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.dropdown-option {
-    padding: 8px 16px;
-    font-size: 16px;
-    font-family: 'Jost', sans-serif;
-    font-weight: 400;
-    color: #000;
-    cursor: pointer;
-    text-align: center;
-    border-bottom: 1px solid #f0f0f0;
-    transition: all 0.1s ease;
-    height: 33px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-}
-
-.dropdown-option:last-child {
-    border-bottom: none;
-}
-
-.dropdown-option:hover {
-    background-color: #000;
-    color: #fff;
-}
-
-.dropdown-option.selected {
-    background-color: #000;
-    color: #fff;
-}
 
 /* ============================= */
 /* CTA Button */
