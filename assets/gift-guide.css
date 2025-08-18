@@ -488,7 +488,15 @@ display:flex;
   flex: 1;                /* كل واحد ياخد نص العرض */
   border: none; 
   text-align:center;
-  
+  flex: 1;
+  height: 40px;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;             
+  align-items: center;       /* يوسّط المربع والنص عمودي */
+  justify-content: center;   /* يخليهم في النص أفقي */
+  gap: 6px;   
 }
 .gift-swatch:hover {
   background: #f4f4f4;
@@ -504,16 +512,7 @@ display:flex;
 }
 
 .gift-swatch {
-  flex: 1;
-  height: 40px;
-  border: none;
-  font-size: 13px;
-  cursor: pointer;
-  background: #fff;
-  display: flex;             
-  align-items: center;       /* يوسّط المربع والنص عمودي */
-  justify-content: center;   /* يخليهم في النص أفقي */
-  gap: 6px;                  /* مسافة صغيرة بين المربع والكلمة */
+               /* مسافة صغيرة بين المربع والكلمة */
 }
 
 .gift-swatch span {
