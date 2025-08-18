@@ -442,251 +442,54 @@ display:flex;
 /* ============================= */
 /* Fields & Labels */
 /* ============================= */
-.gift-field__label {
-  width: 33;
-  height: 18;
-  opacity: 1;
-  font-family: 'Jost', sans-serif;
-  font-weight: 400;
-  font-style: Regular;
-  font-size: 14px;
-  line-height: 130%;
-  letter-spacing: 0%;
-  display: block;
-  margin: 5px 0 8px; /* 👈 المسافة بين الليبل والعنصر */
-  color: #333333;
-}
-
-/* ============================= */
-/* Color Swatches */
-/* ============================= */
-.gift-swatches {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-  display: flex;          /* خليتهم جمب بعض */
-  gap: 0;                 /* شلت أي مسافة بينهم */
-  border: 1px solid #111; /* البوردر الخارجي */
-  border-radius: 6px;     /* يدي كورنر ناعم للكادر كله */
-  overflow: hidden; 
-  text-align:center;
-  height: 40.441322326660156px;
-   display: flex;
-  border: 1px solid #111;
-  border-radius: 6px;
-  overflow: hidden;
-}
-.gift-swatch {
-  font-family: 'Jost', sans-serif;
-  margin-bottom: 10px;        /* المسافة بين كلمة Size والزرار */
-  flex: 1;                    /* كل واحد ياخد نص العرض */
-  height: 40px;
-  border: none;               /* شيل البوردر الداخلي */
-  border-radius: 4px;
-  font-size: 18px;            /* حجم الخط */
-  cursor: pointer;
-  background: #fff;
-  transition: all 0.2s ease;
-  display: flex;              
-  align-items: center;        /* يوسّط عمودي */
-  justify-content: center;    /* يوسّط أفقي */
-  gap: 6px;                   /* مسافة بين المربع والكلمة */
-}
-
-.gift-swatch:hover {
-  background: #f4f4f4;
-}
-.gift-swatch.is-active {
-  background: #000;
-  color: #fff;
-}
-
-.gift-swatches span {
-  width: 7px;
-  opacity: 1;
-  border-width: 0.5px;
-  border: 0.5px solid ; /* علشان الأبيض يبان */
-}
-
-.gift-swatch.is-active {
-  background: #000;
-  color: #fff;
-}
-
-.cwhite {
-  background-color: #FFFFFF;
-}
-.cblack
-{
-  background-color: #000000;
-}
-.cblue
-{
-  background-color:#0D499F;
-}
-.cred
-{
-  background-color:#B20F36;
-}
-.cgrey
-{
-  background-color:#AFAFB7;
-}
-
-/* ============================= */
-/* Size Select */
-/* ============================= */
-/* ============================= */
-/* Size Select - Updated Style */
-/* ============================= */
-/* Dropdown Label */
-.size-field {
-    margin-bottom: 20px;
-}
-
-.size-field__label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 14px;
-    font-weight: 400;
-    color: #333333;
-}
-
+/* تأكد من وجود هذه التنسيقات في ملف الـ CSS */
 .custom-dropdown {
-    position: relative;
-    width: 100%;
-    max-width: 271px;
+  position: relative;
+  width: 100%;
+  max-width: 271px;
+  margin-bottom: 20px;
 }
 
 .dropdown-header {
-    width: 100%;
-    height: 40px;
-    border: 1px solid #D9D9D9;
-    border-radius: 0;
-    background-color: #FFFFFF;
-    padding: 0 45px 0 16px;
-    font-size: 16px;
-    font-family: 'Jost', sans-serif;
-    font-weight: 400;
-    color: #000;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-    position: relative;
-    user-select: none;
-}
-
-.dropdown-header:hover {
-    border-color: #999;
-}
-
-.dropdown-header.active {
-    border-color: #000;
-    color: #000;
-    border-bottom: none;
-}
-
-.dropdown-header.selected {
-    color: #000;
-}
-
-.dropdown-arrow {
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.dropdown-divider {
-    width: 1px;
-    height: 20px;
-    background: #D9D9D9;
-}
-
-.dropdown-arrow svg {
-    width: 16px;
-    height: 16px;
-    stroke: #000;
-    stroke-width: 2;
-    transition: transform 0.2s ease;
-}
-
-.dropdown-header.active .dropdown-arrow svg {
-    transform: rotate(180deg);
+  width: 100%;
+  height: 40px;
+  border: 1px solid #D9D9D9;
+  background-color: #FFFFFF;
+  padding: 0 45px 0 16px;
+  font-size: 16px;
+  font-family: 'Jost', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .dropdown-options {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: white;
-    border: 1px solid #000;
-    border-top: none;
-    border-radius: 0;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.2s ease;
-    height: 120px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    cursor: grab;
-}
-
-.dropdown-options:active {
-    cursor: grabbing;
-}
-
-.dropdown-options::-webkit-scrollbar {
-    display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #000;
+  border-top: none;
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
 }
 
 .dropdown-options.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+  display: block;
 }
 
 .dropdown-option {
-    padding: 8px 16px;
-    font-size: 16px;
-    font-family: 'Jost', sans-serif;
-    font-weight: 400;
-    color: #000;
-    cursor: pointer;
-    text-align: center;
-    border-bottom: 1px solid #f0f0f0;
-    transition: all 0.2s ease;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-}
-
-.dropdown-option:last-child {
-    border-bottom: none;
+  padding: 10px 16px;
+  cursor: pointer;
 }
 
 .dropdown-option:hover {
-    background-color: #000;
-    color: #fff;
-}
-
-.dropdown-option.selected {
-    background-color: #000;
-    color: #fff;
+  background-color: #000;
+  color: #fff;
 }
 
 
@@ -745,150 +548,3 @@ display:flex;
 
 
 
-.gift-field__label {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 14px;
-  font-family: 'Jost', sans-serif;
-  color: #333;
-}
-
-.gift-select {
-  position: relative;
-  display: inline-block;
-  width: 271px;     /* من Figma */
-  height: 40px;
-  background-color: #fff; /* خلفية بيضا */
-  color: #000;  
-}
-
-.gift-select select {
-  width: 100%;
-  height: 40px;
-  border: 1px solid #000;
-  border-radius: 4px;
-  padding: 0 45px 0 12px; 
-  font-size: 16px;                 
-  font-family: 'Jost', sans-serif;
-  font-weight: 400;
-  line-height: 100%;                
-  letter-spacing: -0.02em;          
-  cursor: pointer;
-  background-color: #fff;           /* ✅ خلفية بيضا للـ dropdown */
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  text-align: center;               /* المقاسات في النص */
-  color: #000;
-}
-
-/* ✅ المقاسات في النص */
-.gift-select select option:not([disabled]) {
-  text-align: center;
-  height: 36px;           
-  line-height: 36px;      /* ← لو عايز تزود المسافة زوّد القيمة هنا */
-}
-
-/* ✅ الهوفر على الأوبشن */
-.gift-select select option:hover {
-  background-color: #000 !important;
-  color: #fff !important;
-}
-
-/* ✅ السهم والفاصل */
-.gift-select__chev {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 50px;         
-  display: flex;
-  align-items: center;      
-  justify-content: center; 
-  pointer-events: none;
-  background: transparent;
-}
-
-.gift-select__chev img {
-  position: absolute;
-  left: 0;                      
-  top: 50%;
-  transform: translateY(-50%);
-  height: 100%;
-  width: auto;
-}
-
-.gift-select__chev svg {
-  width: 16px;
-  height: 16px;
-  stroke: black;
-  transition: transform 0.2s ease;
-}
-
-/* ✅ placeholder */
-.gift-placeholder {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  font-family: 'Jost', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 100%;
-  letter-spacing: -0.02em;
-  vertical-align: middle;
-  color: #000; 
-}
-
-
-
-/* تأكد من وجود هذه التنسيقات في ملف الـ CSS */
-.custom-dropdown {
-  position: relative;
-  width: 100%;
-  max-width: 271px;
-  margin-bottom: 20px;
-}
-
-.dropdown-header {
-  width: 100%;
-  height: 40px;
-  border: 1px solid #D9D9D9;
-  background-color: #FFFFFF;
-  padding: 0 45px 0 16px;
-  font-size: 16px;
-  font-family: 'Jost', sans-serif;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.dropdown-options {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: white;
-  border: 1px solid #000;
-  border-top: none;
-  z-index: 1000;
-  max-height: 200px;
-  overflow-y: auto;
-  display: none;
-}
-
-.dropdown-options.show {
-  display: block;
-}
-
-.dropdown-option {
-  padding: 10px 16px;
-  cursor: pointer;
-}
-
-.dropdown-option:hover {
-  background-color: #000;
-  color: #fff;
-}
