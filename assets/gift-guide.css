@@ -590,30 +590,29 @@ display:flex;
 
 
 
-  .custom-dropdown {
+/* ===== Custom Dropdown - Fixed Version ===== */
+.custom-dropdown {
   position: relative;
   width: 100%;
   max-width: 271px;
+  margin-bottom: 20px;
 }
 
 .dropdown-header {
   width: 100%;
   height: 40px;
   border: 1px solid #D9D9D9;
-  border-radius: 0;
   background-color: #FFFFFF;
-  padding: 0 45px 0 16px;
+  padding: 0 16px;
   font-size: 16px;
   font-family: 'Jost', sans-serif;
   font-weight: 400;
-  color: #000;
+  color: #666; /* لون مختلف للنص الافتراضي */
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
+  justify-content: space-between;
   position: relative;
-  user-select: none;
 }
 
 .dropdown-header:hover {
@@ -622,19 +621,20 @@ display:flex;
 
 .dropdown-header.active {
   border-color: #000;
-  border-bottom: none;
+  border-bottom: 1px solid #000; /* إصلاح اختفاء الحد السفلي */
 }
 
 .dropdown-header.selected {
-  color: #000;
+  color: #000; /* لون النص عند التحديد */
+}
+
+.dropdown-text {
+  flex: 1;
+  text-align: left; /* محاذاة النص لليسار */
+  padding-left: 8px;
 }
 
 .dropdown-arrow {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -666,23 +666,13 @@ display:flex;
   background: white;
   border: 1px solid #000;
   border-top: none;
-  border-radius: 0;
   z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-10px);
+  transform: translateY(-5px);
   transition: all 0.2s ease;
-  height: 120px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  cursor: grab;
-}
-
-.dropdown-options::-webkit-scrollbar {
-  display: none;
 }
 
 .dropdown-options.show {
@@ -692,28 +682,27 @@ display:flex;
 }
 
 .dropdown-option {
-  padding: 8px 16px;
+  padding: 10px 16px;
   font-size: 16px;
-  font-family: 'Jost', sans-serif;
-  font-weight: 400;
   color: #000;
   cursor: pointer;
-  text-align: center;
+  text-align: left; /* محاذاة النص لليسار */
   border-bottom: 1px solid #f0f0f0;
   transition: all 0.2s ease;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
-}
-
-.dropdown-option:last-child {
-  border-bottom: none;
 }
 
 .dropdown-option:hover,
 .dropdown-option.selected {
   background-color: #000;
   color: #fff;
+}
+
+/* إخفاء شريط التمرير مع الحفاظ على الوظيفة */
+.dropdown-options::-webkit-scrollbar {
+  width: 4px;
+}
+
+.dropdown-options::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 2px;
 }
