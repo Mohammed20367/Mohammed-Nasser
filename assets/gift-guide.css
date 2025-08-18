@@ -460,21 +460,7 @@ display:flex;
 /* ============================= */
 /* Color Swatches */
 /* ============================= */
-.gift-swatches {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-}
-.gift-swatch {
-  margin-bottom:10px; /*ألمسافه بين كلمة سايز والزرار تحتها*/
-  height: 36px; /* 👈 طول زرار اللون */
-  border: 1px solid #111;
-  border-radius: 4px;
-  font-size: 13px; /* 👈 حجم خط الزرار */
-  cursor: pointer;
-  background: #fff;
-  transition: all 0.2s ease;
-}
+
 .gift-swatch:hover {
   background: #f4f4f4;
 }
@@ -573,32 +559,3 @@ position: relative;
 
 
 
-.gift-swatches {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* زرارين جنب بعض */
-  width: 100%;
-  border: 1px solid #000;   /* إطار خارجي */
-  border-radius: 6px;       /* radius موحد */
-  overflow: hidden;         /* يخفي أي زوائد */
-}
-
-.gift-swatch {
-  height: 40px;
-  font-size: 14px;
-  cursor: pointer;
-  border: none;
-  background: #fff;
-  color: #000;
-  transition: all 0.2s ease;
-}
-
-/* الزرار النشط */
-.gift-swatch.is-active {
-  background: #000;
-  color: #fff;
-}
-
-/* خط الفاصل بينهم */
-.gift-swatches .gift-swatch + .gift-swatch {
-  border-left: 2px solid #000;
-}
