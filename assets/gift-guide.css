@@ -528,7 +528,10 @@ display:flex;
   opacity: 1;
   border-width: 0.5px;
   background-color: #000000;
-  border: 0.5px  #FFFFFF; /* علشان الأبيض يبان */
+  border: 0.5px solid #FFFFFF; /* علشان الأبيض يبان */
+  border: 0.5px solid #000;   /* أسود، سمك نص بكسل، على الأربع جهات */
+box-sizing: border-box;     /* عشان البوردر يبقى جوه الحدود */
+
 }
 
 /* ============================= */
