@@ -586,13 +586,15 @@ position: relative;
 
 
 
+.cwhite {
+  width: 5.807142734527588px;
+  height: 40.441322326660156px;
+  opacity: 1;
+  border-width: 0.5px;
+  background-color: #FFFFFF;
+  border: 0.5px solid #000; /* علشان الأبيض يبان */
+  background-color: #FFFFFF;
+    vertical-align: middle;   /* 👈 يحل مشكلة الرفعة */
 
-
-.color-box {
-  width: 12px;
-  height: 12px;
-  border-radius: 2px;
 }
 
-.color-box.white { background: #fff; border: 1px solid #000; }
-.color-box.black { background: #000; }
