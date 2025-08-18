@@ -84,6 +84,12 @@
 //     placeholder.style.display = "none";
 //   }
 // });
+
+let isOpen = false;
+                let selectedValue = '';
+                let isDragging = false;
+                let startY = 0;
+                let scrollTop = 0;
  document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.custom-dropdown').forEach(function(dropdown) {
     const dropdownHeader = dropdown.querySelector('.dropdown-header');
