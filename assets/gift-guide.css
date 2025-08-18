@@ -168,121 +168,12 @@ display:flex;
 /*الديف الي ع الشمال*/
 
 /* أنماط معدلة لمنع الطول الزائد */
-.gift-hero__copy {
-  width: 100%;
-  padding: 40px 0px 0px 40px;;
-  text-align: center;
-  font-family: 'Jost', sans-serif;
-  margin: 0 auto;
-}
 
-.gift-hero__title {
-  font-size: clamp(32px, 5vw, 48px);
-  font-weight: 700;
-  color: #000;
-  margin-bottom: 15px;
-  line-height: 1.2;
-  font-family: 'Jost', sans-serif;
 
-}
-.gift-hero__text
-{
-  font-family: 'Jost', sans-serif;
-  font-size:20px;
 
-}
-.gift-hero__text-container {
-  margin-bottom: 25px;
-}
 
-.gift-hero__subtitle {
-  font-size: clamp(18px, 2.5vw, 22px);
-  font-weight: 500;
-  color: #333;
-  margin-bottom: 12px;
-  line-height: 1.4;
-}
 
-.gift-hero__description {
-  font-size: clamp(16px, 2vw, 18px);
-  color: #666;
-  line-height: 1.5;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.gift-hero__cta {
-  display: inline-block;
-  padding: 12px 30px;
-  background-color: #000;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  border: 1px solid #000;
-  position: relative;
-}
-
-.gift-hero__cta:hover {
-  background-color: #333;
-  border-color: #333;
-}
-
-.gift-hero__cta::after {
-  content: "→";
-  margin-left: 8px;
-  transition: transform 0.3s ease;
-}
-
-.gift-hero__cta:hover::after {
-  transform: translateX(4px);
-}
-
-/* إزالة الهوامش الزائدة */
-@media (max-width: 480px) {
-  .gift-hero__copy {
-    padding: 30px 15px;
-  }
-}
-
-.gift-hero__text-container {
-  max-width: 20px; /* تقليل العرض لتحقيق 3 سطور */
-  margin: 0 auto 30px;
-}
-
-.gift-hero__text {
-  font-size: 18px;
-  line-height: 1.5;
-  color: #333;
-  text-align: center;
-  white-space: normal; /* التأكد من أن النص يتدفق بشكل طبيعي */
-}
-.gift-text-wrapper {
-  width: 55%; /* التحكم في العرض لإنشاء 3 سطور */
-  margin: 0 auto;
-  text-align: center;
-}
-
-.gift-hero__text {
-  font-size: 18px;
-  line-height: 1.5;
-  color: #333;
-  white-space: normal;
-  word-spacing: -0.5px; /* تقليل المسافة بين الكلمات */
-  letter-spacing: -0.2px; /* تقليل تباعد الأحرف */
-}
-.centered-text br {
-  content: "";
-  display: block;
-  margin-bottom: 8px; /* يمكن تعديل هذه القيمة */
-}
-.centered-text {
-  text-indent: -20px; /* تعديل هذه القيمة حسب الحاجة */
-  padding-left: 20px;
-}
+/**/
 
 .gift-hero__img
 {
