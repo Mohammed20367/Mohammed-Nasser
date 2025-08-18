@@ -539,9 +539,77 @@ display:flex;
 /* ============================= */
 /* Size Select - Updated Style */
 /* ============================= */
- .size-field {
-            max-width: 300px;
-            margin: 0 auto;
+ .open-popup-btn {
+            background: #000;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-family: 'Jost', sans-serif;
+        }
+
+        .open-popup-btn:hover {
+            background: #333;
+        }
+
+        /* Popup Styles */
+        .gift-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .gift-popup.is-open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .gift-popup__content {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+
+        .gift-popup__close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 5px;
+            color: #666;
+        }
+
+        .gift-popup__close:hover {
+            color: #000;
+        }
+
+        .gift-popup h3 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #000;
+        }
+
+        /* Size Field Styles */
+        .size-field {
+            margin-bottom: 20px;
         }
 
         .size-field__label {
@@ -554,7 +622,8 @@ display:flex;
 
         .custom-dropdown {
             position: relative;
-            width: 271px;
+            width: 100%;
+            max-width: 271px;
         }
 
         .dropdown-header {
@@ -634,7 +703,7 @@ display:flex;
             visibility: hidden;
             transform: translateY(-10px);
             transition: all 0.2s ease;
-            height: 120px; /* ثابت عشان يظهر 3 مقاسات بس */
+            height: 120px;
             overflow-y: auto;
             overflow-x: hidden;
             scroll-behavior: smooth;
@@ -686,6 +755,34 @@ display:flex;
         .dropdown-option.selected {
             background-color: #000;
             color: #fff;
+        }
+
+        /* Add to Cart Button */
+        .gift-cta {
+            background: #000;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-family: 'Jost', sans-serif;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .gift-cta:hover {
+            background: #333;
+        }
+
+        /* Demo container */
+        .demo-container {
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
         }
 /* ============================= */
 /* CTA Button */
