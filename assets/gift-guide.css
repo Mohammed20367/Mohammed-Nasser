@@ -359,6 +359,13 @@ display:flex;
   text-indent: -20px; /* تعديل هذه القيمة حسب الحاجة */
   padding-left: 20px;
 }
+.gift-hero__text-container {
+  max-width: 20px;
+}
+.gift-text-wrapper {
+  width: 55%;
+}
+
 
 
 /**/
