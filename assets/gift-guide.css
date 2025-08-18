@@ -484,6 +484,52 @@ display:flex;
 }
 
 
+.gift-swatches {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0; /* علشان يبانوا جنب بعض */
+}
+
+.gift-swatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px; /* مسافة بين المربع والكلمة */
+  height: 40px;
+  border: 1px solid #111;
+  font-size: 13px;
+  cursor: pointer;
+  background: #fff;
+  transition: all 0.2s ease;
+  border-radius: 0; /* علشان يركبوا مع بعض */
+}
+
+.gift-swatch:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.gift-swatch:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.gift-swatch .color-box {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #111;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+/* لما يتعمل اختيار */
+.gift-swatch.is-active {
+  background: #000;
+  color: #fff;
+}
+
+.gift-swatch.is-active .color-box {
+  border: 1px solid #fff; /* المربع يفضل يوضح اللون */
+}
 
 
 /* ============================= */
