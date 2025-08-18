@@ -597,3 +597,7 @@ position: relative;
   
 }
 
+.gift-swatch span {
+  display: inline-block;
+  vertical-align: middle;       /* 👈 ينزل النص في النص */
+}
