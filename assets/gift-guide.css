@@ -503,7 +503,7 @@ display:flex;
 
 .gift-swatch span {
   display: inline-block;     /* 👈 مهم عشان يفضل مع الكلمة */
-  width: 12px;
+  width: 271px;
   height: 12px;
   border: 1px solid #111;
   border-radius: 2px;
@@ -516,7 +516,7 @@ display:flex;
 
 
 .cwhite {
-  width: 5.807142734527588px;
+  width: 23px;
   opacity: 1;
   border-width: 0.5px;
   background-color: #FFFFFF;
