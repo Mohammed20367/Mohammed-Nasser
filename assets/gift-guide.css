@@ -246,9 +246,9 @@ display:flex;
 
 .gift-hero__title
 {
-  padding-top:25px;
+ margin-top:25px;
   padding-left:25px;
-  padding-bottom:0px;
+  
   font-family: 'Jost', sans-serif;
   font-weight: 500;
   font-style: Medium;
