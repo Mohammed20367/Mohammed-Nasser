@@ -124,59 +124,24 @@
     }
 
     // اختيار المقاس
-    dropdownOptions.addEventListener('click', function(e) {
-      if (e.target.classList.contains('dropdown-option') && !isDragging) {
-        dropdownOptions.querySelectorAll('.dropdown-option').forEach(option => {
-          option.classList.remove('selected');
-        });
+//     dropdownOptions.addEventListener('click', function(e) {
+                    if (e.target.classList.contains('dropdown-option') && !isDragging) {
+                        // إزالة التحديد من جميع الخيارات
+                        dropdownOptions.querySelectorAll('.dropdown-option').forEach(option => {
+                            option.classList.remove('selected');
+                        });
 
-        e.target.classList.add('selected');
-        selectedValue = e.target.dataset.value;
-        dropdownText.textContent = selectedValue;
-        dropdownHeader.classList.add('selected');
-        closeDropdown();
-
-        console.log('Selected size:', selectedValue);
-      }
-    });
-
-    // سكرول بالماوس Drag
-    dropdownOptions.addEventListener('mousedown', function(e) {
-      isDragging = true;
-      startY = e.pageY - dropdownOptions.offsetTop;
-      scrollTop = dropdownOptions.scrollTop;
-      dropdownOptions.style.cursor = 'grabbing';
-      e.preventDefault();
-    });
-
-    dropdownOptions.addEventListener('mouseleave', function() {
-      isDragging = false;
-      dropdownOptions.style.cursor = 'grab';
-    });
-
-    dropdownOptions.addEventListener('mouseup', function() {
-      isDragging = false;
-      dropdownOptions.style.cursor = 'grab';
-    });
-
-    dropdownOptions.addEventListener('mousemove', function(e) {
-      if (!isDragging) return;
-      e.preventDefault();
-      const y = e.pageY - dropdownOptions.offsetTop;
-      const walk = (y - startY) * 2;
-      dropdownOptions.scrollTop = scrollTop - walk;
-    });
-
-    // إغلاق عند الضغط برا
-    document.addEventListener('click', function(e) {
-      if (!dropdownHeader.contains(e.target) && !dropdownOptions.contains(e.target)) {
-        closeDropdown();
-      }
-    });
-
-    document.addEventListener('mouseup', function() {
-      isDragging = false;
-      dropdownOptions.style.cursor = 'grab';
-    });
-  });
-});
+                        // تحديد الخيار المختار
+                        e.target.classList.add('selected');
+                        selectedValue = e.target.dataset.value;
+                        dropdownText.textContent = selectedValue;
+                        
+                        // تحديث حالة الهيدر
+                        dropdownHeader.classList.add('selected');
+                        
+                        // إغلاق القائمة
+                        closeDropdown();
+                        
+                        console.log('Selected size:', selectedValue);
+                    }
+                });
