@@ -1,35 +1,47 @@
-.page
-{
-  margin:0;
-  padding:0;
-  width:1440px;
-  height:2000px;
-  gap:90px;
+/* =========================================================
+   Gift Guide — Cleaned CSS (same original class names)
+   Notes:
+   - Kept all original class names exactly as provided.
+   - Removed Arabic comments and broken comments.
+   - Fixed minor issues (missing px, duplicates, typos).
+   - Grouped logically with clear English comments.
+   ========================================================= */
+
+/* ============================= */
+/* 0) Base Page & Sections */
+/* ============================= */
+.page {
+  margin: 0;
+  padding: 0;
+  width: 1440px;
+  height: 2000px;
+  gap: 90px; /* gap on a non-flex/grid container has no effect; kept for compatibility */
 }
 
-.section1
-{
-  width:100%;
- height:auto;
+.section1 {
+  width: 100%;
+  height: auto;
   overflow: hidden;
 }
 
-.nav
-{
-  width:100%;
-  height:67px;
-  gap:360px;
-}  
+.nav {
+  width: 100%;
+  height: 67px;
+  gap: 360px;
+}
 
-
+/* ============================= */
+/* 1) Top Banner (first frame) */
+/* ============================= */
 .firstframe {
-display:flex;
+  display: flex;
   position: relative;
-  height:450px;
+  height: 450px;
   width: 100%;
   overflow: hidden;
   margin-top: -128px;
 }
+
 .imageinframe {
   display: block;
   width: 100%;
@@ -37,29 +49,31 @@ display:flex;
   object-fit: cover;
   position: absolute;
   z-index: 1;
-} 
- 
+}
+
+/* ============================= */
+/* 2) Top Bar (logo / message / CTA) */
+/* ============================= */
 .gift-top-bar {
   background: transparent;
   position: relative;
   z-index: 10;
-  display: flex;              /* Horizontal layout */
-  align-items: center;        /* Vertical centering */
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  gap: 5px;                   /* Space between text and button */
+  gap: 5px;
   background-color: #F5F5F5;
-  padding: 10px 50px;         /* top/bottom - left/right */
+  padding: 10px 50px;
   height: 64px;
-  
 }
 
-/* first image in nav */
+/* Top bar logo */
 .gift-icon--tisso {
   width: 151px;
   height: 19px;
 }
 
-/* Center message text */
+/* Top bar message */
 .gift-top-bar_message {
   display: flex;
   font-size: 16px;
@@ -67,100 +81,13 @@ display:flex;
   font-weight: 400;
   align-items: center;
   justify-content: center;
-  color:#000000;
+  color: #000000;
 }
 
-/* Button */
-.gift-button {
-  width: 207px;
-  height: 44px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 12px 16px;
-  border: 1px solid #000;
-  background: transparent;
-  text-decoration: none;
-  cursor: pointer;
-  position: relative;         
-  overflow: hidden;            
-  transition: color 0.35s ease, border-color 0.35s ease;
-}
-
-/* Yellow button -- highlighted */
-.gift-button--highlight {
-  background-color: #FFF544;
-  border-color: #FFF544;
-  font-weight: 400;
-}
-
-/* fill effect */
-.gift-button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: #000000;          
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 0.4s ease;
-  z-index: 0;
-}
-
-.gift-button .gift-icon--arrow-text,
-.gift-button .gift-icon--arrow {
-  position: relative;
-  z-index: 1;
-  transition: color 0.35s ease, filter 0.35s ease;
-}
-
-.gift-button:hover::before {
-  transform: scaleX(1);
-}
-
-.gift-button:hover .gift-icon--arrow-text {
-    transition: transform 0.4s ease;
-  color: #fff;
-}
-.gift-button:hover .gift-icon--arrow {
-  filter: brightness(0) invert(1);
-}
-
-/* Arrow text container */
-.gift-icon--arrow-text {
-  display: inline-block;
-  transition: transform 0.25s ease;
-}
-.gift-button:hover .gift-icon--arrow-text {
-  transform: translateX(4px);
-}
-
-/* Arrow line */
-.gift-icon--arrow {
-  display: inline-block;
-  width: 24px;
-  height: 100%;
-}
-
-
-
-/* Second frame in home page */
-
-.secondframe{
-  display: grid;            /* required to enable grid layout */
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.gift-hero__copy{
-  margin-left:8px;
- grid-column: span 1 / span 1;}
-
-.gift-hero__art{
-
-  grid-column: span 2/span 2;
-  width:90%;
-  margin-left:auto;
-}
+/* ============================= */
+/* 3) Buttons (shared CTA styles) */
+/* ============================= */
+.gift-button,
 .cta-button {
   width: 207px;
   height: 44px;
@@ -170,275 +97,240 @@ display:flex;
   gap: 20px;
   padding: 12px 16px;
   border: 1px solid #000;
-  background: #000;            
   text-decoration: none;
   cursor: pointer;
   position: relative;
   overflow: hidden;
   transition: color 0.35s ease, border-color 0.35s ease, background 0.35s ease;
-  color: #fff;                   /* النص أبيض */
+}
+
+/* Top bar highlighted yellow button */
+.gift-button {
+  background: transparent;
+}
+
+.gift-button--highlight {
+  background-color: #FFF544;
+  border-color: #FFF544;
   font-weight: 400;
 }
 
-/* fill effect */
+/* Black primary CTA (hero) */
+.cta-button {
+  background: #000;
+  color: #fff;
+  font-weight: 400;
+}
+
+/* Shared fill-on-hover effect */
+.gift-button::before,
 .cta-button::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: #FFF544;           /* أصفر */
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 0.4s ease;
   z-index: 0;
 }
 
-/* النص والسهم فوق الفيل */
+/* Fill colors per button */
+.gift-button::before { background: #000000; }
+.cta-button::before { background: #FFF544; }
+
+.gift-button .gift-icon--arrow-text,
+.gift-button .gift-icon--arrow,
 .cta-button .cta-text,
 .cta-button .cta-arrow {
   position: relative;
   z-index: 1;
-  transition: color 0.35s ease, filter 0.35s ease;
+  transition: color 0.35s ease, filter 0.35s ease, transform 0.4s ease;
 }
 
-/* Hover: شغّل الفيل */
+/* Hover states */
+.gift-button:hover::before,
 .cta-button:hover::before {
   transform: scaleX(1);
 }
 
-/* Hover: النص يبقى أسود */
-.cta-button:hover .cta-text {
-  transition: transform 0.4s ease;
-  color: #000;
-}
+.gift-button:hover .gift-icon--arrow-text { color: #fff; transform: translateX(4px); }
+.gift-button:hover .gift-icon--arrow     { filter: brightness(0) invert(1); }
 
-/* السهم: أبيض أساسي */
-.cta-arrow {
-  display: inline-block;
-  width: 24px;
-  height: 100%;
-  filter: brightness(0) invert(1); /* يخليه أبيض */
-  transition: filter 0.35s ease;
-}
+.cta-button:hover .cta-text  { color: #000; transform: translateX(4px); }
+.cta-button:hover .cta-arrow { filter: none; }
 
-/* Hover: السهم يبقى أسود */
-.cta-button:hover .cta-arrow {
-  filter: none;
-}
-
-/* النص */
+/* Arrow/text wrappers */
+.gift-icon--arrow-text,
 .cta-text {
   display: inline-block;
   transition: transform 0.25s ease;
 }
-.cta-button:hover .cta-text {
-  transform: translateX(4px);
+
+.gift-icon--arrow,
+.cta-arrow {
+  display: inline-block;
+  width: 24px;
+  height: 100%;
 }
 
+/* Default arrow color in black CTA is white */
+.cta-arrow { filter: brightness(0) invert(1); }
 
-/*الديف الي ع الشمال*/
+/* ============================= */
+/* 4) Second frame: grid (content + image) */
+/* ============================= */
+.secondframe {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 
-/* أنماط معدلة لمنع الطول الزائد */
+.gift-hero__copy {
+  margin-left: 8px;
+  grid-column: span 1 / span 1;
+}
 
-.gift-hero__title
-{
- margin-top:30px;
-  margin-left:30px;
+.gift-hero__art {
+  grid-column: span 2 / span 2;
+  width: 90%;
+  margin-left: auto;
+}
+
+.gift-hero__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hero content text */
+.gift-hero__title {
+  margin-top: 30px;
+  margin-left: 30px;
   font-family: 'Jost', sans-serif;
   font-weight: 500;
-  font-style: Medium;
   font-size: 52px;
-  leading-trim: NONE;
   line-height: 100%;
-  letter-spacing: 0px;
+  letter-spacing: 0;
   vertical-align: middle;
-
-}
-.gift-hero__text
-{
-margin-bottom:35px;
-margin-left:30px;
-font-family: 'Jost', sans-serif;
-font-weight: 400;
-font-style: Regular;
-font-size: 15px;
-leading-trim: NONE;
-line-height: 140%;
-letter-spacing: 0px;
-vertical-align: middle;
-width:100%
-
-}
-.cta-button
-{
-  margin-left:25px;
 }
 
-/**/
-
-.gift-hero__img
-{
-  width:100%;
-}
-
-/* مقاسات الهيرو والتحريك لفوق */
-
-
-/* الشريط السفلي */
-.gift-hero__ticker{
-  background-color:#F5F5F5;
-  color:#000000;
-  width:100%;
-  height:34px;
-  text-align:center;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  font-size:12px;
-  padding:10px 50px;
+.gift-hero__text {
+  margin-bottom: 35px;
+  margin-left: 30px;
   font-family: 'Jost', sans-serif;
   font-weight: 400;
-  font-style: Regular;
-  font-size: 16px;
-  line-height: 13.42px;
-  letter-spacing: 0px;
-  text-align: center;
+  font-size: 15px;
+  line-height: 140%;
+  letter-spacing: 0;
   vertical-align: middle;
-  gap:375px
+  width: 100%;
 }
 
-/* موبايل: الصورة فوق */
+.cta-button {
+  margin-left: 25px;
+}
+
+/* Bottom ticker under hero */
+.gift-hero__ticker {
+  background-color: #F5F5F5;
+  color: #000000;
+  width: 100%;
+  height: 34px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .08em; /* visually similar to original */
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 13.42px; /* kept from original */
+  padding: 10px 50px;
+  vertical-align: middle;
+  gap: 375px; /* has no effect here; kept for compatibility */
+}
+
+/* Mobile stacking for hero */
 @media (max-width: 768px){
-  .gift-hero__inner{ grid-template-columns:1fr; }
-  .gift-hero__art{
-    order:-1;
+  .gift-hero__inner { grid-template-columns: 1fr; } /* if used in markup */
+  .gift-hero__art {
+    order: -1;
     height: clamp(160px, 40vw, 220px);
   }
 }
 
-
-
-
-
-
-
-/second section/
- .section2 { 
-  gap:30px;
-  margin:20px 20px;
- }
-
-.part-two{
-  width: min(100%, 1337px);   /* نفس عرض فيجما كحد أقصى */
-  margin: 0 auto;
-  padding:30px 20px 20px 20px;
-  height:982px;
-  height:auto;
-  width:1337;
-
+/* ============================= */
+/* 5) Section 2: Product grid */
+/* ============================= */
+/* Container */
+.section2 { 
+  gap: 30px;
+  margin: 20px 20px;
 }
 
-.wild-title{
+/* Inner wrapper */
+.part-two {
+  width: 1337px;            /* fixed width corrected (px) */
+  max-width: 100%;          /* responsive guard */
+  margin: 0 auto;
+  padding: 30px 20px 20px 20px;
+  height: auto;             /* remove fixed height for flexibility */
+}
+
+/* Section title */
+.wild-title {
   font-family: 'Lustria', 'Jost', system-ui, sans-serif;
   font-weight: 400;
   font-size: clamp(20px, 2.2vw, 28px);
   margin: 8px 0 20px;
 }
 
-/* الشبكة */
-.grid-container{
+/* Grid layout */
+.grid-container {
   display: grid;
   grid-template-columns: repeat(3, minmax(0,1fr));
-  gap: 20px;                               /* من فيجما */
+  gap: 20px;
 }
 
-/* كل كارت */
-.grid-item{
+/* Grid card */
+.grid-item {
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,.08);
-  height:auto                     /* مربعات متساوية */
-  background:#f6f6f6;
+  height: auto;
+  background: #f6f6f6;
 }
 
-.grid-item img{
-  width: 433px;
-  height: 444px;
+/* Card image */
+.grid-item img {
   display: block;
-  object-fit: cover; 
-  display: block;     /* يشيل أي مساحة بيضا من inline-block */
-  max-width: 100%;    /* عشان ما تتجاوزش حجم الديف */
-  height: auto;       /* يحافظ على نسبة العرض والارتفاع */
-  object-fit: contain; /* يخلي الصورة تبان بالكامل */
-  object-position: left;                        /* تقطيع نظيف */
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: left;
 }
 
+/* Plus icons (floating hotspots) */
+.plus-icon1 { position: absolute; top: 58%; right: 120px; }
+.plus-icon2 { position: absolute; top: 190px; right: 40px; }
+.plus-icon3 { position: absolute; top: 80px;  right: 125px; }
+.plus-icon4 { position: absolute; top: 55px;  right: 85px;  }
+.plus-icon5 { position: absolute; top: 90px;  right: 170px; }
+.plus-icon6 { position: absolute; top: 145px; right: 75px;  }
 
-
-
-/* زرار + */
-.plus-icon1{
-  position: absolute;
-  top: 58%;
-  right: 120px;
-  /* هنلعب ف ال6 ف التوب والرايت والليفت لحد مانوصل*/
- 
-}
-.plus-icon2{
-  position: absolute;
-  top: 190px;
-  right: 40px;
-  
- 
-}
-.plus-icon3{
-  position: absolute;
-  top: 80px;
-  right: 125px;
-  
- 
-}
-.plus-icon4{
-  position: absolute;
-  top: 55px;
-  right: 85px;
-  
- 
-}
-.plus-icon5{
-  position: absolute;
-  top: 90px;
-  right: 170px;
-  
- 
-}
-.plus-icon6{
-  position: absolute;
-  top: 145px;
-  right: 75px;
-  
- 
-}
-.plusimage
-{
-   width: 22px !important;
+.plusimage {
+  width: 22px !important;
   height: 22px !important;
 }
 
-/* ريسبونسيف */
+/* Responsive grid breakpoints */
 @media (max-width: 992px){
-  .grid-container{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .grid-container { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
-
 @media (max-width: 576px){
-  .grid-container{ grid-template-columns: 1fr; }
-  .wild-title{ margin-bottom: 14px; }
+  .grid-container { grid-template-columns: 1fr; }
+  .wild-title { margin-bottom: 14px; }
 }
-
-
-
-/*تجربه*/
 
 /* ============================= */
-/* Popup Wrapper & Overlay */
+/* 6) Popup (Quick look modal) */
 /* ============================= */
 .gift-popup {
   position: fixed;
@@ -447,16 +339,11 @@ width:100%
   display: none;
   z-index: 1000;
 }
-.gift-popup.is-open {
-  display: block;
-}
+.gift-popup.is-open { display: block; }
 
-/* ============================= */
-/* Popup Card */
-/* ============================= */
 .gift-popup__card.gift-popup--figma {
-  height:auto;
-  width: 311px; /* 👈 زود/قلل عرض الكارد من هنا */
+  height: auto;
+  width: 311px;
   background: #fff;
   border-radius: 8px;
   border: 1px solid #D9D9D9;
@@ -465,14 +352,12 @@ width:100%
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 16px; /* 👈 padding عام للكارد */
+  padding: 16px;
   font-family: 'Jost', sans-serif;
   color: #111;
 }
 
-/* ============================= */
-/* Close Button */
-/* ============================= */
+/* Close button */
 .gift-popup__close {
   position: absolute;
   top: 6px;
@@ -484,190 +369,135 @@ width:100%
   color: #111;
   transition: color 0.2s ease;
 }
-.gift-popup__close:hover {
-  color: #000;
-}
+.gift-popup__close:hover { color: #000; }
 
-/* ============================= */
-/* Product Head */
-/* ============================= */
+/* Product head (image + meta) */
 .gift-head {
-  margin-top:12px;
+  margin-top: 12px;
   display: grid;
-  grid-template-columns: 120px 1fr; /* 👈 حجم الصورة بالنسبة للنص */
+  grid-template-columns: 120px 1fr;
   column-gap: 12px;
-  margin-bottom: 0px; /* 👈 المسافة بين الصورة وباقي العناصر */
+  margin-bottom: 0;
 }
 
-.gift-head__img {/* 👈 عرض الصورة */
+.gift-head__img {
   width: 120px;
   height: 140px;
-  top: 36px;
+  top: 36px; /* non-positioned, harmless; kept for compatibility */
   left: 17px;
   opacity: 1;
   object-fit: cover;
 }
-.gift-head__title {/* 👈 حجم عنوان المنتج */
-  margin: 0 0 6px;
-  margin-top:5px;
-  width: 136;
-  height: 19;
-  top: 49px;
-  left: 145px;
-  opacity: 1;
+
+.gift-head__title {
+  margin: 5px 0 6px;
+  width: 136px; /* corrected unit */
+  height: 19px; /* corrected unit */
   font-family: 'Jost', sans-serif;
   font-weight: 300;
-  font-style: Light;
   font-size: 16px;
   line-height: 120%;
-  letter-spacing: 0px;
+  letter-spacing: 0;
   vertical-align: middle;
 }
-.gift-head__price {/* 👈 حجم السعر */
-  margin-top:15px;
-  width: 64;
-  height: 19;
-  top: 88px;
-  left: 145px;
-  opacity: 1;
+
+.gift-head__price {
+  margin-top: 15px;
+  width: 64px;  /* corrected unit */
+  height: 19px; /* corrected unit */
   font-family: 'Lustria';
   font-weight: 400;
-  font-style: Regular;
   font-size: 16px;
   line-height: 120%;
-  letter-spacing: 0px;
+  letter-spacing: 0;
   vertical-align: middle;
 }
-.gift-head__desc {/* 👈 حجم وصف المنتج */
-  margin-top:10px;
-  width: 146;
-  height: 60;
-  top: 119px;
-  left: 145px;
-  opacity: 1;
+
+.gift-head__desc {
+  margin-top: 10px;
+  width: 146px; /* corrected unit */
+  height: 60px;  /* corrected unit */
   font-family: 'Jost', sans-serif;
   font-weight: 300;
-  font-style: Light;
   font-size: 14px;
-  line-height: 110.00000000000001%;
+  line-height: 110%;
   letter-spacing: -1%;
   color: #000000;
 }
 
 /* ============================= */
-/* Fields & Labels */
+/* 7) Popup fields: color swatches */
 /* ============================= */
 .gift-field__label {
-  width: 33;
-  height: 18;
-  opacity: 1;
   font-family: 'Jost', sans-serif;
   font-weight: 400;
-  font-style: Regular;
   font-size: 14px;
   line-height: 130%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   display: block;
-  margin: 5px 0 8px; /* 👈 المسافة بين الليبل والعنصر */
+  margin: 5px 0 8px;
   color: #333333;
 }
 
-/* ============================= */
-/* Color Swatches */
-/* ============================= */
 .gift-swatches {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-  display: flex;          /* خليتهم جمب بعض */
-  gap: 0;                 /* شلت أي مسافة بينهم */
-  border: 1px solid #111; /* البوردر الخارجي */
-  border-radius: 6px;     /* يدي كورنر ناعم للكادر كله */
-  overflow: hidden; 
-  text-align:center;
-  height: 40.441322326660156px;
-   display: flex;
+  display: flex;
+  gap: 0;
   border: 1px solid #111;
   border-radius: 6px;
   overflow: hidden;
+  height: 40.44px; /* kept close to original 40.4413… */
 }
+
 .gift-swatch {
   font-family: 'Jost', sans-serif;
-  margin-bottom: 10px;        /* المسافة بين كلمة Size والزرار */
-  flex: 1;                    /* كل واحد ياخد نص العرض */
+  margin-bottom: 10px; /* vertical rhythm below label */
+  flex: 1;
   height: 40px;
-  border: none;               /* شيل البوردر الداخلي */
+  border: none;
   border-radius: 4px;
-  font-size: 18px;            /* حجم الخط */
+  font-size: 18px;
   cursor: pointer;
   background: #fff;
   transition: all 0.2s ease;
-  display: flex;              
-  align-items: center;        /* يوسّط عمودي */
-  justify-content: center;    /* يوسّط أفقي */
-  gap: 6px;                   /* مسافة بين المربع والكلمة */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
 
-.gift-swatch:hover {
-  background: #f4f4f4;
-}
+.gift-swatch:hover { background: #f4f4f4; }
 .gift-swatch.is-active {
   background: #000;
   color: #fff;
 }
 
+/* Tiny separator element inside swatches (if used) */
 .gift-swatches span {
   width: 7px;
   opacity: 1;
-  border-width: 0.5px;
-  border: 0.5px solid ; /* علشان الأبيض يبان */
+  border: 0.5px solid; /* to make white visible */
 }
 
-.gift-swatch.is-active {
-  background: #000;
-  color: #fff;
-}
-
-.cwhite {
-  background-color: #FFFFFF;
-}
-.cblack
-{
-  background-color: #000000;
-}
-.cblue
-{
-  background-color:#0D499F;
-}
-.cred
-{
-  background-color:#B20F36;
-}
-.cgrey
-{
-  background-color:#AFAFB7;
-}
+/* Color helpers */
+.cwhite { background-color: #FFFFFF; }
+.cblack { background-color: #000000; }
+.cblue  { background-color: #0D499F; }
+.cred   { background-color: #B20F36; }
+.cgrey  { background-color: #AFAFB7; }
 
 /* ============================= */
-/* Size Select */
-/* ============================= */
-/* ============================= */
-/* Size Select - Updated Style */
-/* ============================= */
-
-/* ============================= */
-/* CTA Button */
+/* 8) Popup: Add to Cart CTA */
 /* ============================= */
 .gift-cta {
   width: 100%;
-  height: 46px; /* 👈 طول زرار Add To Cart */
+  height: 46px;
   margin-top: 50px;
-  margin-bottom:20px;
+  margin-bottom: 20px;
   background: #000;
   color: #fff;
   border: 0;
   border-radius: 4px;
-  font-size: 13px; /* 👈 حجم الخط داخل الزرار */
+  font-size: 13px;
   font-weight: 700;
   cursor: pointer;
   display: flex;
@@ -677,191 +507,160 @@ width:100%
   text-transform: uppercase;
   transition: background 0.2s ease;
 }
-.gift-cta:hover {
-  background: #333;
-}
+.gift-cta:hover { background: #333; }
+
 .gift-cta__arrow {
   width: 18px;
   filter: brightness(0) invert(1);
 }
 
 /* ============================= */
-/* Responsive */
+/* 9) Dropdown (sizes) */
+/* ============================= */
+.dropdown-text { text-align: left; }
+
+.size-field { margin-bottom: 20px; }
+
+.size-field__label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333333;
+}
+
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+  max-width: 271px;
+}
+
+.dropdown-header {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #D9D9D9;
+  border-radius: 0;
+  background-color: #FFFFFF;
+  padding: 0 45px 0 16px;
+  font-size: 16px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  transition: all 0.2s ease;
+  position: relative;
+  user-select: none;
+}
+.dropdown-header:hover { border-color: #999; }
+.dropdown-header.active {
+  border-color: #000;
+  color: #000;
+  border-bottom: none;
+}
+
+.dropdown-header.selected { color: #000; }
+
+.dropdown-arrow {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdown-divider {
+  width: 1px;
+  height: 20px;
+  background: #D9D9D9;
+}
+
+.dropdown-arrow svg {
+  width: 16px;
+  height: 16px;
+  stroke: #000;
+  stroke-width: 2;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-header.active .dropdown-arrow svg {
+  transform: rotate(180deg);
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #000;
+  border-top: none;
+  border-radius: 0;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+  height: 120px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  cursor: grab;
+}
+.dropdown-options:active { cursor: grabbing; }
+.dropdown-options::-webkit-scrollbar { display: none; }
+.dropdown-options.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-option {
+  padding: 8px 16px;
+  font-size: 16px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  color: #000;
+  cursor: pointer;
+  text-align: center;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.2s ease;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+.dropdown-option:last-child { border-bottom: none; }
+.dropdown-option:hover {
+  background-color: #000;
+  color: #fff;
+}
+.dropdown-option.selected {
+  background-color: #000;
+  color: #fff;
+}
+
+/* ============================= */
+/* 10) Popup responsiveness */
 /* ============================= */
 @media (max-width: 480px) {
   .gift-popup__card.gift-popup--figma {
-    width: 90%; /* 👈 الكارد يبقى مرن على الموبايل */
+    width: 90%;
     padding: 14px;
   }
   .gift-head {
-    grid-template-columns: 100px 1fr; /* 👈 الصورة تصغر في الموبايل */
+    grid-template-columns: 100px 1fr;
   }
   .gift-head__img {
     width: 100px;
     height: 100px;
   }
 }
-
-
-
-
-
-
-.dropdown-text
-{
-  text-align:left;
-}
-.size-field {
-            margin-bottom: 20px;
-        }
-
-        .size-field__label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 14px;
-            font-weight: 400;
-            color: #333333;
-        }
-
-        .custom-dropdown {
-            position: relative;
-            width: 100%;
-            max-width: 271px;
-        }
-
-        .dropdown-header {
-            width: 100%;
-            height: 40px;
-            border: 1px solid #D9D9D9;
-            border-radius: 0;
-            background-color: #FFFFFF;
-            padding: 0 45px 0 16px;
-            font-size: 16px;
-            font-family: 'Jost', sans-serif;
-            font-weight: 400;
-            color: #000;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: start;
-            transition: all 0.2s ease;
-            position: relative;
-            user-select: none;
-        }
-
-        .dropdown-header:hover {
-            border-color: #999;
-        }
-
-        .dropdown-header.active {
-            border-color: #000;
-            color: #000;
-            border-bottom: none;
-        }
-
-        .dropdown-header.selected {
-            color: #000;
-        }
-
-        .dropdown-arrow {
-            position: absolute;
-            right: 16px;
-            top: 50%;
-            transform: translateY(-50%);
-            pointer-events: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .dropdown-divider {
-          
-            width: 1px;
-            height: 20px;
-            background: #D9D9D9;
-        }
-
-        .dropdown-arrow svg {
-          border:30px;
-            width: 16px;
-            height: 16px;
-            stroke: #000;
-            stroke-width: 2;
-            transition: transform 0.2s ease;
-        }
-
-        .dropdown-header.active .dropdown-arrow svg {
-            transform: rotate(180deg);
-        }
-
-        .dropdown-options {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: white;
-            border: 1px solid #000;
-            border-top: none;
-            border-radius: 0;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.2s ease;
-            height: 120px;
-            overflow-y: auto;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-            cursor: grab;
-        }
-
-        .dropdown-options:active {
-            cursor: grabbing;
-        }
-
-        .dropdown-options::-webkit-scrollbar {
-            display: none;
-        }
-
-        .dropdown-options.show {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown-option {
-            padding: 8px 16px;
-            font-size: 16px;
-            font-family: 'Jost', sans-serif;
-            font-weight: 400;
-            color: #000;
-            cursor: pointer;
-            text-align: center;
-            border-bottom: 1px solid #f0f0f0;
-            transition: all 0.2s ease;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #fff;
-        }
-
-        .dropdown-option:last-child {
-            border-bottom: none;
-        }
-
-        .dropdown-option:hover {
-            background-color: #000;
-            color: #fff;
-        }
-
-        .dropdown-option.selected {
-            background-color: #000;
-            color: #fff;
-        }
-
-
-
-
