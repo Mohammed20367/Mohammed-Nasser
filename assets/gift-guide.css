@@ -390,7 +390,6 @@ display:flex;
   left: 17px;
   opacity: 1;
   object-fit: cover;
-  border-radius: 8px;
 }
 .gift-head__title {/* 👈 حجم عنوان المنتج */
   margin: 0 0 6px;
