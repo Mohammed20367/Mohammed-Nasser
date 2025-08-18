@@ -320,7 +320,7 @@ display:flex;
 
 
 
-/تجربه/
+/*تجربه*/
 
 /* ============================= */
 /* Popup Wrapper & Overlay */
@@ -536,42 +536,152 @@ display:flex;
 /* ============================= */
 /* Size Select */
 /* ============================= */
-.gift-select {
-opacity: 1;
-border-width: 1px;
-position: relative;
-}
-.gift-select select {
-  width: 271px;             /* 👈 نفس العرض من Figma */
-  height: 40px;             /* 👈 ارتفاع البوكس نفسه */
-  border: 1px solid #000;   /* 👈 البوردر أسود */
-  border-radius: 4px;
-  padding: 0 12px;          /* مسافة داخلية */
-  font-size: 13px;
-  background: #fff;
-  appearance: none;
-  cursor: pointer;
-}
+/* ============================= */
+/* Size Select - Updated Style */
+/* ============================= */
+  .size-field__label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #333333;
+        }
 
-/* التحكم في العناصر داخل القائمة */
-.gift-select select option {
-  height: 30px;             /* 👈 يخلي كل عنصر أنحف */
-  line-height: 30px;        /* 👈 يضبط ارتفاع السطر */
-  text-align: center;       /* 👈 النص في النص */
-  font-size: 13px;
-}
+        .custom-dropdown {
+            position: relative;
+            width: 271px;
+        }
 
+        .dropdown-header {
+            width: 100%;
+            height: 40px;
+            border: 1px solid #D9D9D9;
+            border-radius: 0;
+            background-color: #FFFFFF;
+            padding: 0 45px 0 16px;
+            font-size: 16px;
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+            color: #666;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* 👈 النص على الشمال */
+            transition: all 0.2s ease;
+            position: relative;
+        }
 
+        .dropdown-header:hover {
+            border-color: #999;
+        }
 
+        .dropdown-header.active {
+            border-color: #000;
+            color: #000;
+            border-bottom: none;
+        }
 
-.gift-select__chev {
-  
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-}
+        .dropdown-header.selected {
+            color: #000;
+        }
+
+        .dropdown-arrow {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dropdown-divider {
+            width: 1px;
+            height: 20px;
+            background: #D9D9D9;
+        }
+
+        .dropdown-arrow svg {
+            width: 16px;
+            height: 16px;
+            stroke: #000;
+            stroke-width: 2;
+            transition: transform 0.2s ease;
+        }
+
+        .dropdown-header.active .dropdown-arrow svg {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-options {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #000;
+            border-top: none;
+            border-radius: 0;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            max-height: 120px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            /* 👈 تفعيل الـ drag scroll */
+            cursor: grab;
+            user-select: none;
+        }
+
+        .dropdown-options:active {
+            cursor: grabbing;
+        }
+
+        .dropdown-options::-webkit-scrollbar {
+            display: none;
+        }
+
+        .dropdown-options.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-option {
+            padding: 8px 16px;
+            font-size: 16px;
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+            color: #000;
+            cursor: pointer;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.2s ease;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dropdown-option:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-option:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .dropdown-option.selected {
+            background-color: #000;
+            color: #fff;
+        }
 
 /* ============================= */
 /* CTA Button */
@@ -618,4 +728,108 @@ position: relative;
     width: 100px;
     height: 100px;
   }
+}
+
+
+
+
+
+
+
+
+
+.gift-field__label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-family: 'Jost', sans-serif;
+  color: #333;
+}
+
+.gift-select {
+  position: relative;
+  display: inline-block;
+  width: 271px;     /* من Figma */
+  height: 40px;
+  background-color: #fff; /* خلفية بيضا */
+  color: #000;  
+}
+
+.gift-select select {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 0 45px 0 12px; 
+  font-size: 16px;                 
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  line-height: 100%;                
+  letter-spacing: -0.02em;          
+  cursor: pointer;
+  background-color: #fff;           /* ✅ خلفية بيضا للـ dropdown */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-align: center;               /* المقاسات في النص */
+  color: #000;
+}
+
+/* ✅ المقاسات في النص */
+.gift-select select option:not([disabled]) {
+  text-align: center;
+  height: 36px;           
+  line-height: 36px;      /* ← لو عايز تزود المسافة زوّد القيمة هنا */
+}
+
+/* ✅ الهوفر على الأوبشن */
+.gift-select select option:hover {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* ✅ السهم والفاصل */
+.gift-select__chev {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50px;         
+  display: flex;
+  align-items: center;      
+  justify-content: center; 
+  pointer-events: none;
+  background: transparent;
+}
+
+.gift-select__chev img {
+  position: absolute;
+  left: 0;                      
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  width: auto;
+}
+
+.gift-select__chev svg {
+  width: 16px;
+  height: 16px;
+  stroke: black;
+  transition: transform 0.2s ease;
+}
+
+/* ✅ placeholder */
+.gift-placeholder {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  vertical-align: middle;
+  color: #000; 
 }
