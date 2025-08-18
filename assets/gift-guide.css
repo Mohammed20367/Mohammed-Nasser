@@ -165,6 +165,95 @@ display:flex;
       /* من أول عمود لآخر عمود (3) */
 }
 
+/*الديف الي ع الشمال*/
+
+/* أنماط قسم The Gift Guide */
+.gift-hero__copy {
+  max-width: 600px;
+  padding: 40px;
+  text-align: left;
+  font-family: 'Jost', sans-serif;
+  margin: 0 auto;
+}
+
+.gift-hero__title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.gift-hero__text {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.gift-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #000;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border: 1px solid #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.gift-btn:hover {
+  background-color: #333;
+  border-color: #333;
+}
+
+.gift-btn::after {
+  content: "→";
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.gift-btn:hover::after {
+  transform: translateX(4px);
+}
+
+/* تأثيرات للشاشات الكبيرة */
+@media (min-width: 768px) {
+  .gift-hero__copy {
+    padding: 60px;
+  }
+  
+  .gift-hero__title {
+    font-size: 48px;
+  }
+  
+  .gift-hero__text {
+    font-size: 20px;
+  }
+}
+
+/* تأثيرات للشاشات الصغيرة */
+@media (max-width: 480px) {
+  .gift-hero__copy {
+    padding: 30px 20px;
+  }
+  
+  .gift-hero__title {
+    font-size: 32px;
+  }
+  
+  .gift-hero__text {
+    font-size: 16px;
+  }
+}
 
 .gift-hero__img
 {
