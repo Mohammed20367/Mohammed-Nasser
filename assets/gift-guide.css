@@ -1,4 +1,4 @@
- .page
+.page
 {
   margin:0;
   padding:0;
@@ -11,7 +11,7 @@
 {
   width:100%;
  height:auto;
-  
+  overflow: hidden;
 }
 
 .nav
@@ -211,7 +211,7 @@ display:flex;
 
 
 
-/*second section*/
+/second section/
  .section2 { 
   gap:30px;
   margin:20px 20px;
@@ -256,6 +256,8 @@ display:flex;
   display: block;
   object-fit: cover;                         /* تقطيع نظيف */
 }
+
+
 
 /* زرار + */
 .plus-icon1{
@@ -316,6 +318,307 @@ display:flex;
   .wild-title{ margin-bottom: 14px; }
 }
 
+
+
+/*تجربه*/
+
+/* ============================= */
+/* Popup Wrapper & Overlay */
+/* ============================= */
+.gift-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
+  z-index: 1000;
+}
+.gift-popup.is-open {
+  display: block;
+}
+
+/* ============================= */
+/* Popup Card */
+/* ============================= */
+.gift-popup__card.gift-popup--figma {
+  height:auto;
+  width: 311px; /* 👈 زود/قلل عرض الكارد من هنا */
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #D9D9D9;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 16px; /* 👈 padding عام للكارد */
+  font-family: 'Jost', sans-serif;
+  color: #111;
+}
+
+/* ============================= */
+/* Close Button */
+/* ============================= */
+.gift-popup__close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: transparent;
+  border: 0;
+  font-size: 18px;
+  cursor: pointer;
+  color: #111;
+  transition: color 0.2s ease;
+}
+.gift-popup__close:hover {
+  color: #000;
+}
+
+/* ============================= */
+/* Product Head */
+/* ============================= */
+.gift-head {
+  margin-top:12px;
+  display: grid;
+  grid-template-columns: 120px 1fr; /* 👈 حجم الصورة بالنسبة للنص */
+  column-gap: 12px;
+  margin-bottom: 0px; /* 👈 المسافة بين الصورة وباقي العناصر */
+}
+
+.gift-head__img {/* 👈 عرض الصورة */
+  width: 120px;
+  height: 140px;
+  top: 36px;
+  left: 17px;
+  opacity: 1;
+  object-fit: cover;
+}
+.gift-head__title {/* 👈 حجم عنوان المنتج */
+  margin: 0 0 6px;
+  margin-top:5px;
+  width: 136;
+  height: 19;
+  top: 49px;
+  left: 145px;
+  opacity: 1;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-style: Light;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0px;
+  vertical-align: middle;
+}
+.gift-head__price {/* 👈 حجم السعر */
+  margin-top:15px;
+  width: 64;
+  height: 19;
+  top: 88px;
+  left: 145px;
+  opacity: 1;
+  font-family: 'Lustria';
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0px;
+  vertical-align: middle;
+}
+.gift-head__desc {/* 👈 حجم وصف المنتج */
+  margin-top:10px;
+  width: 146;
+  height: 60;
+  top: 119px;
+  left: 145px;
+  opacity: 1;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-style: Light;
+  font-size: 14px;
+  line-height: 110.00000000000001%;
+  letter-spacing: -1%;
+  color: #000000;
+}
+
+/* ============================= */
+/* Fields & Labels */
+/* ============================= */
+.gift-field__label {
+  width: 33;
+  height: 18;
+  opacity: 1;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  display: block;
+  margin: 5px 0 8px; /* 👈 المسافة بين الليبل والعنصر */
+  color: #333333;
+}
+
+/* ============================= */
+/* Color Swatches */
+/* ============================= */
+.gift-swatches {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  display: flex;          /* خليتهم جمب بعض */
+  gap: 0;                 /* شلت أي مسافة بينهم */
+  border: 1px solid #111; /* البوردر الخارجي */
+  border-radius: 6px;     /* يدي كورنر ناعم للكادر كله */
+  overflow: hidden; 
+  text-align:center;
+  height: 40.441322326660156px;
+   display: flex;
+  border: 1px solid #111;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.gift-swatch {
+  font-family: 'Jost', sans-serif;
+  margin-bottom: 10px;        /* المسافة بين كلمة Size والزرار */
+  flex: 1;                    /* كل واحد ياخد نص العرض */
+  height: 40px;
+  border: none;               /* شيل البوردر الداخلي */
+  border-radius: 4px;
+  font-size: 18px;            /* حجم الخط */
+  cursor: pointer;
+  background: #fff;
+  transition: all 0.2s ease;
+  display: flex;              
+  align-items: center;        /* يوسّط عمودي */
+  justify-content: center;    /* يوسّط أفقي */
+  gap: 6px;                   /* مسافة بين المربع والكلمة */
+}
+
+.gift-swatch:hover {
+  background: #f4f4f4;
+}
+.gift-swatch.is-active {
+  background: #000;
+  color: #fff;
+}
+
+.gift-swatches span {
+  width: 7px;
+  opacity: 1;
+  border-width: 0.5px;
+  border: 0.5px solid ; /* علشان الأبيض يبان */
+}
+
+.gift-swatch.is-active {
+  background: #000;
+  color: #fff;
+}
+
+.cwhite {
+  background-color: #FFFFFF;
+}
+.cblack
+{
+  background-color: #000000;
+}
+.cblue
+{
+  background-color:#0D499F;
+}
+.cred
+{
+  background-color:#B20F36;
+}
+.cgrey
+{
+  background-color:#AFAFB7;
+}
+
+/* ============================= */
+/* Size Select */
+/* ============================= */
+.gift-select {
+opacity: 1;
+border-width: 1px;
+position: relative;
+}
+.gift-select select {
+  width: 271px;             /* 👈 نفس العرض من Figma */
+  height: 40px;             /* 👈 ارتفاع البوكس نفسه */
+  border: 1px solid #000;   /* 👈 البوردر أسود */
+  border-radius: 4px;
+  padding: 0 12px;          /* مسافة داخلية */
+  font-size: 13px;
+  background: #fff;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* التحكم في العناصر داخل القائمة */
+.gift-select select option {
+  height: 30px;             /* 👈 يخلي كل عنصر أنحف */
+  line-height: 30px;        /* 👈 يضبط ارتفاع السطر */
+  text-align: center;       /* 👈 النص في النص */
+  font-size: 13px;
+}
+
+
+
+
+.gift-select__chev {
+  
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* ============================= */
+/* CTA Button */
+/* ============================= */
+.gift-cta {
+  width: 100%;
+  height: 46px; /* 👈 طول زرار Add To Cart */
+  margin-top: 50px;
+  margin-bottom:20px;
+  background: #000;
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  font-size: 13px; /* 👈 حجم الخط داخل الزرار */
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-transform: uppercase;
+  transition: background 0.2s ease;
+}
+.gift-cta:hover {
+  background: #333;
+}
+.gift-cta__arrow {
+  width: 18px;
+  filter: brightness(0) invert(1);
+}
+
+/* ============================= */
+/* Responsive */
+/* ============================= */
+@media (max-width: 480px) {
+  .gift-popup__card.gift-popup--figma {
+    width: 90%; /* 👈 الكارد يبقى مرن على الموبايل */
+    padding: 14px;
+  }
+  .gift-head {
+    grid-template-columns: 100px 1fr; /* 👈 الصورة تصغر في الموبايل */
+  }
+  .gift-head__img {
+    width: 100px;
+    height: 100px;
+  }
+}
 
 
 
