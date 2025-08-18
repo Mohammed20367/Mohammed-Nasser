@@ -75,12 +75,27 @@ document.addEventListener('click', function(e) {
 
 
 
-const select = document.getElementById("size");
-const placeholder = document.getElementById("placeholder");
+document.addEventListener("DOMContentLoaded", function () {
+  // لما ندوس على أي plus-icon
+  document.querySelectorAll("[data-popup-open]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      const popupId = btn.getAttribute("data-popup-open");
+      const popup = document.querySelector(`[data-popup="${popupId}"]`);
+      if (popup) {
+        popup.setAttribute("aria-hidden", "false");
+        popup.classList.add("active");
+      }
+    });
+  });
 
-// ✅ لما يختار أي مقاس، نخفي الـ placeholder
-select.addEventListener("change", () => {
-  if (select.value !== "") {
-    placeholder.style.display = "none";
-  }
+  // لما ندوس على زرار × نقفل
+  document.querySelectorAll(".gift-popup__close").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      const popup = btn.closest(".gift-popup");
+      if (popup) {
+        popup.setAttribute("aria-hidden", "true");
+        popup.classList.remove("active");
+      }
+    });
+  });
 });
