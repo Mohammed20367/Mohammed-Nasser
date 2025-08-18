@@ -721,3 +721,10 @@
     margin-top: 12px !important;
   }
 }
+.gift-hero__title,
+.gift-hero__subtitle,
+.gift-hero__note {
+  word-break: keep-all !important;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+}
