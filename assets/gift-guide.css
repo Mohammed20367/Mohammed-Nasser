@@ -167,36 +167,46 @@ display:flex;
 
 /*الديف الي ع الشمال*/
 
-/* أنماط قسم The Gift Guide */
+/* أنماط معدلة لمنع الطول الزائد */
 .gift-hero__copy {
   max-width: 600px;
-  height:402px;
-  padding: 20px;
-  text-align: left;
+  padding: 40px 20px;
+  text-align: center;
   font-family: 'Jost', sans-serif;
   margin: 0 auto;
 }
 
 .gift-hero__title {
-  font-size: 42px;
+  font-size: clamp(32px, 5vw, 48px);
   font-weight: 700;
   color: #000;
-  margin-bottom: 20px;
-  letter-spacing: 0.5px;
+  margin-bottom: 15px;
   line-height: 1.2;
 }
 
-.gift-hero__text {
-  font-size: 18px;
-  color: #333;
-  margin-bottom: 10px;
-  line-height: 1.6;
-  font-weight: 400;
+.gift-hero__text-container {
+  margin-bottom: 25px;
 }
 
-.gift-btn {
+.gift-hero__subtitle {
+  font-size: clamp(18px, 2.5vw, 22px);
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.gift-hero__description {
+  font-size: clamp(16px, 2vw, 18px);
+  color: #666;
+  line-height: 1.5;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.gift-hero__cta {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 12px 30px;
   background-color: #000;
   color: #fff;
   font-size: 14px;
@@ -207,52 +217,27 @@ display:flex;
   transition: all 0.3s ease;
   border: 1px solid #000;
   position: relative;
-  overflow: hidden;
 }
 
-.gift-btn:hover {
+.gift-hero__cta:hover {
   background-color: #333;
   border-color: #333;
 }
 
-.gift-btn::after {
+.gift-hero__cta::after {
   content: "→";
   margin-left: 8px;
   transition: transform 0.3s ease;
-  display: inline-block;
 }
 
-.gift-btn:hover::after {
+.gift-hero__cta:hover::after {
   transform: translateX(4px);
 }
 
-/* تأثيرات للشاشات الكبيرة */
-@media (min-width: 768px) {
-  .gift-hero__copy {
-    padding: 60px;
-  }
-  
-  .gift-hero__title {
-    font-size: 48px;
-  }
-  
-  .gift-hero__text {
-    font-size: 20px;
-  }
-}
-
-/* تأثيرات للشاشات الصغيرة */
+/* إزالة الهوامش الزائدة */
 @media (max-width: 480px) {
   .gift-hero__copy {
-    padding: 30px 20px;
-  }
-  
-  .gift-hero__title {
-    font-size: 32px;
-  }
-  
-  .gift-hero__text {
-    font-size: 16px;
+    padding: 30px 15px;
   }
 }
 
