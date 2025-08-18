@@ -173,14 +173,24 @@ The task Contain :-
     </div>
     <label class="gift-field__label">Size</label>
     <div class="gift-select">
-      <select size="3">
-  <option value="" disabled selected hidden>Choose your size</option>
-  <option>XS</option>
-  <option>S</option>
-  <option>M</option>
-  <option>L</option>
-  <option>XL</option>
-</select>
+      <div class="gift-custom-select">
+  <div class="selected">Choose your size</div>
+  <div class="options">
+    <div data-value="XS">XS</div>
+    <div data-value="S">S</div>
+    <div data-value="M">M</div>
+    <div data-value="L">L</div>
+    <div data-value="XL">XL</div>
+  </div>
+  <select name="size" hidden>
+    <option value="">Choose your size</option>
+    <option value="XS">XS</option>
+    <option value="S">S</option>
+    <option value="M">M</option>
+    <option value="L">L</option>
+    <option value="XL">XL</option>
+  </select>
+</div>
 
       <span class="gift-select__chev">▾</span>
     </div>
