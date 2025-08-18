@@ -73,17 +73,6 @@ document.addEventListener('click', function(e) {
   sw.classList.add('is-active');
 });
 
-
-
-const select = document.getElementById("size");
-const placeholder = document.getElementById("placeholder");
-
-// ✅ لما يختار أي مقاس، نخفي الـ placeholder
-select.addEventListener("change", () => {
-  if (select.value !== "") {
-    placeholder.style.display = "none";
-  }
-});
 document.addEventListener('DOMContentLoaded', function() {
     const dropdown = document.querySelector('.custom-dropdown');
     const header = dropdown.querySelector('.dropdown-header');
