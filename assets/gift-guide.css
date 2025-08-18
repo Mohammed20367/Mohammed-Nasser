@@ -1,334 +1,479 @@
-/* =========================================================
-   Gift Guide (gg-*) — Clean, scoped, and BEM-friendly CSS
-   Author: <your-name>
-   Purpose: Styles for Gift Guide page (hero, grid, popups, dropdown)
-   ========================================================= */
-
-/* ============================= */
-/* 1) CSS Variables & Base Rules */
-/* ============================= */
-:root {
-  --gg-black: #000000;
-  --gg-white: #ffffff;
-  --gg-gray-50: #f5f5f5;
-  --gg-gray-200: #d9d9d9;
-  --gg-gray-300: #999999;
-
-  --gg-accent: #fff544;     /* brand highlight */
-  --gg-text: #000000;
-
-  --gg-font-primary: 'Jost', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  --gg-font-serif: 'Lustria', Georgia, 'Times New Roman', serif;
-
-  --gg-radius: 8px;
-  --gg-shadow-md: 0 6px 24px rgba(0,0,0,0.15);
-  --gg-ease: 0.25s ease;
-  --gg-ease-lg: 0.4s ease;
+.page
+{
+  margin:0;
+  padding:0;
+  width:1440px;
+  height:2000px;
+  gap:90px;
 }
 
-/* Better focus for accessibility */
-:focus-visible {
-  outline: 2px solid var(--gg-black);
-  outline-offset: 2px;
-}
-
-/* ============================= */
-/* 2) Page Layout (Wrapper/Sections) */
-/* ============================= */
-.gg-page {
-  margin: 0;
-  padding: 0;
-  width: 1440px;
-  height: 2000px;
-  /* gap is not effective on block; use section spacing instead */
-}
-
-.gg-section {
-  width: 100%;
-  height: auto;
+.section1
+{
+  width:100%;
+ height:auto;
   overflow: hidden;
 }
 
-/* Optional nav shell if needed later */
-.gg-nav {
-  width: 100%;
-  height: 67px;
-}
+.nav
+{
+  width:100%;
+  height:67px;
+  gap:360px;
+}  
 
-/* ============================= */
-/* 3) Top Bar (Logo / Message / CTA) */
-/* ============================= */
-.gg-topbar {
+
+.firstframe {
+display:flex;
+  position: relative;
+  height:450px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: -128px;
+}
+.imageinframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: 1;
+} 
+ 
+.gift-top-bar {
+  background: transparent;
   position: relative;
   z-index: 10;
-  display: flex;
-  align-items: center;
+  display: flex;              /* Horizontal layout */
+  align-items: center;        /* Vertical centering */
   justify-content: space-between;
-  gap: 8px;
+  gap: 5px;                   /* Space between text and button */
+  background-color: #F5F5F5;
+  padding: 10px 50px;         /* top/bottom - left/right */
   height: 64px;
-  padding: 10px 50px;
-  background-color: var(--gg-gray-50);
-  font-family: var(--gg-font-primary);
+  
 }
 
-.gg-topbar__logo {
+/* first image in nav */
+.gift-icon--tisso {
   width: 151px;
   height: 19px;
 }
 
-.gg-topbar__msg {
+/* Center message text */
+.gift-top-bar_message {
   display: flex;
+  font-size: 16px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
   align-items: center;
   justify-content: center;
-  font: 400 16px/1 var(--gg-font-primary);
-  color: var(--gg-text);
+  color:#000000;
 }
 
-/* ============================= */
-/* 4) Buttons (Primary / Highlight) */
-/* ============================= */
-.gg-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
+/* Button */
+.gift-button {
   width: 207px;
   height: 44px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
   padding: 12px 16px;
-  border: 1px solid var(--gg-black);
+  border: 1px solid #000;
   background: transparent;
-  color: var(--gg-text);
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;         
+  overflow: hidden;            
+  transition: color 0.35s ease, border-color 0.35s ease;
+}
+
+/* Yellow button -- highlighted */
+.gift-button--highlight {
+  background-color: #FFF544;
+  border-color: #FFF544;
+  font-weight: 400;
+}
+
+/* fill effect */
+.gift-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #000000;          
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.4s ease;
+  z-index: 0;
+}
+
+.gift-button .gift-icon--arrow-text,
+.gift-button .gift-icon--arrow {
+  position: relative;
+  z-index: 1;
+  transition: color 0.35s ease, filter 0.35s ease;
+}
+
+.gift-button:hover::before {
+  transform: scaleX(1);
+}
+
+.gift-button:hover .gift-icon--arrow-text {
+    transition: transform 0.4s ease;
+  color: #fff;
+}
+.gift-button:hover .gift-icon--arrow {
+  filter: brightness(0) invert(1);
+}
+
+/* Arrow text container */
+.gift-icon--arrow-text {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+.gift-button:hover .gift-icon--arrow-text {
+  transform: translateX(4px);
+}
+
+/* Arrow line */
+.gift-icon--arrow {
+  display: inline-block;
+  width: 24px;
+  height: 100%;
+}
+
+
+
+/* Second frame in home page */
+
+.secondframe{
+  display: grid;            /* required to enable grid layout */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.gift-hero__copy{
+  margin-left:8px;
+ grid-column: span 1 / span 1;}
+
+.gift-hero__art{
+
+  grid-column: span 2/span 2;
+  width:90%;
+  margin-left:auto;
+}
+.cta-button {
+  width: 207px;
+  height: 44px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 16px;
+  border: 1px solid #000;
+  background: #000;            
   text-decoration: none;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: color var(--gg-ease-lg), border-color var(--gg-ease-lg), background var(--gg-ease-lg);
-}
-
-.gg-btn--highlight {
-  background: var(--gg-accent);
-  border-color: var(--gg-accent);
+  transition: color 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+  color: #fff;                   /* النص أبيض */
   font-weight: 400;
 }
 
-/* Shared “fill from left” hover effect */
-.gg-btn::before {
+/* fill effect */
+.cta-button::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--gg-black);
+  background: #FFF544;           /* أصفر */
   transform: scaleX(0);
   transform-origin: left center;
-  transition: transform var(--gg-ease-lg);
+  transition: transform 0.4s ease;
   z-index: 0;
 }
 
-.gg-btn:hover::before {
+/* النص والسهم فوق الفيل */
+.cta-button .cta-text,
+.cta-button .cta-arrow {
+  position: relative;
+  z-index: 1;
+  transition: color 0.35s ease, filter 0.35s ease;
+}
+
+/* Hover: شغّل الفيل */
+.cta-button:hover::before {
   transform: scaleX(1);
 }
 
-.gg-btn__text,
-.gg-btn__icon {
-  position: relative;
-  z-index: 1;
-  transition: color var(--gg-ease-lg), filter var(--gg-ease-lg), transform var(--gg-ease-lg);
+/* Hover: النص يبقى أسود */
+.cta-button:hover .cta-text {
+  transition: transform 0.4s ease;
+  color: #000;
 }
 
-.gg-btn:hover .gg-btn__text {
-  color: var(--gg-white);
+/* السهم: أبيض أساسي */
+.cta-arrow {
+  display: inline-block;
+  width: 24px;
+  height: 100%;
+  filter: brightness(0) invert(1); /* يخليه أبيض */
+  transition: filter 0.35s ease;
+}
+
+/* Hover: السهم يبقى أسود */
+.cta-button:hover .cta-arrow {
+  filter: none;
+}
+
+/* النص */
+.cta-text {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+.cta-button:hover .cta-text {
   transform: translateX(4px);
 }
 
-.gg-btn__icon {
-  width: 24px;
-  height: 24px;
-}
 
-.gg-btn:hover .gg-btn__icon {
-  filter: brightness(0) invert(1);
-}
+/*الديف الي ع الشمال*/
 
-/* Inverse (black base → yellow hover) */
-.gg-btn--inverse {
-  background: var(--gg-black);
-  color: var(--gg-white);
-}
-.gg-btn--inverse::before {
-  background: var(--gg-accent);
-}
-.gg-btn--inverse:hover .gg-btn__text {
-  color: var(--gg-black);
-}
-.gg-btn--inverse:hover .gg-btn__icon {
-  filter: none; /* keep icon dark on yellow */
-}
+/* أنماط معدلة لمنع الطول الزائد */
 
-/* ============================= */
-/* 5) Hero — Top Banner Image */
-/* ============================= */
-.gg-hero-top {
-  position: relative;
-  display: flex;
-  width: 100%;
-  height: 450px;
-  overflow: hidden;
-  margin-top: -128px;
-}
-
-.gg-hero-top__img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-/* ============================= */
-/* 6) Hero — Main (Text + Visual) */
-/* ============================= */
-.gg-hero {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: center;
-  gap: 16px;
-  padding: 0 0 16px;
-}
-
-.gg-hero__content {
-  grid-column: span 1 / span 1;
-  margin-left: 8px;
-}
-
-.gg-hero__title {
-  margin: 30px 0 10px 30px;
-  font-family: var(--gg-font-primary);
+.gift-hero__title
+{
+ margin-top:30px;
+  margin-left:30px;
+  font-family: 'Jost', sans-serif;
   font-weight: 500;
+  font-style: Medium;
   font-size: 52px;
-  line-height: 1;
-  color: var(--gg-text);
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0px;
+  vertical-align: middle;
+
+}
+.gift-hero__text
+{
+margin-bottom:35px;
+margin-left:30px;
+font-family: 'Jost', sans-serif;
+font-weight: 400;
+font-style: Regular;
+font-size: 15px;
+leading-trim: NONE;
+line-height: 140%;
+letter-spacing: 0px;
+vertical-align: middle;
+width:100%
+
+}
+.cta-button
+{
+  margin-left:25px;
 }
 
-.gg-hero__text {
-  margin: 0 0 35px 30px;
-  width: 100%;
-  font: 400 15px/1.4 var(--gg-font-primary);
-  color: var(--gg-text);
+/**/
+
+.gift-hero__img
+{
+  width:100%;
 }
 
-.gg-hero__cta {
-  margin-left: 25px;
-}
+/* مقاسات الهيرو والتحريك لفوق */
 
-.gg-hero__art {
-  grid-column: span 2 / span 2;
-  width: 90%;
-  margin-left: auto;
-}
 
-.gg-hero__img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ============================= */
-/* 7) Ticker (Bottom strip) */
-/* ============================= */
-.gg-ticker {
-  width: 100%;
-  height: 34px;
-  padding: 10px 50px;
-  background: var(--gg-gray-50);
-  color: var(--gg-text);
+/* الشريط السفلي */
+.gift-hero__ticker{
+  background-color:#F5F5F5;
+  color:#000000;
+  width:100%;
+  height:34px;
+  text-align:center;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:12px;
+  padding:10px 50px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 13.42px;
+  letter-spacing: 0px;
   text-align: center;
-  text-transform: uppercase;
-  font: 400 16px/1 var(--gg-font-primary);
+  vertical-align: middle;
+  gap:375px
 }
 
-/* ============================= */
-/* 8) “In the Wild” Grid Section */
-/* ============================= */
-.gg-wild {
-  width: min(100%, 1337px);
-  margin: 20px auto;
-  padding: 30px 20px 20px;
+/* موبايل: الصورة فوق */
+@media (max-width: 768px){
+  .gift-hero__inner{ grid-template-columns:1fr; }
+  .gift-hero__art{
+    order:-1;
+    height: clamp(160px, 40vw, 220px);
+  }
 }
 
-.gg-wild__title {
-  margin: 8px 0 20px;
-  font-family: var(--gg-font-serif);
+
+
+
+
+
+
+/second section/
+ .section2 { 
+  gap:30px;
+  margin:20px 20px;
+ }
+
+.part-two{
+  width: min(100%, 1337px);   /* نفس عرض فيجما كحد أقصى */
+  margin: 0 auto;
+  padding:30px 20px 20px 20px;
+  height:982px;
+  height:auto;
+  width:1337;
+
+}
+
+.wild-title{
+  font-family: 'Lustria', 'Jost', system-ui, sans-serif;
   font-weight: 400;
   font-size: clamp(20px, 2.2vw, 28px);
-  color: var(--gg-text);
+  margin: 8px 0 20px;
 }
 
-.gg-grid {
+/* الشبكة */
+.grid-container{
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 20px;                               /* من فيجما */
 }
 
-.gg-card {
+/* كل كارت */
+.grid-item{
   position: relative;
   overflow: hidden;
-  background: #f6f6f6;
   box-shadow: 0 4px 10px rgba(0,0,0,.08);
+  height:auto                     /* مربعات متساوية */
+  background:#f6f6f6;
 }
 
-.gg-card__img {
+.grid-item img{
+  width: 433px;
+  height: 444px;
   display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;  /* keep full image visible */
-  object-position: left;
+  object-fit: cover; 
+  display: block;     /* يشيل أي مساحة بيضا من inline-block */
+  max-width: 100%;    /* عشان ما تتجاوزش حجم الديف */
+  height: auto;       /* يحافظ على نسبة العرض والارتفاع */
+  object-fit: contain; /* يخلي الصورة تبان بالكامل */
+  object-position: left;                        /* تقطيع نظيف */
 }
 
-/* Floating “+” icon positions (adjust per design) */
-.gg-card__plus {
+
+
+
+/* زرار + */
+.plus-icon1{
   position: absolute;
-  display: inline-block;
+  top: 58%;
+  right: 120px;
+  /* هنلعب ف ال6 ف التوب والرايت والليفت لحد مانوصل*/
+ 
 }
-.gg-card__plus--1 { top: 58%; right: 120px; }
-.gg-card__plus--2 { top: 190px; right: 40px; }
-.gg-card__plus--3 { top: 80px;  right: 125px; }
-.gg-card__plus--4 { top: 55px;  right: 85px; }
-.gg-card__plus--5 { top: 90px;  right: 170px; }
-.gg-card__plus--6 { top: 145px; right: 75px; }
+.plus-icon2{
+  position: absolute;
+  top: 190px;
+  right: 40px;
+  
+ 
+}
+.plus-icon3{
+  position: absolute;
+  top: 80px;
+  right: 125px;
+  
+ 
+}
+.plus-icon4{
+  position: absolute;
+  top: 55px;
+  right: 85px;
+  
+ 
+}
+.plus-icon5{
+  position: absolute;
+  top: 90px;
+  right: 170px;
+  
+ 
+}
+.plus-icon6{
+  position: absolute;
+  top: 145px;
+  right: 75px;
+  
+ 
+}
+.plusimage
+{
+   width: 22px !important;
+  height: 22px !important;
+}
 
-.gg-card__plus-img {
-  width: 22px;
-  height: 22px;
+/* ريسبونسيف */
+@media (max-width: 992px){
+  .grid-container{ grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
+
+@media (max-width: 576px){
+  .grid-container{ grid-template-columns: 1fr; }
+  .wild-title{ margin-bottom: 14px; }
+}
+
+
+
+/*تجربه*/
 
 /* ============================= */
-/* 9) Popup (Quick Look) */
+/* Popup Wrapper & Overlay */
 /* ============================= */
-.gg-popup {
+.gift-popup {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0, 0, 0, 0.45);
   display: none;
   z-index: 1000;
 }
-.gg-popup.is-open { display: block; }
+.gift-popup.is-open {
+  display: block;
+}
 
-.gg-popup__card {
+/* ============================= */
+/* Popup Card */
+/* ============================= */
+.gift-popup__card.gift-popup--figma {
+  height:auto;
+  width: 311px; /* 👈 زود/قلل عرض الكارد من هنا */
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #D9D9D9;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 311px;
   transform: translate(-50%, -50%);
-  background: var(--gg-white);
-  border: 1px solid var(--gg-gray-200);
-  border-radius: var(--gg-radius);
-  box-shadow: var(--gg-shadow-md);
-  padding: 16px;
-  font-family: var(--gg-font-primary);
+  padding: 16px; /* 👈 padding عام للكارد */
+  font-family: 'Jost', sans-serif;
   color: #111;
 }
 
-.gg-popup__close {
+/* ============================= */
+/* Close Button */
+/* ============================= */
+.gift-popup__close {
   position: absolute;
   top: 6px;
   right: 8px;
@@ -337,254 +482,386 @@
   font-size: 18px;
   cursor: pointer;
   color: #111;
-  transition: color var(--gg-ease);
+  transition: color 0.2s ease;
 }
-.gg-popup__close:hover { color: var(--gg-black); }
+.gift-popup__close:hover {
+  color: #000;
+}
 
-/* Product head (image + meta) */
-.gg-popup__head {
+/* ============================= */
+/* Product Head */
+/* ============================= */
+.gift-head {
+  margin-top:12px;
   display: grid;
-  grid-template-columns: 120px 1fr;
+  grid-template-columns: 120px 1fr; /* 👈 حجم الصورة بالنسبة للنص */
   column-gap: 12px;
-  margin: 12px 0 0;
+  margin-bottom: 0px; /* 👈 المسافة بين الصورة وباقي العناصر */
 }
 
-.gg-popup__img {
+.gift-head__img {/* 👈 عرض الصورة */
   width: 120px;
   height: 140px;
+  top: 36px;
+  left: 17px;
+  opacity: 1;
   object-fit: cover;
 }
-
-.gg-popup__title {
-  margin: 5px 0 6px;
-  font: 300 16px/1.2 var(--gg-font-primary);
-  color: var(--gg-text);
+.gift-head__title {/* 👈 حجم عنوان المنتج */
+  margin: 0 0 6px;
+  margin-top:5px;
+  width: 136;
+  height: 19;
+  top: 49px;
+  left: 145px;
+  opacity: 1;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-style: Light;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0px;
+  vertical-align: middle;
+}
+.gift-head__price {/* 👈 حجم السعر */
+  margin-top:15px;
+  width: 64;
+  height: 19;
+  top: 88px;
+  left: 145px;
+  opacity: 1;
+  font-family: 'Lustria';
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0px;
+  vertical-align: middle;
+}
+.gift-head__desc {/* 👈 حجم وصف المنتج */
+  margin-top:10px;
+  width: 146;
+  height: 60;
+  top: 119px;
+  left: 145px;
+  opacity: 1;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-style: Light;
+  font-size: 14px;
+  line-height: 110.00000000000001%;
+  letter-spacing: -1%;
+  color: #000000;
 }
 
-.gg-popup__price {
-  margin-top: 15px;
-  font: 400 16px/1.2 var(--gg-font-serif);
-}
-
-.gg-popup__desc {
-  margin-top: 10px;
-  font: 300 14px/1.1 var(--gg-font-primary);
-  letter-spacing: -0.01em;
-  color: var(--gg-text);
-}
-
-/* Field label */
-.gg-field__label {
+/* ============================= */
+/* Fields & Labels */
+/* ============================= */
+.gift-field__label {
+  width: 33;
+  height: 18;
+  opacity: 1;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0%;
   display: block;
-  margin: 5px 0 8px;
-  font: 400 14px/1.3 var(--gg-font-primary);
+  margin: 5px 0 8px; /* 👈 المسافة بين الليبل والعنصر */
   color: #333333;
 }
 
+/* ============================= */
 /* Color Swatches */
-.gg-swatches {
-  display: flex;
+/* ============================= */
+.gift-swatches {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  display: flex;          /* خليتهم جمب بعض */
+  gap: 0;                 /* شلت أي مسافة بينهم */
+  border: 1px solid #111; /* البوردر الخارجي */
+  border-radius: 6px;     /* يدي كورنر ناعم للكادر كله */
+  overflow: hidden; 
+  text-align:center;
+  height: 40.441322326660156px;
+   display: flex;
   border: 1px solid #111;
   border-radius: 6px;
   overflow: hidden;
-  height: 40px;
 }
-
-.gg-swatch {
-  flex: 1;
+.gift-swatch {
+  font-family: 'Jost', sans-serif;
+  margin-bottom: 10px;        /* المسافة بين كلمة Size والزرار */
+  flex: 1;                    /* كل واحد ياخد نص العرض */
   height: 40px;
-  border: none;
-  background: var(--gg-white);
-  font: 400 18px/1 var(--gg-font-primary);
+  border: none;               /* شيل البوردر الداخلي */
+  border-radius: 4px;
+  font-size: 18px;            /* حجم الخط */
   cursor: pointer;
-  transition: background var(--gg-ease);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-}
-.gg-swatch:hover { background: #f4f4f4; }
-.gg-swatch.is-active {
-  background: var(--gg-black);
-  color: var(--gg-white);
+  background: #fff;
+  transition: all 0.2s ease;
+  display: flex;              
+  align-items: center;        /* يوسّط عمودي */
+  justify-content: center;    /* يوسّط أفقي */
+  gap: 6px;                   /* مسافة بين المربع والكلمة */
 }
 
-/* Small colored dots inside swatch (if used) */
-.gg-swatch__dot {
+.gift-swatch:hover {
+  background: #f4f4f4;
+}
+.gift-swatch.is-active {
+  background: #000;
+  color: #fff;
+}
+
+.gift-swatches span {
   width: 7px;
-  height: 7px;
-  border: .5px solid currentColor;
-  border-radius: 2px;
+  opacity: 1;
+  border-width: 0.5px;
+  border: 0.5px solid ; /* علشان الأبيض يبان */
 }
 
-/* Color helpers */
-.gg-c-white { background-color: #FFFFFF; }
-.gg-c-black { background-color: #000000; }
-.gg-c-blue  { background-color: #0D499F; }
-.gg-c-red   { background-color: #B20F36; }
-.gg-c-grey  { background-color: #AFAFB7; }
+.gift-swatch.is-active {
+  background: #000;
+  color: #fff;
+}
 
-/* Add to cart CTA */
-.gg-popup__cta {
+.cwhite {
+  background-color: #FFFFFF;
+}
+.cblack
+{
+  background-color: #000000;
+}
+.cblue
+{
+  background-color:#0D499F;
+}
+.cred
+{
+  background-color:#B20F36;
+}
+.cgrey
+{
+  background-color:#AFAFB7;
+}
+
+/* ============================= */
+/* Size Select */
+/* ============================= */
+/* ============================= */
+/* Size Select - Updated Style */
+/* ============================= */
+
+/* ============================= */
+/* CTA Button */
+/* ============================= */
+.gift-cta {
   width: 100%;
-  height: 46px;
-  margin: 50px 0 20px;
+  height: 46px; /* 👈 طول زرار Add To Cart */
+  margin-top: 50px;
+  margin-bottom:20px;
+  background: #000;
+  color: #fff;
   border: 0;
   border-radius: 4px;
-  background: var(--gg-black);
-  color: var(--gg-white);
-  font: 700 13px/1 var(--gg-font-primary);
-  text-transform: uppercase;
+  font-size: 13px; /* 👈 حجم الخط داخل الزرار */
+  font-weight: 700;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  transition: background var(--gg-ease);
+  text-transform: uppercase;
+  transition: background 0.2s ease;
 }
-.gg-popup__cta:hover { background: #333333; }
-
-.gg-popup__cta-icon {
+.gift-cta:hover {
+  background: #333;
+}
+.gift-cta__arrow {
   width: 18px;
   filter: brightness(0) invert(1);
 }
 
 /* ============================= */
-/* 10) Custom Dropdown (Sizes) */
+/* Responsive */
 /* ============================= */
-.gg-size {
-  margin-bottom: 20px;
-}
-.gg-size__label {
-  display: block;
-  margin-bottom: 8px;
-  font: 400 14px/1.3 var(--gg-font-primary);
-  color: #333333;
-}
-
-.gg-dropdown {
-  position: relative;
-  width: 100%;
-  max-width: 271px;
-}
-
-.gg-dropdown__header {
-  width: 100%;
-  height: 40px;
-  padding: 0 45px 0 16px;
-  border: 1px solid var(--gg-gray-200);
-  border-radius: 0;
-  background: var(--gg-white);
-  color: var(--gg-text);
-  font: 400 16px/1 var(--gg-font-primary);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  user-select: none;
-  transition: border-color var(--gg-ease), color var(--gg-ease);
-  position: relative;
-}
-.gg-dropdown__header:hover { border-color: var(--gg-gray-300); }
-.gg-dropdown__header.is-active {
-  border-color: var(--gg-black);
-  border-bottom: none;
-}
-
-.gg-dropdown__arrow {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  translate: 0 -50%;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  pointer-events: none;
-}
-.gg-dropdown__divider {
-  width: 1px;
-  height: 20px;
-  background: var(--gg-gray-200);
-}
-.gg-dropdown__chev {
-  width: 16px;
-  height: 16px;
-  stroke: var(--gg-black);
-  stroke-width: 2;
-  transition: transform var(--gg-ease);
-}
-.gg-dropdown__header.is-active .gg-dropdown__chev {
-  transform: rotate(180deg);
-}
-
-.gg-dropdown__menu {
-  position: absolute;
-  inset: auto 0 0 0; /* top set by header bottom via top:100% */
-  top: 100%;
-  background: var(--gg-white);
-  border: 1px solid var(--gg-black);
-  border-top: none;
-  border-radius: 0;
-  z-index: 1000;
-  height: 120px;
-  overflow-y: auto;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: opacity var(--gg-ease), visibility var(--gg-ease), transform var(--gg-ease);
-  scrollbar-width: none;       /* Firefox */
-  -ms-overflow-style: none;    /* IE/Edge */
-}
-.gg-dropdown__menu::-webkit-scrollbar { display: none; }
-.gg-dropdown__menu.is-open {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.gg-dropdown__option {
-  height: 40px;
-  padding: 0 16px;
-  border-bottom: 1px solid #f0f0f0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font: 400 16px/1 var(--gg-font-primary);
-  color: var(--gg-text);
-  background: var(--gg-white);
-  cursor: pointer;
-  transition: background var(--gg-ease), color var(--gg-ease);
-  text-align: center;
-}
-.gg-dropdown__option:last-child { border-bottom: none; }
-.gg-dropdown__option:hover {
-  background: var(--gg-black);
-  color: var(--gg-white);
-}
-.gg-dropdown__option.is-selected {
-  background: var(--gg-black);
-  color: var(--gg-white);
-}
-
-/* ============================= */
-/* 11) Responsive */
-/* ============================= */
-@media (max-width: 992px) {
-  .gg-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-@media (max-width: 768px) {
-  .gg-hero { grid-template-columns: 1fr; }
-  .gg-hero__art {
-    order: -1;
-    height: clamp(160px, 40vw, 220px);
+@media (max-width: 480px) {
+  .gift-popup__card.gift-popup--figma {
+    width: 90%; /* 👈 الكارد يبقى مرن على الموبايل */
+    padding: 14px;
+  }
+  .gift-head {
+    grid-template-columns: 100px 1fr; /* 👈 الصورة تصغر في الموبايل */
+  }
+  .gift-head__img {
+    width: 100px;
+    height: 100px;
   }
 }
 
-@media (max-width: 576px) {
-  .gg-grid { grid-template-columns: 1fr; }
-  .gg-wild__title { margin-bottom: 14px; }
-  .gg-popup__card { width: 90%; padding: 14px; }
-  .gg-popup__head { grid-template-columns: 100px 1fr; }
-  .gg-popup__img { width: 100px; height: 100px; }
+
+
+
+
+
+.dropdown-text
+{
+  text-align:left;
 }
+.size-field {
+            margin-bottom: 20px;
+        }
+
+        .size-field__label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #333333;
+        }
+
+        .custom-dropdown {
+            position: relative;
+            width: 100%;
+            max-width: 271px;
+        }
+
+        .dropdown-header {
+            width: 100%;
+            height: 40px;
+            border: 1px solid #D9D9D9;
+            border-radius: 0;
+            background-color: #FFFFFF;
+            padding: 0 45px 0 16px;
+            font-size: 16px;
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+            color: #000;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            transition: all 0.2s ease;
+            position: relative;
+            user-select: none;
+        }
+
+        .dropdown-header:hover {
+            border-color: #999;
+        }
+
+        .dropdown-header.active {
+            border-color: #000;
+            color: #000;
+            border-bottom: none;
+        }
+
+        .dropdown-header.selected {
+            color: #000;
+        }
+
+        .dropdown-arrow {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dropdown-divider {
+          
+            width: 1px;
+            height: 20px;
+            background: #D9D9D9;
+        }
+
+        .dropdown-arrow svg {
+          border:30px;
+            width: 16px;
+            height: 16px;
+            stroke: #000;
+            stroke-width: 2;
+            transition: transform 0.2s ease;
+        }
+
+        .dropdown-header.active .dropdown-arrow svg {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-options {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #000;
+            border-top: none;
+            border-radius: 0;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            height: 120px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            cursor: grab;
+        }
+
+        .dropdown-options:active {
+            cursor: grabbing;
+        }
+
+        .dropdown-options::-webkit-scrollbar {
+            display: none;
+        }
+
+        .dropdown-options.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-option {
+            padding: 8px 16px;
+            font-size: 16px;
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+            color: #000;
+            cursor: pointer;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.2s ease;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+        }
+
+        .dropdown-option:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-option:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .dropdown-option.selected {
+            background-color: #000;
+            color: #fff;
+        }
+
+
+
+
