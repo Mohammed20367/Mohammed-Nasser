@@ -460,7 +460,21 @@ display:flex;
 /* ============================= */
 /* Color Swatches */
 /* ============================= */
-
+.gift-swatches {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.gift-swatch {
+  margin-bottom:10px; /*ألمسافه بين كلمة سايز والزرار تحتها*/
+  height: 36px; /* 👈 طول زرار اللون */
+  border: 1px solid #111;
+  border-radius: 4px;
+  font-size: 13px; /* 👈 حجم خط الزرار */
+  cursor: pointer;
+  background: #fff;
+  transition: all 0.2s ease;
+}
 .gift-swatch:hover {
   background: #f4f4f4;
 }
@@ -487,6 +501,8 @@ position: relative;
   background: #fff;
   appearance: none;
   cursor: pointer;
+   max-height: 70px;   /* تقريبًا 3 options */
+  overflow-y: auto;   /* scroll لو زادوا */
 }
 
 /* التحكم في العناصر داخل القائمة */
