@@ -749,7 +749,7 @@ display:flex;
         }
 
         .dropdown-arrow svg {
-          border-left:20px;
+          border:30px;
             width: 16px;
             height: 16px;
             stroke: #000;
