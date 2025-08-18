@@ -175,23 +175,25 @@ The task Contain :-
 
     <!-- Size Select -->
    <!-- Size Select - Updated HTML -->
-<label for="size-1" class="gift-field__label">Size</label>
-<div class="gift-select">
-  <select id="size-1" required>
-    <option value="" disabled selected hidden></option>
-    <option value="XS">XS</option>
-    <option value="S">S</option>
-    <option value="M">M</option>
-    <option value="L">L</option>
-    <option value="XL">XL</option>
-  </select>
-  <span class="gift-placeholder">Choose your size</span>
-  <div class="gift-select__chev">
-    <div class="divider"></div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-      <polyline points="6 9 12 15 18 9"></polyline>
-    </svg>
-  </div>
+<!-- Size Dropdown -->
+<label class="size-field__label">Size</label>
+<div class="custom-dropdown" data-dropdown="size1">
+    <div class="dropdown-header" data-placeholder="Choose your size">
+        Choose your size
+    </div>
+    <div class="dropdown-arrow">
+        <div class="dropdown-divider"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+    </div>
+    <div class="dropdown-options">
+        <div class="dropdown-option" data-value="XS">XS</div>
+        <div class="dropdown-option" data-value="S">S</div>
+        <div class="dropdown-option" data-value="M">M</div>
+        <div class="dropdown-option" data-value="L">L</div>
+        <div class="dropdown-option" data-value="XL">XL</div>
+    </div>
 </div>
     <button class="gift-cta" type="button">
       ADD TO CART
