@@ -477,6 +477,7 @@ display:flex;
   overflow: hidden;
 }
 .gift-swatch {
+  font-family: 'Jost', sans-serif;
   margin-bottom: 10px;        /* المسافة بين كلمة Size والزرار */
   flex: 1;                    /* كل واحد ياخد نص العرض */
   height: 40px;
@@ -498,15 +499,6 @@ display:flex;
 .gift-swatch.is-active {
   background: #000;
   color: #fff;
-}
-
-
-.gift-swatches {
- 
-}
-
-.gift-swatch {
-               /* مسافة صغيرة بين المربع والكلمة */
 }
 
 .gift-swatch span {
