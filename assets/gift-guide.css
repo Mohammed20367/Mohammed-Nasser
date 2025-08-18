@@ -603,11 +603,10 @@ position: relative;
   transition: all 0.2s ease;
 }
 
-.gift-swatch.is-active {
-  background: #000;             /* الزرار المختار يبقى اسود */
-  color: #fff;
-}
-
 .gift-swatch:hover {
   background: #f4f4f4;
+}
+.gift-swatch.is-active {
+  background: #000;
+  color: #fff;
 }
