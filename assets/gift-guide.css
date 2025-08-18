@@ -487,35 +487,31 @@ display:flex;
 
 .gift-swatches {
   display: flex;
-  gap: 8px; /* مسافة صغيرة بين الألوان */
+  width: 100%;
+  border: 1px solid #111;
+  border-radius: 6px;
+  overflow: hidden; /* علشان الزرار يفضلوا لازقين */
 }
 
 .gift-swatch {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;          /* يخليها دائرية */
-  border: 2px solid #ccc;      /* إطار افتراضي */
+  flex: 1; /* كل زرار ياخد نفس العرض */
+  height: 40px;
+  font-size: 14px;
   cursor: pointer;
+  border: none;
+  background: #fff;
+  color: #111;
   transition: all 0.2s ease;
 }
 
-.gift-swatch.is-active {
-  border: 2px solid #000;      /* إطار غامق لما يتحدد */
-  box-shadow: 0 0 0 2px #0002; /* لمعة بسيطة حوالين اللون */
+.gift-swatch:not(:last-child) {
+  border-right: 1px solid #111; /* الخط الفاصل */
 }
 
-/* أمثلة ألوان */
-.gift-swatch[data-color="white"] {
-  background: #fff;
-}
-.gift-swatch[data-color="black"] {
-  background: #000;
-}
-.gift-swatch[data-color="blue"] {
-  background: #007bff;
-}
-.gift-swatch[data-color="red"] {
-  background: #e63946;
+.gift-swatch.is-active {
+  background: #000;  /* يتلون بالأسود */
+  color: #fff;       /* النص يبقى أبيض */
+  font-weight: 600;
 }
 
 
