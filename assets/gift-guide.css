@@ -442,11 +442,18 @@ display:flex;
 /* Fields & Labels */
 /* ============================= */
 .gift-field__label {
+  width: 33;
+  height: 18;
+  opacity: 1;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0%;
   display: block;
-  font-size: 12px;
-  font-weight: 500;
   margin: 14px 0 8px; /* 👈 المسافة بين الليبل والعنصر */
-  color: #111;
+  color: #333333;
 }
 
 /* ============================= */
