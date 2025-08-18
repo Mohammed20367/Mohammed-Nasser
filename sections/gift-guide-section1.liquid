@@ -166,27 +166,41 @@ The task Contain :-
         <p class="gift-head__desc">This onepiece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.</p>
       </div>
     </div>
+
     <label class="gift-field__label">Color</label>
     <div class="gift-swatches">
-      <span class = cwhite> </span>
-      <button type="button" class="gift-swatch ">White</button>
-      <span class = cblack> </span>
-      <button type="button" class="gift-swatch">Black</button>
+      <span class="cwhite"></span><button type="button" class="gift-swatch">White</button>
+      <span class="cblack"></span><button type="button" class="gift-swatch">Black</button>
     </div>
-    <label class="gift-field__label">Size</label>
+
+    <!-- Size Select -->
+    <label for="size-1" class="gift-field__label">Size</label>
     <div class="gift-select">
-      <select>
-        <option value="" disabled selected hidden >Choose your size</option>
-        <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      <select id="size-1" required>
+        <option value="" disabled selected hidden></option>
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
       </select>
-      <span class="gift-select__chev">▾</span>
+      <span class="gift-placeholder">Choose your size</span>
+      <span class="gift-select__chev">
+        <img src="{{ 'Line 25.svg' | asset_url }}" alt="divider" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </span>
     </div>
+
     <button class="gift-cta" type="button">
       ADD TO CART
       <img class="gift-cta__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="">
     </button>
   </div>
 </div>
+
 
 <!-- Look 2 -->
 <div class="gift-popup" data-popup="look-2" aria-hidden="true">
@@ -200,27 +214,42 @@ The task Contain :-
         <p class="gift-head__desc">This onepiece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.</p>
       </div>
     </div>
+
     <label class="gift-field__label">Color</label>
     <div class="gift-swatches">
-      <span class = cblue> </span>
-      <button type="button" class="gift-swatch ">Blue</button>
-      <span class = cblack> </span>
-      <button type="button" class="gift-swatch">Black</button>
+      <span class="cblue"></span><button type="button" class="gift-swatch">Blue</button>
+      <span class="cblack"></span><button type="button" class="gift-swatch">Black</button>
     </div>
-    <label class="gift-field__label">Size</label>
+
+    <!-- Size Select -->
+    <label for="size-2" class="gift-field__label">Size</label>
     <div class="gift-select">
-      <select>
-        <option value="" disabled selected hidden>Choose your size</option>
-        <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      <select id="size-2" required>
+        <option value="" disabled selected hidden></option>
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
       </select>
-      <span class="gift-select__chev">▾</span>
+      <span class="gift-placeholder">Choose your size</span>
+      <span class="gift-select__chev">
+        <img src="{{ 'Line 25.svg' | asset_url }}" alt="divider" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </span>
     </div>
+
     <button class="gift-cta" type="button">
       ADD TO CART
       <img class="gift-cta__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="">
     </button>
   </div>
 </div>
+
+
 <!-- Look 3 -->
 <div class="gift-popup" data-popup="look-3" aria-hidden="true">
   <div class="gift-popup__card gift-popup--figma">
@@ -233,27 +262,41 @@ The task Contain :-
         <p class="gift-head__desc">This pleated dress brings elegance with a modern cut and flowy fabric.</p>
       </div>
     </div>
+
     <label class="gift-field__label">Color</label>
     <div class="gift-swatches">
-      <span class = cred> </span>
-      <button type="button" class="gift-swatch ">Red</button>
-      <span class = cgrey> </span>
-      <button type="button" class="gift-swatch">Grey</button>
+      <span class="cred"></span><button type="button" class="gift-swatch">Red</button>
+      <span class="cgrey"></span><button type="button" class="gift-swatch">Grey</button>
     </div>
-    <label class="gift-field__label">Size</label>
+
+    <!-- Size Select -->
+    <label for="size-3" class="gift-field__label">Size</label>
     <div class="gift-select">
-      <select>
-        <option value="" disabled selected hidden>Choose your size</option>
-        <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      <select id="size-3" required>
+        <option value="" disabled selected hidden></option>
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
       </select>
-      <span class="gift-select__chev">▾</span>
+      <span class="gift-placeholder">Choose your size</span>
+      <span class="gift-select__chev">
+        <img src="{{ 'Line 25.svg' | asset_url }}" alt="divider" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </span>
     </div>
+
     <button class="gift-cta" type="button">
       ADD TO CART
       <img class="gift-cta__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="">
     </button>
   </div>
 </div>
+
 
 <!-- Look 4 -->
 <div class="gift-popup" data-popup="look-4" aria-hidden="true">
@@ -267,27 +310,41 @@ The task Contain :-
         <p class="gift-head__desc">Classic trench coat reimagined in bold green with a modern silhouette.</p>
       </div>
     </div>
+
     <label class="gift-field__label">Color</label>
     <div class="gift-swatches">
-      <span class = cwhite> </span>
-      <button type="button" class="gift-swatch ">White</button>
-      <span class = cblack> </span>
-      <button type="button" class="gift-swatch">Black</button>
+      <span class="cwhite"></span><button type="button" class="gift-swatch">White</button>
+      <span class="cblack"></span><button type="button" class="gift-swatch">Black</button>
     </div>
-    <label class="gift-field__label">Size</label>
+
+    <!-- Size Select -->
+    <label for="size-4" class="gift-field__label">Size</label>
     <div class="gift-select">
-      <select>          
-        <option value="" disabled selected hidden>Choose your size</option>
-        <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      <select id="size-4" required>
+        <option value="" disabled selected hidden></option>
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
       </select>
-      <span class="gift-select__chev">▾</span>
+      <span class="gift-placeholder">Choose your size</span>
+      <span class="gift-select__chev">
+        <img src="{{ 'Line 25.svg' | asset_url }}" alt="divider" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </span>
     </div>
+
     <button class="gift-cta" type="button">
       ADD TO CART
       <img class="gift-cta__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="">
     </button>
   </div>
 </div>
+
 
 <!-- Look 5 -->
 <div class="gift-popup" data-popup="look-5" aria-hidden="true">
@@ -301,27 +358,41 @@ The task Contain :-
         <p class="gift-head__desc">Sporty and stylish, this tennis t-shirt is crafted from breathable cotton.</p>
       </div>
     </div>
+
     <label class="gift-field__label">Color</label>
     <div class="gift-swatches">
-      <span class = cgrey> </span>
-      <button type="button" class="gift-swatch ">Grey</button>
-      <span class = cblack> </span>
-      <button type="button" class="gift-swatch">Black</button>
+      <span class="cgrey"></span><button type="button" class="gift-swatch">Grey</button>
+      <span class="cblack"></span><button type="button" class="gift-swatch">Black</button>
     </div>
-    <label class="gift-field__label">Size</label>
+
+    <!-- Size Select -->
+    <label for="size-5" class="gift-field__label">Size</label>
     <div class="gift-select">
-      <select>
-        <option value="" disabled selected hidden>Choose your size</option>
-        <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      <select id="size-5" required>
+        <option value="" disabled selected hidden></option>
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
       </select>
-      <span class="gift-select__chev">▾</span>
+      <span class="gift-placeholder">Choose your size</span>
+      <span class="gift-select__chev">
+        <img src="{{ 'Line 25.svg' | asset_url }}" alt="divider" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </span>
     </div>
+
     <button class="gift-cta" type="button">
       ADD TO CART
       <img class="gift-cta__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="">
     </button>
   </div>
 </div>
+
 
 <!-- Look 6 -->
 <div class="gift-popup" data-popup="look-6" aria-hidden="true">
@@ -335,27 +406,41 @@ The task Contain :-
         <p class="gift-head__desc">A long sleeve version of the tennis top, perfect for cooler days on court.</p>
       </div>
     </div>
+
     <label class="gift-field__label">Color</label>
     <div class="gift-swatches">
-      <span class = cblue> </span>
-      <button type="button" class="gift-swatch ">Blue</button>
-      <span class = cblack> </span>
-      <button type="button" class="gift-swatch">Black</button>
+      <span class="cblue"></span><button type="button" class="gift-swatch">Blue</button>
+      <span class="cblack"></span><button type="button" class="gift-swatch">Black</button>
     </div>
-    <label class="gift-field__label">Size</label>
+
+    <!-- Size Select -->
+    <label for="size-6" class="gift-field__label">Size</label>
     <div class="gift-select">
-      <select>
-          <option value="" disabled selected hidden>Choose your size</option>
-        <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      <select id="size-6" required>
+        <option value="" disabled selected hidden></option>
+        <option value="XS">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
       </select>
-      <span class="gift-select__chev">▾</span>
+      <span class="gift-placeholder">Choose your size</span>
+      <span class="gift-select__chev">
+        <img src="{{ 'Line 25.svg' | asset_url }}" alt="divider" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </span>
     </div>
+
     <button class="gift-cta" type="button">
       ADD TO CART
       <img class="gift-cta__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="">
     </button>
   </div>
 </div>
+
 
     {{ 'gift-guide-section1.js' | asset_url | script_tag }}
 
