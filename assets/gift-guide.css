@@ -472,3 +472,67 @@
   .gift-hero__title { font-size: 52px; }
   .gift-hero__ticker { font-size: 16px; padding: 10px 50px; }
 }
+/* Hero Container */
+.gift-hero {
+  position: relative;
+  background: url("{{ 'Frame.svg' | asset_url }}") no-repeat center center/cover;
+  width: 100%;
+  min-height: 450px; /* نفس أبعاد السكرين */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Overlay Content */
+.gift-hero__overlay {
+  max-width: 600px;
+  color: #000; /* لو الصورة فاتحة */
+}
+
+/* Title */
+.gift-hero__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Paragraph */
+.gift-hero__text {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* CTA Button */
+.cta-button {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.cta-button:hover {
+  background: #333;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .gift-hero {
+    min-height: 380px;
+    padding: 1.5rem;
+  }
+  .gift-hero__title {
+    font-size: 1.6rem;
+  }
+  .gift-hero__text {
+    font-size: 0.95rem;
+  }
+}
