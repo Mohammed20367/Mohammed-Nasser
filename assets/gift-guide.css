@@ -594,5 +594,7 @@ position: relative;
   background-color: #FFFFFF;
   border: 0.5px solid #000; /* علشان الأبيض يبان */
   background-color: #FFFFFF;
+    vertical-align: middle;   /* 👈 يحل مشكلة الرفعة */
+
 }
 
