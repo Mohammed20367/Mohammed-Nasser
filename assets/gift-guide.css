@@ -321,200 +321,49 @@ display:flex;
 
 
 /*تجربه*/
-/* ============================= */
-/* Popup Wrapper & Overlay */
-/* ============================= */
-.gift-popup {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  display: none;
-  z-index: 1000;
-}
-.gift-popup.is-open {
-  display: block;
-}
-
-/* ============================= */
-/* Popup Card */
-/* ============================= */
+/* Popup Card width => زود العرض هنا */
 .gift-popup__card.gift-popup--figma {
-  width: 270px;   /* ✅ العرض أكبر شوية */
-  height: 440px;  /* ✅ الطول ثابت */
-  background: #fff;
-  border-radius: 8px;
-  border: 1px solid #D9D9D9;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 12px;
-  font-family: 'Jost', sans-serif;
-  color: #111;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* توزيع المحتوى */
-  overflow: hidden;
+  width: 340px; /* بدل 280px */
+  padding: 16px; /* padding أكبر شوية */
 }
 
-/* ============================= */
-/* Close Button */
-/* ============================= */
-.gift-popup__close {
-  position: absolute;
-  top: 6px;
-  right: 8px;
-  background: transparent;
-  border: 0;
-  font-size: 18px;
-  cursor: pointer;
-  color: #111;
-  transition: color 0.2s ease;
-}
-.gift-popup__close:hover {
-  color: #000;
-}
-
-/* ============================= */
-/* Product Head */
-/* ============================= */
-.gift-head {
-  display: grid;
-  grid-template-columns: 92px 1fr;
-  column-gap: 10px;
-  margin-bottom: 12px;
-}
+/* صورة المنتج => زود الحجم هنا */
 .gift-head__img {
-  width: 92px;
-  height: 92px;
-  object-fit: cover;
-  border-radius: 8px;
+  width: 120px;  /* بدل 92px */
+  height: 120px;
 }
+
+/* عنوان المنتج */
 .gift-head__title {
-  font-size: 13px;
+  font-size: 14px; /* بدل 13px */
   font-weight: 600;
-  margin: 0 0 4px;
 }
+
+/* السعر */
 .gift-head__price {
-  font-size: 14px;
-  font-weight: 700;
-  margin: 0 0 6px;
+  font-size: 15px; /* أكبر سنة */
 }
+
+/* الوصف */
 .gift-head__desc {
-  font-size: 11px;
-  line-height: 1.45;
-  color: #4B4B4B;
-  margin: 0;
-  max-height: 60px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 12px; /* بدل 11px */
+  line-height: 1.5;
 }
 
-/* ============================= */
-/* Fields & Labels */
-/* ============================= */
-.gift-field__label {
-  display: block;
-  font-size: 12px;
-  font-weight: 500;
-  margin: 12px 0 6px;
-  color: #111;
-}
-
-/* ============================= */
-/* Color Swatches */
-/* ============================= */
-.gift-swatches {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 6px;
-}
+/* زرار الألوان */
 .gift-swatch {
-  height: 32px;
-  border: 1px solid #111;
-  border-radius: 4px;
-  font-size: 12px;
-  cursor: pointer;
-  background: #fff;
-  transition: all 0.2s ease;
-}
-.gift-swatch:hover {
-  background: #f4f4f4;
-}
-.gift-swatch.is-active {
-  background: #000;
-  color: #fff;
+  height: 36px; /* بدل 32px */
+  font-size: 13px;
 }
 
-/* ============================= */
-/* Size Select */
-/* ============================= */
-.gift-select {
-  position: relative;
-}
+/* زرار السايد (الـ select) */
 .gift-select select {
-  width: 100%;
-  height: 36px;
-  border: 1px solid #111;
-  border-radius: 4px;
-  padding: 0 34px 0 10px;
-  font-size: 12px;
-  background: #fff;
-  appearance: none;
-  cursor: pointer;
-}
-.gift-select__chev {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
+  height: 40px; /* بدل 36px */
+  font-size: 13px;
 }
 
-/* ============================= */
-/* CTA Button */
-/* ============================= */
+/* زرار Add To Cart => زود الطول هنا */
 .gift-cta {
-  width: 100%;
-  height: 40px;
-  margin-top: 14px;
-  background: #000;
-  color: #fff;
-  border: 0;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  text-transform: uppercase;
-  transition: background 0.2s ease;
-}
-.gift-cta:hover {
-  background: #333;
-}
-.gift-cta__arrow {
-  width: 18px;
-  filter: brightness(0) invert(1);
-}
-
-/* ============================= */
-/* Responsive */
-/* ============================= */
-@media (max-width: 480px) {
-  .gift-popup__card.gift-popup--figma {
-    width: 90%;
-    height: auto;   /* موبايل يسيبها أوتو */
-    padding: 14px;
-  }
-  .gift-head {
-    grid-template-columns: 80px 1fr;
-  }
-  .gift-head__img {
-    width: 80px;
-    height: 80px;
-  }
+  height: 45px; /* بدل 40px */
+  font-size: 13px;
 }
