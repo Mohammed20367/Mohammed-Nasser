@@ -526,7 +526,6 @@ display:flex;
 {
   width: 7px;
   opacity: 1;
-  
   background-color: #000000;
   border: 0.5px solid #FFFFFF; /* علشان الأبيض يبان */
 }
