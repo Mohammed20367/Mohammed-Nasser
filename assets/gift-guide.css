@@ -710,7 +710,7 @@ display:flex;
             cursor: pointer;
             display: flex;
             align-items: center;
-            justify-content: end;
+            justify-content: start;
             transition: all 0.2s ease;
             position: relative;
             user-select: none;
@@ -742,7 +742,8 @@ display:flex;
         }
 
         .dropdown-divider {
-            width: 1px;
+
+            width: 10px;
             height: 20px;
             background: #D9D9D9;
         }
