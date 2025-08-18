@@ -502,6 +502,11 @@ position: relative;
   appearance: none;
   cursor: pointer;
 }
+.gift-select option {
+  width: 100%;
+  height: 20px; /* 👈 ارتفاع القائمة المنسدلة */
+ 
+}
 .gift-select__chev {
   
   position: absolute;
