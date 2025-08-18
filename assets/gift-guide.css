@@ -514,25 +514,23 @@ display:flex;
   color: #fff;
 }
 
-.cwhite {
-  width: 7px;
-  opacity: 1;
-  border-width: 0.5px;
-  background-color: #FFFFFF;
-  border: 0.5px solid #000; /* علشان الأبيض يبان */
-  background-color: #FFFFFF;
+.gift-swatch span {
+  display: inline-block;   /* يخليه ياخد أبعاد ثابتة */
+  width: 12px;             /* عرض المربع */
+  height: 12px;            /* ارتفاع المربع */
+  border: 0.5px solid #000;
+  border-radius: 2px;
+  flex-shrink: 0;          /* يمنع المربع من التمدد */
 }
-.cblack
-{
-  width: 7px;
-  opacity: 1;
-  border-width: 0.5px;
-  background-color: #000000;
-  border: 0.5px solid #FFFFFF; /* علشان الأبيض يبان */
-  border: 0.5px solid #000;   /* أسود، سمك نص بكسل، على الأربع جهات */
-box-sizing: border-box;     /* عشان البوردر يبقى جوه الحدود */
 
+.cwhite {
+  background-color: #FFFFFF;
 }
+
+.cblack {
+  background-color: #000000;
+}
+
 
 /* ============================= */
 /* Size Select */
