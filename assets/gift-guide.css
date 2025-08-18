@@ -383,6 +383,7 @@ display:flex;
   margin-bottom: 14px; /* 👈 المسافة بين الصورة وباقي العناصر */
 }
 .gift-head__img {/* 👈 عرض الصورة */
+  margin-top:20px;
   width: 120px;
   height: 140px;
   top: 36px;
