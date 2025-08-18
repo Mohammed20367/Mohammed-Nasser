@@ -88,28 +88,48 @@ document.querySelectorAll(".gift-select").forEach(wrapper => {
 });
 
 
-// Updated JavaScript for Custom Select
-document.querySelectorAll(".gift-select").forEach(wrapper => {
-  const select = wrapper.querySelector("select");
-  const placeholder = wrapper.querySelector(".gift-placeholder");
-
-  select.addEventListener("change", () => {
-    if (select.value !== "") {
-      placeholder.style.opacity = "0";
-      select.style.color = "#000";
-    } else {
-      placeholder.style.opacity = "1";
-      select.style.color = "transparent";
-    }
-  });
-
-  select.addEventListener("focus", () => {
-    select.style.color = "#000";
-  });
-
-  select.addEventListener("blur", () => {
-    if (select.value === "") {
-      select.style.color = "transparent";
-    }
-  });
+// Custom Dropdown Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdown = document.querySelector('.custom-dropdown');
+    const header = dropdown.querySelector('.dropdown-header');
+    const options = dropdown.querySelector('.dropdown-options');
+    const optionItems = dropdown.querySelectorAll('.dropdown-option');
+    const placeholder = header.getAttribute('data-placeholder');
+    
+    // Toggle dropdown
+    header.addEventListener('click', function() {
+        header.classList.toggle('active');
+        options.classList.toggle('show');
+    });
+    
+    // Handle option selection
+    optionItems.forEach(option => {
+        option.addEventListener('click', function() {
+            const value = this.getAttribute('data-value');
+            
+            // Update header
+            header.textContent = value;
+            header.classList.add('selected');
+            header.setAttribute('data-selected', value);
+            
+            // Update selected option styling
+            optionItems.forEach(opt => opt.classList.remove('selected'));
+            this.classList.add('selected');
+            
+            // Close dropdown
+            header.classList.remove('active');
+            options.classList.remove('show');
+            
+            // Optional: Log the selected value
+            console.log('Selected size:', value);
+        });
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.custom-dropdown')) {
+            header.classList.remove('active');
+            options.classList.remove('show');
+        }
+    });
 });
