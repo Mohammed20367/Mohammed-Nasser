@@ -473,7 +473,7 @@ display:flex;
 .gift-swatch {
   text-align:center;
   margin-bottom:10px; /*ألمسافه بين كلمة سايز والزرار تحتها*/
-  height: 40.441322326660156px; /* 👈 طول زرار اللون */
+  height: 20px; /* 👈 طول زرار اللون */
   border: 0.54px solid #111;
   border-radius: 4px;
   font-size: 13px; /* 👈 حجم خط الزرار */
@@ -585,16 +585,12 @@ position: relative;
 
 
 .cwhite {
-width: 5.807142734527588px;
-height: 40.441322326660156px;
-
-opacity: 1;
-border-width: 0.5px;
-
+  width: 5.807142734527588px;
+  height: 40.441322326660156px;
+  opacity: 1;
+  border-width: 0.5px;
   background-color: #FFFFFF;
   border: 0.5px solid #000; /* علشان الأبيض يبان */
-}
-
-.cwhite {
   background-color: #FFFFFF;
 }
+
