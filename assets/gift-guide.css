@@ -487,7 +487,6 @@ display:flex;
 .gift-swatches {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
   border: 1px solid #111;
   border-radius: 6px;
   overflow: hidden;
@@ -496,8 +495,8 @@ display:flex;
 .gift-swatch {
   display: flex;
   align-items: center;
-  gap: 6px;
   justify-content: center;
+  gap: 6px;
   padding: 8px 0;
   border: none;
   background: #f9f9f9;
@@ -507,9 +506,9 @@ display:flex;
 }
 
 .gift-swatch__color {
-  width: 14px;
-  height: 14px;
-  border-radius: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
   border: 1px solid #ccc;
 }
 
@@ -519,7 +518,7 @@ display:flex;
 }
 
 .gift-swatch.is-active .gift-swatch__color {
-  border: 1px solid #fff; /* يفضل يبان جوه الزرار */
+  border: 1px solid #fff;
 }
 
 
