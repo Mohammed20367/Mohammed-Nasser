@@ -466,6 +466,7 @@ display:flex;
   gap: 8px;
 }
 .gift-swatch {
+  margin-bottom:10px;
   height: 36px; /* 👈 طول زرار اللون */
   border: 1px solid #111;
   border-radius: 4px;
