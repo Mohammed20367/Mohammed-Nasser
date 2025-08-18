@@ -471,6 +471,7 @@ display:flex;
   overflow: hidden;   
 }
 .gift-swatch {
+  text-align:center
   margin-bottom:10px; /*ألمسافه بين كلمة سايز والزرار تحتها*/
   height: 40.441322326660156px; /* 👈 طول زرار اللون */
   border: 0.54px solid #111;
@@ -479,7 +480,7 @@ display:flex;
   cursor: pointer;
   background: #fff;
   transition: all 0.2s ease;
-   flex: 1;                /* كل واحد ياخد نص العرض */
+  flex: 1;                /* كل واحد ياخد نص العرض */
   border: none; 
 }
 .gift-swatch:hover {
