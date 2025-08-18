@@ -179,6 +179,7 @@ display:flex;
 .gift-hero__title {
   margin:0px;
   padding:0px;
+  width:100%;
 font-family: 'Jost', sans-serif;
 font-weight: 500;
 font-style: Medium;
