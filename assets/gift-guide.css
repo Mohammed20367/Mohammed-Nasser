@@ -503,9 +503,7 @@ position: relative;
   cursor: pointer;
 }
 .gift-select select option {
-  height:20px;
   font-size: 11px;   /* خط أصغر = ارتفاع أقل */
-  padding: 2px 4px;  /* دي أهم حاجة تقلل المسافة فوق وتحت كل اختيار */
 }
 
 .gift-select__chev {
