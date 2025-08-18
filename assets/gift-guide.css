@@ -424,7 +424,7 @@ display:flex;
   vertical-align: middle;
 }
 .gift-head__desc {/* 👈 حجم وصف المنتج */
-  margin-top:15px;
+  margin-top:12px;
   width: 146;
   height: 60;
   top: 119px;
@@ -466,7 +466,7 @@ display:flex;
   gap: 8px;
 }
 .gift-swatch {
-  margin-bottom:10px;
+  margin-bottom:10px; /*ألمسافه بين كلمة سايز والزرار تحتها*/
   height: 36px; /* 👈 طول زرار اللون */
   border: 1px solid #111;
   border-radius: 4px;
