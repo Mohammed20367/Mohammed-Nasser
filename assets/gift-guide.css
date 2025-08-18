@@ -340,7 +340,7 @@ display:flex;
 /* Popup Card */
 /* ============================= */
 .gift-popup__card.gift-popup--figma {
-  width: 280px;
+  width: 340px; /* 👈 زود/قلل عرض الكارد من هنا */
   background: #fff;
   border-radius: 8px;
   border: 1px solid #D9D9D9;
@@ -349,7 +349,7 @@ display:flex;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 12px;
+  padding: 16px; /* 👈 padding عام للكارد */
   font-family: 'Jost', sans-serif;
   color: #111;
 }
@@ -377,29 +377,29 @@ display:flex;
 /* ============================= */
 .gift-head {
   display: grid;
-  grid-template-columns: 92px 1fr;
-  column-gap: 10px;
-  margin-bottom: 12px;
+  grid-template-columns: 120px 1fr; /* 👈 حجم الصورة بالنسبة للنص */
+  column-gap: 12px;
+  margin-bottom: 14px; /* 👈 المسافة بين الصورة وباقي العناصر */
 }
 .gift-head__img {
-  width: 92px;
-  height: 92px;
+  width: 120px;  /* 👈 عرض الصورة */
+  height: 120px; /* 👈 طول الصورة */
   object-fit: cover;
   border-radius: 8px;
 }
 .gift-head__title {
-  font-size: 13px;
+  font-size: 14px; /* 👈 حجم عنوان المنتج */
   font-weight: 600;
-  margin: 0 0 4px;
-}
-.gift-head__price {
-  font-size: 14px;
-  font-weight: 700;
   margin: 0 0 6px;
 }
+.gift-head__price {
+  font-size: 15px; /* 👈 حجم السعر */
+  font-weight: 700;
+  margin: 0 0 8px;
+}
 .gift-head__desc {
-  font-size: 11px;
-  line-height: 1.45;
+  font-size: 12px; /* 👈 حجم وصف المنتج */
+  line-height: 1.5;
   color: #4B4B4B;
   margin: 0;
 }
@@ -411,7 +411,7 @@ display:flex;
   display: block;
   font-size: 12px;
   font-weight: 500;
-  margin: 12px 0 6px;
+  margin: 14px 0 8px; /* 👈 المسافة بين الليبل والعنصر */
   color: #111;
 }
 
@@ -421,13 +421,13 @@ display:flex;
 .gift-swatches {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 6px;
+  gap: 8px;
 }
 .gift-swatch {
-  height: 32px;
+  height: 36px; /* 👈 طول زرار اللون */
   border: 1px solid #111;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 13px; /* 👈 حجم خط الزرار */
   cursor: pointer;
   background: #fff;
   transition: all 0.2s ease;
@@ -448,11 +448,11 @@ display:flex;
 }
 .gift-select select {
   width: 100%;
-  height: 36px;
+  height: 40px; /* 👈 ارتفاع القائمة المنسدلة */
   border: 1px solid #111;
   border-radius: 4px;
   padding: 0 34px 0 10px;
-  font-size: 12px;
+  font-size: 13px; /* 👈 حجم الخط */
   background: #fff;
   appearance: none;
   cursor: pointer;
@@ -470,13 +470,13 @@ display:flex;
 /* ============================= */
 .gift-cta {
   width: 100%;
-  height: 40px;
-  margin-top: 14px;
+  height: 46px; /* 👈 طول زرار Add To Cart */
+  margin-top: 16px;
   background: #000;
   color: #fff;
   border: 0;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 13px; /* 👈 حجم الخط داخل الزرار */
   font-weight: 700;
   cursor: pointer;
   display: flex;
@@ -499,14 +499,14 @@ display:flex;
 /* ============================= */
 @media (max-width: 480px) {
   .gift-popup__card.gift-popup--figma {
-    width: 90%;
+    width: 90%; /* 👈 الكارد يبقى مرن على الموبايل */
     padding: 14px;
   }
   .gift-head {
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 100px 1fr; /* 👈 الصورة تصغر في الموبايل */
   }
   .gift-head__img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
   }
 }
