@@ -12,8 +12,7 @@ The task Contain :-
 -----items =>images to Add Card.
 {% endcomment %}
 
-{{ 'gift-guide.css' | asset_url | stylesheet_tag }} {% comment %} =>this link with css file in html {% endcomment %}
-{{ 'gift-guide-section1.js' | asset_url | script_tag }} {% comment %} =>this link with JS file in html {% endcomment %}
+ {{ 'gift-guide.css' | asset_url | stylesheet_tag }} {% comment %} =>this link with css file in html {% endcomment %}
 
 <!--link the Font Family using in task-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -135,154 +134,11 @@ The task Contain :-
         <img src="{{ 'image 827.svg' | asset_url }}" alt="Look 5">
  <span class="plus-icon6"><img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="plus in card"></span>      </div>
     </div>
-    <!-- ========== POPUPS (repeat per look) ========== -->
-
-<!-- Look 2: Tailored Jacket (example) -->
-<div class="gift-popup" data-popup="look-2" aria-hidden="true"
-     data-variant-map='{
-       "Blue":  { "XS": 1111111111, "S": 1111111112, "M": 1111111113, "L": 1111111114, "XL": 1111111115 },
-       "Black": { "XS": 2222222221, "S": 2222222222, "M": 2222222223, "L": 2222222224, "XL": 2222222225 }
-     }'>
-  <div class="gift-card" role="dialog" aria-modal="true" aria-label="Tailored Jacket">
-    <button class="gift-close" type="button" aria-label="Close">×</button>
-
-    <!-- Head: image left + meta right -->
-    <div class="gift-head">
-      <img class="gift-head__img" src="{{ 'image 823.png' | asset_url }}" alt="Tailored Jacket">
-      <div class="gift-head__meta">
-        <h4 class="gift-title">Tailored Jacket</h4>
-        <div class="gift-price">980,00€</div>
-        <p class="gift-desc">This onepiece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.</p>
-      </div>
-    </div>
-
-    <!-- Color -->
-    <label class="gift-label">Color</label>
-    <div class="gift-swatches" data-field="color">
-      <button type="button" class="gift-swatch is-active" data-color="Blue">Blue</button>
-      <button type="button" class="gift-swatch" data-color="Black">Black</button>
-    </div>
-
-    <!-- Size -->
-    <label class="gift-label">Size</label>
-    <div class="gift-select" data-field="size">
-      <select aria-label="Choose your size">
-        <option selected disabled>Choose your size</option>
-        <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-      </select>
-      <span class="gift-select__chev">▾</span>
-    </div>
-
-    <!-- CTA -->
-    <button class="gift-cta" type="button" data-action="add-to-cart" disabled>
-      ADD TO CART
-      <img class="gift-cta__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="" aria-hidden="true">
-    </button>
-
-    <!-- Tiny feedback -->
-    <div class="gift-feedback" aria-live="polite" hidden></div>
-  </div>
-</div>
-
-<!-- 👇 انسخ البلوك أعلاه وعدّل: data-popup, الصورة/العناوين، ألوان الـ buttons، وخريطة data-variant-map لكل Look (1..6) -->
-
   </section>
-
 </div> 
-<!--تجربه بالليل-->
-    {% comment %} <div class="product-layout">
-            <div class="details-section">
-              <div class="product-info" style="display: flex; gap: 5px">
-                <div class="image-section">
-                  <div class="product-image"></div>
-                </div>
-                <div>
-                  <h1 class="product-title">Tailored Jacket</h1>
-                  <div class="product-price">980,00€</div>
-                  <p class="product-description">
-                    This one-piece swimsuit is crafted from jersey featuring an
-                    allover micro Monogram motif in relief.
-                  </p>
-                </div>
-              </div>
-
-              <div class="product-options">
-                <div class="option-group">
-                  <label class="option-label">Color</label>
-                  <div class="color-options">
-                    <button class="color-option blue" data-color="blue">
-                      Blue
-                    </button>
-                    <button class="color-option black" data-color="black">
-                      Black
-                    </button>
-                  </div>
-                </div>
-
-                <div class="option-group">
-                  <label class="option-label">Size</label>
-                  <div class="size-selector">
-                    <div class="custom-select" id="customSelect">
-                      <div class="select-trigger" id="selectTrigger">
-                        <span
-                          class="select-text placeholder"
-                          style="padding: 10px; text-align: center; width: 100%"
-                          id="selectText"
-                          >Choose your size</span
-                        >
-                        <div
-                          style="
-                            display: flex;
-                            align-items: center;
-                            border-left: 2px solid #111010;
-                            height: 40.4px;
-                            padding: 10px;
-                          "
-                        >
-                          <div class="dropdown-arrow" id="dropdownArrow">
-                            <svg
-                              width="16"
-                              height="10"
-                              viewBox="0 0 16 10"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M2 2L8 8L14 2"
-                                stroke="black"
-                                stroke-width="1.5"
-                                stroke-linecap="square"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="select-options" id="selectOptions">
-                        <div class="select-option" data-value="xs">XS</div>
-                        <div class="select-option" data-value="s">S</div>
-                        <div class="select-option" data-value="m">M</div>
-                        <div class="select-option" data-value="l">L</div>
-                        <div class="select-option" data-value="xl">XL</div>
-                        <div class="select-option" data-value="xxl">XXL</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Add to Cart Button -->
-                <button id="addToCartBtn" class="add-to-cart-btn">
-                  ADD TO CART
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-      {% endcomment %}
 
 
-
+      
 </div>
 
 
@@ -338,8 +194,6 @@ The task Contain :-
 </section> {% endcomment %}
 
 </div>
-
-<!--تجربة-->
 
 
 {% schema %}
