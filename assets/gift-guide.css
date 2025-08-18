@@ -496,10 +496,7 @@ display:flex;
 .gift-swatch:hover {
   background: #f4f4f4;
 }
-.gift-swatch.is-active {
-  background: #000;
-  color: #fff;
-}
+
 
 .gift-swatches span {
   width: 7px;
