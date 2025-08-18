@@ -48,82 +48,84 @@
 
   document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.custom-dropdown').forEach(function(dropdown) {
-      const dropdownHeader = dropdown.querySelector('.dropdown-header');
-      const dropdownOptions = dropdown.querySelector('.dropdown-options');
-      const dropdownText = dropdownHeader.querySelector('.dropdown-text');
-      let isOpen = false;
-      let selectedValue = '';
-      let isDragging = false;
-      let startY = 0;
-      let scrollTop = 0;
+        const dropdownHeader = dropdown.querySelector('.dropdown-header');
+        const dropdownOptions = dropdown.querySelector('.dropdown-options');
+        const dropdownText = dropdownHeader.querySelector('.dropdown-text');
+        let isOpen = false;
+        let selectedValue = '';
+        let isDragging = false;
+        let startY = 0;
+        let scrollTop = 0;
 
-      dropdownHeader.addEventListener('click', function() {
-        if (isOpen) {
-          closeDropdown();
-        } else {
-          openDropdown();
-        }
-      });
-
-      function openDropdown() {
-        document.querySelectorAll('.dropdown-options.show').forEach(function(otherOptions) {
-          if (otherOptions !== dropdownOptions) {
-            otherOptions.classList.remove('show');
-            otherOptions.closest('.custom-dropdown').querySelector('.dropdown-header').classList.remove('active');
-          }
+        // فتح/إغلاق القائمة
+        dropdownHeader.addEventListener('click', function() {
+            if (isOpen) {
+                closeDropdown();
+            } else {
+                openDropdown();
+            }
         });
-        isOpen = true;
-        dropdownHeader.classList.add('active');
-        dropdownOptions.classList.add('show');
-      }
 
-      function closeDropdown() {
-        isOpen = false;
-        dropdownHeader.classList.remove('active');
-        dropdownOptions.classList.remove('show');
-      }
+        function openDropdown() {
+            // إغلاق أي dropdown مفتوح
+            document.querySelectorAll('.dropdown-options.show').forEach(function(otherOptions) {
+                if (otherOptions !== dropdownOptions) {
+                    otherOptions.classList.remove('show');
+                    otherOptions.closest('.custom-dropdown').querySelector('.dropdown-header').classList.remove('active');
+                }
+            });
 
-      dropdownOptions.addEventListener('click', function(e) {
-        if (e.target.classList.contains('dropdown-option') && !isDragging) {
-          dropdownOptions.querySelectorAll('.dropdown-option').forEach(option => {
-            option.classList.remove('selected');
-          });
-          e.target.classList.add('selected');
-          selectedValue = e.target.dataset.value;
-          dropdownText.textContent = selectedValue;
-          dropdownHeader.classList.add('selected');
-          closeDropdown();
-          console.log('Selected size:', selectedValue);
+            isOpen = true;
+            dropdownHeader.classList.add('active');
+            dropdownOptions.classList.add('show');
         }
-      });
 
-      dropdownOptions.addEventListener('mousedown', function(e) {
-        isDragging = true;
-        startY = e.pageY - dropdownOptions.offsetTop;
-        scrollTop = dropdownOptions.scrollTop;
-        dropdownOptions.style.cursor = 'grabbing';
-        e.preventDefault();
-      });
+        function closeDropdown() {
+            isOpen = false;
+            dropdownHeader.classList.remove('active');
+            dropdownOptions.classList.remove('show');
+        }
 
-      dropdownOptions.addEventListener('mouseleave', function() {
-        isDragging = false;
-        dropdownOptions.style.cursor = 'grab';
-      });
+        // اختيار المقاس
+        dropdownOptions.addEventListener('click', function(e) {
+            if (e.target.classList.contains('dropdown-option') && !isDragging) {
+                dropdownOptions.querySelectorAll('.dropdown-option').forEach(option => {
+                    option.classList.remove('selected');
+                });
+                e.target.classList.add('selected');
+                selectedValue = e.target.dataset.value;
+                dropdownText.textContent = selectedValue;
+                dropdownHeader.classList.add('selected');
+                closeDropdown();
+                console.log('Selected size:', selectedValue);
+            }
+        });
 
-      dropdownOptions.addEventListener('mouseup', function() {
-        isDragging = false;
-        dropdownOptions.style.cursor = 'grab';
-      });
+        // Drag scroll
+        dropdownOptions.addEventListener('mousedown', function(e) {
+            isDragging = true;
+            startY = e.pageY - dropdownOptions.offsetTop;
+            scrollTop = dropdownOptions.scrollTop;
+            dropdownOptions.style.cursor = 'grabbing';
+            e.preventDefault();
+        });
 
-      dropdownOptions.addEventListener('mousemove', function(e) {
-        if (!isDragging) return;
-        e.preventDefault();
-        const y = e.pageY - dropdownOptions.offsetTop;
-        const walk = (y - startY) * 2;
-        dropdownOptions.scrollTop = scrollTop - walk;
-      });
+        dropdownOptions.addEventListener('mouseleave', function() {
+            isDragging = false;
+            dropdownOptions.style.cursor = 'grab';
+        });
 
+        dropdownOptions.addEventListener('mouseup', function() {
+            isDragging = false;
+            dropdownOptions.style.cursor = 'grab';
+        });
+
+        dropdownOptions.addEventListener('mousemove', function(e) {
+            if (!isDragging) return;
+            e.preventDefault();
+            const y = e.pageY - dropdownOptions.offsetTop;
+            const walk = (y - startY) * 2;
+            dropdownOptions.scrollTop = scrollTop - walk;
+        });
     });
-  });
-
-})(); // ✅ قفلة واحدة بس
+});
