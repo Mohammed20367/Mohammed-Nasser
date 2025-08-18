@@ -394,7 +394,7 @@ display:flex;
 }
 .gift-head__title {/* 👈 حجم عنوان المنتج */
   margin: 0 0 6px;
-  margin-top:8px;
+  margin-top:5px;
   width: 136;
   height: 19;
   top: 49px;
