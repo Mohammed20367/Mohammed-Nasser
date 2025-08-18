@@ -674,7 +674,10 @@ display:flex;
 
 
 
-
+.dropdown-text
+{
+  text-align:left;
+}
 .size-field {
             margin-bottom: 20px;
         }
