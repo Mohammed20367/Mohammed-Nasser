@@ -863,26 +863,3 @@ width:100%
         }
 
 
-
-        /* النص اللي فوق (Choose size) */
-.size-field__label {
-  text-align: left;
-}
-
-/* الهيدر بتاع الـ dropdown */
-.dropdown-header {
-  justify-content: center; /* يخلي النص أو الاختيار في النص */
-  text-align: center;
-}
-
-/* لو لسه مفيش اختيار (مثلاً choose size placeholder) */
-.dropdown-header.placeholder {
-  justify-content: flex-start; /* يبقى شمال */
-  text-align: left;
-  color: #666; /* لون مختلف عشان يبان انه placeholder */
-}
-
-/* العناصر داخل الـ dropdown */
-.dropdown-option {
-  text-align: center; /* تخلي المقاسات جوة القائمة في النص */
-}
