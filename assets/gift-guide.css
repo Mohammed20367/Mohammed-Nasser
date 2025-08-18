@@ -573,3 +573,33 @@ position: relative;
 
 
 
+.gift-select{ position:relative; width:100%; }
+
+.gift-select select{
+  box-sizing:border-box;
+  width:100%;
+  border:1px solid #000;
+  border-radius:4px;
+  font-size:13px;
+  background:#fff;
+  padding:6px 12px;
+  color:#111;
+  /* listbox سلوك */
+  height:auto;
+  max-height:96px;         /* ~ 3 صفوف */
+  overflow-y:auto;
+  appearance:none;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+}
+
+/* تحسين شكل الاسكرول */
+.gift-select select { scrollbar-width: thin; }
+.gift-select select::-webkit-scrollbar{ width:8px; }
+.gift-select select::-webkit-scrollbar-thumb{ background:#c7c7c7; border-radius:6px; }
+
+/* أول خيار كـ placeholder */
+.gift-select select option[disabled] { color:#666; }
+
+/* اختياري: شيل السهم المصاحب لليست بوكس */
+.gift-select__chev{ display:none; }
