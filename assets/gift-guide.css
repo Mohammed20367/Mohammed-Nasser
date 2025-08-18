@@ -170,13 +170,15 @@ display:flex;
 /* أنماط معدلة لمنع الطول الزائد */
 .gift-hero__copy {
   max-width: 600px;
-  padding: 40px 0px;
+  padding: 40px 20px;
   text-align: center;
   font-family: 'Jost', sans-serif;
   margin: 0 auto;
 }
 
 .gift-hero__title {
+  margin:0px;
+  padding:0px;
 font-family: 'Jost', sans-serif;
 font-weight: 500;
 font-style: Medium;
