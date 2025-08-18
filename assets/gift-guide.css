@@ -377,19 +377,7 @@ width:100%
   object-position: left;                        /* تقطيع نظيف */
 }
 
-.image-container {
-  width: 100%;
-  text-align: left;   /* يحط الصورة شمال */
-  overflow: hidden;   /* لو الصورة أكبر من الديف */
-}
 
-.image-container img {
-  display: block;     /* يشيل أي مساحة بيضا من inline-block */
-  max-width: 100%;    /* عشان ما تتجاوزش حجم الديف */
-  height: auto;       /* يحافظ على نسبة العرض والارتفاع */
-  object-fit: contain; /* يخلي الصورة تبان بالكامل */
-  object-position: left; /* يخليها تبدأ من الشمال */
-}
 
 
 /* زرار + */
