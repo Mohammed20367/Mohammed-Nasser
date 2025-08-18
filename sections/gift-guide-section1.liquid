@@ -1,341 +1,142 @@
 {% comment %}
-Gift Guid - Banner (Custom)
-First i want to thank who make ui of this task.
-The task Contain :-
---Page =>with width 1440px and hieght 2000px
-----Section 1 
-------Navbar.
-------Frame image 1. 
-------2 div =>1 contain content and another contain image.
-------footer.
-----Section2
------items =>images to Add Card.
+Gift Guide - Custom Section
+- Section 1: Navbar + Frame + Hero + Footer
+- Section 2: Grid with 6 images + Popups
 {% endcomment %}
 
- {{ 'gift-guide.css' | asset_url | stylesheet_tag }} {% comment %} =>this link with css file in html {% endcomment %}
+{{ 'gift-guide.css' | asset_url | stylesheet_tag }}
 
-<!--link the Font Family using in task-->
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lustria&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lustria&display=swap" rel="stylesheet">
 
-<!--Start the task-->
+<div class="page"><!-- All page container -->
 
-<div classe = "page">  <!--All page that contain 2 section-->
-  <div class="section1"> <!--contain nav + fram1 + fram2 + footer-->
-    <div class='gift-top-bar'> <!--navbar-->
- <div>
-      <img class="gift-icon--tisso"
-           src="{{ 'tisso.svg' | asset_url }}"
-           alt="Tisso Vison"
-           width="151" height="19" loading="lazy">
-    </div>
+  <!-- ================= Section 1 ================= -->
+  <div class="section1">
 
-    <div class="gift-top-bar_message">
-      Find the ideal gift for your loved ones.
-    </div>
-
-    <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
-      <span class="gift-icon--arrow-text">CHOOSE GIFT</span>
-      <img class="gift-icon gift-icon--arrow"
-           src="{{ 'Arrow.svg' | asset_url }}"
-           alt="" aria-hidden="true"
-           width="24" height="1" loading="lazy">
-    </button>
-      </div><!--end of navbar-->
-    <div class="firstframe"> <!--first frame-->
-    <img class="imageinframe"
-         src="{{ 'Frame.svg' | asset_url }}"
-         alt="image in section 1"
-         width="10" height="10" loading="eager">
-  </div> <!--end to first frame-->
-
-  {% comment %} <div class="secondframe">
-    <div class="divleft">
-      <div  class="contentdiv">
-      The Gift Guide
+    <!-- Navbar -->
+    <div class='gift-top-bar'>
+      <div>
+        <img class="gift-icon--tisso"
+             src="{{ 'tisso.svg' | asset_url }}"
+             alt="Tisso Vison"
+             width="151" height="19" loading="lazy">
       </div>
-      <div class="contentinleftdiv">
-        Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.
-        </div>
-        <div class="showbottom">
-           <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
-      <span class="gift-icon--arrow-text">Shop</span>
-      <img class="gift-icon gift-icon--arrow"
-           src="{{ 'Arrow.svg' | asset_url }}"
-           alt="" aria-hidden="true"
-           width="24" height="1" loading="lazy">
-    </button>
-          </div>
-    </div>
-    <div>
-      <img class="seconimageinframe"
+
+      <div class="gift-top-bar_message">
+        Find the ideal gift for your loved ones.
+      </div>
+
+      <button class="gift-button gift-button--highlight" id="gift-topbar-cta" type="button">
+        <span class="gift-icon--arrow-text">CHOOSE GIFT</span>
+        <img class="gift-icon gift-icon--arrow"
+             src="{{ 'Arrow.svg' | asset_url }}"
+             alt="" aria-hidden="true"
+             width="24" height="1" loading="lazy">
+      </button>
+    </div><!-- end navbar -->
+
+    <!-- First frame -->
+    <div class="firstframe">
+      <img class="imageinframe"
            src="{{ 'Frame.svg' | asset_url }}"
-           alt=""
-           width="10" height="10" loading="lazy">
-    </div> {% endcomment %}
-
-<div class = "secondframe"> <!--Second frame in first section-->
-   <!--content and left div-->
-    <!-- النص -->
-    <div class="gift-hero__copy">
-      <h2 class="gift-hero__title">The Gift Guide</h2>
-      <p class="gift-hero__text">
-        Discover Joy: Your Ultimate Holiday Gift Destination.
-        Explore our curated selection and find the perfect gifts to
-        delight your loved ones this holiday season.
-      </p>
-      <a href="/collections/gift-guide" class="gift-btn">SHOP NOW →</a>
+           alt="image in section 1"
+           width="10" height="10" loading="eager">
     </div>
 
-    <!-- الصورة -->
-    <div class="gift-hero__art" > <!--div of image-->
-     <img src="{{ 'Frame.png' | asset_url }}" alt="image in section 1" class="gift-hero__img"> 
+    <!-- Hero Section -->
+    <div class="secondframe">
+      <!-- Content -->
+      <div class="gift-hero__copy">
+        <h2 class="gift-hero__title">The Gift Guide</h2>
+        <p class="gift-hero__text">
+          Discover Joy: Your Ultimate Holiday Gift Destination.
+          Explore our curated selection and find the perfect gifts to
+          delight your loved ones this holiday season.
+        </p>
+        <a href="/collections/gift-guide" class="gift-btn">SHOP NOW →</a>
+      </div>
+
+      <!-- Image -->
+      <div class="gift-hero__art">
+        <img src="{{ 'Frame.png' | asset_url }}" alt="image in section 1" class="gift-hero__img"> 
+      </div>
+    </div>
+
+    <!-- Footer ticker -->
+    <div class="gift-hero__ticker">
+      SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL
+    </div>
+
+  </div><!-- end section1 -->
+
+  <!-- ================= Section 2 ================= -->
+  <div class="section2">
+    <section class="part-two">
+      <h2 class="wild-title">Tisso vision in the wild</h2>
+
+      <div class="grid-container">
+        {% for i in (1..6) %}
+          <div class="grid-item">
+            <img src="{{ 'image 82' | append: i | append: '.svg' | asset_url }}" alt="Look {{ i }}">
+            <span class="plus-icon plus-icon{{ i }}" data-popup-open="look-{{ i }}" role="button" tabindex="0">
+              <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="plus icon">
+            </span>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
   </div>
-</div>
-  
-  
-<div class="gift-hero__ticker">
-    SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL
-  </div>
 
-  </div>   
-</div>
+  <!-- ================= Popups ================= -->
+  {% for i in (1..6) %}
+    <div class="gift-popup" data-popup="look-{{ i }}" aria-hidden="true">
+      <div class="gift-popup__card gift-popup--figma">
+        <button class="gift-popup__close" type="button" aria-label="Close">×</button>
 
-<!-- ============ Section 2 ============ -->
-<div class="section2">
-  <section class="part-two">
-    <h2 class="wild-title">Tisso vison in the wild</h2>
+        <div class="gift-head">
+          <img class="gift-head__img" src="{{ 'image 82' | append: i | append: '.svg' | asset_url }}" alt="Look {{ i }}">
+          <div class="gift-head__meta">
+            <h4 class="gift-head__title">Look {{ i }} Title</h4>
+            <div class="gift-head__price">980,00€</div>
+            <p class="gift-head__desc">Description for Look {{ i }} goes here.</p>
+          </div>
+        </div>
 
-    <div class="grid-container">
-      <div class="grid-item">
-        <img src="{{ 'image 822.svg' | asset_url }}" alt="Look 1">
-        <span class="plus-icon1" data-popup-open="look-1" role="button" tabindex="0">
-          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
-        </span>
-      </div>
+        <label class="gift-field__label">Color</label>
+        <div class="gift-swatches">
+          <button type="button" class="gift-swatch is-active">Option 1</button>
+          <button type="button" class="gift-swatch">Option 2</button>
+        </div>
 
-      <div class="grid-item">
-        <img src="{{ 'image 823.png' | asset_url }}" alt="Look 2">
-        <span class="plus-icon2" data-popup-open="look-2" role="button" tabindex="0">
-          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
-        </span>
-      </div>
+        <label class="gift-field__label">Size</label>
+        <div class="gift-select">
+          <select>
+            <option selected>Choose your size</option>
+            <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+          </select>
+          <span class="gift-select__chev">▾</span>
+        </div>
 
-      <div class="grid-item">
-        <img src="{{ 'image 824.svg' | asset_url }}" alt="Look 3">
-        <span class="plus-icon3" data-popup-open="look-3" role="button" tabindex="0">
-          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
-        </span>
-      </div>
-
-      <div class="grid-item">
-        <img src="{{ 'image 825.svg' | asset_url }}" alt="Look 4">
-        <span class="plus-icon4" data-popup-open="look-4" role="button" tabindex="0">
-          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
-        </span>
-      </div>
-
-      <div class="grid-item">
-        <img src="{{ 'image 826.svg' | asset_url }}" alt="Look 5">
-        <span class="plus-icon5" data-popup-open="look-5" role="button" tabindex="0">
-          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
-        </span>
-      </div>
-
-      <div class="grid-item">
-        <img src="{{ 'image 827.svg' | asset_url }}" alt="Look 6">
-        <span class="plus-icon6" data-popup-open="look-6" role="button" tabindex="0">
-          <img class="plusimage" src="{{ 'plus.svg' | asset_url }}" alt="">
-        </span>
+        <button class="gift-cta" type="button">
+          ADD TO CART
+          <img class="gift-cta__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="">
+        </button>
       </div>
     </div>
-  </section>
-</div>
+  {% endfor %}
 
-<!-- ========= 6 POPUPS (Figma-perfect, width 250px) ========= -->
-
-<!-- Look 1 -->
-<div class="gift-popup" data-popup="look-1" aria-hidden="true">
-  <div class="gift-popup__card gift-popup--figma">
-    <button class="gift-popup__close" type="button" aria-label="Close">×</button>
-    <div class="gift-head">
-      <img class="gift-head__img" src="{{ 'image 822.svg' | asset_url }}" alt="Orange Wide Leg">
-      <div class="gift-head__meta">
-        <h4 class="gift-head__title">Orange Wide Leg</h4>
-        <div class="gift-head__price">980,00€</div>
-        <p class="gift-head__desc">This onepiece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.</p>
-      </div>
-    </div>
-    <label class="gift-field__label">Color</label>
-    <div class="gift-swatches">
-      <button type="button" class="gift-swatch is-active">White</button>
-      <button type="button" class="gift-swatch">Black</button>
-    </div>
-    <label class="gift-field__label">Size</label>
-    <div class="gift-select">
-      <select>
-        <option selected>Choose your size</option>
-        <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-      </select>
-      <span class="gift-select__chev">▾</span>
-    </div>
-    <button class="gift-cta" type="button">
-      ADD TO CART
-      <img class="gift-cta__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="">
-    </button>
-  </div>
-</div>
-
-<!-- Look 2 -->
-<div class="gift-popup" data-popup="look-2" aria-hidden="true">
-  <div class="gift-popup__card gift-popup--figma">
-    <button class="gift-popup__close" type="button" aria-label="Close">×</button>
-    <div class="gift-head">
-      <img class="gift-head__img" src="{{ 'image 823.png' | asset_url }}" alt="Tailored Jacket">
-      <div class="gift-head__meta">
-        <h4 class="gift-head__title">Tailored Jacket</h4>
-        <div class="gift-head__price">980,00€</div>
-        <p class="gift-head__desc">This onepiece swimsuit is crafted from jersey featuring an allover micro Monogram motif in relief.</p>
-      </div>
-    </div>
-    <label class="gift-field__label">Color</label>
-    <div class="gift-swatches">
-      <button type="button" class="gift-swatch is-active">Blue</button>
-      <button type="button" class="gift-swatch">Black</button>
-    </div>
-    <label class="gift-field__label">Size</label>
-    <div class="gift-select">
-      <select>
-        <option selected>Choose your size</option>
-        <option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-      </select>
-      <span class="gift-select__chev">▾</span>
-    </div>
-    <button class="gift-cta" type="button">
-      ADD TO CART
-      <img class="gift-cta__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="">
-    </button>
-  </div>
-</div>
-
-<!-- ========= CSS ========= -->
-<style>
-.gift-popup{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;z-index:1000}
-.gift-popup.is-open{display:block}
-.gift-popup__card.gift-popup--figma{
-  width:250px;background:#fff;border-radius:8px;border:1px solid #D9D9D9;
-  box-shadow:0 6px 24px rgba(0,0,0,.15);
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  padding:10px;font-family:'Jost',sans-serif;color:#111
-}
-.gift-popup__close{position:absolute;top:6px;right:8px;background:transparent;border:0;font-size:18px;cursor:pointer;color:#111}
-.gift-head{display:grid;grid-template-columns:92px 1fr;column-gap:8px;margin-bottom:8px}
-.gift-head__img{width:92px;height:92px;object-fit:cover;border-radius:8px}
-.gift-head__title{font-size:12px;font-weight:500;margin:0 0 2px}
-.gift-head__price{font-size:14px;font-weight:700;margin:0 0 4px}
-.gift-head__desc{font-size:11px;line-height:1.45;color:#4B4B4B;margin:0}
-.gift-field__label{display:block;font-size:12px;margin:10px 0 6px}
-.gift-swatches{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.gift-swatch{height:32px;border:1px solid #111;border-radius:4px;font-size:12px;cursor:pointer}
-.gift-swatch.is-active{background:#000;color:#fff}
-.gift-select{position:relative}
-.gift-select select{width:100%;height:36px;border:1px solid #111;border-radius:4px;padding:0 34px 0 10px;font-size:12px}
-.gift-select__chev{position:absolute;right:10px;top:50%;transform:translateY(-50%)}
-.gift-cta{width:100%;height:40px;margin-top:10px;background:#000;color:#fff;border:0;border-radius:4px;
-  font-size:12px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;text-transform:uppercase}
-.gift-cta__arrow{width:18px;filter:brightness(0) invert(1)}
-</style>
-
-<!-- ========= JS ========= -->
-<script>
-(function(){
-  function openPopup(id){var p=document.querySelector('.gift-popup[data-popup="'+id+'"]');if(p){p.classList.add('is-open');p.setAttribute('aria-hidden','false');}}
-  function closePopup(p){p.classList.remove('is-open');p.setAttribute('aria-hidden','true');}
-  document.addEventListener('click',function(e){
-    var t=e.target.closest('[data-popup-open]'); if(t){e.preventDefault(); openPopup(t.getAttribute('data-popup-open'));}
-    if(e.target.closest('.gift-popup__close')){ closePopup(e.target.closest('.gift-popup')); }
-    else if(e.target.classList.contains('gift-popup')){ closePopup(e.target); }
-  });
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.gift-popup.is-open').forEach(closePopup);}});
-  document.addEventListener('click',function(e){
-    var sw=e.target.closest('.gift-swatch'); if(!sw) return;
-    var wrap=sw.closest('.gift-popup'); wrap.querySelectorAll('.gift-swatch').forEach(b=>b.classList.remove('is-active'));
-    sw.classList.add('is-active');
-  });
-})();
-</script>
-
-</div> 
-
-
-      
-</div>
-
-
- 
-
- 
-
-
-  <!-- أول صورة: تيجي مباشرة تحت الناف -->
-
-
-
-
-
-{% comment %} <div class="section2">
-<section class="part-two">
-  <div class ="parentofimages">
-    <div>
-      <span class="spantisso">Tisso vison in the wild</span>
-      </div>
- <div class="grid-container">
-    <div class="grid-item">
-      <img src="{{ 'image 822.svg' | asset_url }}" alt="لازم تكتبها" width="10" height="10">
-            <span class="plus-icon">+</span>
-
-    </div>
-    <div class="grid-item">
-      <img src="{{ 'image 823.svg' | asset_url }}" alt="لازم تكتبها "width="10" height="10">
-            <span class="plus-icon">+</span>
-
-    </div>
-    <div class="grid-item">
-      <img src="{{ 'image 824.svg' | asset_url }}" alt="لازم تكتبها"width="10" height="10">
-            <span class="plus-icon">+</span>
-
-    </div>
-    <div class="grid-item">
-      <img src="{{ 'image 825.svg' | asset_url }}" alt="لازم تكتبها"width="10" height="10">
-            <span class="plus-icon">+</span>
-
-    </div>
-    <div class="grid-item ">
-      <img src="{{ 'image 825.svg' | asset_url }}" alt="لازم تكتبها"width="10" height="10">
-            <span class="plus-icon">+</span>
-
-    </div>
-    <div class="grid-item">
-      <img src="{{ 'image 826.svg' | asset_url }}" alt="لازم تكتبها"width="10" height="10">
-        <span class="plus-icon">+</span>
-    </div>
-</div>
-</div>
-</section> {% endcomment %}
-
-</div>
-
+</div><!-- end page -->
 
 {% schema %}
 {
-  "name": "Task",
+  "name": "Gift Guide Section",
   "settings": [],
   "presets": [
-    { "name": "Task" }
+    { "name": "Gift Guide" }
   ]
 }
 {% endschema %}
