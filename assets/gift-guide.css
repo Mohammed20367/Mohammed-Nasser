@@ -469,7 +469,9 @@ display:flex;
   border: 1px solid #111; /* البوردر الخارجي */
   border-radius: 6px;     /* يدي كورنر ناعم للكادر كله */
   overflow: hidden; 
-    text-align:center;
+  text-align:center;
+    height: 40.441322326660156px;
+
   
 }
 .gift-swatch {
