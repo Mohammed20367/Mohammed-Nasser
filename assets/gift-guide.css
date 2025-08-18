@@ -467,6 +467,10 @@ display:flex;
 
 .gift-swatch {
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;               /* مسافة بين المربع والكلمة */
   padding: 8px 0;
   background: #fff;
   border: 1px solid #000;
@@ -475,15 +479,21 @@ display:flex;
   transition: all 0.2s ease;
 }
 
-/* منع الخط المزدوج */
 .gift-swatch + .gift-swatch {
   border-left: none;
 }
 
-/* اللي متعلم */
 .gift-swatch.is-active {
   border: 2px solid #000;
   background: #f9f9f9;
+}
+
+.color-box {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #111;
+  border-radius: 2px;
+  display: inline-block;
 }
 
 
