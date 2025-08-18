@@ -156,6 +156,7 @@ display:flex;
 
 /* الكتلة اليسار تاخد عمود واحد (الأول) في الصف الأول */
 .gift-hero__copy{
+  margin-left:10px;
  grid-column: span 1 / span 1;}
 
 /* الصورة تحت وتاخد عرض الجريد كله */
