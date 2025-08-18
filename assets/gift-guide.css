@@ -484,6 +484,8 @@ display:flex;
   flex: 1;                /* كل واحد ياخد نص العرض */
   border: none; 
   text-align:center;
+    line-height: normal;   /* يمنع رفع النص */
+
 }
 .gift-swatch:hover {
   background: #f4f4f4;
