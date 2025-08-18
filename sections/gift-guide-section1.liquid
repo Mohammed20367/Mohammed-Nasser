@@ -78,22 +78,21 @@ The task Contain :-
            width="10" height="10" loading="lazy">
     </div> {% endcomment %}
 
-<div class = "secondframe"> <!--Second frame in first section-->
-   <!--content and left div-->
-    <!-- النص -->
-    <div class="gift-hero__copy">
-      <h2 class="gift-hero__title">The Gift Guide</h2>
-      <p class="gift-hero__text">
-        Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.
-      </p>
- <button class="cta-button" id="gift-topbar-cta" type="button">
-  <span class="cta-text">Shop Now</span>
-  <img class="cta-arrow"
-       src="{{ 'Arrow.svg' | asset_url }}"
-       alt="" aria-hidden="true"
-       width="24" height="1" loading="lazy">
-</button>
-    </div>
+<!-- Hero Section -->
+<div class="gift-hero">
+  <div class="gift-hero__overlay">
+    <h2 class="gift-hero__title">The Gift Guide</h2>
+    <p class="gift-hero__text">
+      Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated 
+      selection and find the perfect gifts to delight your loved ones this holiday season.
+    </p>
+    <button class="cta-button" type="button">
+      <span class="cta-text">Shop Now</span>
+      <img class="cta-arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="" aria-hidden="true" width="24" height="24">
+    </button>
+  </div>
+</div>
+
 
     <!-- الصورة -->
     <div class="gift-hero__art" > <!--div of image-->
