@@ -573,14 +573,3 @@ position: relative;
 
 
 
-#size {
-  width: 200px;
-  border: 1px solid #000;
-  border-radius: 4px;
-  font-size: 14px;
-  text-align: center;
-  cursor: pointer;
-}
-#size option {
-  padding: 8px 0;
-}
