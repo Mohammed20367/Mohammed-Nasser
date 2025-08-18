@@ -155,6 +155,7 @@ The task Contain :-
   </section>
 </div>
 <!-- Look 1 -->
+<!-- Look 1 - Fixed -->
 <div class="gift-popup" data-popup="look-1" aria-hidden="true">
   <div class="gift-popup__card gift-popup--figma">
     <button class="gift-popup__close" type="button" aria-label="Close">×</button>
@@ -173,33 +174,36 @@ The task Contain :-
       <span class="cblack"></span><button type="button" class="gift-swatch">Black</button>
     </div>
 
-    <!-- Size Select -->
-   <!-- Size Select - Updated HTML -->
-<label for="size-1" class="gift-field__label">Size</label>
-<div class="gift-select">
-  <select id="size-1" required>
-    <option value="" disabled selected hidden></option>
-    <option value="XS">XS</option>
-    <option value="S">S</option>
-    <option value="M">M</option>
-    <option value="L">L</option>
-    <option value="XL">XL</option>
-  </select>
-  <span class="gift-placeholder">Choose your size</span>
-  <div class="gift-select__chev">
-    <div class="divider"></div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-      <polyline points="6 9 12 15 18 9"></polyline>
-    </svg>
-  </div>
-</div>
+    <!-- Custom Size Dropdown -->
+    <div class="size-field">
+        <label class="size-field__label">Size</label>
+        <div class="custom-dropdown">
+            <div class="dropdown-header">
+                <span class="dropdown-text">Choose your size</span>
+                <div class="dropdown-arrow">
+                    <div class="dropdown-divider"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </div>
+            <div class="dropdown-options">
+                <div class="dropdown-option" data-value="XS">XS</div>
+                <div class="dropdown-option" data-value="S">S</div>
+                <div class="dropdown-option" data-value="M">M</div>
+                <div class="dropdown-option" data-value="L">L</div>
+                <div class="dropdown-option" data-value="XL">XL</div>
+                <div class="dropdown-option" data-value="XXL">XXL</div>
+            </div>
+        </div>
+    </div>
+
     <button class="gift-cta" type="button">
       ADD TO CART
       <img class="gift-cta__arrow" src="{{ 'Arrow.svg' | asset_url }}" alt="">
     </button>
   </div>
 </div>
-
 
 <!-- Look 2 -->
 <div class="gift-popup" data-popup="look-2" aria-hidden="true">
