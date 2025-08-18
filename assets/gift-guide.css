@@ -600,6 +600,10 @@ display:flex;
   height: 100%;
   width: auto;
 }
+.gift-select__chev img {
+  filter: brightness(0) saturate(100%); /* يخليها أسود */
+}
+
 
 .gift-select__chev svg {
   width: 16px;
