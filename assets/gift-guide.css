@@ -501,7 +501,6 @@ position: relative;
   background: #fff;
   appearance: none;
   cursor: pointer;
-   max-height: 70px;   /* تقريبًا 3 options */
   overflow-y: auto;   /* scroll لو زادوا */
 }
 
