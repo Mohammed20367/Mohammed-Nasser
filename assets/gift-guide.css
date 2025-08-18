@@ -583,3 +583,12 @@ position: relative;
 
 
 
+
+.cwhite {
+  background-color: #fff;
+  border: 1px solid #000; /* علشان الأبيض يبان */
+}
+
+.cwhite {
+  background-color: #000;
+}
