@@ -453,7 +453,7 @@ display:flex;
   line-height: 130%;
   letter-spacing: 0%;
   display: block;
-  margin: 1px 0 8px; /* 👈 المسافة بين الليبل والعنصر */
+  margin: 5px 0 8px; /* 👈 المسافة بين الليبل والعنصر */
   color: #333333;
 }
 
