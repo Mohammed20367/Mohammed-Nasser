@@ -256,7 +256,7 @@ display:flex;
 }
 .cta-button
 {
-  padding:5px 0px 5px 25px;
+  margin-left:25px;
 }
 
 /**/
