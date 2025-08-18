@@ -383,6 +383,13 @@ display:flex;
   column-gap: 12px;
   margin-bottom: 0px; /* 👈 المسافة بين الصورة وباقي العناصر */
 }
+.gift-head {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  column-gap: 10px;
+  margin-bottom: 6px; /* قللت المسافة */
+}
+
 .gift-head__img {/* 👈 عرض الصورة */
   width: 120px;
   height: 140px;
