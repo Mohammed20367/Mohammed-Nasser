@@ -539,7 +539,12 @@ display:flex;
 /* ============================= */
 /* Size Select - Updated Style */
 /* ============================= */
-  .size-field__label {
+ .size-field {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .size-field__label {
             display: block;
             margin-bottom: 8px;
             font-size: 14px;
@@ -562,13 +567,14 @@ display:flex;
             font-size: 16px;
             font-family: 'Jost', sans-serif;
             font-weight: 400;
-            color: #666;
+            color: #000;
             cursor: pointer;
             display: flex;
             align-items: center;
-            justify-content: flex-start; /* 👈 النص على الشمال */
+            justify-content: center;
             transition: all 0.2s ease;
             position: relative;
+            user-select: none;
         }
 
         .dropdown-header:hover {
@@ -628,15 +634,13 @@ display:flex;
             visibility: hidden;
             transform: translateY(-10px);
             transition: all 0.2s ease;
-            max-height: 120px;
+            height: 120px; /* ثابت عشان يظهر 3 مقاسات بس */
             overflow-y: auto;
             overflow-x: hidden;
             scroll-behavior: smooth;
             scrollbar-width: none;
             -ms-overflow-style: none;
-            /* 👈 تفعيل الـ drag scroll */
             cursor: grab;
-            user-select: none;
         }
 
         .dropdown-options:active {
@@ -667,6 +671,7 @@ display:flex;
             display: flex;
             align-items: center;
             justify-content: center;
+            background-color: #fff;
         }
 
         .dropdown-option:last-child {
@@ -682,7 +687,6 @@ display:flex;
             background-color: #000;
             color: #fff;
         }
-
 /* ============================= */
 /* CTA Button */
 /* ============================= */
