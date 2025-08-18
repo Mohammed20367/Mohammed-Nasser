@@ -492,10 +492,8 @@ border-width: 1px;
 position: relative;
 }
 .gift-select select {
-  width: ;
-height: ;
-  width: 271px;
-  height: 99px; /* 👈 ارتفاع القائمة المنسدلة */
+  width: 100%;
+  height: 40px; /* 👈 ارتفاع القائمة المنسدلة */
   border: 1px solid #111;
   border-radius: 4px;
   padding: 0 34px 0 10px;
@@ -505,6 +503,8 @@ height: ;
   cursor: pointer;
 }
 .gift-select__chev {
+  width: 271px;
+height: 99px;
   position: absolute;
   right: 10px;
   top: 50%;
