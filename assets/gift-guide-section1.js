@@ -86,3 +86,30 @@ document.querySelectorAll(".gift-select").forEach(wrapper => {
     }
   });
 });
+
+
+// Updated JavaScript for Custom Select
+document.querySelectorAll(".gift-select").forEach(wrapper => {
+  const select = wrapper.querySelector("select");
+  const placeholder = wrapper.querySelector(".gift-placeholder");
+
+  select.addEventListener("change", () => {
+    if (select.value !== "") {
+      placeholder.style.opacity = "0";
+      select.style.color = "#000";
+    } else {
+      placeholder.style.opacity = "1";
+      select.style.color = "transparent";
+    }
+  });
+
+  select.addEventListener("focus", () => {
+    select.style.color = "#000";
+  });
+
+  select.addEventListener("blur", () => {
+    if (select.value === "") {
+      select.style.color = "transparent";
+    }
+  });
+});
