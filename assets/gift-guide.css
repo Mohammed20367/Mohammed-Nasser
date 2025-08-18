@@ -569,3 +569,45 @@ position: relative;
     height: 100px;
   }
 }
+
+
+
+
+.gift-select {
+  position: relative;
+  width: 100%;
+}
+
+.gift-select select {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #111;
+  border-radius: 4px;
+  padding: 0 34px 0 10px;
+  font-size: 14px;
+  background: #fff;
+  appearance: none; /* يخفي السهم الافتراضي */
+  cursor: pointer;
+}
+
+/* السهم المخصص */
+.gift-select__chev {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 14px;
+}
+
+/* التحكم في القائمة المنسدلة */
+.gift-select select option {
+  text-align: center;
+  font-size: 13px;
+  padding: 6px 0;
+}
+
+/* 👇 يخلي القائمة تعرض 3 عناصر فقط وبعدها Scroll */
+.gift-select select {
+  overflow-y: auto;
+}
