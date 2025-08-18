@@ -495,6 +495,39 @@ display:flex;
 }
 
 
+.gift-swatches {
+  display: flex;
+  border: 1px solid #111;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.gift-swatch {
+  flex: 1;
+  height: 40px;
+  border: none;              /* 👈 شيل البوردر الداخلي */
+  font-size: 13px;
+  cursor: pointer;
+  background: #fff;
+  display: flex;             
+  align-items: center;       /* 👈 يوسّط المربع والنص عمودي */
+  justify-content: center;   /* 👈 يوسّط أفقي */
+  gap: 6px;
+}
+
+.gift-swatch span {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #111;
+  border-radius: 2px;
+}
+
+.gift-swatch.is-active {
+  background: #000;   /* الزرار كله يتلون */
+  color: #fff;
+}
+
+
 
 /* ============================= */
 /* Size Select */
