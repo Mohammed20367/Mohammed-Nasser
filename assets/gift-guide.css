@@ -498,8 +498,6 @@ position: relative;
   border-radius: 4px;
   padding: 0 12px;          /* مسافة داخلية */
   font-size: 13px;
-  max-height: 70px;   /* تقريبًا 3 options */
-  overflow-y: auto;   /* scroll لو زادوا */
   background: #fff;
   appearance: none;
   cursor: pointer;
