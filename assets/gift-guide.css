@@ -539,114 +539,127 @@ display:flex;
 /* ============================= */
 /* Size Select - Updated Style */
 /* ============================= */
-.gift-field__label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 14px;
-  font-family: 'Jost', sans-serif;
-  font-weight: 400;
-  color: #333333;
+/* Custom Dropdown Styles */
+.size-field__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333333;
 }
 
-.gift-select {
-  position: relative;
-  display: inline-block;
-  width: 271px;
-  height: 40px;
+.custom-dropdown {
+    position: relative;
+    width: 271px;
 }
 
-.gift-select select {
-  width: 100%;
-  height: 40px;
-  border: 1px solid #D9D9D9;
-  border-radius: 4px;
-  padding: 0 45px 0 16px;
-  font-size: 16px;
-  font-family: 'Jost', sans-serif;
-  font-weight: 400;
-  cursor: pointer;
-  background-color: #FFFFFF;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  color: transparent;
-  outline: none;
-  text-align: center; /* 👈 المقاس المختار يكون في النص */
+.dropdown-header {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    padding: 0 45px 0 16px;
+    font-size: 16px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    color: #666;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
 }
 
-.gift-select select:focus {
-  border-color: #000;
-  color: #000;
+.dropdown-header:hover {
+    border-color: #999;
 }
 
-.gift-select select option {
-  color: #000;
-  background: #fff;
-  padding: 8px 16px;
-  font-family: 'Jost', sans-serif;
-  font-weight: 400;
-  text-align: center; /* 👈 المقاس في النص */
+.dropdown-header.active {
+    border-color: #000;
+    color: #000;
 }
 
-.gift-select select option:hover {
-  background-color: #000 !important;
-  color: #fff !important;
+.dropdown-header.selected {
+    color: #000;
 }
 
-.gift-select select option:checked {
-  background-color: #000 !important;
-  color: #fff !important;
+.dropdown-arrow {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.gift-select select option:focus {
-  background-color: #000 !important;
-  color: #fff !important;
+.dropdown-divider {
+    width: 1px;
+    height: 20px;
+    background: #D9D9D9;
 }
 
-.gift-placeholder {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  font-family: 'Jost', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  color: #000000;
-  transition: opacity 0.2s ease;
+.dropdown-arrow svg {
+    width: 16px;
+    height: 16px;
+    stroke: #000;
+    stroke-width: 2;
+    transition: transform 0.2s ease;
 }
 
-.gift-placeholder.hide {
-  opacity: 0;
+.dropdown-header.active .dropdown-arrow svg {
+    transform: rotate(180deg);
 }
 
-.gift-select__chev {
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  gap: 50px; /* 👈 هنا تقدر تغير المسافة بين الفاصل والسهم */
+.dropdown-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #D9D9D9;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
 }
 
-.gift-select__chev .divider {
-  width: 1px;
-  height: 20px;
-  background: #D9D9D9;
+.dropdown-options.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
-.gift-select__chev svg {
-  width: 16px;
-  height: 16px;
-  stroke: #000;
-  stroke-width: 2;
-  transition: transform 0.2s ease;
+.dropdown-option {
+    padding: 12px 16px;
+    font-size: 16px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    color: #000;
+    cursor: pointer;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.2s ease;
 }
 
-.gift-select select:focus + .gift-placeholder + .gift-select__chev svg {
-  transform: rotate(180deg);
+.dropdown-option:last-child {
+    border-bottom: none;
+}
+
+.dropdown-option:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.dropdown-option.selected {
+    background-color: #000;
+    color: #fff;
 }
 
 /* ============================= */
