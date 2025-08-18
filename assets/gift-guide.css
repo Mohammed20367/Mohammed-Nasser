@@ -524,9 +524,9 @@ display:flex;
 }
 .cblack
 {
-   width: 7px;
+  width: 7px;
   opacity: 1;
-  border-width: 0.5px;
+  
   background-color: #000000;
   border: 0.5px solid #FFFFFF; /* علشان الأبيض يبان */
 }
