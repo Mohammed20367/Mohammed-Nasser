@@ -83,8 +83,8 @@ display:flex;
   background: transparent;
   text-decoration: none;
   cursor: pointer;
-  position: relative;          /* مهم للفيل */
-  overflow: hidden;            /* عشان الفيل ما يطلعش برا */
+  position: relative;         
+  overflow: hidden;            
   transition: color 0.35s ease, border-color 0.35s ease;
 }
 
@@ -100,14 +100,13 @@ display:flex;
   content: "";
   position: absolute;
   inset: 0;
-  background: #000000;          /* أحمر مؤقتًا */
+  background: #000000;          
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 0.4s ease;
   z-index: 0;
 }
 
-/* text & arrow فوق الفيل */
 .gift-button .gift-icon--arrow-text,
 .gift-button .gift-icon--arrow {
   position: relative;
@@ -115,12 +114,10 @@ display:flex;
   transition: color 0.35s ease, filter 0.35s ease;
 }
 
-/* Hover: شغّل الفيل */
 .gift-button:hover::before {
   transform: scaleX(1);
 }
 
-/* Hover: النص والسهم أبيض */
 .gift-button:hover .gift-icon--arrow-text {
     transition: transform 0.4s ease;
   color: #fff;
@@ -147,25 +144,22 @@ display:flex;
 
 
 
-/* first frame in home page */
+/* Second frame in home page */
 
 .secondframe{
   display: grid;            /* required to enable grid layout */
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-/* الكتلة اليسار تاخد عمود واحد (الأول) في الصف الأول */
 .gift-hero__copy{
   margin-left:8px;
  grid-column: span 1 / span 1;}
 
-/* الصورة تحت وتاخد عرض الجريد كله */
 .gift-hero__art{
 
   grid-column: span 2/span 2;
   width:90%;
   margin-left:auto;
-      /* من أول عمود لآخر عمود (3) */
 }
 .cta-button {
   width: 207px;
@@ -176,7 +170,7 @@ display:flex;
   gap: 20px;
   padding: 12px 16px;
   border: 1px solid #000;
-  background: #000;              /* أسود أساسي */
+  background: #000;            
   text-decoration: none;
   cursor: pointer;
   position: relative;
@@ -869,3 +863,47 @@ width:100%
         }
 
 
+
+
+/* الوضع العادي (ديسكتوب) */
+.secondframe {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+}
+
+/* موبايل */
+@media (max-width: 768px) {
+  .secondframe {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .gift-hero__art {
+    order: -1;              /* الصورة تيجي فوق */
+    width: 100%;            /* الصورة تاخد عرض الموبايل */
+    margin: 0 auto 20px;    /* تبقى في النص وتدي مسافة تحت */
+  }
+
+  .gift-hero__copy {
+    margin: 0 auto;
+    text-align: center;     /* النصوص كلها في النص */
+  }
+
+  .gift-hero__title {
+    font-size: 28px;        /* أصغر عشان الموبايل */
+    margin: 16px 0;
+  }
+
+  .gift-hero__text {
+    font-size: 14px;
+    margin: 0 auto 20px;
+    max-width: 90%;         /* يقلل عرض النص */
+  }
+
+  .cta-button {
+    margin: 0 auto;
+  }
+}
