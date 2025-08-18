@@ -1,4 +1,6 @@
 (function(){
+
+  // فتح وغلق البوب أب
   function openPopup(id){
     var p = document.querySelector('.gift-popup[data-popup="'+id+'"]');
     if(p){
@@ -12,7 +14,6 @@
     p.setAttribute('aria-hidden','true');
   }
 
-  // فتح/غلق البوب أب
   document.addEventListener('click',function(e){
     var t = e.target.closest('[data-popup-open]');
     if(t){
@@ -27,7 +28,6 @@
     }
   });
 
-  // ESC key closes any open popup
   document.addEventListener('keydown',function(e){
     if(e.key==='Escape'){
       document.querySelectorAll('.gift-popup.is-open').forEach(closePopup);
@@ -43,7 +43,9 @@
     sw.classList.add('is-active');
   });
 
-  // Custom dropdown functionality
+
+  // ========== DROPDOWN ==========
+
   document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.custom-dropdown').forEach(function(dropdown) {
       const dropdownHeader = dropdown.querySelector('.dropdown-header');
@@ -55,7 +57,6 @@
       let startY = 0;
       let scrollTop = 0;
 
-      // فتح/إغلاق القائمة
       dropdownHeader.addEventListener('click', function() {
         if (isOpen) {
           closeDropdown();
@@ -65,14 +66,12 @@
       });
 
       function openDropdown() {
-        // إغلاق أي dropdown مفتوح
         document.querySelectorAll('.dropdown-options.show').forEach(function(otherOptions) {
           if (otherOptions !== dropdownOptions) {
             otherOptions.classList.remove('show');
             otherOptions.closest('.custom-dropdown').querySelector('.dropdown-header').classList.remove('active');
           }
         });
-
         isOpen = true;
         dropdownHeader.classList.add('active');
         dropdownOptions.classList.add('show');
@@ -84,30 +83,20 @@
         dropdownOptions.classList.remove('show');
       }
 
-      // اختيار المقاس
       dropdownOptions.addEventListener('click', function(e) {
         if (e.target.classList.contains('dropdown-option') && !isDragging) {
-          // إزالة التحديد من جميع الخيارات
           dropdownOptions.querySelectorAll('.dropdown-option').forEach(option => {
             option.classList.remove('selected');
           });
-
-          // تحديد الخيار المختار
           e.target.classList.add('selected');
           selectedValue = e.target.dataset.value;
           dropdownText.textContent = selectedValue;
-          
-          // تحديث حالة الهيدر
           dropdownHeader.classList.add('selected');
-          
-          // إغلاق القائمة
           closeDropdown();
-          
           console.log('Selected size:', selectedValue);
         }
       });
 
-      // Drag scroll functionality
       dropdownOptions.addEventListener('mousedown', function(e) {
         isDragging = true;
         startY = e.pageY - dropdownOptions.offsetTop;
@@ -134,13 +123,7 @@
         dropdownOptions.scrollTop = scrollTop - walk;
       });
 
-      // إغلاق الدروب داون لما نضغط خارجه
-      document.addEventListener('click', function(e) {
-        if (!dropdown.contains(e.target)) {
-          closeDropdown();
-        }
-      });
     });
   });
 
-})();
+})(); // ✅ قفلة واحدة بس
