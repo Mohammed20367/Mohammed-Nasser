@@ -464,6 +464,11 @@ display:flex;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 8px;
+  display: flex;          /* خليتهم جمب بعض */
+  gap: 0;                 /* شلت أي مسافة بينهم */
+  border: 1px solid #111; /* البوردر الخارجي */
+  border-radius: 6px;     /* يدي كورنر ناعم للكادر كله */
+  overflow: hidden;   
 }
 .gift-swatch {
   margin-bottom:10px; /*ألمسافه بين كلمة سايز والزرار تحتها*/
@@ -482,7 +487,6 @@ display:flex;
   background: #000;
   color: #fff;
 }
-
 
 
 
