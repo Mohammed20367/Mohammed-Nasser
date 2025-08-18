@@ -489,9 +489,13 @@ display:flex;
 }
 .gift-swatch:hover {
   background: #f4f4f4;
+    height: 40.441322326660156px;
+
 }
 .gift-swatch.is-active {
   background: #000;
+    height: 40.441322326660156px;
+
   color: #fff;
 }
 
