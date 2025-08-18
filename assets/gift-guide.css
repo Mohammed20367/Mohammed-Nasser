@@ -461,51 +461,38 @@ display:flex;
 /* Color Swatches */
 /* ============================= */
 .gift-swatches {
-  display: flex;                /* الزرارين جمب بعض */
-  border: 1px solid #111;       /* البوردر الخارجي */
-  border-radius: 6px;           /* كورنر ناعم للكادر كله */
-  overflow: hidden;             /* يخلي الزرارين محبوسين جوه */
-  width: fit-content;           /* قد المحتوى فقط */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  display: flex;          /* خليتهم جمب بعض */
+  gap: 0;                 /* شلت أي مسافة بينهم */
+  border: 1px solid #111; /* البوردر الخارجي */
+  border-radius: 6px;     /* يدي كورنر ناعم للكادر كله */
+  overflow: hidden; 
+    text-align:center;
+  
 }
-
 .gift-swatch {
   flex: 1;
   height: 40px;
-  border: none;                 /* منع البوردر الداخلي */
+  border: 1px solid #111;
   font-size: 13px;
   cursor: pointer;
   background: #fff;
-  display: flex;                
+  display: flex;               
   align-items: center;          /* يوسّط عمودي */
   justify-content: center;      /* يوسّط أفقي */
   gap: 6px;                     /* مسافة بين المربع والكلمة */
-  line-height: 1;
+  border-radius: 4px;
+  line-height: 1;               /* 👈 يمنع النص يطلع فوق */
 }
-
-.gift-swatch:first-child {
-  border-right: 1px solid #111; /* خط فاصل بين White و Black */
-}
-
 .gift-swatch:hover {
   background: #f4f4f4;
 }
-
 .gift-swatch.is-active {
   background: #000;
   color: #fff;
 }
-
-/* المربع الصغير */
-.gift-swatch span {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border: 1px solid #111;
-  border-radius: 2px;
-}
-.cwhite { background-color: #fff; }
-.cblack { background-color: #000; }
-
 
 
 
@@ -599,3 +586,19 @@ position: relative;
 
 
 
+
+.cwhite {
+  width: 5.807142734527588px;
+  height: 40.441322326660156px;
+  opacity: 1;
+  border-width: 0.5px;
+  background-color: #FFFFFF;
+  border: 0.5px solid #000; /* علشان الأبيض يبان */
+  background-color: #FFFFFF;
+  
+}
+
+.gift-swatch span {
+  display: inline-block;
+  vertical-align: middle;       /* 👈 ينزل النص في النص */
+}
