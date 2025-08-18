@@ -87,109 +87,163 @@
 
 
 
- document.addEventListener('DOMContentLoaded', function() {
-            const dropdownHeader = document.getElementById('dropdownHeader');
-            const dropdownOptions = document.getElementById('dropdownOptions');
-            const dropdownText = dropdownHeader.querySelector('.dropdown-text');
-            let isOpen = false;
-            let selectedValue = '';
-            let isDragging = false;
-            let startY = 0;
-            let scrollTop = 0;
+  document.addEventListener('DOMContentLoaded', function() {
+            
+            // ========== POPUP FUNCTIONALITY ==========
+            function openPopup(id) {
+                var popup = document.querySelector('.gift-popup[data-popup="' + id + '"]');
+                if (popup) {
+                    popup.classList.add('is-open');
+                    popup.setAttribute('aria-hidden', 'false');
+                }
+            }
 
-            // فتح/إغلاق القائمة
-            dropdownHeader.addEventListener('click', function() {
-                if (isOpen) {
-                    closeDropdown();
-                } else {
-                    openDropdown();
+            function closePopup(popup) {
+                popup.classList.remove('is-open');
+                popup.setAttribute('aria-hidden', 'true');
+            }
+
+            // فتح البوب أب
+            document.addEventListener('click', function(e) {
+                var trigger = e.target.closest('[data-popup-open]');
+                if (trigger) {
+                    e.preventDefault();
+                    openPopup(trigger.getAttribute('data-popup-open'));
+                }
+
+                // إغلاق البوب أب
+                if (e.target.closest('.gift-popup__close')) {
+                    closePopup(e.target.closest('.gift-popup'));
+                } else if (e.target.classList.contains('gift-popup')) {
+                    closePopup(e.target);
                 }
             });
 
-            function openDropdown() {
-                isOpen = true;
-                dropdownHeader.classList.add('active');
-                dropdownOptions.classList.add('show');
-            }
+            // إغلاق بمفتاح ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    document.querySelectorAll('.gift-popup.is-open').forEach(closePopup);
+                }
+            });
 
-            function closeDropdown() {
-                isOpen = false;
-                dropdownHeader.classList.remove('active');
-                dropdownOptions.classList.remove('show');
-            }
+            // ========== DROPDOWN FUNCTIONALITY ==========
+            // تطبيق الوظائف على كل dropdown في الصفحة
+            document.querySelectorAll('.custom-dropdown').forEach(function(dropdown) {
+                const dropdownHeader = dropdown.querySelector('.dropdown-header');
+                const dropdownOptions = dropdown.querySelector('.dropdown-options');
+                const dropdownText = dropdownHeader.querySelector('.dropdown-text');
+                let isOpen = false;
+                let selectedValue = '';
+                let isDragging = false;
+                let startY = 0;
+                let scrollTop = 0;
 
-            // اختيار المقاس
-            dropdownOptions.addEventListener('click', function(e) {
-                if (e.target.classList.contains('dropdown-option') && !isDragging) {
-                    // إزالة التحديد من جميع الخيارات
-                    dropdownOptions.querySelectorAll('.dropdown-option').forEach(option => {
-                        option.classList.remove('selected');
+                // فتح/إغلاق القائمة
+                dropdownHeader.addEventListener('click', function() {
+                    if (isOpen) {
+                        closeDropdown();
+                    } else {
+                        openDropdown();
+                    }
+                });
+
+                function openDropdown() {
+                    // إغلاق أي dropdown مفتوح
+                    document.querySelectorAll('.dropdown-options.show').forEach(function(otherOptions) {
+                        if (otherOptions !== dropdownOptions) {
+                            otherOptions.classList.remove('show');
+                            otherOptions.closest('.custom-dropdown').querySelector('.dropdown-header').classList.remove('active');
+                        }
                     });
 
-                    // تحديد الخيار المختار
-                    e.target.classList.add('selected');
-                    selectedValue = e.target.dataset.value;
-                    dropdownText.textContent = selectedValue;
-                    
-                    // تحديث حالة الهيدر
-                    dropdownHeader.classList.add('selected');
-                    
-                    // إغلاق القائمة
-                    closeDropdown();
-                    
-                    console.log('Selected size:', selectedValue);
+                    isOpen = true;
+                    dropdownHeader.classList.add('active');
+                    dropdownOptions.classList.add('show');
                 }
+
+                function closeDropdown() {
+                    isOpen = false;
+                    dropdownHeader.classList.remove('active');
+                    dropdownOptions.classList.remove('show');
+                }
+
+                // اختيار المقاس
+                dropdownOptions.addEventListener('click', function(e) {
+                    if (e.target.classList.contains('dropdown-option') && !isDragging) {
+                        // إزالة التحديد من جميع الخيارات
+                        dropdownOptions.querySelectorAll('.dropdown-option').forEach(option => {
+                            option.classList.remove('selected');
+                        });
+
+                        // تحديد الخيار المختار
+                        e.target.classList.add('selected');
+                        selectedValue = e.target.dataset.value;
+                        dropdownText.textContent = selectedValue;
+                        
+                        // تحديث حالة الهيدر
+                        dropdownHeader.classList.add('selected');
+                        
+                        // إغلاق القائمة
+                        closeDropdown();
+                        
+                        console.log('Selected size:', selectedValue);
+                    }
+                });
+
+                // Drag scroll functionality
+                dropdownOptions.addEventListener('mousedown', function(e) {
+                    isDragging = true;
+                    startY = e.pageY - dropdownOptions.offsetTop;
+                    scrollTop = dropdownOptions.scrollTop;
+                    dropdownOptions.style.cursor = 'grabbing';
+                    e.preventDefault();
+                });
+
+                dropdownOptions.addEventListener('mouseleave', function() {
+                    isDragging = false;
+                    dropdownOptions.style.cursor = 'grab';
+                });
+
+                dropdownOptions.addEventListener('mouseup', function() {
+                    isDragging = false;
+                    dropdownOptions.style.cursor = 'grab';
+                });
+
+                dropdownOptions.addEventListener('mousemove', function(e) {
+                    if (!isDragging) return;
+                    e.preventDefault();
+                    const y = e.pageY - dropdownOptions.offsetTop;
+                    const walk = (y - startY) * 2;
+                    dropdownOptions.scrollTop = scrollTop - walk;
+                });
+
+                // إغلاق القائمة عند الضغط خارجها
+                document.addEventListener('click', function(e) {
+                    if (!dropdownHeader.contains(e.target) && !dropdownOptions.contains(e.target)) {
+                        closeDropdown();
+                    }
+                });
+
+                // منع الإغلاق عند السكرول داخل القائمة
+                dropdownOptions.addEventListener('scroll', function(e) {
+                    e.stopPropagation();
+                });
+
+                // Reset drag state when mouse leaves window
+                document.addEventListener('mouseup', function() {
+                    isDragging = false;
+                    dropdownOptions.style.cursor = 'grab';
+                });
             });
 
-            // Drag scroll functionality
-            dropdownOptions.addEventListener('mousedown', function(e) {
-                isDragging = true;
-                startY = e.pageY - dropdownOptions.offsetTop;
-                scrollTop = dropdownOptions.scrollTop;
-                dropdownOptions.style.cursor = 'grabbing';
-                e.preventDefault();
-            });
-
-            dropdownOptions.addEventListener('mouseleave', function() {
-                isDragging = false;
-                dropdownOptions.style.cursor = 'grab';
-            });
-
-            dropdownOptions.addEventListener('mouseup', function() {
-                isDragging = false;
-                dropdownOptions.style.cursor = 'grab';
-            });
-
-            dropdownOptions.addEventListener('mousemove', function(e) {
-                if (!isDragging) return;
-                e.preventDefault();
-                const y = e.pageY - dropdownOptions.offsetTop;
-                const walk = (y - startY) * 2;
-                dropdownOptions.scrollTop = scrollTop - walk;
-            });
-
-            // إغلاق القائمة عند الضغط خارجها
+            // ========== ADD TO CART FUNCTIONALITY ==========
             document.addEventListener('click', function(e) {
-                if (!dropdownHeader.contains(e.target) && !dropdownOptions.contains(e.target)) {
-                    closeDropdown();
+                if (e.target.closest('.gift-cta')) {
+                    var btn = e.target.closest('.gift-cta');
+                    var popup = btn.closest('.gift-popup');
+                    console.log('Add to cart from popup:', popup.dataset.popup);
+                    // هنا تحط كود إضافة المنتج للسلة
+                    closePopup(popup);
                 }
-            });
-
-            // إغلاق القائمة بمفتاح ESC
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && isOpen) {
-                    closeDropdown();
-                }
-            });
-
-            // منع الإغلاق عند السكرول داخل القائمة
-            dropdownOptions.addEventListener('scroll', function(e) {
-                e.stopPropagation();
-            });
-
-            // Reset drag state when mouse leaves window
-            document.addEventListener('mouseup', function() {
-                isDragging = false;
-                dropdownOptions.style.cursor = 'grab';
             });
         });
