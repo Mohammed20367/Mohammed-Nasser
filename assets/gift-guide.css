@@ -501,7 +501,12 @@ display:flex;
   color: #fff;
 }
 
-
+.gift-swatches span {
+width: 7px;
+  opacity: 1;
+  border-width: 0.5px;
+  border: 0.5px solid #000; /* علشان الأبيض يبان */
+}
 
 .gift-swatch.is-active {
   background: #000;
@@ -509,20 +514,11 @@ display:flex;
 }
 
 .cwhite {
-  width: 7px;
-  opacity: 1;
-  border-width: 0.5px;
-  background-color: #FFFFFF;
-  border: 0.5px solid #000; /* علشان الأبيض يبان */
   background-color: #FFFFFF;
 }
 .cblack
 {
-  width: 7px;
-  opacity: 1;
-  border-width: 0.5px;
   background-color: #000000;
-  border: 0.5px solid #FFFFFF; /* علشان الأبيض يبان */
 }
 
 /* ============================= */
