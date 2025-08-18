@@ -539,149 +539,134 @@ display:flex;
 /* ============================= */
 /* Size Select - Updated Style */
 /* ============================= */
-  .size-field__label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 14px;
-            font-weight: 400;
-            color: #333333;
-        }
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+  max-width: 271px;
+}
 
-        .custom-dropdown {
-            position: relative;
-            width: 271px;
-        }
+.dropdown-header {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #D9D9D9;
+  border-radius: 0;
+  background-color: #FFFFFF;
+  padding: 0 45px 0 16px;
+  font-size: 16px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  position: relative;
+  user-select: none;
+}
 
-        .dropdown-header {
-            width: 100%;
-            height: 40px;
-            border: 1px solid #D9D9D9;
-            border-radius: 0;
-            background-color: #FFFFFF;
-            padding: 0 45px 0 16px;
-            font-size: 16px;
-            font-family: 'Jost', sans-serif;
-            font-weight: 400;
-            color: #666;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start; /* 👈 النص على الشمال */
-            transition: all 0.2s ease;
-            position: relative;
-        }
+.dropdown-header:hover {
+  border-color: #999;
+}
 
-        .dropdown-header:hover {
-            border-color: #999;
-        }
+.dropdown-header.active {
+  border-color: #000;
+  border-bottom: none;
+}
 
-        .dropdown-header.active {
-            border-color: #000;
-            color: #000;
-            border-bottom: none;
-        }
+.dropdown-header.selected {
+  color: #000;
+}
 
-        .dropdown-header.selected {
-            color: #000;
-        }
+.dropdown-arrow {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
-        .dropdown-arrow {
-            position: absolute;
-            right: 16px;
-            top: 50%;
-            transform: translateY(-50%);
-            pointer-events: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+.dropdown-divider {
+  width: 1px;
+  height: 20px;
+  background: #D9D9D9;
+}
 
-        .dropdown-divider {
-            width: 1px;
-            height: 20px;
-            background: #D9D9D9;
-        }
+.dropdown-arrow svg {
+  width: 16px;
+  height: 16px;
+  stroke: #000;
+  stroke-width: 2;
+  transition: transform 0.2s ease;
+}
 
-        .dropdown-arrow svg {
-            width: 16px;
-            height: 16px;
-            stroke: #000;
-            stroke-width: 2;
-            transition: transform 0.2s ease;
-        }
+.dropdown-header.active .dropdown-arrow svg {
+  transform: rotate(180deg);
+}
 
-        .dropdown-header.active .dropdown-arrow svg {
-            transform: rotate(180deg);
-        }
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #000;
+  border-top: none;
+  border-radius: 0;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+  height: 120px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+}
 
-        .dropdown-options {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: white;
-            border: 1px solid #000;
-            border-top: none;
-            border-radius: 0;
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.2s ease;
-            max-height: 120px;
-            overflow-y: auto;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-            /* 👈 تفعيل الـ drag scroll */
-            cursor: grab;
-            user-select: none;
-        }
+.dropdown-options::-webkit-scrollbar {
+  display: none;
+}
 
-        .dropdown-options:active {
-            cursor: grabbing;
-        }
+.dropdown-options.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
 
-        .dropdown-options::-webkit-scrollbar {
-            display: none;
-        }
+.dropdown-option {
+  padding: 8px 16px;
+  font-size: 16px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  color: #000;
+  cursor: pointer;
+  text-align: center;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.2s ease;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
 
-        .dropdown-options.show {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
+.dropdown-option:last-child {
+  border-bottom: none;
+}
 
-        .dropdown-option {
-            padding: 8px 16px;
-            font-size: 16px;
-            font-family: 'Jost', sans-serif;
-            font-weight: 400;
-            color: #000;
-            cursor: pointer;
-            text-align: center;
-            border-bottom: 1px solid #f0f0f0;
-            transition: all 0.2s ease;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.dropdown-option:hover,
+.dropdown-option.selected {
+  background-color: #000;
+  color: #fff;
+}
 
-        .dropdown-option:last-child {
-            border-bottom: none;
-        }
-
-        .dropdown-option:hover {
-            background-color: #000;
-            color: #fff;
-        }
-
-        .dropdown-option.selected {
-            background-color: #000;
-            color: #fff;
-        }
 
 /* ============================= */
 /* CTA Button */
@@ -738,176 +723,3 @@ display:flex;
 
 
 
-.gift-field__label {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 14px;
-  font-family: 'Jost', sans-serif;
-  color: #333;
-}
-
-.gift-select {
-  position: relative;
-  display: inline-block;
-  width: 271px;     /* من Figma */
-  height: 40px;
-  background-color: #fff; /* خلفية بيضا */
-  color: #000;  
-}
-
-.gift-select select {
-  width: 100%;
-  height: 40px;
-  border: 1px solid #000;
-  border-radius: 4px;
-  padding: 0 45px 0 12px; 
-  font-size: 16px;                 
-  font-family: 'Jost', sans-serif;
-  font-weight: 400;
-  line-height: 100%;                
-  letter-spacing: -0.02em;          
-  cursor: pointer;
-  background-color: #fff;           /* ✅ خلفية بيضا للـ dropdown */
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  text-align: center;               /* المقاسات في النص */
-  color: #000;
-}
-
-/* ✅ المقاسات في النص */
-.gift-select select option:not([disabled]) {
-  text-align: center;
-  height: 36px;           
-  line-height: 36px;      /* ← لو عايز تزود المسافة زوّد القيمة هنا */
-}
-
-/* ✅ الهوفر على الأوبشن */
-.gift-select select option:hover {
-  background-color: #000 !important;
-  color: #fff !important;
-}
-
-/* ✅ السهم والفاصل */
-.gift-select__chev {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 50px;         
-  display: flex;
-  align-items: center;      
-  justify-content: center; 
-  pointer-events: none;
-  background: transparent;
-}
-
-.gift-select__chev img {
-  position: absolute;
-  left: 0;                      
-  top: 50%;
-  transform: translateY(-50%);
-  height: 100%;
-  width: auto;
-}
-
-.gift-select__chev svg {
-  width: 16px;
-  height: 16px;
-  stroke: black;
-  transition: transform 0.2s ease;
-}
-
-/* ✅ placeholder */
-.gift-placeholder {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  font-family: 'Jost', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 100%;
-  letter-spacing: -0.02em;
-  vertical-align: middle;
-  color: #000; 
-}
-/* Container */
-.custom-dropdown {
-  position: relative;
-  width: 100%;
-  font-family: inherit;
-  user-select: none;
-  cursor: pointer;
-}
-
-/* Header (المربع اللي بيتضغط عليه) */
-.custom-dropdown .dropdown-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 14px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background: #fff;
-  transition: border 0.2s;
-}
-
-.custom-dropdown .dropdown-header:hover {
-  border-color: #000;
-}
-
-/* النص */
-.custom-dropdown .dropdown-text {
-  font-size: 14px;
-  color: #555;
-}
-
-/* السهم */
-.custom-dropdown .dropdown-arrow {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.custom-dropdown .dropdown-divider {
-  width: 1px;
-  height: 16px;
-  background: #ddd;
-}
-
-/* القائمة */
-.custom-dropdown .dropdown-list {
-  position: absolute;
-  top: calc(100% + 5px);
-  left: 0;
-  right: 0;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  max-height: 180px;   /* scroll لو طويلة */
-  overflow-y: auto;
-  list-style: none;
-  padding: 5px 0;
-  margin: 0;
-  display: none;
-  z-index: 10;
-}
-
-/* العنصر */
-.custom-dropdown .dropdown-list li {
-  padding: 10px 14px;
-  font-size: 14px;
-  color: #333;
-  transition: background 0.2s;
-}
-
-.custom-dropdown .dropdown-list li:hover {
-  background: #f5f5f5;
-}
-
-/* فتح القائمة */
-.custom-dropdown.open .dropdown-list {
-  display: block;
-}
