@@ -591,10 +591,10 @@ height: 40.441322326660156px;
 opacity: 1;
 border-width: 0.5px;
 
-  background-color: #fff;
-  border: 3px solid #000; /* علشان الأبيض يبان */
+  background-color: #FFFFFF;
+  border: 3px solid #FFFFFF; /* علشان الأبيض يبان */
 }
 
 .cwhite {
-  background-color: #000;
+  background-color: #FFFFFF;
 }
