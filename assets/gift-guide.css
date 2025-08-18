@@ -170,6 +170,7 @@ display:flex;
 /* أنماط قسم The Gift Guide */
 .gift-hero__copy {
   max-width: 600px;
+  height:auto;
   padding: 40px;
   text-align: left;
   font-family: 'Jost', sans-serif;
