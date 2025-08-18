@@ -252,7 +252,7 @@ display:flex;
 }
 
 .gift-hero__title {
-  font-size: 12px;
+  font-size: clamp(15px, 5vw, 48px);
   font-weight: 700;
   color: #000;
   margin-bottom: 15px;
@@ -260,15 +260,13 @@ display:flex;
 }
 
 .gift-hero__subtitle {
-  font-size: clamp(18px, 2.5vw, 22px);
-  font-weight: 500;
+  font-size: 2px
   color: #333;
   margin-bottom: 12px;
   line-height: 1.4;
 }
 
 .gift-hero__description {
-  font-size: clamp(16px, 2vw, 18px);
   color: #666;
   line-height: 1.5;
   max-width: 500px;
