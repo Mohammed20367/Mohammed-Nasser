@@ -720,135 +720,101 @@ display:flex;
 
 
 
-/* ===== Custom Dropdown Styles ===== */
-.custom-dropdown {
-  position: relative;
-  width: 100%;
-  max-width: 271px;
-  margin-bottom: 20px;
+
+
+
+.gift-field__label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-family: 'Jost', sans-serif;
+  color: #333;
 }
 
-.dropdown-header {
+.gift-select {
+  position: relative;
+  display: inline-block;
+  width: 271px;     /* من Figma */
+  height: 40px;
+  background-color: #fff; /* خلفية بيضا */
+  color: #000;  
+}
+
+.gift-select select {
   width: 100%;
   height: 40px;
-  border: 1px solid #D9D9D9;
-  background-color: #FFFFFF;
-  padding: 0 45px 0 16px;
-  font-size: 16px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 0 45px 0 12px; 
+  font-size: 16px;                 
   font-family: 'Jost', sans-serif;
-  color: #000;
+  font-weight: 400;
+  line-height: 100%;                
+  letter-spacing: -0.02em;          
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  user-select: none;
-  transition: border-color 0.2s ease;
-}
-
-.dropdown-header:hover {
-  border-color: #999;
-}
-
-.dropdown-header.active {
-  border-color: #000;
-  border-bottom-color: transparent;
-}
-
-.dropdown-header.selected {
+  background-color: #fff;           /* ✅ خلفية بيضا للـ dropdown */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-align: center;               /* المقاسات في النص */
   color: #000;
 }
 
-.dropdown-text {
-  flex-grow: 1;
+/* ✅ المقاسات في النص */
+.gift-select select option:not([disabled]) {
   text-align: center;
+  height: 36px;           
+  line-height: 36px;      /* ← لو عايز تزود المسافة زوّد القيمة هنا */
 }
 
-.dropdown-arrow {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+/* ✅ الهوفر على الأوبشن */
+.gift-select select option:hover {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* ✅ السهم والفاصل */
+.gift-select__chev {
   position: absolute;
-  right: 16px;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50px;         
+  display: flex;
+  align-items: center;      
+  justify-content: center; 
+  pointer-events: none;
+  background: transparent;
+}
+
+.gift-select__chev img {
+  position: absolute;
+  left: 0;                      
   top: 50%;
   transform: translateY(-50%);
-  pointer-events: none;
+  height: 100%;
+  width: auto;
 }
 
-.dropdown-divider {
-  width: 1px;
-  height: 20px;
-  background: #D9D9D9;
-}
-
-.dropdown-arrow svg {
+.gift-select__chev svg {
   width: 16px;
   height: 16px;
-  stroke: #000;
-  stroke-width: 2;
+  stroke: black;
   transition: transform 0.2s ease;
 }
 
-.dropdown-header.active .dropdown-arrow svg {
-  transform: rotate(180deg);
-}
-
-.dropdown-options {
+/* ✅ placeholder */
+.gift-placeholder {
   position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: white;
-  border: 1px solid #000;
-  border-top: none;
-  z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: all 0.2s ease;
-  max-height: 200px;
-  overflow-y: auto;
-  scrollbar-width: none;
-}
-
-.dropdown-options::-webkit-scrollbar {
-  display: none;
-}
-
-.dropdown-options.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.dropdown-option {
-  padding: 8px 16px;
-  font-size: 16px;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
   font-family: 'Jost', sans-serif;
-  color: #000;
-  cursor: pointer;
-  text-align: center;
-  border-bottom: 1px solid #f0f0f0;
-  transition: all 0.2s ease;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.dropdown-option:last-child {
-  border-bottom: none;
-}
-
-.dropdown-option:hover,
-.dropdown-option.selected {
-  background-color: #000;
-  color: #fff;
-}
-
-/* ===== Responsive Adjustments ===== */
-@media (max-width: 480px) {
-  .custom-dropdown {
-    max-width: 100%;
-  }
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  vertical-align: middle;
+  color: #000; 
 }
