@@ -247,11 +247,11 @@ display:flex;
 .gift-hero__title
 {
   padding-top:25px;
-  
+  padding-left:25px;
 }
 .gift-hero__text
 {
-    padding:10px 0px 5px 25px;
+    padding:5px 0px 5px 25px;
 
 }
 
