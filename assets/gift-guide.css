@@ -292,43 +292,84 @@
 }
 
 /* Grid card */
+/* ============================= */
+/* 11) Plus Icons Positioning */
+/* ============================= */
+
 .grid-item {
   position: relative;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,.08);
-  height: auto;
-  background: #f6f6f6;
 }
 
-/* Card image */
-.grid-item img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  object-position: left;
+.plus-icon1, .plus-icon2, .plus-icon3, 
+.plus-icon4, .plus-icon5, .plus-icon6 {
+  position: absolute;
+  z-index: 5;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-/* Plus icons (floating hotspots) */
-.plus-icon1 { position: absolute; top: 58%; right: 120px; }
-.plus-icon2 { position: absolute; top: 190px; right: 40px; }
-.plus-icon3 { position: absolute; top: 80px;  right: 125px; }
-.plus-icon4 { position: absolute; top: 55px;  right: 85px;  }
-.plus-icon5 { position: absolute; top: 90px;  right: 170px; }
-.plus-icon6 { position: absolute; top: 145px; right: 75px;  }
+.plus-icon1:hover, .plus-icon2:hover, .plus-icon3:hover,
+.plus-icon4:hover, .plus-icon5:hover, .plus-icon6:hover {
+  transform: scale(1.2);
+}
 
 .plusimage {
   width: 22px !important;
   height: 22px !important;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.3));
 }
 
-/* Responsive grid breakpoints */
-@media (max-width: 992px){
-  .grid-container { grid-template-columns: repeat(2, minmax(0,1fr)); }
+/* Desktop Positions (1440px) */
+.plus-icon1 { top: 58%; right: 30%; }
+.plus-icon2 { top: 50%; right: 15%; }
+.plus-icon3 { top: 25%; right: 35%; }
+.plus-icon4 { top: 20%; right: 25%; }
+.plus-icon5 { top: 30%; right: 45%; }
+.plus-icon6 { top: 45%; right: 22%; }
+
+/* Tablet Positions (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .plus-icon1 { top: 55%; right: 25%; }
+  .plus-icon2 { top: 45%; right: 12%; }
+  .plus-icon3 { top: 22%; right: 30%; }
+  .plus-icon4 { top: 18%; right: 20%; }
+  .plus-icon5 { top: 25%; right: 40%; }
+  .plus-icon6 { top: 40%; right: 18%; }
+  
+  .plusimage {
+    width: 20px !important;
+    height: 20px !important;
+  }
 }
-@media (max-width: 576px){
-  .grid-container { grid-template-columns: 1fr; }
-  .wild-title { margin-bottom: 14px; }
+
+/* Mobile Positions (up to 768px) */
+@media (max-width: 768px) {
+  .plus-icon1 { top: 50%; right: 20%; }
+  .plus-icon2 { top: 40%; right: 10%; }
+  .plus-icon3 { top: 20%; right: 25%; }
+  .plus-icon4 { top: 15%; right: 15%; }
+  .plus-icon5 { top: 20%; right: 35%; }
+  .plus-icon6 { top: 35%; right: 15%; }
+  
+  .plusimage {
+    width: 18px !important;
+    height: 18px !important;
+  }
+}
+
+/* Small Mobile (up to 480px) */
+@media (max-width: 480px) {
+  .plus-icon1 { top: 45%; right: 15%; }
+  .plus-icon2 { top: 35%; right: 8%; }
+  .plus-icon3 { top: 15%; right: 20%; }
+  .plus-icon4 { top: 12%; right: 12%; }
+  .plus-icon5 { top: 15%; right: 30%; }
+  .plus-icon6 { top: 30%; right: 12%; }
+  
+  .plusimage {
+    width: 16px !important;
+    height: 16px !important;
+  }
 }
 
 /* ============================= */
