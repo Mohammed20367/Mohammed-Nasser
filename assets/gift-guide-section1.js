@@ -473,7 +473,7 @@
     }
 
     addToCart(product);
-    showToast('Added to cart ✓');
+    showToast('Added to cart');
 
     // Optional: close popup after add
     setTimeout(function () { closePopup(popup); }, 250);
