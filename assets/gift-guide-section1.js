@@ -468,7 +468,6 @@ function readProductFromPopup(popupEl) {
  }
 
  // Click "ADD TO CART"
- // Click "ADD TO CART"
 document.addEventListener('click', function (e) {
   var btn = e.target.closest('.gift-cta');
   if (!btn) return;
