@@ -274,13 +274,13 @@
   // ===========================================
   // DRAG SCROLL FOR DROPDOWN OPTIONS
   // ===========================================
-  let isDragging = false;
-  let startY = 0;
-  let scrollTop = 0;
-  let currentDropdown = null;
+  var isDragging = false;
+  var startY = 0;
+  var scrollTop = 0;
+  var currentDropdown = null;
 
   document.addEventListener('mousedown', function(e) {
-    const dropdownOptions = e.target.closest('.dropdown-options');
+    var dropdownOptions = e.target.closest('.dropdown-options');
     if (dropdownOptions) {
       isDragging = true;
       currentDropdown = dropdownOptions;
@@ -294,8 +294,8 @@
   document.addEventListener('mousemove', function(e) {
     if (!isDragging || !currentDropdown) return;
     e.preventDefault();
-    const y = e.pageY - currentDropdown.offsetTop;
-    const walk = (y - startY) * 2; // scroll speed multiplier
+    var y = e.pageY - currentDropdown.offsetTop;
+    var walk = (y - startY) * 2; // scroll speed multiplier
     currentDropdown.scrollTop = scrollTop - walk;
   });
 
