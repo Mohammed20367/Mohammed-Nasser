@@ -589,7 +589,16 @@
   display: block;
   flex-shrink: 0;
 }
-
+.dropdown-arrow {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 .dropdown-arrow svg {
   width: 16px;
   height: 16px;
