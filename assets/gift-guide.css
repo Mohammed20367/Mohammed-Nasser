@@ -581,24 +581,8 @@
   height: 20px;
   background: #000000;
 }
-.dropdown-divider {
-  width: 1px;
-  height: 16px;
-  background-color: #000000;
-  border: 1px solid #000000;
-  display: block;
-  flex-shrink: 0;
-}
-.dropdown-arrow {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
+
+
 .dropdown-arrow svg {
   width: 16px;
   height: 16px;
