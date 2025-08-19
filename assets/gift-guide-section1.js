@@ -214,3 +214,64 @@
   // Init cart count on load
   updateCartCount();
 })();
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdown = document.querySelector('.custom-dropdown');
+    const header = dropdown.querySelector('.dropdown-header');
+    const options = dropdown.querySelector('.dropdown-options');
+    const dropdownText = dropdown.querySelector('.dropdown-text');
+    const optionElements = dropdown.querySelectorAll('.dropdown-option');
+    
+    let isOpen = false;
+    let selectedValue = null;
+
+    // Toggle dropdown
+    header.addEventListener('click', function() {
+        if (isOpen) {
+            closeDropdown();
+        } else {
+            openDropdown();
+        }
+    });
+
+    // Handle option selection
+    optionElements.forEach(option => {
+        option.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            // Remove selected class from all options
+            optionElements.forEach(opt => opt.classList.remove('selected'));
+            
+            // Add selected class to clicked option
+            this.classList.add('selected');
+            
+            // Update selected value
+            selectedValue = this.dataset.value;
+            
+            // Update header text and styling - الجزء المهم الجديد
+            dropdownText.textContent = selectedValue;
+            dropdownText.classList.add('selected');
+            header.classList.add('selected');
+            
+            closeDropdown();
+        });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target)) {
+            closeDropdown();
+        }
+    });
+
+    function openDropdown() {
+        isOpen = true;
+        header.classList.add('active');
+        options.classList.add('show');
+    }
+
+    function closeDropdown() {
+        isOpen = false;
+        header.classList.remove('active');
+        options.classList.remove('show');
+    }
+});

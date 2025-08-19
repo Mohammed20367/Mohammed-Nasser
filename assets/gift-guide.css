@@ -650,6 +650,16 @@
   color: #fff;
 }
 
+.dropdown-header.selected { 
+    color: #000; 
+    justify-content: center; 
+}
+
+.dropdown-text.selected {
+    text-align: center;
+    width: 100%;
+}
+
 /* ============================= */
 /* 10) Popup responsiveness */
 /* ============================= */
