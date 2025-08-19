@@ -416,38 +416,49 @@
    setTimeout(function () { t.remove(); }, 1800);
  }
 
- function readProductFromPopup(popupEl) {
-   var title = popupEl.querySelector('.gift-head__title')?.textContent.trim() || 'Product';
-   var priceText = popupEl.querySelector('.gift-head__price')?.textContent.trim() || '';
-   var img = popupEl.querySelector('.gift-head__img')?.getAttribute('src') || '';
-   
-   // Fix: Only get color if there's an ACTIVE swatch
-   var activeSw = popupEl.querySelector('.gift-swatch.is-active');
-   var color = activeSw ? activeSw.textContent.trim() : null;
+function readProductFromPopup(popupEl) {
+  var title = popupEl.querySelector('.gift-head__title')?.textContent.trim() || 'Product';
+  var priceText = popupEl.querySelector('.gift-head__price')?.textContent.trim() || '';
+  var img = popupEl.querySelector('.gift-head__img')?.getAttribute('src') || '';
+  
+  // Debug: Check if any swatch exists and which one is active
+  var allSwatches = popupEl.querySelectorAll('.gift-swatch');
+  var activeSw = popupEl.querySelector('.gift-swatch.is-active');
+  
+  console.log('All swatches:', allSwatches.length);
+  console.log('Active swatch:', activeSw);
+  
+  var color = null;
+  if (activeSw) {
+    color = activeSw.textContent.trim();
+    console.log('Color found:', color);
+  } else {
+    console.log('No active swatch found');
+  }
 
-   var ddHeader = popupEl.querySelector('.custom-dropdown .dropdown-header');
-   var size = ddHeader && ddHeader.classList.contains('selected')
-     ? ddHeader.querySelector('.dropdown-text')?.textContent.trim()
-     : null;
+  var ddHeader = popupEl.querySelector('.custom-dropdown .dropdown-header');
+  var size = ddHeader && ddHeader.classList.contains('selected')
+    ? ddHeader.querySelector('.dropdown-text')?.textContent.trim()
+    : null;
 
-   var priceNum = null;
-   if (priceText) {
-     var normalized = priceText.replace(/[^\d,.\-]/g, '').replace('.', '').replace(',', '.');
-     var parsed = parseFloat(normalized);
-     if (!isNaN(parsed)) priceNum = parsed;
-   }
+  var priceNum = null;
+  if (priceText) {
+    var normalized = priceText.replace(/[^\d,.\-]/g, '').replace('.', '').replace(',', '.');
+    var parsed = parseFloat(normalized);
+    if (!isNaN(parsed)) priceNum = parsed;
+  }
 
-   return {
-     id: (title + '|' + (color || '') + '|' + (size || '')).toLowerCase().replace(/\s+/g, '-'),
-     title: title,
-     priceText: priceText,
-     price: priceNum,
-     color: color,
-     size: size,
-     image: img,
-     qty: 1
-   };
- }
+  return {
+    id: (title + '|' + (color || '') + '|' + (size || '')).toLowerCase().replace(/\s+/g, '-'),
+    title: title,
+    priceText: priceText,
+    price: priceNum,
+    color: color,
+    size: size,
+    image: img,
+    qty: 1
+  };
+}
 
  function addToCart(product) {
    var cart = getCart();
