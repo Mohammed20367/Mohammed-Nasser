@@ -272,6 +272,50 @@
   });
 
   // ===========================================
+  // DRAG SCROLL FOR DROPDOWN OPTIONS
+  // ===========================================
+  let isDragging = false;
+  let startY = 0;
+  let scrollTop = 0;
+  let currentDropdown = null;
+
+  document.addEventListener('mousedown', function(e) {
+    const dropdownOptions = e.target.closest('.dropdown-options');
+    if (dropdownOptions) {
+      isDragging = true;
+      currentDropdown = dropdownOptions;
+      startY = e.pageY - dropdownOptions.offsetTop;
+      scrollTop = dropdownOptions.scrollTop;
+      dropdownOptions.style.cursor = 'grabbing';
+      e.preventDefault();
+    }
+  });
+
+  document.addEventListener('mousemove', function(e) {
+    if (!isDragging || !currentDropdown) return;
+    e.preventDefault();
+    const y = e.pageY - currentDropdown.offsetTop;
+    const walk = (y - startY) * 2; // scroll speed multiplier
+    currentDropdown.scrollTop = scrollTop - walk;
+  });
+
+  document.addEventListener('mouseup', function() {
+    if (isDragging && currentDropdown) {
+      isDragging = false;
+      currentDropdown.style.cursor = 'grab';
+      currentDropdown = null;
+    }
+  });
+
+  document.addEventListener('mouseleave', function() {
+    if (isDragging && currentDropdown) {
+      isDragging = false;
+      currentDropdown.style.cursor = 'grab';
+      currentDropdown = null;
+    }
+  });
+
+  // ===========================================
   // SIZE DROPDOWN (conflict-free, delegated) - UPDATED VERSION
   // ===========================================
   document.addEventListener('click', function (e) {
