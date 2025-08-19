@@ -581,13 +581,7 @@
   height: 20px;
   background: #000000;
 }
-.dropdown-divider {
-    font-size: 16px;
-    color: #333333;
-    margin: 0 8px 0 4px;
-    font-weight: 300;
-    line-height: 1;
-}
+
 
 .dropdown-arrow svg {
   width: 16px;
