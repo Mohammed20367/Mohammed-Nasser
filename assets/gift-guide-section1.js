@@ -457,41 +457,41 @@
  }
 
  // Click "ADD TO CART"
- document.addEventListener('click', function (e) {
-   var btn = e.target.closest('.gift-cta');
-   if (!btn) return;
+ // Click "ADD TO CART"
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest('.gift-cta');
+  if (!btn) return;
 
-   var popup = btn.closest('.gift-popup');
-   if (!popup) return;
+  var popup = btn.closest('.gift-popup');
+  if (!popup) return;
 
-   var product = readProductFromPopup(popup);
+  var product = readProductFromPopup(popup);
 
-   // Check if size is selected
-   if (!product.size) {
-     showToast('Please choose a size', true);
-     var dd = popup.querySelector('.custom-dropdown .dropdown-header');
-     if (dd) { dd.style.outline = '2px solid #B20F36'; setTimeout(function () { dd.style.outline = 'none'; }, 1200); }
-     return;
-   }
+  // Check if size is selected
+  if (!product.size) {
+    showToast('Please choose a size', true);
+    var dd = popup.querySelector('.custom-dropdown .dropdown-header');
+    if (dd) { dd.style.outline = '2px solid #B20F36'; setTimeout(function () { dd.style.outline = 'none'; }, 1200); }
+    return;
+  }
 
-   // Check if color is selected
-   if (!product.color) {
-     showToast('Please choose a color', true);
-     var colorSwatches = popup.querySelector('.gift-swatches');
-     if (colorSwatches) { 
-       colorSwatches.style.outline = '2px solid #B20F36'; 
-       setTimeout(function () { colorSwatches.style.outline = 'none'; }, 1200); 
-     }
-     return;
-   }
+  // Check if color is selected
+  if (!product.color) {
+    showToast('Please choose a color', true);
+    var colorSwatches = popup.querySelector('.gift-swatches');
+    if (colorSwatches) { 
+      colorSwatches.style.outline = '2px solid #B20F36'; 
+      setTimeout(function () { colorSwatches.style.outline = 'none'; }, 1200); 
+    }
+    return;
+  }
 
-   addToCart(product);
-   showToast('Added to cart');
+  addToCart(product);
+  showToast('Added to cart');
 
-   // Optional: close popup after add
-   setTimeout(function () { closePopup(popup); }, 250);
- });
-
+  // Close popup only if both size and color are selected
+  setTimeout(function () { closePopup(popup); }, 250);
+});
  // Init cart count on load
  updateCartCount();
 })();
